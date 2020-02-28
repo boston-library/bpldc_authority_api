@@ -26,15 +26,34 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Required gems for QA and linked data access
 gem 'qa', '~> 5.3'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
-
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
+group :development, :test do
+  gem 'awesome_print', '~> 1.8.0'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails', '~> 2.7'
+  gem 'factory_bot_rails', '~> 5.0'
+  gem 'faker', '~> 2.6.0'
+  gem 'pry', '~> 0.12.2'
+  gem 'pry-byebug', '~> 3.7.0'
+  gem 'pry-rails', '~> 0.3.9'
+  gem 'rubocop', '~> 0.75.0', require: false
+  gem 'rubocop-performance', '~> 1.5.0', require: false
+  gem 'rubocop-rails', '~> 2.3.2', require: false
+  gem 'rubocop-rspec', require: false
+end
+
+group :test do
+  gem 'coveralls', require: false
+  gem 'database_cleaner', '~> 1.7'
+  gem 'rspec-activemodel-mocks', '~> 1.1.0'
+  gem 'rspec-rails', '~> 3.8.0'
+  gem 'shoulda-matchers', '~> 4.1'
+  gem 'vcr', '~> 5.0.0'
+  gem 'webmock', '~> 3.7.6'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
