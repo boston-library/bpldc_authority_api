@@ -27,6 +27,7 @@ tmp/
 scratch.rb
 .env
 .env.*
+!.env.example
 
 # Ignore all RubyMine temp files
 .idea/
