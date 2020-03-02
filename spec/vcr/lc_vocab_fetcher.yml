@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://id.loc.gov/vocabulary/graphicMaterials/tgm002707.madsrdf.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 28 Feb 2020 21:40:02 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc5c5df4f1217b82b843f3d6d71fe95811582926002; expires=Sun, 29-Mar-20
+        21:40:02 GMT; path=/; domain=.loc.gov; HttpOnly; SameSite=Lax
+      X-Uri:
+      - http://id.loc.gov/vocabulary/graphicMaterials/tgm002707
+      Cache-Control:
+      - public, max-age=2419200
+      X-Varnish:
+      - 15416153 13896382
+      Age:
+      - '345283'
+      Via:
+      - 1.1 varnish-v4
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - HEAD, POST, GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 56c58dfc4b34ff7c-BOS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        WyAgeyAiQGlkIjogIl86YjhpZGRPdGxvY2RPdGdvdnZvY2FidWxhcnlncmFwaGljTWF0ZXJpYWxzdGdtMDAyNzA3IiwgIkB0eXBlIjogWyAiaHR0cDovL3d3dy5sb2MuZ292L21hZHMvcmRmL3YxI1RvcGljIiwgImh0dHA6Ly93d3cubG9jLmdvdi9tYWRzL3JkZi92MSNWYXJpYW50IiBdLCAiaHR0cDovL3d3dy5sb2MuZ292L21hZHMvcmRmL3YxI3ZhcmlhbnRMYWJlbCI6IFsgeyAiQGxhbmd1YWdlIjogImVuIiwKIkB2YWx1ZSI6ICJDb250w6kgY3JheW9uIGRyYXdpbmdzIiB9IF0gfSwgIHsgIkBpZCI6ICJodHRwOi8vaWQubG9jLmdvdi92b2NhYnVsYXJ5L2dyYXBoaWNNYXRlcmlhbHMvdGdtMDAyNzA3IiwgIkB0eXBlIjogWyAiaHR0cDovL3d3dy5sb2MuZ292L21hZHMvcmRmL3YxI1RvcGljIiwgImh0dHA6Ly93d3cubG9jLmdvdi9tYWRzL3JkZi92MSNBdXRob3JpdHkiIF0sICJodHRwOi8vd3d3LmxvYy5nb3YvbWFkcy9yZGYvdjEjYXV0aG9yaXRhdGl2ZUxhYmVsIjogWyB7ICJAbGFuZ3VhZ2UiOiAiZW4iLAoiQHZhbHVlIjogIkNyYXlvbiBkcmF3aW5ncyIgfSBdLCAiaHR0cDovL3d3dy5sb2MuZ292L21hZHMvcmRmL3YxI2hhc1ZhcmlhbnQiOiBbIHsgIkBpZCI6ICJfOmI4aWRkT3Rsb2NkT3Rnb3Z2b2NhYnVsYXJ5Z3JhcGhpY01hdGVyaWFsc3RnbTAwMjcwNyIgfSBdLCAiaHR0cDovL3d3dy5sb2MuZ292L21hZHMvcmRmL3YxI2hhc0Jyb2FkZXJBdXRob3JpdHkiOiBbIHsgIkBpZCI6ICJodHRwOi8vaWQubG9jLmdvdi92b2NhYnVsYXJ5L2dyYXBoaWNNYXRlcmlhbHMvdGdtMDAzMjc5IiB9IF0sICJodHRwOi8vd3d3LmxvYy5nb3YvbWFkcy9yZGYvdjEjdXNlRm9yIjogWyB7ICJAaWQiOiAiaHR0cDovL2lkLmxvYy5nb3Yvdm9jYWJ1bGFyeS9ncmFwaGljTWF0ZXJpYWxzL3RnbTAwMjQ5NSIgfSBdLCAiaHR0cDovL3d3dy5sb2MuZ292L21hZHMvcmRmL3YxI2lzTWVtYmVyT2ZNQURTQ29sbGVjdGlvbiI6IFsgeyAiQGlkIjogImh0dHA6Ly9pZC5sb2MuZ292L3ZvY2FidWxhcnkvZ3JhcGhpY01hdGVyaWFscy9jb2xsZWN0aW9uX2dyYXBoaWNNYXRlcmlhbHMiIH0gXSwgImh0dHA6Ly93d3cubG9jLmdvdi9tYWRzL3JkZi92MSNpc01lbWJlck9mTUFEU1NjaGVtZSI6IFsgeyAiQGlkIjogImh0dHA6Ly9pZC5sb2MuZ292L3ZvY2FidWxhcnkvZ3JhcGhpY01hdGVyaWFscyIgfSBdLCAiaHR0cDovL3d3dy53My5vcmcvMjAwMi8wNy9vd2wjc2FtZUFzIjogWyB7ICJAaWQiOiAiaW5mbzpsYy92b2NhYnVsYXJ5L2dyYXBoaWNNYXRlcmlhbHMvdGdtMDAyNzA3IiB9IF0sICJodHRwOi8vd3d3LmxvYy5nb3YvbWFkcy9yZGYvdjEjc2NvcGVOb3RlIjogWyB7ICJAbGFuZ3VhZ2UiOiAiZW4iLAoiQHZhbHVlIjogIk1haW4gVGVybSIgfSBdLCAiaHR0cDovL3d3dy5sb2MuZ292L21hZHMvcmRmL3YxI2V4YW1wbGVOb3RlIjogWyB7ICJAbGFuZ3VhZ2UiOiAiZW4iLAoiQHZhbHVlIjogIkFwcGxpZWQgd2l0aGluIE1BUkMgYXM6IFN1YmplY3QgKE1BUkMgMTUwLzY1MCkiIH0gXSwgImh0dHA6Ly93d3cubG9jLmdvdi9tYWRzL3JkZi92MSNoaXN0b3J5Tm90ZSI6IFsgeyAiQGxhbmd1YWdlIjogImVuIiwKIkB2YWx1ZSI6ICJGb3JtZXJseSBUR01JIHRlcm0gJiBUR01JSSB0ZXJtLiIgfSwgeyAiQGxhbmd1YWdlIjogImVuIiwKIkB2YWx1ZSI6ICJGb3JtZXIgY29udHJvbCBudW1iZXIgZnJvbSBUR00gSTogbGN0Z20wMDI3MDIiIH0sIHsgIkBsYW5ndWFnZSI6ICJlbiIsCiJAdmFsdWUiOiAiRm9ybWVyIGNvbnRyb2wgbnVtYmVyIGZyb20gVEdNIElJOiBnbWdwYzAwMDI4MyIgfSBdLCAiaHR0cDovL3d3dy5sb2MuZ292L21hZHMvcmRmL3YxI2FkbWluTWV0YWRhdGEiOiBbIHsgIkBpZCI6ICJfOmIzM2lkZE90bG9jZE90Z292dm9jYWJ1bGFyeWdyYXBoaWNNYXRlcmlhbHN0Z20wMDI3MDciIH0gXSB9LCAgeyAiQGlkIjogIl86YjMzaWRkT3Rsb2NkT3Rnb3Z2b2NhYnVsYXJ5Z3JhcGhpY01hdGVyaWFsc3RnbTAwMjcwNyIsICJAdHlwZSI6IFsgImh0dHA6Ly9pZC5sb2MuZ292L29udG9sb2dpZXMvUmVjb3JkSW5mbyNSZWNvcmRJbmZvIiBdLCAiaHR0cDovL2lkLmxvYy5nb3Yvb250b2xvZ2llcy9SZWNvcmRJbmZvI3JlY29yZFN0YXR1cyI6IFsgeyAiQHR5cGUiOiAiaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEjc3RyaW5nIiwKIkB2YWx1ZSI6ICJ1cGRhdGVkIiB9IF0sICJodHRwOi8vaWQubG9jLmdvdi9vbnRvbG9naWVzL1JlY29yZEluZm8jcmVjb3JkQ2hhbmdlRGF0ZSI6IFsgeyAiQHR5cGUiOiAiaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEjZGF0ZVRpbWUiLAoiQHZhbHVlIjogIjIwMDctMDgtMDJUMDA6MDA6MDAiIH0gXSwgImh0dHA6Ly9pZC5sb2MuZ292L29udG9sb2dpZXMvUmVjb3JkSW5mbyNyZWNvcmRDb250ZW50U291cmNlIjogWyB7ICJAaWQiOiAiaHR0cDovL2lkLmxvYy5nb3Yvdm9jYWJ1bGFyeS9vcmdhbml6YXRpb25zL2RsYyIgfSBdIH0gXQ==
+    http_version: 
+  recorded_at: Fri, 28 Feb 2020 21:40:02 GMT
+recorded_with: VCR 5.0.0

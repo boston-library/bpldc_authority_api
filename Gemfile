@@ -25,6 +25,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+gem 'oj', '~> 3.10'
+
 # Required gems for QA and linked data access
 gem 'qa', '~> 5.3'
 
@@ -49,11 +51,11 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  gem 'database_cleaner', '~> 1.7'
-  gem 'rspec-activemodel-mocks', '~> 1.1.0'
-  gem 'rspec-rails', '~> 3.8.0'
+  gem 'database_cleaner', '~> 1.8'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 3.9'
   gem 'shoulda-matchers', '~> 4.1'
-  gem 'vcr', '~> 5.0.0'
+  gem 'vcr', '~> 5.1.0'
   gem 'webmock', '~> 3.7.6'
 end
 

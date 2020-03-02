@@ -59,6 +59,8 @@ Layout/EmptyLinesAroundAccessModifier:
 
 Layout/EmptyLinesAroundBlockBody:
   Enabled: true
+  Exclude:
+    - 'db/schema.rb'
 
 Layout/EmptyLinesAroundClassBody:
   Enabled: true
@@ -331,6 +333,8 @@ Style/ExpandPathArguments:
 
 Style/FrozenStringLiteralComment:
   Enabled: true
+  Exclude:
+    - 'db/schema.rb'
 
 Style/GuardClause:
   Enabled: true
@@ -345,6 +349,8 @@ Style/Lambda:
 
 Style/MixinUsage:
   Enabled: true
+  Exclude:
+    - 'db/seeds.rb'
 
 Style/MutableConstant:
   Enabled: true
@@ -354,6 +360,8 @@ Style/Next:
 
 Style/NumericLiterals:
   Enabled: true
+  Exclude:
+    - 'db/schema.rb'
 
 Style/PercentLiteralDelimiters:
   Enabled: true
@@ -389,6 +397,8 @@ Style/StderrPuts:
 
 Style/StringLiterals:
   Enabled: true
+  Exclude:
+    - 'db/schema.rb'
 
 Style/SymbolArray:
   Enabled: false
@@ -420,6 +430,8 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Enabled: true
   Max: 10
+  Exclude:
+    - 'lib/bpldc/lc_vocab_utilities.rb'
 
 Metrics/MethodLength:
   Enabled: true
@@ -502,6 +514,9 @@ Rails/Present:
 
 Rails/Output:
   Enabled: true
+  Exclude:
+    - 'db/seeds.rb'
+    - 'lib/bpldc/lc_vocab_utilities.rb'
 
 Rails/ReflectionClassName:
   Enabled: false
