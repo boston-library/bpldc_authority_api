@@ -20,6 +20,15 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+require 'simplecov'
+require 'coveralls'
+Coveralls.wear!('rails')
+
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start do
+  add_filter '/spec/'
+end
+
 require 'vcr'
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
