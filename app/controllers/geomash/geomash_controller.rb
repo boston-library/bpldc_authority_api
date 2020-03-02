@@ -33,9 +33,10 @@ module Geomash
     end
 
     # GET /geomash/state_town_lookup
+    # WARNING: this only works for MA towns
     def state_town_lookup
       begin
-        @geomash_data = Geomash::TownLookup.state_town_lookup(params[:state_key], params[:term])
+        @geomash_data = Geomash::TownLookup.state_town_lookup('MA', params[:term])
         @geomash_data = { tgn_id: @geomash_data } if @geomash_data
         return_or_not_found
       rescue StandardError => error
@@ -54,7 +55,7 @@ module Geomash
     end
 
     def error_response(error, response_code)
-      render json: { error: "#{error}" }, status: response_code
+      render json: { error: error.to_s }, status: response_code
     end
   end
 end

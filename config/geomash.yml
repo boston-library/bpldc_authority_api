@@ -7,7 +7,7 @@ default: &default
 development:
   <<: *default
 
-test: &TEST
+test:
   <<: *default
 
 production:
