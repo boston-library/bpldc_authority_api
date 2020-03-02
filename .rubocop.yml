@@ -6,6 +6,7 @@ require:
 AllCops:
   Exclude:
     - 'bin/*'
+    - 'vendor/**/*'
   DisplayCopNames: true
   DisabledByDefault: true
   TargetRubyVersion: 2.5
