@@ -59,6 +59,8 @@ Layout/EmptyLinesAroundAccessModifier:
 
 Layout/EmptyLinesAroundBlockBody:
   Enabled: true
+  Exclude:
+    - 'db/schema.rb'
 
 Layout/EmptyLinesAroundClassBody:
   Enabled: true
@@ -331,6 +333,8 @@ Style/ExpandPathArguments:
 
 Style/FrozenStringLiteralComment:
   Enabled: true
+  Exclude:
+    - 'db/schema.rb'
 
 Style/GuardClause:
   Enabled: true
@@ -393,6 +397,8 @@ Style/StderrPuts:
 
 Style/StringLiterals:
   Enabled: true
+  Exclude:
+    - 'db/schema.rb'
 
 Style/SymbolArray:
   Enabled: false
