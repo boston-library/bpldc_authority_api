@@ -8,8 +8,7 @@ class Bpldc::Nomenclature < ApplicationRecord
   scope :with_authority, -> { includes(:authority) }
 
   def self.all_for_api
-    all_records = with_authority
-    all_records.map do |rec|
+    with_authority.map do |rec|
       auth_code = rec.authority.code
       rec = rec.as_json
       rec['authority_code'] = auth_code

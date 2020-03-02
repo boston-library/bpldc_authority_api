@@ -4,8 +4,8 @@ module Bpldc
   class LicensesController < ApplicationController
     # GET /bpldc/licenses
     def index
-      @objects = Bpldc::License.all_for_api
-      render json: @objects
+      @objects = Bpldc::License.public_attributes
+      render json: Oj.dump(@objects)
     end
   end
 end
