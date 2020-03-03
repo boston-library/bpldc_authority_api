@@ -33,7 +33,7 @@ module Geomash
     end
 
     # GET /geomash/state_town_lookup
-    # WARNING: this only works for MA towns
+    # Only works for MA towns, so we hard-code :state_key param
     def state_town_lookup
       begin
         @geomash_data = Geomash::TownLookup.state_town_lookup('MA', params[:term])

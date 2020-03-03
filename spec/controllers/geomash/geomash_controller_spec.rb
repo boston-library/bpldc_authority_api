@@ -66,8 +66,8 @@ RSpec.describe Geomash::GeomashController do
 
     describe 'with invalid params' do
       let(:geomash_route) { :state_town_lookup }
-      let(:request_params) { { term: city, state_key: 'WA' } }
-      let(:expected_status) { :bad_request }
+      let(:request_params) { { term: city } }
+      let(:expected_status) { :not_found }
       it_behaves_like 'geomash_error_response'
     end
   end
