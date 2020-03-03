@@ -1,0 +1,14 @@
+default: &default
+  tgn_enabled: true
+  geonames_username: <%= ENV['GEONAMES_USERNAME'] %>
+  google_key: <%= ENV['GOOGLE_MAPS_API_KEY'] %>
+  parser_cache_enabled: false
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
