@@ -20,6 +20,7 @@ before_script:
 
 rvm:
   - 2.5.7
+  - 2.6.5
 
 env:
   global:
