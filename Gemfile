@@ -28,6 +28,7 @@ gem 'geomash', github: 'samvera-labs/geomash', branch: 'specs-working'
 gem 'oj', '~> 3.10'
 
 # Required gems for QA and linked data access
+gem 'linkeddata'
 gem 'qa', '~> 5.3'
 
 group :development do

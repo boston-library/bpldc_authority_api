@@ -49,7 +49,7 @@
           "variable": "username",
           "property": "hydra:freetextQuery",
           "required": false,
-          "default": "elrayle"
+          "default": "boston_library"
         },
         {
           "@type": "IriTemplateMapping",
