@@ -12,3 +12,17 @@ See the wiki for more information:
 * Querying authorities
     * [Get label for vocabulary id](https://github.com/boston-library/bpldc_authority_api/wiki/Querying-authorities:-get-label-for-vocabulary-id): Use a vocabulary id to fetch the label for a term
     * [Search for terms](https://github.com/boston-library/bpldc_authority_api/wiki/Querying-authorities:-search-for-terms): Search for terms from an authority by keyword/string; returns a list of matches
+
+## Running with Docker
+
+Run the following commands from the project root:
+
+1. Build/start Ruby/Rails and Postgres containers:
+```
+$ docker-compose up --build
+```
+2. From another terminal window, run:
+```
+$ docker-compose run bpldc_authority_api rake db:create db:migrate db:seed
+```
+The application will be available on `localhost:3001`. Use `docker-compose up` and `docker-compose down` to start/stop the application.
