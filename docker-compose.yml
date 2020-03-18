@@ -1,0 +1,20 @@
+# based on https://docs.docker.com/compose/rails/
+version: '3'
+services:
+  pg:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+  bpldc_authority_api:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    environment:
+      - POSTGRES_HOST=pg
+    volumes:
+      - .:/bpldc_authority_api
+    ports:
+      - "3001:3000"
+    depends_on:
+      - pg
