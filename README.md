@@ -23,6 +23,6 @@ $ docker-compose up --build
 ```
 2. From another terminal window, run:
 ```
-$ docker-compose run bpldc_authority_api rake db:create db:migrate db:seed
+$ docker-compose run bpldc_authority_api rails db:setup
 ```
 The application will be available on `localhost:3001`. Use `docker-compose up` and `docker-compose down` to start/stop the application.
