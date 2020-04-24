@@ -35,7 +35,7 @@ module BpldcAuthorityApi
     config.api_only = true
 
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
-
+    config.eager_load_paths << Rails.root.join('lib')
     # Geomash doesn't read ERB/ENV in config/geomash.yml, so we reset it here
     Geomash.config[:geonames_username] = ENV['GEONAMES_USERNAME']
     Geomash.config[:google_key] = ENV['GOOGLE_MAPS_API_KEY']
