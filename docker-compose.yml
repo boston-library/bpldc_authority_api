@@ -4,17 +4,23 @@ services:
   pg:
     image: postgres
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=postgres
   bpldc_authority_api:
-    build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
+      - RAILS_ENV=development
+      - RAILS_LOG_TO_STDOUT=true
       - POSTGRES_HOST=pg
     volumes:
-      - .:/bpldc_authority_api
+      - .:/bpldc_authority_api-app
     ports:
       - "3001:3000"
     depends_on:
       - pg
+
+volumes:
+  pg_data:
