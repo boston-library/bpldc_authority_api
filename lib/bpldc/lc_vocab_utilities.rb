@@ -15,7 +15,11 @@ module Bpldc
         return false if bpldc_class.blank? || lc_url.blank? || auth_code.blank?
 
         puts "Seeding #{bpldc_class} values"
-        lc_response = Faraday.get(lc_url)
+        connection = Faraday.new(lc_url) do |f|
+          f.use FaradayMiddleware::FollowRedirects, limit: 3
+          f.adapter Faraday.default_adapter
+        end
+        lc_response = connection.get
         lc_data = lc_response.status == 200 ? JSON.parse(lc_response.body) : nil
         return false unless lc_data
 
@@ -23,7 +27,8 @@ module Bpldc
         return false unless authority
 
         lc_data.each do |lc_data_hash|
-          next unless lc_data_hash['@type'].include?('http://www.loc.gov/mads/rdf/v1#Authority')
+          next unless lc_data_hash['@id'] !~ /\A_:/ &&
+                      lc_data_hash['@type'].include?('http://www.loc.gov/mads/rdf/v1#Authority')
 
           bpldc_class.constantize.transaction do
             begin

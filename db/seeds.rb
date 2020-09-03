@@ -97,23 +97,23 @@ BASIC_GENRE_INPUTS.each do |auth_code, ids_from_auth|
   ids_from_auth.each do |id_from_auth|
     lc_vocab_path = auth_code == 'lcgft' ? 'authorities/genreForms' : 'vocabulary/graphicMaterials'
     LcVocabFetcher.seed_lc_data(bpldc_class: 'Bpldc::BasicGenre',
-                                lc_url: "http://id.loc.gov/#{lc_vocab_path}/#{id_from_auth}.madsrdf.json",
+                                lc_url: "https://id.loc.gov/#{lc_vocab_path}/#{id_from_auth}.madsrdf.json",
                                 auth_code: auth_code)
   end
 end
 
 ### RESOURCE TYPES ###
 LcVocabFetcher.seed_lc_data(bpldc_class: 'Bpldc::ResourceType',
-                            lc_url: 'http://id.loc.gov/vocabulary/resourceTypes.json',
+                            lc_url: 'https://id.loc.gov/vocabulary/resourceTypes.json',
                             skip: %w(unk resourceTypes), auth_code: 'resourceTypes')
 
 ### ROLES ###
 LcVocabFetcher.seed_lc_data(bpldc_class: 'Bpldc::Role',
-                            lc_url: 'http://id.loc.gov/vocabulary/relators.json',
+                            lc_url: 'https://id.loc.gov/vocabulary/relators.json',
                             skip: ['relators'], auth_code: 'marcrelator')
 
 ### LANGUAGES ###
 LcVocabFetcher.seed_lc_data(bpldc_class: 'Bpldc::Language',
-                            lc_url: 'http://id.loc.gov/vocabulary/iso639-2.json',
+                            lc_url: 'https://id.loc.gov/vocabulary/iso639-2.json',
                             skip: %w(iso639-2 zxx qaa-qtz mis mul und), auth_code: 'iso639-2')
 
