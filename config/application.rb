@@ -22,7 +22,7 @@ Bundler.require(*Rails.groups)
 module BpldcAuthorityApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.0
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -34,12 +34,13 @@ module BpldcAuthorityApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.autoload_paths += Dir["#{config.root}/lib/**/"]
-    config.eager_load_paths << Rails.root.join('lib')
+    config.eager_load_paths += Dir["#{config.root}/lib/bpldc/**/"]
+    config.autoload_paths += Dir["#{config.root}/lib/bpldc/**/"]
     # Geomash doesn't read ERB/ENV in config/geomash.yml, so we reset it here
     Geomash.config[:geonames_username] = ENV['GEONAMES_USERNAME']
     Geomash.config[:google_key] = ENV['GOOGLE_MAPS_API_KEY']
 
     Qa::Authorities::Geonames.username = ENV['GEONAMES_USERNAME']
+    Rails.autoloaders.logger = Logger.new("#{Rails.root}/log/autoloading.log")
   end
 end

@@ -5,14 +5,16 @@ class Bpldc::Nomenclature < ApplicationRecord
   validates :label, presence: true
   validates :type, presence: true
 
-  scope :with_authority, -> { includes(:authority) }
+  scope :with_authority, -> { joins(:authority).preload(:authority) }
 
-  def self.all_for_api
-    with_authority.map do |rec|
-      auth_code = rec.authority.code
-      rec = rec.as_json
-      rec['authority_code'] = auth_code
-      rec.slice('label', 'id_from_auth', 'authority_code')
-    end
-  end
+  scope :all_for_api, -> { with_authority.select(:label, :id_from_auth, :authority_id, :updated_at, :type, 'bpldc_authorities.code AS authority_code') } # NOTE changed to work better with jbuilder/ caching.
+
+  # def self.all_for_api
+  #   with_authority.map do |rec|
+  #     auth_code = rec.authority.code
+  #     rec = rec.as_json
+  #     rec['authority_code'] = auth_code
+  #     rec.slice('label', 'id_from_auth', 'authority_code')
+  #   end
+  # end
 end

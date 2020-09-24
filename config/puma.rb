@@ -24,7 +24,7 @@ stdout_redirect('/dev/stdout', '/dev/stderr', true)
 app_dir = File.expand_path('..', __dir__)
 
 pidfile ENV.fetch('PIDFILE') { "#{app_dir}/tmp/pids/server.pid" }
-state_path "#{app_dir}/tmp/pids/server.state"
+state_path "#{app_dir}/tmp/pids/server_dev.state"
 
 preload_app!
 
