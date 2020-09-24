@@ -23,6 +23,7 @@ module BpldcAuthorityApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.api_only = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -32,15 +33,22 @@ module BpldcAuthorityApi
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
 
-    config.eager_load_paths += Dir["#{config.root}/lib/bpldc/**/"]
-    config.autoload_paths += Dir["#{config.root}/lib/bpldc/**/"]
+    config.eager_load_paths += Dir["#{config.root}/lib"]
+    config.autoload_paths += Dir["#{config.root}/lib"]
+
+    config.generators do |g|
+      g.orm :active_record
+      g.api_only = true
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :factory_bot
+      g.factory_bot dir: 'spec/factories'
+    end
+
     # Geomash doesn't read ERB/ENV in config/geomash.yml, so we reset it here
     Geomash.config[:geonames_username] = ENV['GEONAMES_USERNAME']
     Geomash.config[:google_key] = ENV['GOOGLE_MAPS_API_KEY']
 
     Qa::Authorities::Geonames.username = ENV['GEONAMES_USERNAME']
-    Rails.autoloaders.logger = Logger.new("#{Rails.root}/log/autoloading.log")
   end
 end

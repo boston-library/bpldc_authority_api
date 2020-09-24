@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get 'languages', to: 'nomenclatures#languages'
     get 'basic_genres', to: 'nomenclatures#basic_genres'
     get 'licenses', to: 'licenses#index'
+    get 'rights_statements', to: 'rights_statements#index'
   end
 
   namespace :geomash, defaults: { format: 'json' } do

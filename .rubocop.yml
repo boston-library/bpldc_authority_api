@@ -336,6 +336,7 @@ Style/FrozenStringLiteralComment:
   Enabled: true
   Exclude:
     - 'db/schema.rb'
+    - 'config/initializers/new_framework_defaults_6_0.rb'
 
 Style/GuardClause:
   Enabled: true
@@ -432,7 +433,7 @@ Metrics/CyclomaticComplexity:
   Enabled: true
   Max: 10
   Exclude:
-    - 'lib/bpldc/lc_vocab_utilities.rb'
+    - 'app/services/bpldc/lc_vocab_utilities/lc_vocab_fetcher.rb'
 
 Metrics/MethodLength:
   Enabled: true
@@ -517,7 +518,7 @@ Rails/Output:
   Enabled: true
   Exclude:
     - 'db/seeds.rb'
-    - 'lib/bpldc/lc_vocab_utilities.rb'
+    - 'app/services/bpldc/lc_vocab_utilities/lc_vocab_fetcher.rb'
 
 Rails/ReflectionClassName:
   Enabled: false

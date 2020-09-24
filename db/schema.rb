@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_171825) do
+ActiveRecord::Schema.define(version: 2020_09_24_201933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 2020_02_24_171825) do
     t.datetime "updated_at", null: false
     t.index ["authority_id"], name: "index_bpldc_nomenclatures_on_authority_id"
     t.index ["type"], name: "index_bpldc_nomenclatures_on_type"
+  end
+
+  create_table "bpldc_rights_statements", force: :cascade do |t|
+    t.string "label", null: false
+    t.string "uri"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "bpldc_nomenclatures", "bpldc_authorities", column: "authority_id", on_delete: :nullify
