@@ -11,7 +11,7 @@ before_install:
 - gem update --system 3.1.4
 - gem install bundler:2.1.4
 before_script:
-- RAILS_ENV=test bundle exec rake db:create
+- RAILS_ENV=test bundle exec rails db:prepare
 rvm:
 - 2.5.8
 - 2.6.6
