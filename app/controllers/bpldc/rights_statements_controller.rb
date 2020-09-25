@@ -4,7 +4,7 @@ module Bpldc
   class RightsStatementsController < ApplicationController
     # GET /bpldc/rights_statements
     def index
-      @objects = Bpldc::License.public_attributes
+      @objects = Bpldc::RightsStatement.public_attributes
     end
   end
 end
