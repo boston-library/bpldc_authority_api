@@ -5,7 +5,6 @@ module Bpldc
     # GET /bpldc/licenses
     def index
       @objects = Bpldc::License.public_attributes
-      render json: Oj.dump(@objects)
     end
   end
 end

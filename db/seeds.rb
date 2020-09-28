@@ -85,6 +85,35 @@ LICENSE_INPUTS.each do |license_input|
   end
 end
 
+## RIGHTS STATEMENTS ##
+# from https://rightsstatements.org/en/statements/
+RIGHTS_STATEMENTS = [
+    { label: 'In Copyright', uri: 'http://rightsstatements.org/vocab/InC/1.0/' },
+    { label: 'In Copyright - EU Orphan Work', uri: 'http://rightsstatements.org/vocab/InC-OW-EU/1.0/' },
+    { label: 'In Copyright - Educational Use Permitted', uri: 'http://rightsstatements.org/vocab/InC-EDU/1.0/' },
+    { label: 'In Copyright - Non-Commercial Use Permitted', uri: 'http://rightsstatements.org/vocab/InC-NC/1.0/' },
+    { label: 'In Copyright - Rights-Holder(s) Unlocatable Or Unidentifiable', uri: 'http://rightsstatements.org/vocab/InC-RUU/1.0/' },
+    { label: 'No Copyright - Contractual Restrictions', uri: 'http://rightsstatements.org/vocab/NoC-CR/1.0/' },
+    { label: 'No Copyright - Non-Commercial Use Only', uri: 'http://rightsstatements.org/vocab/NoC-NC/1.0/' },
+    { label: 'No Copyright - Other Known Legal Restrictions', uri: 'http://rightsstatements.org/vocab/NoC-OKLR/1.0/' },
+    { label: 'No Copyright - United States', uri: 'http://rightsstatements.org/vocab/NoC-US/1.0/' },
+    { label: 'Copyright Not Evaluated', uri: 'http://rightsstatements.org/vocab/CNE/1.0/' },
+    { label: 'Copyright Undetermined', uri: 'http://rightsstatements.org/vocab/UND/1.0/' },
+    { label: 'No Known Copyright', uri: 'http://rightsstatements.org/vocab/NKC/1.0/' }
+].freeze
+
+puts 'Seeding Bpldc::RightsStatement values'
+RIGHTS_STATEMENTS.each do |rights_statement_input|
+  Bpldc::License.transaction do
+    begin
+      Bpldc::RightsStatement.where(rights_statement_input).first_or_create!
+    rescue StandardError => e
+      puts "Failed to seed Bpldc::RightsStatement for the following input #{rights_statement_input.inspect}"
+      puts e.inspect
+    end
+  end
+end
+
 ### BASIC GENRES ###
 BASIC_GENRE_INPUTS = {
   'gmgpc' => %w(tgm001686 tgm003185 tgm003279 tgm003634 tgm012286 tgm006261 tgm007393
@@ -116,4 +145,3 @@ LcVocabFetcher.seed_lc_data(bpldc_class: 'Bpldc::Role',
 LcVocabFetcher.seed_lc_data(bpldc_class: 'Bpldc::Language',
                             lc_url: 'https://id.loc.gov/vocabulary/iso639-2.json',
                             skip: %w(iso639-2 zxx qaa-qtz mis mul und), auth_code: 'iso639-2')
-

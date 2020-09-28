@@ -5,6 +5,7 @@ RSpec.describe 'Routes' do
     describe 'authorities' do
       it 'routes the authorities url to authorities#index' do
         expect(get: '/bpldc/authorities').to route_to(controller: 'bpldc/authorities',
+                                                      format: 'json',
                                                       action: 'index')
       end
 
@@ -13,6 +14,7 @@ RSpec.describe 'Routes' do
           describe "authorities/#{subroute}" do
             it "routes the authorities/subjects url to authorities##{subroute}" do
               expect(get: "/bpldc/authorities/#{subroute}").to route_to(controller: 'bpldc/authorities',
+                                                                        format: 'json',
                                                                         action: subroute)
             end
           end
@@ -25,6 +27,7 @@ RSpec.describe 'Routes' do
         describe nom_route do
           it "routes the #{nom_route} url to nomenclatures##{nom_route}" do
             expect(get: "/bpldc/#{nom_route}").to route_to(controller: 'bpldc/nomenclatures',
+                                                           format: 'json',
                                                            action: nom_route)
           end
         end
@@ -33,7 +36,13 @@ RSpec.describe 'Routes' do
 
     describe 'licenses' do
       it 'routes the licenses url to licenses#index' do
-        expect(get: '/bpldc/licenses').to route_to(controller: 'bpldc/licenses', action: 'index')
+        expect(get: '/bpldc/licenses').to route_to(controller: 'bpldc/licenses', format: 'json', action: 'index')
+      end
+    end
+
+    describe 'rights_statements' do
+      it 'routes the rights_statements url to licenses#index' do
+        expect(get: '/bpldc/rights_statements').to route_to(controller: 'bpldc/rights_statements', format: 'json', action: 'index')
       end
     end
   end
@@ -43,6 +52,7 @@ RSpec.describe 'Routes' do
       it 'routes the tgn url to geomash#tgn' do
         expect(get: '/geomash/tgn/foo').to route_to(controller: 'geomash/geomash',
                                                     action: 'tgn',
+                                                    format: 'json',
                                                     id: 'foo')
       end
     end
@@ -51,6 +61,7 @@ RSpec.describe 'Routes' do
       it 'routes the geonames url to geomash#geonames' do
         expect(get: '/geomash/geonames/foo').to route_to(controller: 'geomash/geomash',
                                                          action: 'geonames',
+                                                         format: 'json',
                                                          id: 'foo')
       end
     end
@@ -59,6 +70,7 @@ RSpec.describe 'Routes' do
       it 'routes the parse url to geomash#parse' do
         expect(get: '/geomash/parse?term=foo').to route_to(controller: 'geomash/geomash',
                                                            action: 'parse',
+                                                           format: 'json',
                                                            term: 'foo')
       end
     end
@@ -67,6 +79,7 @@ RSpec.describe 'Routes' do
       it 'routes the state_town_lookup url to geomash#state_town_lookup' do
         expect(get: '/geomash/state_town_lookup?term=foo').to route_to(controller: 'geomash/geomash',
                                                                        action: 'state_town_lookup',
+                                                                       format: 'json',
                                                                        term: 'foo')
       end
     end

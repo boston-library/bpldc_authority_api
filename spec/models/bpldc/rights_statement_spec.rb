@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe Bpldc::License, type: :model do
-  subject { create(:bpldc_license) }
+RSpec.describe Bpldc::RightsStatement, type: :model do
+  subject { create(:bpldc_rights_statement) }
 
   describe 'database' do
     it { is_expected.to have_db_column(:label).of_type(:string).with_options(null: false) }

@@ -2,12 +2,12 @@ FROM ruby:2.6.6
 
 LABEL maintainer="bbarber@bpl.org, eenglish@bpl.org"
 
-ENV BUNDLER_VERSION=2.1.2
+ENV BUNDLER_VERSION=2.1.4
 
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 
-RUN gem update --system
-RUN gem install bundler:2.1.2
+RUN gem update --system 3.1.4
+RUN gem install bundler:2.1.4
 
 RUN mkdir /bpldc_authority_api-app
 

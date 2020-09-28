@@ -48,7 +48,7 @@ module Geomash
 
     def return_or_not_found
       if @geomash_data.present?
-        render json: Oj.dump(@geomash_data)
+        render json: @geomash_data
       else
         error_response('no data found', 404)
       end

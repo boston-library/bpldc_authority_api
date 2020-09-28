@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../shared/index_shared'
-RSpec.describe Bpldc::LicensesController do
+RSpec.describe Bpldc::RightsStatementsController do
   render_views
 
   describe 'GET licenses' do

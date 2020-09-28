@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   mount Qa::Engine => '/qa'
 
-  namespace :bpldc do
+  namespace :bpldc, defaults: { format: 'json' } do
     get 'authorities', to: 'authorities#index'
     get 'authorities/subjects', to: 'authorities#subjects'
     get 'authorities/genres', to: 'authorities#genres'
@@ -14,9 +14,10 @@ Rails.application.routes.draw do
     get 'languages', to: 'nomenclatures#languages'
     get 'basic_genres', to: 'nomenclatures#basic_genres'
     get 'licenses', to: 'licenses#index'
+    get 'rights_statements', to: 'rights_statements#index'
   end
 
-  namespace :geomash do
+  namespace :geomash, defaults: { format: 'json' } do
     get 'tgn/:id', to: 'geomash#tgn'
     get 'geonames/:id', to: 'geomash#geonames'
     get 'parse', to: 'geomash#parse'

@@ -5,31 +5,36 @@ module Bpldc
     # GET /bpldc/authorities
     def index
       @objects = Bpldc::Authority.public_attributes.all
-      render json: Oj.dump(@objects)
     end
 
     # GET /bpldc/authorities/subjects
     def subjects
       @objects = Bpldc::Authority.public_attributes.subjects
-      render json: Oj.dump(@objects)
+      render_json_index
     end
 
     # GET /bpldc/authorities/subjects
     def genres
       @objects = Bpldc::Authority.public_attributes.genres
-      render json: Oj.dump(@objects)
+      render_json_index
     end
 
     # GET /bpldc/authorities/subjects
     def names
       @objects = Bpldc::Authority.public_attributes.names
-      render json: Oj.dump(@objects)
+      render_json_index
     end
 
-    # GET /bpldc/authorities/subjects
+    # GET /bpldc/authorities/geographics
     def geographics
       @objects = Bpldc::Authority.public_attributes.geographics
-      render json: Oj.dump(@objects)
+      render_json_index
+    end
+
+    private
+
+    def render_json_index
+      render :index
     end
   end
 end
