@@ -2,7 +2,7 @@
 version: '3'
 services:
   pg:
-    image: postgres:11.8
+    image: postgres:12
     volumes:
       - pg_data:/var/lib/postgresql/data
     environment:
@@ -11,6 +11,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    env_file: .env  
     environment:
       - RAILS_ENV=development
       - RAILS_LOG_TO_STDOUT=true

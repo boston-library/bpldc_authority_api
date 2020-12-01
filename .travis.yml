@@ -1,24 +1,35 @@
 language: ruby
-sudo: false
+os: linux
 dist: bionic
+
 services:
-- postgresql
+  - postgresql
+
 cache:
   bundler: true
+
 addons:
-  postgresql: '9.6'
+  postgresql: '12'
+  apt:
+    packages:
+      - postgresql-12
+      - postgresql-client-12
+
 before_install:
 - gem update --system 3.1.4
 - gem install bundler:2.1.4
+
 before_script:
 - RAILS_ENV=test bundle exec rails db:prepare
+
 rvm:
 - 2.5.8
 - 2.6.6
+
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   - secure: Eck0lIl3m21veBtc6ORmkt1s1nPZX/tFODbGNw3R2zzHg0HqdqG8ub52fwW13/V7sbGp7buqYEaV0MH6muJsEQ3//f8fLg/pIP4oW945cN2C6x2VWq7/pK4/dhSYvUtF7mvDhPywxSiMVifhzSu2jj8qo8mXlgyPtfqA7j26r+a49q2Dabb4ZtZWP0ONRcN61nQQfaH/iDsVVJbaqNc5talXITzzRSmpwhtykKE2tJLXKrJWFKzjJP2YbrazfvWWVuZ0g370REQYOb2pf+ts3hV+YMFHonouetuKOJUdC0FIqEnee0OnKb9OjKxcxhUY0CdTuHbT06Jggb+/ggT0Wm8HExQVJG/Xi9n+1PNCfmwbsJ8MkQDFi6AZ8UzXHH+mTjzzNLbi4OMXvhnMPV1UTagRz3pW645FwGtFsSW1oWK0rGFkC6X/eYMC7Zp8uyALNdA6eCx+SmebTsYcyBVqBqSRsv/jF9qRq8orhqKOQCq6z70mhoRoqe9IOffgoNj8v3GdhOPXpww4JeKvUCh8BygZpS8ukXVbNJjEgW/TShoGWIv4BJJnO19xrBaC+VHC+OyFWv5UQflSTD/yD26rtVaTIr9qD1HONoGXy+sj6e4koF/fzQjUSkyG2nOC3zt1ZzAykjdYgFtW+FgIrRljHsGQXHnx2oUx8mWj/cXtS/0=
   - secure: SZ/5Z/PLPaslWAqLec6yHBoN69PBfxK4zwQXIn67RiEEz9LCiViXjS7gF397MjlHVb6INNnTsA+2f5jH/BtAWpxxpm0XJgkNpRVehyvq8hMQpeG+E28X8GNRn0wmOFqSxRJS92asVbqi+auY9VREhMv/Z4sE9AlovTVr1gm8EAMBICedEj1QLxYbMxma0rjpXk27QtGTMvU9JeiZ8bxhzHKdlgqaZ3UqBVnw8rtPvWp1CINpRonYnpX+mn5YrGW3Nqbd7cCx9TUucWoaYEFxx72AQ8VMFPYt8NShrRWDat1gRV9uZZyqtuZgGyaGD3ajYoTQldaKNb7h+10ZRBH46aQkEpiX70fjldWyvYj2a8m91/Ygtgde5obqJ2BTXmOA4OPGfS9JqwscHOv2A01P+rXqrW8R/bWvNm25Z24QKIy6cglDvyWK0BjJCqFvG0PeFxWaDh62cyu4tzzB2VPkI8ySEi+Fmr7qoEZc1JBQ3acUIY/xBQjWKR6UHed3A/7RzBXYRvGGcYHJ3PwQq9HIcT+wJGGE5Quk4JzI/rfkEhXbwsLfePMDm+5s3PJLHuCL1815CEBxLMMKPPNsdYgeAW/lCpY9uL6Pry44qqwGlmGb1CT8i3jPdXTWjWlpsnGehPhMe8E/5JlCoAOJ3Mwin4EMKfV+ETo1nbxXE+m6U30=
-  matrix:
-  - RAILS_VERSION=6.0.3.3
+  jobs:
+  - RAILS_VERSION=6.0.3.4
