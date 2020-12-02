@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '>= 2.5.8'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '< 6.1'
+gem 'rails', '~> 6', '< 6.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -33,7 +33,7 @@ gem 'oj', '~> 3.10'
 gem 'linkeddata', '~> 3.1'
 gem 'qa', '~> 5.5'
 
-gem 'faraday', '~> 1.0'
+gem 'faraday', '~> 1.1'
 gem 'faraday_middleware', '~> 1.0'
 
 group :development do
@@ -44,8 +44,8 @@ group :development, :test do
   gem 'awesome_print', '~> 1.8'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails', '~> 2.7'
-  gem 'factory_bot_rails', '~> 5.2'
-  gem 'faker', '~> 2.14'
+  gem 'factory_bot_rails', '~> 6'
+  gem 'faker', '~> 2.15'
   gem 'pry', '~> 0.13'
   gem 'pry-byebug', '~> 3.9'
   gem 'pry-rails', '~> 0.3'
@@ -61,8 +61,8 @@ group :test do
   gem 'rails-controller-testing', '~> 1.0'
   gem 'rspec-rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 4.4'
-  gem 'vcr', '~> 6.0'
-  gem 'webmock', '~> 3.9'
+  gem 'vcr', '~> 6'
+  gem 'webmock', '~> 3.10'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
