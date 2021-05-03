@@ -10,6 +10,8 @@ AUTHORITY_INPUTS = [
       name: 'GeoNames', geographics: true },
     { code: 'gmgpc', base_url: 'http://id.loc.gov/vocabulary/graphicMaterials',
       name: 'Thesaurus for Graphic Materials', genres: true },
+    { code: 'homoit', base_url: 'http://homosaurus.org/v2',
+      name: 'Homosaurus LGBTQ vocabulary', subjects: true, genres: true },
     { code: 'iso639-2', base_url: 'http://id.loc.gov/vocabulary/iso639-2',
       name: 'ISO639-2 Languages' },
     { code: 'lcgft', base_url: 'http://id.loc.gov/authorities/genreForms',
@@ -25,6 +27,8 @@ AUTHORITY_INPUTS = [
       name: 'MARC genre terms', genres: true },
     { code: 'marcrelator', base_url: 'http://id.loc.gov/vocabulary/relators',
       name: 'MARC Relators Scheme' },
+    { code: 'mesh', base_url: 'https://id.nlm.nih.gov/mesh',
+      name: 'Medical Subject Headings', subjects: true },
     { code: 'rbbin', base_url: 'http://id.loc.gov/vocabulary/genreFormSchemes/rbbin',
       name: 'RBMS Controlled Vocabularies: Binding Terms', genres: true },
     { code: 'rbgenr', base_url: 'http://id.loc.gov/vocabulary/genreFormSchemes/rbgenr',
@@ -44,7 +48,9 @@ AUTHORITY_INPUTS = [
     { code: 'tgn', base_url: 'http://vocab.getty.edu/tgn',
       name: 'Thesaurus of Geographic Names', geographics: true },
     { code: 'ulan', base_url: 'http://vocab.getty.edu/ulan',
-      name: 'Getty Union List of Artist Names', subjects: true, names: true }
+      name: 'Getty Union List of Artist Names', subjects: true, names: true },
+    { code: 'viaf', base_url: 'http://viaf.org/viaf',
+      name: 'Virtual International Authority File', subjects: true, names: true }
 ].freeze
 
 puts 'Seeding Bpldc::Authority values'
