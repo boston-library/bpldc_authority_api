@@ -6,38 +6,40 @@
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum; this matches the default thread size of Active Record.
 #
-workers Integer(ENV.fetch('WEB_CONCURRENCY') { 2 })
+max_threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }
+min_threads_count = ENV.fetch('RAILS_MIN_THREADS') { max_threads_count }
+threads min_threads_count, max_threads_count
 
-threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }
-threads threads_count, threads_count
+# Specifies the `worker_timeout` threshold that Puma will use to wait before
+# terminating a worker in development environments.
+#
+worker_timeout 3600 if ENV.fetch('RAILS_ENV', 'development') == 'development'
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-bind 'tcp://0.0.0.0'
-port        ENV.fetch('PORT') { 3000 }
+port ENV.fetch('PORT') { 3000 }
+
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch('RAILS_ENV') { 'development' }
 
-stdout_redirect('/dev/stdout', '/dev/stderr', true)
+# Specifies the `pidfile` that Puma will use.
+pidfile ENV.fetch('PIDFILE') { 'tmp/pids/server.pid' }
 
-app_dir = File.expand_path('..', __dir__)
+# Specifies the number of `workers` to boot in clustered mode.
+# Workers are forked web server processes. If using threads and workers together
+# the concurrency of the application would be max `threads` * `workers`.
+# Workers do not work on JRuby or Windows (both of which do not support
+# processes).
+#
+# workers ENV.fetch('WEB_CONCURRENCY') { 2 }
 
-pidfile ENV.fetch('PIDFILE') { "#{app_dir}/tmp/pids/server.pid" }
-state_path "#{app_dir}/tmp/pids/server.state"
+# Use the `preload_app!` method when specifying a `workers` number.
+# This directive tells Puma to first boot the application and load code
+# before forking the application. This takes advantage of Copy On Write
+# process behavior so workers use less memory.
+#
+# preload_app!
 
-preload_app!
-
-worker_timeout 600
-
-on_restart do
-  Rails.logger.info 'Restarting Worker...'
-  ActiveRecord::Base.connection.disconnect! if defined?(ActiveRecord::Base)
-end
-
-on_worker_boot do
-  Rails.logger.info 'Booting Worker...'
-  ActiveRecord::Base.establish_connection if defined?(ActiveRecord::Base)
-end
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart

@@ -10,6 +10,8 @@ AUTHORITY_INPUTS = [
       name: 'GeoNames', geographics: true },
     { code: 'gmgpc', base_url: 'http://id.loc.gov/vocabulary/graphicMaterials',
       name: 'Thesaurus for Graphic Materials', genres: true },
+    { code: 'homoit', base_url: 'http://homosaurus.org/v2',
+      name: 'Homosaurus LGBTQ vocabulary', subjects: true, genres: true },
     { code: 'iso639-2', base_url: 'http://id.loc.gov/vocabulary/iso639-2',
       name: 'ISO639-2 Languages' },
     { code: 'lcgft', base_url: 'http://id.loc.gov/authorities/genreForms',
@@ -25,6 +27,8 @@ AUTHORITY_INPUTS = [
       name: 'MARC genre terms', genres: true },
     { code: 'marcrelator', base_url: 'http://id.loc.gov/vocabulary/relators',
       name: 'MARC Relators Scheme' },
+    { code: 'mesh', base_url: 'https://id.nlm.nih.gov/mesh',
+      name: 'Medical Subject Headings', subjects: true },
     { code: 'rbbin', base_url: 'http://id.loc.gov/vocabulary/genreFormSchemes/rbbin',
       name: 'RBMS Controlled Vocabularies: Binding Terms', genres: true },
     { code: 'rbgenr', base_url: 'http://id.loc.gov/vocabulary/genreFormSchemes/rbgenr',
@@ -44,7 +48,9 @@ AUTHORITY_INPUTS = [
     { code: 'tgn', base_url: 'http://vocab.getty.edu/tgn',
       name: 'Thesaurus of Geographic Names', geographics: true },
     { code: 'ulan', base_url: 'http://vocab.getty.edu/ulan',
-      name: 'Getty Union List of Artist Names', subjects: true, names: true }
+      name: 'Getty Union List of Artist Names', subjects: true, names: true },
+    { code: 'viaf', base_url: 'http://viaf.org/viaf',
+      name: 'Virtual International Authority File', subjects: true, names: true }
 ].freeze
 
 puts 'Seeding Bpldc::Authority values'
@@ -63,12 +69,12 @@ end
 LICENSE_INPUTS = [
     { label: 'No known restrictions on use.' },
     { label: 'This work is in the public domain under a Creative Commons No Rights Reserved License (CC0).' },
-    { label: 'This work is licensed for use under a Creative Commons Attribution License (CC BY).', uri: 'https://creativecommons.org/licenses/by/4.0' },
-    { label: 'This work is licensed for use under a Creative Commons Attribution Share Alike License (CC BY-SA).', uri: 'https://creativecommons.org/licenses/by-sa/4.0' },
-    { label: 'This work is licensed for use under a Creative Commons Attribution No Derivatives License (CC BY-ND).', uri: 'https://creativecommons.org/licenses/by-nd/4.0' },
-    { label: 'This work is licensed for use under a Creative Commons Attribution Non-Commercial License (CC BY-NC).', uri: 'https://creativecommons.org/licenses/by-nc/4.0' },
-    { label: 'This work is licensed for use under a Creative Commons Attribution Non-Commercial Share Alike License (CC BY-NC-SA).', uri: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
-    { label: 'This work is licensed for use under a Creative Commons Attribution Non-Commercial No Derivatives License (CC BY-NC-ND).', uri: 'https://creativecommons.org/licenses/by-nc-nd/4.0' },
+    { label: 'This work is licensed for use under a Creative Commons Attribution License (CC BY).', uri: 'https://creativecommons.org/licenses/by/4.0/' },
+    { label: 'This work is licensed for use under a Creative Commons Attribution Share Alike License (CC BY-SA).', uri: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    { label: 'This work is licensed for use under a Creative Commons Attribution No Derivatives License (CC BY-ND).', uri: 'https://creativecommons.org/licenses/by-nd/4.0/' },
+    { label: 'This work is licensed for use under a Creative Commons Attribution Non-Commercial License (CC BY-NC).', uri: 'https://creativecommons.org/licenses/by-nc/4.0/' },
+    { label: 'This work is licensed for use under a Creative Commons Attribution Non-Commercial Share Alike License (CC BY-NC-SA).', uri: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' },
+    { label: 'This work is licensed for use under a Creative Commons Attribution Non-Commercial No Derivatives License (CC BY-NC-ND).', uri: 'https://creativecommons.org/licenses/by-nc-nd/4.0/' },
     { label: 'All rights reserved.' },
     { label: 'Contact host institution for more information.' }
 ].freeze
