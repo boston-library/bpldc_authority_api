@@ -27,7 +27,7 @@ RSpec.describe Qa::LinkedDataTermsController do
     end
 
     describe 'getty_ulan_ld4l_cache' do
-      let(:vocab_name) { 'getty_tgn_ld4l_cache' }
+      let(:vocab_name) { 'getty_ulan_ld4l_cache' }
       let(:term_id) { '500019204' }
       let(:term_uri) { "http://vocab.getty.edu/ulan/#{term_id}" }
       let(:query) { 'McKim' }
