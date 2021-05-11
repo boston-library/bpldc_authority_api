@@ -8,8 +8,8 @@ cache:
 
 addons:
   postgresql: '12'
-  update: true
   apt:
+    update: true
     packages:
       - postgresql-12
       - postgresql-client-12
