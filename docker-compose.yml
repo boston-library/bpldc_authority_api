@@ -2,26 +2,36 @@
 version: '3'
 services:
   pg:
+    container_name: bpldc_authority_pg
     image: postgres:12
     volumes:
       - pg_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=postgres
-  bpldc_authority_api:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
-    env_file: .env  
+    container_name: bpldc_authority_api
+    env_file: .env
     environment:
       - RAILS_ENV=development
       - RAILS_LOG_TO_STDOUT=true
       - POSTGRES_HOST=pg
+      - REDIS_CACHE_URL=redis://cache:6379/0
     volumes:
       - .:/bpldc_authority_api-app
     ports:
       - "3001:3000"
     depends_on:
       - pg
+      - cache
+  cache:
+    image: redis:latest
+    container_name: bpldc_authority_cache
+    command: redis-server --maxmemory 16mb --maxmemory-policy allkeys-lfu
+    sysctls:
+      net.core.somaxconn: 1024
 
 volumes:
   pg_data:

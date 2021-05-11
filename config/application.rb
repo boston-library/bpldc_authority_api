@@ -34,9 +34,6 @@ module BpldcAuthorityApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
 
-    config.eager_load_paths += Dir["#{config.root}/lib"]
-    config.autoload_paths += Dir["#{config.root}/lib"]
-
     config.generators do |g|
       g.orm :active_record
       g.api_only = true

@@ -5,7 +5,9 @@ module Geomash
     # GET /geomash/tgn/:id
     def tgn
       begin
-        @geomash_data = Geomash::TGN.get_tgn_data(params[:id])
+        @geomash_data = Rails.cache.fetch("geomash/tgn/#{params[:id]}") do
+          Geomash::TGN.get_tgn_data(params[:id])
+        end
         return_or_not_found
       rescue StandardError => error
         error_response(error, 400)
@@ -15,7 +17,10 @@ module Geomash
     # GET /geomash/geonames/:id
     def geonames
       begin
-        @geomash_data = Geomash::Geonames.get_geonames_data(params[:id])
+        @geomash_data = Rails.cache.fetch("geomash/geonames/#{params[:id]}") do
+          Geomash::Geonames.get_geonames_data(params[:id])
+        end
+
         return_or_not_found
       rescue StandardError => error
         error_response(error, 400)

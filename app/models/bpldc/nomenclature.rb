@@ -7,7 +7,7 @@ class Bpldc::Nomenclature < ApplicationRecord
 
   scope :with_authority, -> { joins(:authority).preload(:authority) }
 
-  scope :all_for_api, -> { with_authority.select(:label, :id_from_auth, :authority_id, :updated_at, :type, 'bpldc_authorities.code AS authority_code') } # NOTE changed to work better with jbuilder/ caching.
+  scope :all_for_api, -> { with_authority.select(:label, :id_from_auth, :authority_id, :updated_at, :type, 'bpldc_authorities.code AS authority_code').order(updated_at: :desc) } # NOTE changed to work better with jbuilder/ caching.
 
   # def self.all_for_api
   #   with_authority.map do |rec|

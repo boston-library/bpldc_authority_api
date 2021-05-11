@@ -23,6 +23,17 @@ Rails.application.configure do
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
+  elsif ENV.fetch('BPLDC_REDIS_CACHE_URL', '').present?
+    config.action_controller.perform_caching = true
+    config.public_file_server.headers = {
+      'Cache-Control' => "public, max-age=#{1.day.to_i}"
+    }
+    config.cache_store = :redis_cache_store, {
+      url: ENV['BPLDC_REDIS_CACHE_URL'],
+      pool_size: ENV.fetch('RAILS_MAX_THREADS') { 5 },
+      pool_timeout: 5,
+      expires_in: 24.hours
+    }
   else
     config.action_controller.perform_caching = false
 
