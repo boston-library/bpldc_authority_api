@@ -17,8 +17,9 @@ services:
     environment:
       - RAILS_ENV=development
       - RAILS_LOG_TO_STDOUT=true
+      - WEB_CONCURRENCY=0
       - POSTGRES_HOST=pg
-      - REDIS_CACHE_URL=redis://cache:6379/0
+      - BPLDC_REDIS_CACHE_URL=redis://cache:6379/0
     volumes:
       - .:/bpldc_authority_api-app
     ports:
