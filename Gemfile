@@ -3,16 +3,18 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '>= 2.5.8'
+ruby '>= 2.5.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6', '< 6.1'
+gem 'rails', '>= 6.0.3', '< 6.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Needed for caching
+gem 'connection_pool', '~> 2.2'
 gem 'jbuilder', '~> 2.10'
+gem 'redis', '~> 4.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -27,13 +29,13 @@ gem 'geomash', github: 'samvera-labs/geomash', branch: 'specs-working'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1'
 
-gem 'oj', '~> 3.10'
+gem 'oj', '~> 3.11'
 
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.1'
 gem 'qa', '~> 5.5'
 
-gem 'faraday', '~> 1.1'
+gem 'faraday', '~> 1.4'
 gem 'faraday_middleware', '~> 1.0'
 
 group :development do
@@ -41,13 +43,12 @@ group :development do
 end
 
 group :development, :test do
-  gem 'awesome_print', '~> 1.8'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'awesome_print', '~> 1.9'
+  gem 'byebug', '~> 11.1', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails', '~> 2.7'
   gem 'factory_bot_rails', '~> 6'
   gem 'faker', '~> 2.15'
-  gem 'pry', '~> 0.13'
-  gem 'pry-byebug', '~> 3.9'
+  gem 'pry', '~> 0.14'
   gem 'pry-rails', '~> 0.3'
   gem 'rubocop', '~> 0.75.1', require: false
   gem 'rubocop-performance', '~> 1.5', require: false
@@ -57,10 +58,10 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  gem 'database_cleaner', '~> 1.8'
+  gem 'database_cleaner-active_record', '~> 2'
   gem 'rails-controller-testing', '~> 1.0'
   gem 'rspec-rails', '~> 4.0'
-  gem 'shoulda-matchers', '~> 4.4'
+  gem 'shoulda-matchers', '~> 4.5'
   gem 'vcr', '~> 6'
   gem 'webmock', '~> 3.10'
 end

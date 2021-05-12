@@ -3,6 +3,12 @@
 RSpec.describe Bpldc::Authority do
   subject { create(:bpldc_authority) }
 
+  describe 'class constants' do
+    it 'is expected to have const :CACHE_KEYS' do
+      expect(described_class).to be_const_defined(:CACHE_KEYS)
+    end
+  end
+
   describe 'database' do
     it { is_expected.to have_db_column(:name).of_type(:string) }
     it { is_expected.to have_db_column(:code).of_type(:string).with_options(null: false) }
@@ -47,5 +53,16 @@ RSpec.describe Bpldc::Authority do
         class_name('Bpldc::BasicGenre').
         with_foreign_key(:authority_id).
         dependent(:destroy) }
+  end
+
+  describe 'callbacks' do
+    describe '#clear_authority_cache' do
+      it 'expects the callback to be invoked after_commit' do
+        # rubocop:disable RSpec/MessageExpectation
+        expect(subject).to receive(:clear_authority_cache)
+        subject.run_callbacks(:commit)
+        # rubocop:enable RSpec/MessageExpectation
+      end
+    end
   end
 end
