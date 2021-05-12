@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 class Bpldc::Authority < ApplicationRecord
+  CACHE_KEYS = {
+    all: 'bpldc/authorities/all',
+    subjects: 'bpldc/authorities/subjects',
+    genres: 'bpldc/authorities/genres',
+    names: 'bpldc/authorities/names',
+    geographics: 'bpldc/authorities/geographics',
+  }.freeze
+
   validates :code, presence: true, uniqueness: true
 
   after_commit :clear_authority_cache
@@ -21,8 +29,8 @@ class Bpldc::Authority < ApplicationRecord
   private
 
   def clear_authority_cache
-    %w(all subjects names genres geographics).each do |cache_key|
-      Rails.cache.delete("bpldc/authorities/#{cache_key}")
+    CACHE_KEYS.values.each do |cache_key|
+      Rails.cache.delete(cache_key)
     end
   end
 end

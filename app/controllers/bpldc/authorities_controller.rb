@@ -4,7 +4,7 @@ module Bpldc
   class AuthoritiesController < ApplicationController
     # GET /bpldc/authorities
     def index
-      @objects = Rails.cache.fetch('bpldc/authorities/all') do
+      @objects = Rails.cache.fetch(Bpldc::Authority::CACHE_KEYS[:all]) do
         Bpldc::Authority.public_attributes.all
       end
 
@@ -13,7 +13,7 @@ module Bpldc
 
     # GET /bpldc/authorities/subjects
     def subjects
-      @objects = Rails.cache.fetch('bpldc/authorities/subjects') do
+      @objects = Rails.cache.fetch(Bpldc::Authority::CACHE_KEYS[:subjects]) do
         Bpldc::Authority.public_attributes.subjects
       end
 
@@ -22,7 +22,7 @@ module Bpldc
 
     # GET /bpldc/authorities/subjects
     def genres
-      @objects = Rails.cache.fetch('bpldc/authorities/genres') do
+      @objects = Rails.cache.fetch(Bpldc::Authority::CACHE_KEYS[:genres]) do
         Bpldc::Authority.public_attributes.genres
       end
 
@@ -31,7 +31,7 @@ module Bpldc
 
     # GET /bpldc/authorities/subjects
     def names
-      @objects = Rails.cache.fetch('bpldc/authorities/names') do
+      @objects = Rails.cache.fetch(Bpldc::Authority::CACHE_KEYS[:names]) do
         Bpldc::Authority.public_attributes.names
       end
 
@@ -40,7 +40,7 @@ module Bpldc
 
     # GET /bpldc/authorities/geographics
     def geographics
-      @objects = Rails.cache.fetch('bpldc/authorities/geographics') do
+      @objects = Rails.cache.fetch(Bpldc::Authority::CACHE_KEYS[:geographics]) do
         Bpldc::Authority.public_attributes.geographics
       end
 
@@ -50,7 +50,7 @@ module Bpldc
     private
 
     def render_json_index
-      render :index if stale?(strong_etag: @objects, last_modified: @objects.maximum(:updated_at))
+      render :index if stale?(strong_etag: @objects, last_modified: @objects.maximum(:updated_at), public: true)
     end
   end
 end
