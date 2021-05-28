@@ -8,7 +8,7 @@ module Bpldc
         Bpldc::Authority.public_attributes.all
       end
 
-      fresh_when strong_etag: @objects, last_modified: @objects.maximum(:updated_at), public: true
+      fresh_when strong_etag: @objects, last_modified: @objects.maximum(:updated_at)
     end
 
     # GET /bpldc/authorities/subjects
@@ -50,7 +50,7 @@ module Bpldc
     private
 
     def render_json_index
-      render :index if stale?(strong_etag: @objects, last_modified: @objects.maximum(:updated_at), public: true)
+      render :index if stale?(strong_etag: @objects, last_modified: @objects.maximum(:updated_at))
     end
   end
 end

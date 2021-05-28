@@ -30,7 +30,7 @@ services:
   cache:
     image: redis:latest
     container_name: bpldc_authority_cache
-    command: redis-server --maxmemory 16mb --maxmemory-policy allkeys-lfu
+    command: redis-server --databases 1 --maxmemory 16mb --maxmemory-policy allkeys-lfu
     sysctls:
       net.core.somaxconn: 1024
 
