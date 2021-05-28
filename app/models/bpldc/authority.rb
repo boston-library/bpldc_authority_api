@@ -2,11 +2,11 @@
 
 class Bpldc::Authority < ApplicationRecord
   CACHE_KEYS = {
-    all: 'bpldc/authorities/all',
-    subjects: 'bpldc/authorities/subjects',
-    genres: 'bpldc/authorities/genres',
-    names: 'bpldc/authorities/names',
-    geographics: 'bpldc/authorities/geographics',
+    all: 'bpldc:authorities/all',
+    subjects: 'bpldc:authorities/subjects',
+    genres: 'bpldc:authorities/genres',
+    names: 'bpldc:authorities/names',
+    geographics: 'bpldc:authorities/geographics',
   }.freeze
 
   validates :code, presence: true, uniqueness: true

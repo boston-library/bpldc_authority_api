@@ -42,7 +42,7 @@ module BpldcAuthorityApi
       g.factory_bot dir: 'spec/factories'
     end
 
-    # Geomash doesn't read ERB/ENV in config/geomash.yml, so we reset it here
+    # NOTE Geomash doesn't read ERB/ENV in config/geomash.yml, so we reset it here
     Geomash.config[:geonames_username] = ENV['GEONAMES_USERNAME']
     Geomash.config[:google_key] = ENV['GOOGLE_MAPS_API_KEY']
 

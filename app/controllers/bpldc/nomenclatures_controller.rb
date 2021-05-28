@@ -41,7 +41,7 @@ module Bpldc
     private
 
     def render_json_index
-      render 'bpldc/nomenclatures/index.json.jbuilder' if stale?(strong_etag: @objects, last_modified: @objects.maximum(:updated_at), public: true)
+      render 'bpldc/nomenclatures/index.json.jbuilder' if stale?(strong_etag: @objects, last_modified: @objects.maximum(:updated_at))
     end
   end
 end

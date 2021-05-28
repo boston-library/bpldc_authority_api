@@ -5,7 +5,7 @@ module Bpldc
     # GET /bpldc/rights_statements
     def index
       @objects = Bpldc::RightsStatement.public_attributes
-      fresh_when strong_etag: @objects, last_modified: @objects.maximum(:updated_at), public: true
+      fresh_when strong_etag: @objects, last_modified: @objects.maximum(:updated_at)
     end
   end
 end
