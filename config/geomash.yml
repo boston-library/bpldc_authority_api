@@ -1,13 +1,16 @@
 default: &default
   tgn_enabled: true
-  geonames_username: <%= ENV['GEONAMES_USERNAME'] %>
-  google_key: <%= ENV['GOOGLE_MAPS_API_KEY'] %>
+  geonames_username: <%= ENV.fetch('GEONAMES_USERNAME') { Rails.application.secrets.dig(:geonames_user) } %>
+  google_key: <%= ENV.fetch('GOOGLE_MAPS_API_KEY') { Rails.application.secrets.dig(:google_maps_api_key) } %>
   parser_cache_enabled: false
 
 development:
   <<: *default
 
 test:
+  <<: *default
+
+staging:
   <<: *default
 
 production:
