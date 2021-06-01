@@ -15,8 +15,14 @@ test:
   <<: *default
   database: bpldc_authority_api_test
 
+staging:
+  <<: *default
+  database: bpldc_authority_api_staging
+  username: <%= ENV.fetch('BPLDC_AUTHORITY_API_DATABASE_USERNAME') { Rails.application.secrets.dig(:postgres, :user) } %>
+  password: <%= ENV.fetch('BPLDC_AUTHORITY_API_DATABASE_PASSWORD') { Rails.application.secrets.dig(:postgres, :password) } %>
+
 production:
   <<: *default
   database: bpldc_authority_api_production
-  username: <%= ENV['BPLDC_AUTHORITY_API_DATABASE_USERNAME'] %>
-  password: <%= ENV['BPLDC_AUTHORITY_API_DATABASE_PASSWORD'] %>
+  username: <%= ENV.fetch('BPLDC_AUTHORITY_API_DATABASE_USERNAME') { Rails.application.secrets.dig(:postgres, :user) } %>
+  password: <%= ENV.fetch('BPLDC_AUTHORITY_API_DATABASE_PASSWORD') { Rails.application.secrets.dig(:postgres, :password) } %>

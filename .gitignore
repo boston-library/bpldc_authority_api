@@ -35,3 +35,7 @@ scratch.rb
 # Ignore coverage reports
 coverage/*
 
+
+/config/credentials/staging.key
+
+/config/credentials/production.key
