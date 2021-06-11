@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 RSpec.describe 'Routes' do
+  describe 'app_info' do
+    it 'routes the root url to application#app_info' do
+      expect(get: '/').to route_to(controller: 'application', action: 'app_info')
+    end
+  end
+
   describe 'bpldc routes' do
     describe 'authorities' do
       it 'routes the authorities url to authorities#index' do
