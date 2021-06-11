@@ -4,4 +4,14 @@ class ApplicationController < ActionController::API
   include ActionController::ImplicitRender
   include ActionView::Layouts
   include ActionController::Caching
+
+  APP_INFO = {
+    app_name: 'bpldc_authority_api',
+    organization: 'Boston Public Library',
+    version: '1.0',
+  }.freeze
+
+  def app_info
+    render json: Oj.dump(APP_INFO), status: :ok
+  end
 end

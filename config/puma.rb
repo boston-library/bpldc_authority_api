@@ -30,7 +30,7 @@ if %w(staging production).member?(rails_env)
   state_path "#{app_dir}/tmp/pids/bpldc_puma_server.state"
 else
   port 3000
-  stdout_redirect('/dev/stdout', '/dev/stderr', true)
+  # stdout_redirect('/dev/stdout', '/dev/stderr', true)
   pidfile "#{app_dir}/tmp/pids/server.pid"
   state_path "#{app_dir}/tmp/pids/server.state"
   plugin :tmp_restart

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root 'application#app_info'
+
   mount Qa::Engine => '/qa'
 
   namespace :bpldc, defaults: { format: 'json' } do
