@@ -2,6 +2,7 @@
 version: '3'
 services:
   pg:
+    restart: unless-stopped
     container_name: bpldc_authority_pg
     image: postgres:12
     volumes:
@@ -28,9 +29,16 @@ services:
       - pg
       - cache
   cache:
+    restart: unless-stopped
+    mem_reservation: 32m
     image: redis:latest
     container_name: bpldc_authority_cache
-    command: redis-server --databases 1 --maxmemory 16mb --maxmemory-policy allkeys-lfu
+    privileged: true
+    command: >
+      bash -c "echo 1 > /proc/sys/vm/overcommit_memory &&
+      redis-server --databases 1 --maxmemory 16mb --maxmemory-policy allkeys-lfu"
+    ulimits:
+      nproc: 16384
     sysctls:
       net.core.somaxconn: 1024
 

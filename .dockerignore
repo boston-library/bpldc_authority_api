@@ -17,3 +17,5 @@ README.md
 .env
 .env.sample
 scratch.rb
+*.key
+/coverage/
