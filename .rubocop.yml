@@ -9,7 +9,7 @@ AllCops:
     - 'vendor/**/*'
   DisplayCopNames: true
   DisabledByDefault: true
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
 
 ####################### BUNDLER/GEMSPEC ###############################
 Bundler/OrderedGems:

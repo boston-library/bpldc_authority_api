@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '>= 2.5.9'
+ruby '>= 2.6.7', '< 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 6.0.4', '< 6.1'
 # Use postgresql as the database for Active Record
@@ -29,13 +29,13 @@ gem 'geomash', github: 'samvera-labs/geomash', branch: 'specs-working'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1'
 
-gem 'oj', '~> 3.11'
+gem 'oj', '~> 3.12'
 
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.1'
 gem 'qa', '~> 5.6'
 
-gem 'faraday', '~> 1.4'
+gem 'faraday', '~> 1.5'
 gem 'faraday_middleware', '~> 1.0'
 
 group :development do
@@ -60,7 +60,7 @@ group :test do
   gem 'database_cleaner-active_record', '~> 2'
   gem 'rails-controller-testing', '~> 1.0'
   gem 'rspec-rails', '~> 5'
-  gem 'shoulda-matchers', '~> 4.5'
+  gem 'shoulda-matchers', '~> 5.0'
   gem 'vcr', '~> 6'
   gem 'webmock', '~> 3.13'
 end
