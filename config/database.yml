@@ -27,4 +27,4 @@ production:
   username: <%= ENV.fetch('BPLDC_AUTHORITY_API_DATABASE_USERNAME') { Rails.application.credentials.dig(:postgres, :user) } %>
   password: <%= ENV.fetch('BPLDC_AUTHORITY_API_DATABASE_PASSWORD') { Rails.application.credentials.dig(:postgres, :password) } %>
   host: <%= ENV.fetch('BPLDC_AUTHORITY_API_HOST') { Rails.application.credentials.dig(:postgres, :host) } %>
-  port: host: <%= ENV.fetch('BPLDC_AUTHORITY_API_PORT') { Rails.application.credentials.dig(:postgres, :port) } %>
+  port: <%= ENV.fetch('BPLDC_AUTHORITY_API_PORT') { Rails.application.credentials.dig(:postgres, :port) } %>
