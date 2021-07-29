@@ -23,6 +23,9 @@ worker_timeout 3600 if rails_env == 'development'
 
 environment rails_env
 
+wait_for_less_busy_worker
+nakayoshi_fork
+
 if %w(staging production).member?(rails_env)
   bind "unix://#{app_dir}/tmp/sockets/bpldc_auth_puma.sock"
   stdout_redirect("#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true)
@@ -30,7 +33,7 @@ if %w(staging production).member?(rails_env)
   state_path "#{app_dir}/tmp/pids/bpldc_puma_server.state"
 else
   port 3000
-  # stdout_redirect('/dev/stdout', '/dev/stderr', true)
+  stdout_redirect('/dev/stdout', '/dev/stderr')
   pidfile "#{app_dir}/tmp/pids/server.pid"
   state_path "#{app_dir}/tmp/pids/server.state"
   plugin :tmp_restart
