@@ -19,8 +19,6 @@ workers ENV.fetch('WEB_CONCURRENCY') { 2 }
 #
 worker_timeout 3600 if rails_env == 'development'
 
-# Specifies the `environment` that Puma will run in.
-
 environment rails_env
 
 # New feature that reduces latency https://github.com/puma/puma/blob/master/5.0-Upgrade.md#lower-latency-better-throughput
@@ -30,7 +28,6 @@ nakayoshi_fork
 
 # Best Practice is to reconnect any Non Active Record Connections on boot in clustered mode
 on_worker_boot do
-  puts '-------Reloading Redis Cache------------'
   Rails.cache.redis.reload(&:quit) if Rails.cache.respond_to?(:redis)
 end
 
