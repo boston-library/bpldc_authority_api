@@ -23,7 +23,9 @@ worker_timeout 3600 if rails_env == 'development'
 
 environment rails_env
 
+# New feature that reduces latency https://github.com/puma/puma/blob/master/5.0-Upgrade.md#lower-latency-better-throughput
 wait_for_less_busy_worker
+# New feature that runs garbage collector when forking workers https://github.com/puma/puma/blob/master/5.0-Upgrade.md#nakayoshi_fork
 nakayoshi_fork
 
 if %w(staging production).member?(rails_env)
