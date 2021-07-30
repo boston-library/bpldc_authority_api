@@ -28,13 +28,19 @@ wait_for_less_busy_worker
 # New feature that runs garbage collector when forking workers https://github.com/puma/puma/blob/master/5.0-Upgrade.md#nakayoshi_fork
 nakayoshi_fork
 
+# Best Practice is to reconnect any Non Active Record Connections on boot in clustered mode
+on_worker_boot do
+  puts '-------Reloading Redis Cache------------'
+  Rails.cache.redis.reload(&:quit) if Rails.cache.respond_to?(:redis)
+end
+
 if %w(staging production).member?(rails_env)
   bind "unix://#{app_dir}/tmp/sockets/bpldc_auth_puma.sock"
   stdout_redirect("#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true)
   pidfile "#{app_dir}/tmp/pids/bpldc_puma_server.pid"
   state_path "#{app_dir}/tmp/pids/bpldc_puma_server.state"
 else
-  port 3000
+  port ENV.fetch('PORT') { 3000 }
   stdout_redirect('/dev/stdout', '/dev/stderr')
   pidfile "#{app_dir}/tmp/pids/server.pid"
   state_path "#{app_dir}/tmp/pids/server.state"
