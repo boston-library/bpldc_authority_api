@@ -14,7 +14,7 @@ gem 'puma', '~> 5.4'
 # Needed for caching
 gem 'connection_pool', '~> 2.2'
 gem 'jbuilder', '~> 2.11'
-gem 'redis', '~> 4.3'
+gem 'redis', '~> 4.4'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -29,13 +29,13 @@ gem 'geomash', github: 'samvera-labs/geomash', branch: 'specs-working'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1'
 
-gem 'oj', '~> 3.12'
+gem 'oj', '~> 3.12.3'
 
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.1'
 gem 'qa', '~> 5.6'
 
-gem 'faraday', '~> 1.5'
+gem 'faraday', '~> 1.7'
 gem 'faraday_middleware', '~> 1.0'
 
 group :development do
@@ -48,7 +48,7 @@ group :development, :test do
   gem 'dotenv-rails', '~> 2.7'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.18'
-  gem 'pry', '~> 0.14'
+  gem 'pry', '~> 0.13.1'
   gem 'rubocop', '~> 0.75.1', require: false
   gem 'rubocop-performance', '~> 1.5', require: false
   gem 'rubocop-rails', '~> 2.3', require: false
