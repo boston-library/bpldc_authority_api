@@ -38,6 +38,8 @@ gem 'qa', '~> 5.6'
 gem 'faraday', '~> 1.7'
 gem 'faraday_middleware', '~> 1.0'
 
+gem 'sd_notify', group: [:production, :staging]
+
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
@@ -49,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.18'
   gem 'pry', '~> 0.13.1'
+  gem 'pry-rails'
   gem 'rubocop', '~> 0.75.1', require: false
   gem 'rubocop-performance', '~> 1.5', require: false
   gem 'rubocop-rails', '~> 2.3', require: false
