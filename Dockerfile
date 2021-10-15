@@ -6,8 +6,12 @@ ENV LANG=C.UTF-8 \
     BUNDLER_VERSION=2.2.27
 
 RUN apt-get update -qq \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
-  apt-utils \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends apt-utils
+
+RUN apt-get update -qq \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends build-essential \
+  libxml2-dev \
+  libxslt1-dev \
   gnupg2 \
   curl \
   less \
@@ -21,16 +25,17 @@ RUN curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
     && echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' 12 > /etc/apt/sources.list.d/pgdg.list
 
 RUN apt-get update -qq && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
+  DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends \
   libpq-dev \
   postgresql-client-12 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   truncate -s 0 /var/log/*log
 
-RUN gem update --system --no-document
-RUN gem install bundler:$BUNDLER_VERSION --no-document
+RUN gem update --system --no-document --quiet --silent --no-post-install-message
+RUN gem install bundler:$BUNDLER_VERSION --no-document --quiet --silent
 RUN bundle config --local disable_platform_warnings true
+RUN bundle config build.nokogiri --use-system-libraries
 
 RUN mkdir /bpldc_authority_api-app
 
@@ -38,8 +43,6 @@ WORKDIR /bpldc_authority_api-app
 
 COPY Gemfile Gemfile.* /bpldc_authority_api-app/
 
-RUN bundle config build.nokogiri --use-system-libraries
-RUN bundle config set --global without staging:production
 RUN bundle check || bundle install --jobs 5 --retry 5
 
 COPY . /bpldc_authority_api-app

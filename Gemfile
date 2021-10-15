@@ -9,12 +9,12 @@ gem 'rails', '>= 6.0.4', '< 6.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 5.4'
+gem 'puma', '~> 5.5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Needed for caching
 gem 'connection_pool', '~> 2.2'
 gem 'jbuilder', '~> 2.11'
-gem 'redis', '~> 4.4'
+gem 'redis', '~> 4.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -29,14 +29,14 @@ gem 'geomash', github: 'samvera-labs/geomash', branch: 'specs-working'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1'
 
-gem 'oj', '~> 3.12.3'
+gem 'oj', '~> 3.13'
 
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.1'
 gem 'qa', '~> 5.6'
 
-gem 'faraday', '~> 1.7'
-gem 'faraday_middleware', '~> 1.0'
+gem 'faraday', '~> 1.8'
+gem 'faraday_middleware', '~> 1.2'
 
 gem 'sd_notify', group: [:production, :staging]
 
@@ -52,6 +52,7 @@ group :development, :test do
   gem 'faker', '~> 2.18'
   gem 'pry', '~> 0.13.1'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 5'
   gem 'rubocop', '~> 0.75.1', require: false
   gem 'rubocop-performance', '~> 1.5', require: false
   gem 'rubocop-rails', '~> 2.3', require: false
@@ -62,10 +63,9 @@ group :test do
   gem 'coveralls', require: false
   gem 'database_cleaner-active_record', '~> 2'
   gem 'rails-controller-testing', '~> 1.0'
-  gem 'rspec-rails', '~> 5'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'vcr', '~> 6'
-  gem 'webmock', '~> 3.13'
+  gem 'webmock', '~> 3.14'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -17,12 +17,18 @@ See the wiki for more information:
 
 Run the following commands from the project root:
 
-1. Build/start Ruby/Rails and Postgres containers:
+1. Start Ruby/Rails and Postgres containers:
 ```
-$ docker-compose up --build
+$ docker-compose up
+
 ```
+Note entrypoint.sh runs `bundle exec rails db:prepare` which creates the databases and runs the migrations
 2. From another terminal window, run:
 ```
-$ docker-compose run app rails db:setup
+$ docker-compose run app rails db:seed
+```
+3. To rebuild the container run
+```
+$ docker-compose build --no-cache
 ```
 The application will be available on `localhost:3001`. Use `docker-compose up -d` and `docker-compose down` to start/stop the application.
