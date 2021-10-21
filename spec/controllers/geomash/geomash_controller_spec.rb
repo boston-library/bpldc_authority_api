@@ -44,7 +44,8 @@ RSpec.describe Geomash::GeomashController do
     it 'returns the parsed term as JSON' do
       get :parse, params: { term: "#{city}, WA" }
       response_body = JSON.parse(response.body)
-
+      awesome_print response
+      awesome_print response_body
       expect(response).to be_successful
       expect(assigns(:geomash_data)).to_not be_falsey
       expect(response_body['city_part']).to eq city
