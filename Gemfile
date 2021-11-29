@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 2.7'
+ruby '~> 2.7.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 6.0.4', '< 6.1'
 # Use postgresql as the database for Active Record
@@ -24,7 +24,7 @@ gem 'redis', '~> 4.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'geomash', github: 'samvera-labs/geomash', branch: 'specs-working'
+gem 'geomash', github: 'samvera-labs/geomash', ref: 'e86f2f0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1'
@@ -33,7 +33,7 @@ gem 'oj', '~> 3.13'
 
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.1'
-gem 'qa', '~> 5.6'
+gem 'qa', '~> 5.6.0'
 
 gem 'faraday', '~> 1.8'
 gem 'faraday_middleware', '~> 1.2'
@@ -46,7 +46,6 @@ end
 
 group :development, :test do
   gem 'awesome_print', '~> 1.9'
-  gem 'byebug', '~> 11.1', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails', '~> 2.7'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.18'
