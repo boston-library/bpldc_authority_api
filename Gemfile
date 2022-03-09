@@ -33,7 +33,7 @@ gem 'oj', '~> 3.13'
 
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.1'
-gem 'qa', '~> 5.7.0'
+gem 'qa', '~> 5.8.0'
 
 gem 'faraday', '~> 1.9', '< 2'
 gem 'faraday_middleware', '~> 1.2'
