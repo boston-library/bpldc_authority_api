@@ -30,7 +30,7 @@ AUTHORITY_INPUTS = [
     { code: 'mesh', base_url: 'https://id.nlm.nih.gov/mesh',
       name: 'Medical Subject Headings', subjects: true },
     { code: 'rbmscv', base_url: 'http://id.loc.gov/vocabulary/rbmscv',
-      name: 'Controlled Vocabulary for Rare Materials Cataloging', genres: true }
+      name: 'Controlled Vocabulary for Rare Materials Cataloging', genres: true },
     { code: 'resourceTypes', base_url: 'http://id.loc.gov/vocabulary/resourceTypes',
       name: 'Resource Types Scheme' },
     { code: 'tgn', base_url: 'http://vocab.getty.edu/tgn',
