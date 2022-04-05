@@ -30,7 +30,7 @@ AUTHORITY_INPUTS = [
     { code: 'naf', base_url: 'http://id.loc.gov/authorities/names',
       name: 'Library of Congress Name Authority File', subjects: true, names: true },
     { code: 'ngl', base_url: 'https://lib.washington.edu/gmm/collections/mcnews/ngl',
-      name: 'Newspaper Genre List', genres: true }
+      name: 'Newspaper Genre List', genres: true },
     { code: 'rbmscv', base_url: 'http://id.loc.gov/vocabulary/rbmscv',
       name: 'Controlled Vocabulary for Rare Materials Cataloging', genres: true },
     { code: 'resourceTypes', base_url: 'http://id.loc.gov/vocabulary/resourceTypes',
