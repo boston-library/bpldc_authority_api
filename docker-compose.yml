@@ -30,7 +30,7 @@ services:
       - cache
   cache:
     restart: unless-stopped
-    mem_reservation: 32m
+    #mem_reservation: 32m
     image: redis:latest
     container_name: bpldc_authority_cache
     privileged: true
