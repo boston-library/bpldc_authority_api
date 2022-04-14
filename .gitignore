@@ -19,7 +19,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-.ruby-version
 storage/
 log/
 tmp/
