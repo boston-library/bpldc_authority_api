@@ -32,3 +32,5 @@ $ docker-compose run app rails db:seed
 $ docker-compose build --no-cache
 ```
 The application will be available on `localhost:3001`. Use `docker-compose up -d` and `docker-compose down` to start/stop the application.
+
+## Add a line for testing whether pull-request job works in Jenkins
