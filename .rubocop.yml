@@ -7,6 +7,7 @@ AllCops:
   Exclude:
     - 'bin/*'
     - 'vendor/**/*'
+    - 'scratch.rb'
   DisplayCopNames: true
   DisabledByDefault: true
   TargetRubyVersion: 2.7
