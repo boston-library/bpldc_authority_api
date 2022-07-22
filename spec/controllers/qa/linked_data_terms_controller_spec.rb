@@ -5,9 +5,9 @@
 # don't use VCR, so we can be sure source authority is returning expected data
 require_relative '../shared/linked_data_terms_shared'
 RSpec.describe Qa::LinkedDataTermsController do
-  before(:each) { @routes = Qa::Engine.routes }
+  # before(:each) { @routes = Qa::Engine.routes }
 
-  describe 'authorities/linked_data configs' do
+  skip 'authorities/linked_data configs' do
     describe 'getty_aat_ld4l_cache' do
       let(:vocab_name) { 'getty_aat_ld4l_cache' }
       let(:term_id) { '300261803' }
