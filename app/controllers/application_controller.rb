@@ -4,6 +4,7 @@ class ApplicationController < ActionController::API
   include ActionController::ImplicitRender
   include ActionView::Layouts
   include ActionController::Caching
+  include ActionController::MimeResponds
 
   APP_INFO = {
     app_name: 'bpldc_authority_api',
