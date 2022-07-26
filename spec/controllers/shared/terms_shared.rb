@@ -3,7 +3,6 @@
 RSpec.shared_examples 'terms_fetch' do
   it 'fetches data for a term uri' do
     get :fetch, params: { uri: term_uri, vocab: vocab_name, subauthority: vocab_subauth }
-    binding.pry
     expect(response).to have_http_status(:ok)
     response_body = JSON.parse(response.body)
     expect(response_body['label']).not_to be_blank

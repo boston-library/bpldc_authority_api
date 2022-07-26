@@ -31,7 +31,6 @@ RSpec.describe Qa::LinkedDataTermsController do
     end
   end
 
-
   describe 'geonames configs' do
     let(:query) { 'Allston' }
 
