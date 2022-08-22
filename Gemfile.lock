@@ -1,17 +1,17 @@
 GIT
   remote: https://github.com/samvera-labs/geomash.git
-  revision: e86f2f0c875db514043014337bab9815360407f0
-  ref: e86f2f0
+  revision: 460162d0cb227fae756fc111fea1215a1ebb5aa3
+  ref: 460162d
   specs:
-    geomash (0.5.4)
-      activesupport
-      countries (>= 2.0.0)
+    geomash (0.5.7)
+      activesupport (>= 5.0)
+      countries (>= 5.0.0)
       geocoder
       htmlentities
       nokogiri
       sparql
       stringex
-      typhoeus
+      typhoeus (>= 1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -86,8 +86,7 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
     connection_pool (2.2.5)
-    countries (4.2.3)
-      i18n_data (~> 0.16.0)
+    countries (5.1.2)
       sixarm_ruby_unaccent (~> 1.1)
     coveralls (0.8.23)
       json (>= 1.8, < 3)
@@ -117,7 +116,7 @@ GEM
       scanf (~> 1.0)
       sxp (~> 1.2)
       unicode-types (~> 1.7)
-    erubi (1.10.0)
+    erubi (1.11.0)
     ethon (0.15.0)
       ffi (>= 1.15.0)
     factory_bot (6.2.1)
@@ -127,7 +126,7 @@ GEM
       railties (>= 5.0.0)
     faker (2.21.0)
       i18n (>= 1.8.11, < 2)
-    faraday (1.10.0)
+    faraday (1.10.1)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -143,8 +142,8 @@ GEM
     faraday-em_synchrony (1.0.0)
     faraday-excon (1.1.0)
     faraday-httpclient (1.0.1)
-    faraday-multipart (1.0.3)
-      multipart-post (>= 1.2, < 3)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
@@ -163,10 +162,8 @@ GEM
       concurrent-ruby (~> 1.0)
     hashdiff (1.0.1)
     htmlentities (4.3.4)
-    i18n (1.11.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    i18n_data (0.16.0)
-      simple_po_parser (~> 1.1)
     jaro_winkler (1.5.4)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
@@ -189,10 +186,11 @@ GEM
       rdf-xsd (~> 3.2)
       sparql (~> 3.2)
       sxp (~> 1.2)
-    ldpath (1.1.0)
+    ldpath (1.2.0)
       nokogiri (~> 1.8)
       parslet
       rdf (~> 3.0)
+      rdf-vocab (~> 3.0)
     link_header (0.0.8)
     linkeddata (3.2.0)
       json-ld (~> 3.2)
@@ -236,14 +234,14 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.16.2)
+    minitest (5.16.3)
     msgpack (1.5.1)
     multi_json (1.15.0)
-    multipart-post (2.1.1)
+    multipart-post (2.2.3)
     net-http-persistent (4.0.1)
       connection_pool (~> 2.2)
     nio4r (2.5.8)
-    nokogiri (1.13.7)
+    nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oj (3.13.11)
@@ -260,10 +258,10 @@ GEM
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
-    qa (5.8.1)
+    qa (5.9.0)
       activerecord-import
       deprecation
-      faraday (< 2.0)
+      faraday (< 3.0, != 2.0.0)
       geocoder
       ldpath
       nokogiri (~> 1.6)
@@ -310,9 +308,9 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rdf (3.2.7)
+    rdf (3.2.9)
       link_header (~> 0.0, >= 0.0.8)
-    rdf-aggregate-repo (3.2.0)
+    rdf-aggregate-repo (3.2.1)
       rdf (~> 3.2)
     rdf-hamster-repo (3.2.1)
       hamster (~> 3.0)
@@ -428,18 +426,17 @@ GEM
       sxp (~> 1.2)
     shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
-    simple_po_parser (1.1.6)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
     sixarm_ruby_unaccent (1.2.0)
-    sparql (3.2.3)
+    sparql (3.2.4)
       builder (~> 3.2)
       ebnf (~> 2.2, >= 2.3.1)
       logger (~> 1.5)
-      rdf (~> 3.2, >= 3.2.7)
+      rdf (~> 3.2, >= 3.2.8)
       rdf-aggregate-repo (~> 3.2)
       rdf-xsd (~> 3.2)
       sparql-client (~> 3.2, >= 3.2.1)
@@ -490,7 +487,6 @@ DEPENDENCIES
   awesome_print (~> 1.9)
   bootsnap (>= 1.1.0)
   connection_pool (~> 2.2)
-  countries (< 5.0.0)
   coveralls
   database_cleaner-active_record (~> 2)
   dotenv-rails (~> 2.7)
@@ -507,7 +503,7 @@ DEPENDENCIES
   pry (~> 0.13.1)
   pry-rails
   puma (~> 5.6)
-  qa (~> 5.8.1)
+  qa (~> 5.9)
   rack-cors (~> 1.1)
   rails (>= 6.0.5.1, < 6.1)
   rails-controller-testing (~> 1.0)

@@ -20,7 +20,7 @@ RSpec.describe Geomash::GeomashController do
 
     describe 'with an invalid TGN id' do
       let(:request_params) { { id: bad_id } }
-      let(:expected_status) { :not_found }
+      let(:expected_status) { :bad_request }
       it_behaves_like 'geomash_error_response'
     end
   end
