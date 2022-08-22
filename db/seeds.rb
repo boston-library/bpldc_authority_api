@@ -114,7 +114,7 @@ end
 BASIC_GENRE_INPUTS = {
   'gmgpc' => %w(tgm001686 tgm003185 tgm003279 tgm003634 tgm012286 tgm006261 tgm007393
                 tgm007721 tgm008104 tgm008237 tgm007641 tgm001221 tgm000229),
-  'lctgm' => %w(tgm002590 tgm007159 tgm007068 tgm009874 tgm006804 tgm006926 tgm006906),
+  'lctgm' => %w(tgm002590 tgm007159 tgm007068 tgm009874 tgm006804 tgm006926 tgm006906 tgm000526),
   'lcgft' => %w(gf2014026174)
 }.freeze
 

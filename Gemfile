@@ -24,7 +24,7 @@ gem 'redis', '~> 4.6'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'geomash', github: 'samvera-labs/geomash', ref: 'e86f2f0'
+gem 'geomash', github: 'samvera-labs/geomash', ref: '460162d'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1'
@@ -34,8 +34,7 @@ gem 'oj', '~> 3.13'
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.1'
 # NOTE: Geomash needs to be updated to updated to handle the breaking changes in
-gem 'countries', '< 5.0.0'
-gem 'qa', '~> 5.8.1'
+gem 'qa', '~> 5.9'
 
 gem 'faraday', '~> 1.9', '< 2'
 gem 'faraday_middleware', '~> 1.2'
