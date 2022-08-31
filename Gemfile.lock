@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/samvera-labs/geomash.git
-  revision: 460162d0cb227fae756fc111fea1215a1ebb5aa3
-  ref: 460162d
+  revision: 46ddfb9171a1ab21874c62b833a8405bb564ce86
+  ref: 46ddfb9
   specs:
     geomash (0.5.7)
       activesupport (>= 5.0)
@@ -256,7 +256,7 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.7)
-    puma (5.6.4)
+    puma (5.6.5)
       nio4r (~> 2.0)
     qa (5.9.0)
       activerecord-import
