@@ -1,9 +1,9 @@
-FROM ruby:2.7.6
+FROM ruby:3.0.4
 
 LABEL maintainer="bbarber@bpl.org, eenglish@bpl.org"
 
 ENV LANG=C.UTF-8 \
-    BUNDLER_VERSION=2.3.11
+    BUNDLER_VERSION=2.3.12
 
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends apt-utils
@@ -32,7 +32,7 @@ RUN apt-get update -qq && \
   rm -rf /var/lib/apt/lists/* /tRUBY_CONFIGURE_OPTS='--with-jemalloc'mp/* /var/tmp/* && \
   truncate -s 0 /var/log/*log
 
-RUN gem update --system --no-document --quiet --silent --no-post-install-message
+RUN gem update --system --no-document --quiet --silent
 RUN gem install bundler:$BUNDLER_VERSION --no-document --quiet --silent
 RUN bundle config --local disable_platform_warnings true
 RUN bundle config build.nokogiri --use-system-libraries

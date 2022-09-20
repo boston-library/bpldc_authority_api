@@ -2,7 +2,6 @@
 Dockerfile
 .coveralls.yml
 .travis.yml
-.ruby-version
 docker-compose.yml
 .bin
 .git
