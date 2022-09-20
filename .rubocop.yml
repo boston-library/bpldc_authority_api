@@ -10,7 +10,7 @@ AllCops:
     - 'scratch.rb'
   DisplayCopNames: true
   DisabledByDefault: true
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.0
 
 ####################### BUNDLER/GEMSPEC ###############################
 Bundler/OrderedGems:
@@ -23,7 +23,7 @@ Gemspec/OrderedDependencies:
   Enabled: true
 
 ####################### LAYOUT ###############################
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Enabled: true
 
 Layout/BlockAlignment:
@@ -35,7 +35,7 @@ Layout/CaseIndentation:
 Layout/CommentIndentation:
   Enabled: true
 
-Layout/AlignArguments:
+Layout/ArgumentAlignment:
   Enabled: true
 
 Layout/ClosingParenthesisIndentation:
@@ -76,7 +76,7 @@ Layout/EndAlignment:
 Layout/ExtraSpacing:
   Enabled: true
 
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   Enabled: true
   EnforcedStyle: consistent
 
@@ -86,11 +86,15 @@ Layout/IndentationConsistency:
 Layout/IndentationWidth:
   Enabled: true
 
-Layout/LeadingBlankLines:
+Layout/LeadingEmptyLines:
   Enabled: true
 
 Layout/LeadingCommentSpace:
   Enabled: true
+
+Layout/LineLength:
+  Enabled: true
+  Max: 400
 
 Layout/MultilineArrayBraceLayout:
   Enabled: true
@@ -142,6 +146,9 @@ Lint/AmbiguousRegexpLiteral:
 Lint/AssignmentInCondition:
   Enabled: true
 
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+
 Lint/CircularArgumentReference:
   Enabled: true
 
@@ -157,7 +164,7 @@ Lint/DuplicateCaseCondition:
 Lint/DuplicateMethods:
   Enabled: true
 
-Lint/DuplicatedKey:
+Lint/DuplicateHashKey:
   Enabled: true
 
 Lint/EachWithObjectArgument:
@@ -179,9 +186,6 @@ Lint/EmptyInterpolation:
 Lint/EmptyWhen:
   Enabled: true
 
-Lint/EndInMethod:
-  Enabled: true
-
 Lint/EnsureReturn:
   Enabled: true
 
@@ -194,7 +198,7 @@ Lint/FloatOutOfRange:
 Lint/FormatParameterMismatch:
   Enabled: true
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Enabled: true
 
 Lint/ImplicitStringConcatenation:
@@ -215,7 +219,7 @@ Lint/LiteralInInterpolation:
 Lint/Loop:
   Enabled: true
 
-Lint/MultipleCompare:
+Lint/MultipleComparison:
   Enabled: true
 
 Lint/NestedMethodDefinition:
@@ -239,6 +243,12 @@ Lint/PercentSymbolArray:
 Lint/RandOne:
   Enabled: true
 
+Lint/RedundantSplatExpansion:
+  Enabled: true
+
+Lint/RedundantStringCoercion:
+  Enabled: true
+
 Lint/RequireParentheses:
   Enabled: true
 
@@ -254,16 +264,10 @@ Lint/ShadowedException:
 Lint/ShadowingOuterLocalVariable:
   Enabled: true
 
-Lint/StringConversionInInterpolation:
-  Enabled: true
-
 Lint/UnderscorePrefixedVariableName:
   Enabled: true
 
 Lint/UnifiedInteger:
-  Enabled: true
-
-Lint/UnneededSplatExpansion:
   Enabled: true
 
 Lint/UnusedMethodArgument:
@@ -279,9 +283,6 @@ Lint/UselessAccessModifier:
   Enabled: true
 
 Lint/UselessAssignment:
-  Enabled: true
-
-Lint/UselessComparison:
   Enabled: true
 
 Lint/UselessElseWithoutRescue:
@@ -325,6 +326,9 @@ Style/DefWithParentheses:
   Enabled: true
 
 Style/EmptyElse:
+  Enabled: true
+
+Style/EndBlock:
   Enabled: true
 
 Style/EvalWithLocation:
@@ -381,6 +385,9 @@ Style/Proc:
 Style/RedundantFreeze:
   Enabled: true
 
+Style/RedundantInterpolation:
+  Enabled: true
+
 Style/RedundantSelf:
   Enabled: true
 
@@ -409,9 +416,6 @@ Style/SymbolArray:
 Style/WordArray:
   Enabled: false
 
-Style/UnneededInterpolation:
-  Enabled: true
-
 ####################### METRICS ###############################
 
 # REVIEW: Tweak these values at some point low priority
@@ -439,10 +443,6 @@ Metrics/CyclomaticComplexity:
 Metrics/MethodLength:
   Enabled: true
   Max: 100
-
-Metrics/LineLength:
-  Enabled: true
-  Max: 400
 
 ####################### SECURITY ###############################
 
@@ -671,6 +671,11 @@ RSpec/ExpectInHook:
 RSpec/ExpectOutput:
   Enabled: true
 
+RSpec/FactoryBot:
+  Enabled: true
+  EnforcedStyle: create_list
+
+
 RSpec/HookArgument:
   Enabled: true
   EnforcedStyle: each
@@ -743,11 +748,4 @@ RSpec/SharedExamples:
   Enabled: true
 
 RSpec/VoidExpect:
-  Enabled: true
-####################### FACTORY BOT ###############################
-
-FactoryBot/AttributeDefinedStatically:
-  Enabled: true
-
-FactoryBot/CreateList:
   Enabled: true

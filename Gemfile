@@ -3,9 +3,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.0.0'
+ruby '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 6.1.7', '< 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -48,15 +48,15 @@ end
 
 group :development, :test do
   gem 'awesome_print', '~> 1.9'
-  gem 'dotenv-rails', '~> 2.7'
+  gem 'dotenv-rails', '~> 2.8'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.18'
   gem 'pry', '~> 0.13.1'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 5'
-  gem 'rubocop', '~> 0.75.1', require: false
-  gem 'rubocop-performance', '~> 1.5', require: false
-  gem 'rubocop-rails', '~> 2.3', require: false
+  gem 'rubocop', '~> 1.36', require: false
+  gem 'rubocop-performance', '~> 1.15', require: false
+  gem 'rubocop-rails', '~> 2.16', require: false
   gem 'rubocop-rspec', require: false
 end
 

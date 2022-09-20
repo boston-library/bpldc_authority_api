@@ -22,7 +22,7 @@ Bundler.require(*Rails.groups)
 module BpldcAuthorityApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0
+    config.load_defaults 6.1
     config.api_only = true
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -42,7 +42,7 @@ module BpldcAuthorityApi
       g.factory_bot dir: 'spec/factories'
     end
 
-    # NOTE Geomash doesn't read ERB/ENV in config/geomash.yml, so we reset it here
+    # NOTE: Geomash doesn't read ERB/ENV in config/geomash.yml, so we reset it here
     Geomash.config[:geonames_username] = ENV.fetch('GEONAMES_USERNAME') { Rails.application.credentials.dig(:geonames_user) }
     Geomash.config[:google_key] = ENV.fetch('GOOGLE_MAPS_API_KEY') { Rails.application.credentials.dig(:google_maps_api_key) }
 

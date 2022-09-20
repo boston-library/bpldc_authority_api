@@ -19,13 +19,13 @@ before_install:
   - sudo cp /etc/postgresql/{9.3,12}/main/pg_hba.conf
   - sudo pg_ctlcluster 12 main restart
   - gem update --system --no-document
-  - gem install bundler:2.3.11 --no-document
+  - gem install bundler:2.3.12 --no-document
 
 before_script:
   - bundle exec rails db:prepare
 
 rvm:
-  - 3.0.0
+  - 3.0.4
 
 env:
   global:
