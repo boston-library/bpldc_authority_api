@@ -9,7 +9,7 @@ RSpec.describe Bpldc::LcVocabUtilities::LcVocabFetcher do
           described_class.seed_lc_data(bpldc_class: 'Bpldc::BasicGenre',
                                        lc_url: "http://id.loc.gov/vocabulary/graphicMaterials/#{id_from_auth}.madsrdf.json",
                                        auth_code: 'lctgm')
-        end.to change { Bpldc::BasicGenre.count }.by(1)
+        end.to change(Bpldc::BasicGenre, :count).by(1)
       end
       expect(Bpldc::BasicGenre.find_by(id_from_auth: id_from_auth)).not_to be_blank
     end

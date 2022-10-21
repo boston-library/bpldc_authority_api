@@ -673,8 +673,6 @@ RSpec/ExpectOutput:
 
 RSpec/FactoryBot:
   Enabled: true
-  EnforcedStyle: create_list
-
 
 RSpec/HookArgument:
   Enabled: true
@@ -685,9 +683,6 @@ RSpec/HooksBeforeExamples:
 
 RSpec/InstanceVariable:
   Enabled: false
-
-RSpec/InvalidPredicateMatcher:
-  Enabled: true
 
 RSpec/ItBehavesLike:
   Enabled: true
