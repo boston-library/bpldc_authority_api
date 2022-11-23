@@ -9,7 +9,7 @@ gem 'rails', '~> 6.1.7', '< 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 5.6', '< 6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Needed for caching
 gem 'connection_pool', '~> 2.3'
@@ -54,6 +54,10 @@ group :development, :test do
   gem 'pry', '~> 0.13.1'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 5.1'
+  gem 'capistrano', '~> 3.17', require: false
+  gem 'capistrano-rails', '~> 1.4', require: false
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
   gem 'rubocop', '~> 1.36', require: false
   gem 'rubocop-performance', '~> 1.15', require: false
   gem 'rubocop-rails', '~> 2.16', require: false
