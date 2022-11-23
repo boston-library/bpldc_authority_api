@@ -35,6 +35,7 @@ scratch.rb
 coverage/*
 
 /config/database.yml
+
 /config/credentials/staging.key
 /config/credentials/production.key
 
