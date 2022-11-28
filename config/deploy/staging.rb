@@ -35,6 +35,7 @@ role :db,  %w{manager@172.29.101.160}
 before :'bundler:install', :'boston_library:gem_update'
 before :'deploy:migrate', :'boston_library:hello'
 
+
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
