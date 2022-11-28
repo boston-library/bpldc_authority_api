@@ -27,10 +27,13 @@ set :branch, 'capistrano'
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
+
+role :app, %w{manager@172.29.101.160}
+role :web, %w{manager@172.29.101.160}
+role :db,  %w{manager@172.29.101.160}
+
 before :'bundler:install', :'boston_library:gem_update'
-
 before :'deploy:migrate', :'boston_library:hello'
-
 
 # Configuration
 # =============
@@ -71,17 +74,10 @@ SSHKit.config.command_map[:rm] = 'sudo rm'
 
 server '172.29.101.160', {
   :user => 'manager',
-  :role => 'app',
+  :role => %w{app db web},
   :ssh_options => {
     :keys =>  '/var/lib/jenkins/.ssh/promdev'
   }
 }
 
 
-server '172.29.101.160', {
-  :user => 'manager',
-  :role => 'db',
-  :ssh_options => {
-    :keys =>  '/var/lib/jenkins/.ssh/promdev'
-  }
-}
