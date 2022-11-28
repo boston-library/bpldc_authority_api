@@ -68,3 +68,11 @@ SSHKit.config.command_map[:rm] = 'sudo rm'
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server '172.29.101.160', {
+  :user => 'manager',
+  :role => 'app',
+  :ssh_options => {
+    :keys =>  '/var/lib/jenkins/.ssh/promdev'
+  }
+}
