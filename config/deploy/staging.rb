@@ -71,7 +71,7 @@ SSHKit.config.command_map[:rm] = 'sudo rm'
 
 server '172.29.101.160', {
   :user => 'manager',
-  :role => 'app',
+  :role => ['app', 'db']
   :ssh_options => {
     :keys =>  '/var/lib/jenkins/.ssh/promdev'
   }
