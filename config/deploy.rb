@@ -28,7 +28,11 @@ set :pty, true
 # append :linked_files, "config/database.yml", 'config/master.key'
 # append :linked_files, "config/database.yml", "config/staging.key", 
 
-append :linked_files, "config/database.yml", "config/staging.key", "config/credentials/staging.key"
+
+## When running tasks against staging server, some tasks defined in it needs to be available.
+## config/deploy/staging.rb cannot be removed from <project>/shared/ directory. 
+append :linked_files, "config/database.yml", "config/staging.key", "config/credentials/staging.key", "config/environments/staging.rb"
+# append :linked_files, "config/database.yml", "config/staging.key", "config/credentials/staging.key"
 
 ## , "lib/capistrano/tasks/bpldc_nginx.rake"
 
