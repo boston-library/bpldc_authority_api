@@ -90,7 +90,8 @@ namespace :boston_library do
 
 end
 
-# before 'boston_library:staging_key_symlink', 'boston_library:restart_bpldc_nginx'
+before :'bundler:install', :'boston_library:gem_update'
+before :'deploy:migrate', :'boston_library:hello'
 after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
 after 'boston_library:restart_bpldc_nginx', 'boston_library:restart_nginx'
 

@@ -32,8 +32,8 @@ role :app, %w{manager@172.29.101.160}
 role :web, %w{manager@172.29.101.160}
 role :db,  %w{manager@172.29.101.160}
 
-before :'bundler:install', :'boston_library:gem_update'
-before :'deploy:migrate', :'boston_library:hello'
+# before :'bundler:install', :'boston_library:gem_update'
+# before :'deploy:migrate', :'boston_library:hello'
 
 
 # Configuration
