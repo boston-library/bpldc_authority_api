@@ -88,8 +88,16 @@ namespace :boston_library do
 	  end
 	end
 
+  desc "Send config/deploy/staging.rb(with latest ruby version) to shared/config/environments/staging.rb on target server"
+  task :upload_staging_rb do
+    on roles(:app) do
+      upload!('./config/deploy/staging.rb', '/tmp/staging.rb')
+    end
+  end
+
 end
 
+before :'deploy:set_current_revision', :'boston_library:upload_staging_rb'
 before :'bundler:install', :'boston_library:gem_update'
 before :'deploy:migrate', :'boston_library:hello'
 after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
