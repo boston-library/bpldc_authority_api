@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.0'
+ruby '~> 3.0.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.7', '< 7.0'
 # Use postgresql as the database for Active Record
@@ -12,7 +12,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Needed for caching
-gem 'connection_pool', '~> 2.2'
+gem 'connection_pool', '~> 2.3'
 gem 'jbuilder', '~> 2.11'
 gem 'redis', '~> 4.6'
 # Use ActiveModel has_secure_password
@@ -33,11 +33,11 @@ gem 'oj', '~> 3.13'
 gem 'psych', '~> 3.3'
 
 # Required gems for QA and linked data access
-gem 'linkeddata', '~> 3.1'
+gem 'linkeddata', '~> 3.2'
 # NOTE: Geomash needs to be updated to updated to handle the breaking changes in
 gem 'qa', '~> 5.9'
 
-gem 'faraday', '~> 1.9', '< 2'
+gem 'faraday', '~> 1.10', '< 2'
 gem 'faraday_middleware', '~> 1.2'
 
 gem 'sd_notify', group: [:production, :staging]
@@ -50,10 +50,10 @@ group :development, :test do
   gem 'awesome_print', '~> 1.9'
   gem 'dotenv-rails', '~> 2.8'
   gem 'factory_bot_rails', '~> 6.2'
-  gem 'faker', '~> 2.18'
+  gem 'faker', '~> 2.23'
   gem 'pry', '~> 0.13.1'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 5'
+  gem 'rspec-rails', '~> 5.1'
   gem 'rubocop', '~> 1.36', require: false
   gem 'rubocop-performance', '~> 1.15', require: false
   gem 'rubocop-rails', '~> 2.16', require: false
@@ -64,9 +64,9 @@ group :test do
   gem 'coveralls', require: false
   gem 'database_cleaner-active_record', '~> 2'
   gem 'rails-controller-testing', '~> 1.0'
-  gem 'shoulda-matchers', '~> 5.0'
-  gem 'vcr', '~> 6'
-  gem 'webmock', '~> 3.14'
+  gem 'shoulda-matchers', '~> 5.2'
+  gem 'vcr', '~> 6.1'
+  gem 'webmock', '~> 3.18'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
