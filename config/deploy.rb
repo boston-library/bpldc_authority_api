@@ -66,12 +66,10 @@ namespace :boston_library do
     end
 
 
-    execute "echo '#{fetch(:app_environment)}' >
-
     desc "gem update"
     task :gem_update do
       on roles(:app) do
-        execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem update --system --no-document")
+        execute('/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem update --system --no-document')
         #working# execute('~/.rvm/bin/rvm 3.0.4 do gem update --system --no-document')
         #notWorking# execute('gem update --system --no-document')
       end
