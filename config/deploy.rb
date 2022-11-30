@@ -6,7 +6,7 @@ lock "~> 3.17.1"
 set :application, "bpldc_authority_api"
 set :repo_url, "https://github.com/boston-library/bpldc_authority_api.git"
 set :rails_env, 'staging'
-set :rvm_ruby_version, File.read(File.expand_path('./../../.ruby-version', __dir__)).strip
+set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 
 
 # Default branch is :master
