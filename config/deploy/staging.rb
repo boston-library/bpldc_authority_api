@@ -9,7 +9,8 @@
 
 
 ## set :rvm_ruby_version, '3.0.4'
-set :rvm_ruby_version, File.read(Rails.root.join(".ruby-version")).strip
+
+set :rvm_ruby_version, File.read(File.expand_path('./../../.ruby-version', __dir__)).strip
 
 ## server "####", user: "######", password: "#{####}", roles: %w{app db}
 ## server ENV.fetch('BPLDC_AUTHORITY_API_DEPLOY_SERVER'){ Rails.application.credentials.dig(:deploy, :server) }, user: ENV.fetch('BPLDC_AUTHORITY_API_DEPLOY_USER'){ Rails.application.credentials.dig(:deploy, :user) }, password: ENV.fetch('BPLDC_AUTHORITY_API_DEPLOY_PASSWORD'){ Rails.application.credentials.dig(:deploy, :password) }, roles: %w{app db}
