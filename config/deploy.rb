@@ -6,6 +6,8 @@ lock "~> 3.17.1"
 set :application, "bpldc_authority_api"
 set :repo_url, "https://github.com/boston-library/bpldc_authority_api.git"
 set :rails_env, 'staging'
+set :rvm_ruby_version, File.read(File.expand_path('./../../.ruby-version', __dir__)).strip
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -63,11 +65,15 @@ namespace :boston_library do
         end
     end
 
+
+    execute "echo '#{fetch(:app_environment)}' >
+
     desc "gem update"
     task :gem_update do
       on roles(:app) do
-        # execute('~/.rvm/bin/rvm 3.0.4 do gem update --system --no-document')
-        execute('gem update --system --no-document')
+        execute("~/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem update --system --no-document")
+        #working# execute('~/.rvm/bin/rvm 3.0.4 do gem update --system --no-document')
+        #notWorking# execute('gem update --system --no-document')
       end
     end
 
