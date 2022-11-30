@@ -32,7 +32,8 @@ set :pty, true
 
 
 ## When running tasks against staging server, some tasks defined in it needs to be available.
-## config/deploy/staging.rb cannot be removed from <project>/shared/ directory. 
+## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
+## Otherwise curl 172.29.101.160 returns 301....
 append :linked_files, "config/database.yml", "config/staging.key", "config/credentials/staging.key", "config/environments/staging.rb"
 # append :linked_files, "config/database.yml", "config/staging.key", "config/credentials/staging.key"
 
@@ -65,13 +66,11 @@ namespace :boston_library do
         end
     end
 
-
+    ## rvm_ruby_version = 3.0.4
     desc "gem update"
     task :gem_update do
       on roles(:app) do
         execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem update --system --no-document")
-        #working# execute('~/.rvm/bin/rvm 3.0.4 do gem update --system --no-document')
-        #notWorking# execute('gem update --system --no-document')
       end
     end
 
