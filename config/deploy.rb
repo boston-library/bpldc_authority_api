@@ -66,8 +66,8 @@ namespace :boston_library do
     desc "gem update"
     task :gem_update do
       on roles(:app) do
-        execute('~/.rvm/bin/rvm 3.0.4 do gem update --system --no-document')
-        # execute('gem update --no-document')
+        # execute('~/.rvm/bin/rvm 3.0.4 do gem update --system --no-document')
+        execute('gem update --system --no-document')
       end
     end
 
