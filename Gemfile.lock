@@ -526,12 +526,11 @@ PLATFORMS
 DEPENDENCIES
   awesome_print (~> 1.9)
   bootsnap (>= 1.1.0)
-  connection_pool (~> 2.3)
   capistrano (~> 3.17)
   capistrano-rails (~> 1.4)
   capistrano-rvm
   capistrano3-puma
-  connection_pool (~> 2.2)
+  connection_pool (~> 2.3)
   coveralls
   database_cleaner-active_record (~> 2)
   dotenv-rails (~> 2.8)
