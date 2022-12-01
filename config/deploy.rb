@@ -18,7 +18,7 @@ set :pty, true
 ## Otherwise curl 172.29.101.160 returns 301....
 append :linked_files, 'config/database.yml', 'config/staging.key', 'config/credentials/staging.key', 'config/environments/staging.rb'
 
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'bundle'
 
 set :default_env, { node_env: :staging }
 
