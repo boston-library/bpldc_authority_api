@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 # server-based syntax
 # ======================
 
 # Grab ruby version from project home directory. It is needed for deployment.
-
 set :rvm_ruby_version, File.read(File.expand_path('./../../.ruby-version', __dir__)).strip
 
 # set :branch, 'jenkins'
@@ -16,10 +17,9 @@ set :branch, 'capistrano'
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w{manager@172.29.101.160}
-role :web, %w{manager@172.29.101.160}
-role :db,  %w{manager@172.29.101.160}
-
+role :app, %w(manager@172.29.101.160)
+role :web, %w(manager@172.29.101.160)
+role :db,  %w(manager@172.29.101.160)
 
 ## When Capistrano tries to delete old release, puma socket/id can be removed only by sudo user.
 ## Allow current user to run it with sudo priviledge.
@@ -30,10 +30,8 @@ SSHKit.config.command_map[:rm] = 'sudo rm'
 # For security reason, here uses ssh key.
 server '172.29.101.160', {
   :user => 'manager',
-  :role => %w{app db web},
+  :role => %w(app db web),
   :ssh_options => {
-    :keys =>  '/var/lib/jenkins/.ssh/promdev'
+    :keys => '/var/lib/jenkins/.ssh/promdev'
   }
 }
-
-
