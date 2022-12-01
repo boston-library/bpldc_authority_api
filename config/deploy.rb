@@ -53,9 +53,9 @@ namespace :boston_library do
   task :install_bundler do 
     on roles(:app) do
       execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install bundler:2.3.26") 
-      execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle update --bundler")
+      # execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle update --bundler")
       execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install puma:5.6.5")
-      execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle update --puma")
+      # execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle update --puma")
     end
   end
 
