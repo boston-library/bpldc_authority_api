@@ -44,7 +44,7 @@ namespace :boston_library do
   desc 'Install new ruby if ruby-version is required'
   task :rvm_install_ruby do
     on role(:app) do
-      execute("/home/manager/.rvm/bin/rvm install #{fetch(:rvm_ruby_version)} -C --with-jemalloc")
+      execute '/home/manager/.rvm/bin/rvm install #{fetch(:rvm_ruby_version)} -C --with-jemalloc'
     end
   end
 
