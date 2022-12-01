@@ -34,10 +34,17 @@ namespace :boston_library do
     end
   end
 
-  desc 'gem update'
+  desc 'Gem update'
   task :gem_update do
     on roles(:app) do
       execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem update --system --no-document")
+    end
+  end
+
+  desc 'Install new ruby if ruby-version is required'
+  task :rvm_install_ruby do
+    on role(:app) do
+      execute("/home/manager/.rvm/bin/rvm install #{fetch(:rvm_ruby_version)} -C --with-jemalloc")
     end
   end
 
@@ -57,6 +64,7 @@ namespace :boston_library do
   end
 end
 
+before :'rvm:check', :'boston_library:rvm_install_ruby'
 before :'bundler:install', :'boston_library:gem_update'
 before :'deploy:migrate', :'boston_library:hello'
 after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
