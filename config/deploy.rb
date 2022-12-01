@@ -49,6 +49,16 @@ namespace :boston_library do
     end
   end
 
+  desc 'Install bundler 2.3.26'
+  task :install_bundler do 
+    on roles(:app) do
+      execute("gem install bundler:2.3.26") 
+      execute("bundle update --bundler")
+      execute("gem install puma:5.6.5")
+      execute("bundle update --puma")
+    end
+  end
+
   desc 'bpldc_authority_api restart bpldc_puma service'
   task :restart_bpldc_nginx do
     on roles(:app), in: :sequence, wait: 5 do
@@ -66,6 +76,7 @@ namespace :boston_library do
 end
 
 before :'rvm:check', :'boston_library:rvm_install_ruby'
+after :'boston_library:gem_update', :'install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
 before :'deploy:migrate', :'boston_library:hello'
 after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
