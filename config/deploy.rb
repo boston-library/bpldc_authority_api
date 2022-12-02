@@ -16,7 +16,8 @@ set :pty, true
 ## When running tasks against staging server, some tasks defined in it needs to be available.
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
 ## Otherwise curl 172.29.101.160 returns 301....
-append :linked_files, 'config/database.yml', 'config/staging.key', 'config/credentials/staging.key', 'config/environments/staging.rb'
+#mm# append :linked_files, 'config/database.yml', 'config/staging.key', 'config/credentials/staging.key', 'config/environments/staging.rb'
+append :linked_files, 'config/database.yml', 'config/credentials/staging.key', 'config/environments/staging.rb'
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'bundle'
 
@@ -79,5 +80,5 @@ before :'rvm:check', :'boston_library:rvm_install_ruby'
 after :'boston_library:gem_update', :'install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
 before :'deploy:migrate', :'boston_library:hello'
-after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
-after 'boston_library:restart_bpldc_nginx', 'boston_library:restart_nginx'
+# after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
+# after 'boston_library:restart_bpldc_nginx', 'boston_library:restart_nginx'
