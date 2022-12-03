@@ -2,6 +2,7 @@
 
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.17.1'
+require File.expand_path('./environment', __dir__)
 
 set :application, 'bpldc_authority_api'
 set :repo_url, 'https://github.com/boston-library/bpldc_authority_api.git'
@@ -54,9 +55,7 @@ namespace :boston_library do
   task :install_bundler do 
     on roles(:app) do
       execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install bundler:2.3.26") 
-      # execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle update --bundler")
       execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install puma:5.6.5")
-      # execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle update --puma")
     end
   end
 
