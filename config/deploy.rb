@@ -29,13 +29,6 @@ set :keep_releases, 5
 
 # Costomized tasks that restart our services
 namespace :boston_library do
-  desc 'Greeting from BOSTON PUBLIC LIBRARY'
-  task :hello do
-    on roles(:app, :db) do
-      execute('echo Hello BOSTON PUBLIC LIBRARY')
-    end
-  end
-
   desc 'Gem update'
   task :gem_update do
     on roles(:app) do
@@ -78,6 +71,5 @@ end
 before :'rvm:check', :'boston_library:rvm_install_ruby'
 after :'boston_library:gem_update', :'install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
-before :'deploy:migrate', :'boston_library:hello'
 # after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
 # after 'boston_library:restart_bpldc_nginx', 'boston_library:restart_nginx'
