@@ -22,7 +22,7 @@ append :linked_files, 'config/database.yml', 'config/credentials/staging.key', '
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'bundle'
 
-set :default_env, { node_env: :staging }
+# set :default_env, { node_env: :staging }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
@@ -73,3 +73,4 @@ after :'boston_library:gem_update', :'install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
 # after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
 # after 'boston_library:restart_bpldc_nginx', 'boston_library:restart_nginx'
+after 'deploy:cleanup', 'boston_library:restart_nginx'
