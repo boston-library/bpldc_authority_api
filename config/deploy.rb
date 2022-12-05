@@ -7,9 +7,11 @@ require File.expand_path('./environment', __dir__)
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch :application}.git"
 set :deploy_to, "/home/manager/#{fetch :application}"
+
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 set :rvm_installed, '/home/manager/.rvm/bin/rvm'
+
 # Default value for :pty is false
 set :pty, true
 
