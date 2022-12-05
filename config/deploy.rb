@@ -8,9 +8,8 @@ set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch :application}.git"
 set :deploy_to, "/home/manager/#{fetch :application}"
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
-# Bundle version is always at the very last line of Gemfile.lock.
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
-
+set :rvm_installed, '/home/manager/.rvm/bin/rvm'
 # Default value for :pty is false
 set :pty, true
 
@@ -32,15 +31,15 @@ namespace :boston_library do
   desc 'Gem update'
   task :gem_update do
     on roles(:app) do
-      execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem update --system --no-document")
+      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem update --system --no-document")
     end
   end
 
   desc 'Install new ruby if ruby-version is required'
   task :rvm_install_ruby do
     on roles(:app) do
-      execute("/home/manager/.rvm/bin/rvm install #{fetch(:rvm_ruby_version)} -C --with-jemalloc")
-      execute("/home/manager/.rvm/bin/rvm use #{fetch(:rvm_ruby_version)}")
+      execute("#{fetch(:rvm_installed)} install #{fetch(:rvm_ruby_version)} -C --with-jemalloc")
+      execute("#{fetch(:rvm_installed)} use #{fetch(:rvm_ruby_version)}")
     end
   end
 
@@ -48,8 +47,8 @@ namespace :boston_library do
   desc "Install bundler"
   task :install_bundler do
     on roles(:app) do
-      execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
-      execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install puma:5.6.5")
+      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
+      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install puma:5.6.5")
     end
   end
 
