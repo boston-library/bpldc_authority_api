@@ -5,18 +5,16 @@ lock '~> 3.17.1'
 require File.expand_path('./environment', __dir__)
 
 set :application, 'bpldc_authority_api'
-set :repo_url, 'https://github.com/boston-library/bpldc_authority_api.git'
-set :rails_env, 'staging'
+set :repo_url, "https://github.com/boston-library/#{fetch :application}.git"
+set :deploy_to, "/home/manager/#{fetch :application}"
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
-
-set :deploy_to, '/home/manager/bpldc_authority_api'
 
 # Default value for :pty is false
 set :pty, true
 
 ## When running tasks against staging server, some tasks defined in it needs to be available.
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
-## Otherwise curl 172.29.101.160 returns 301....
+## Otherwise "curl server_IP" returns 301....
 #mm# append :linked_files, 'config/database.yml', 'config/staging.key', 'config/credentials/staging.key', 'config/environments/staging.rb'
 append :linked_files, 'config/database.yml', 'config/credentials/staging.key', 'config/environments/staging.rb'
 
