@@ -8,6 +8,8 @@ set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch :application}.git"
 set :deploy_to, "/home/manager/#{fetch :application}"
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
+# Bundle version is always at the very last line of Gemfile.lock.
+set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 
 # Default value for :pty is false
 set :pty, true
@@ -42,10 +44,11 @@ namespace :boston_library do
     end
   end
 
-  desc 'Install bundler 2.3.26'
-  task :install_bundler do 
+  # desc 'Install bundler 2.3.26'
+  desc "Install bundler"
+  task :install_bundler do
     on roles(:app) do
-      execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install bundler:2.3.26") 
+      execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
       execute("/home/manager/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do gem install puma:5.6.5")
     end
   end
