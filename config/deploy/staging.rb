@@ -10,7 +10,7 @@ set :rvm_ruby_version, File.read(File.expand_path('./../../.ruby-version', __dir
 set :server_ip, Rails.application.credentials.dig(:deploy, :server)
 set :user, Rails.application.credentials.dig(:deploy, :user)
 
-set :default_env, { node_env: :staging }
+# set :default_env, { node_env: :staging }
 
 # set :branch, 'master'
 set :branch, 'capistrano'
