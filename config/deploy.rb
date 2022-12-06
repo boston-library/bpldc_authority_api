@@ -10,6 +10,8 @@ set :deploy_to, "/home/manager/#{fetch :application}"
 
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
+## Gemfile.lock show puma version as "    puma (5.6.5) " -  don't remove space from "/ /"
+set :puma_version, File.readlines('./Gemfile.lock').select { |v| v =~ /    puma/ }.last[-7..-3].strip
 set :rvm_installed, '/home/manager/.rvm/bin/rvm'
 
 # Default value for :pty is false
@@ -22,8 +24,6 @@ set :pty, true
 append :linked_files, 'config/database.yml', 'config/credentials/staging.key', 'config/environments/staging.rb'
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'bundle'
-
-# set :default_env, { node_env: :staging }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
@@ -50,7 +50,7 @@ namespace :boston_library do
   task :install_bundler do
     on roles(:app) do
       execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
-      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install puma:5.6.5")
+      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install puma:#{fetch(:puma_version)}")
     end
   end
 
