@@ -46,7 +46,7 @@ namespace :boston_library do
   end
 
   # desc 'Install bundler 2.3.26'
-  desc "Install bundler"
+  desc "Install bundler #{fetch(:rvm_bundle_version)}"
   task :install_bundler do
     on roles(:app) do
       execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
@@ -57,7 +57,8 @@ namespace :boston_library do
   desc 'bpldc_authority_api restart bpldc_puma service'
   task :restart_bpldc_nginx do
     on roles(:app), in: :sequence, wait: 5 do
-      execute 'sudo /bin/systemctl restart bpldc_puma.socket bpldc_puma.service'
+      # execute 'sudo /bin/systemctl restart bpldc_puma.socket bpldc_puma.service'
+      execute 'sudo /bin/systemctl restart bpldc_puma.service'
       sleep(5)
     end
   end
