@@ -5,15 +5,14 @@ lock '~> 3.17.1'
 require File.expand_path('./environment', __dir__)
 
 set :application, 'bpldc_authority_api'
-set :repo_url, "https://github.com/boston-library/#{fetch :application}.git"
-set :deploy_to, "/home/manager/#{fetch :application}"
+set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
+set :deploy_to, "/home/manager/#{fetch(:application)}"
 
+set :rvm_installed, '/home/manager/.rvm/bin/rvm'
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 ## Gemfile.lock show puma version as "    puma (5.6.5) " -  don't remove space from "/ /"
-# set :puma_version, File.readlines('./Gemfile.lock').select { |v| v =~ /    puma/ }.last[-7..-3].strip
-set :puma_version, File.readlines('./Gemfile.lock').reverse.find { |v| v =~ /    puma/ }[-7..-3]
-set :rvm_installed, '/home/manager/.rvm/bin/rvm'
+set :rvm_puma_version, File.readlines('./Gemfile.lock').reverse.find { |v| v =~ /    puma/ }[-7..-3]
 
 # Default value for :pty is false
 set :pty, true
@@ -49,7 +48,7 @@ namespace :boston_library do
   task :install_bundler do
     on roles(:app) do
       execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
-      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install puma:#{fetch(:puma_version)}")
+      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install puma:#{fetch(:rvm_puma_version)}")
     end
   end
 
