@@ -11,7 +11,8 @@ set :deploy_to, "/home/manager/#{fetch :application}"
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 ## Gemfile.lock show puma version as "    puma (5.6.5) " -  don't remove space from "/ /"
-set :puma_version, File.readlines('./Gemfile.lock').select { |v| v =~ /    puma/ }.last[-7..-3].strip
+# set :puma_version, File.readlines('./Gemfile.lock').select { |v| v =~ /    puma/ }.last[-7..-3].strip
+set :puma_version, File.readlines('./Gemfile.lock').reverse.find { |v| v =~ /    puma/ }[-7..-3]
 set :rvm_installed, '/home/manager/.rvm/bin/rvm'
 
 # Default value for :pty is false
@@ -20,9 +21,7 @@ set :pty, true
 ## When running tasks against staging server, some tasks defined in it needs to be available.
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
 ## Otherwise "curl server_IP" returns 301....
-#mm# append :linked_files, 'config/database.yml', 'config/staging.key', 'config/credentials/staging.key', 'config/environments/staging.rb'
 append :linked_files, 'config/database.yml', 'config/credentials/staging.key', 'config/environments/staging.rb'
-
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'bundle'
 
 # Default value for keep_releases is 5
@@ -45,7 +44,7 @@ namespace :boston_library do
     end
   end
 
-  # desc 'Install bundler 2.3.26'
+  # desc 'Install bundler 2.3.26 and puma 5.6.5'
   desc "Install bundler #{fetch(:rvm_bundle_version)}"
   task :install_bundler do
     on roles(:app) do
@@ -57,7 +56,6 @@ namespace :boston_library do
   desc 'bpldc_authority_api restart bpldc_puma service'
   task :restart_bpldc_nginx do
     on roles(:app), in: :sequence, wait: 5 do
-      # execute 'sudo /bin/systemctl restart bpldc_puma.socket bpldc_puma.service'
       execute 'sudo /bin/systemctl restart bpldc_puma.service'
       sleep(5)
     end
@@ -76,4 +74,3 @@ after :'boston_library:gem_update', :'install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
 after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
 after 'boston_library:restart_bpldc_nginx', 'boston_library:restart_nginx'
-# after 'deploy:cleanup', 'boston_library:restart_nginx'
