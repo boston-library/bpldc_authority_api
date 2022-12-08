@@ -31,8 +31,8 @@ SSHKit.config.command_map[:rm] = 'sudo rm'
 # SSH to remote server uses username/password.
 # For security reason, here uses ssh key.
 
-server "#{fetch(:server_ip)}", {
-  :user => "#{fetch(:user)}",
+server fetch(:server_ip).to_s, {
+  :user => fetch(:user).to_s,
   :role => %w(app db web),
   :ssh_options => {
     :keys => '/var/lib/jenkins/.ssh/promdev'
