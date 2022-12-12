@@ -4,6 +4,8 @@
 lock '~> 3.17.1'
 require File.expand_path('./environment', __dir__)
 
+set :use_sudo, false
+
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
 ## Make user home path dynamic..
