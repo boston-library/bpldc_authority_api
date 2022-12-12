@@ -6,7 +6,9 @@ require File.expand_path('./environment', __dir__)
 
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
-set :deploy_to, "/home/manager/#{fetch(:application)}"
+## Make user home path dynamic..
+set :user, Rails.application.credentials.dig(:deploy, :user)
+set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
 
 set :rvm_installed, '/home/manager/.rvm/bin/rvm'
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
