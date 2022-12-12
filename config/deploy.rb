@@ -14,7 +14,7 @@ set :rvm_installed, '/home/manager/.rvm/bin/rvm'
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 ## Gemfile.lock show puma version as "    puma (5.6.5) " -  don't remove space from "/ /"
-set :rvm_puma_version, File.readlines('./Gemfile.lock').reverse.find { |v| v =~ /    puma/ }[-7..-3]
+# set :rvm_puma_version, File.readlines('./Gemfile.lock').reverse.find { |v| v =~ /    puma/ }[-7..-3]
 
 # Default value for :pty is false
 set :pty, true
@@ -45,12 +45,12 @@ namespace :boston_library do
     end
   end
 
-  # desc 'Install bundler 2.3.26 and puma 5.6.5'
+  # desc 'Install bundler 2.3.26'
   desc "Install bundler #{fetch(:rvm_bundle_version)}"
   task :install_bundler do
     on roles(:app) do
       execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
-      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install puma:#{fetch(:rvm_puma_version)}")
+      # execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install puma:#{fetch(:rvm_puma_version)}")
     end
   end
 
