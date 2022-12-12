@@ -65,7 +65,7 @@ namespace :boston_library do
   desc 'Capistrano restarts nginx services'
   task :restart_nginx do
     on roles(:app), in: :sequence, wait: 5 do
-      execute 'sudo /bin/systemctl restart nginx.service'
+      execute 'sudo /bin/systemctl reload nginx.service'
     end
   end
 end
