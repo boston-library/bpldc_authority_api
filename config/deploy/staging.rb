@@ -3,9 +3,6 @@
 # server-based syntax
 # ======================
 
-# Grab ruby version from project home directory. It is needed for deployment.
-set :rvm_ruby_version, File.read(File.expand_path('./../../.ruby-version', __dir__)).strip
-
 set :server_ip, Rails.application.credentials.dig(:deploy, :server)
 
 # set :branch, 'master'
