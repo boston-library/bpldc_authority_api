@@ -42,7 +42,7 @@ namespace :boston_library do
   desc 'Retrieve rvm path from remote server'
   task :retrieve_rvm_path do
     on roles(:app) do
-      path = capture("cd #{fetch(:application)}; /bin/sh -c 'echo $PATH'").split(":").last
+      path = capture("source ~/.rvm/bin/rvm; cd #{fetch(:application)}; /bin/sh -c 'echo $PATH'").split(":").last
       set :rvm_installed, "#{path}/rvm"
     end
   end
