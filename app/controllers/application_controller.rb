@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
 
   APP_INFO = {
     app_name: 'bpldc_authority_api',
-    organization: 'Maine Public Library',
+    organization: 'Nova Scotia Public Library',
     version: '1.0',
   }.freeze
 
