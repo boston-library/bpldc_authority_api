@@ -12,7 +12,7 @@ set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
 set :user, Rails.application.credentials.dig(:deploy, :user)
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
 
-set :rvm_installed, '/home/manager/.rvm/bin/rvm'
+set :rvm_installed, "/home/#{fetch(:user)}/.rvm/bin/rvm"
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 ## Gemfile.lock show puma version as "    puma (5.6.5) " -  don't remove space from "/ /"
