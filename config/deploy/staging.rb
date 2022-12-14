@@ -5,8 +5,8 @@
 
 set :server_ip, Rails.application.credentials.dig(:deploy, :server)
 
-set :branch, 'master'
-# set :branch, 'capistrano'
+# set :branch, 'master'
+set :branch, 'capistrano'
 
 # role-based syntax
 # ==================
