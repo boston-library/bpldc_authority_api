@@ -12,7 +12,7 @@ set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
 set :user, Rails.application.credentials.dig(:deploy, :user)
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
 
-# set :rvm_installed, '/home/manager/.rvm/bin/rvm'
+set :rvm_installed, '/home/manager/.rvm/bin/rvm'
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 ## Gemfile.lock show puma version as "    puma (5.6.5) " -  don't remove space from "/ /"
@@ -36,14 +36,6 @@ namespace :boston_library do
   task :gem_update do
     on roles(:app) do
       execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem update --system --no-document")
-    end
-  end
-
-  desc 'Retrieve rvm path from remote server'
-  task :retrieve_rvm_path do
-    on roles(:app) do
-      path = capture("source ~/.rvm/bin/rvm; cd #{fetch(:application)}; /bin/sh -c 'echo $PATH'").split(":").last
-      set :rvm_installed, "#{path}/rvm"
     end
   end
 
@@ -80,7 +72,6 @@ namespace :boston_library do
   end
 end
 
-before :"boston_library:rvm_install_ruby", :"boston_library:retrieve_rvm_path"
 before :'rvm:check', :'boston_library:rvm_install_ruby'
 after :'boston_library:gem_update', :'install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
