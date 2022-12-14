@@ -58,10 +58,6 @@ group :development, :test do
   gem 'pry', '~> 0.13.1'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 5.1'
-  gem 'capistrano', '~> 3.17', require: false
-  gem 'capistrano-rails', '~> 1.4', require: false
-  gem 'capistrano-rvm'
-  gem 'capistrano3-puma'
   gem 'rubocop', '~> 1.36', require: false
   gem 'rubocop-performance', '~> 1.15', require: false
   gem 'rubocop-rails', '~> 2.16', require: false
