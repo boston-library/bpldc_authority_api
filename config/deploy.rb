@@ -35,7 +35,7 @@ namespace :boston_library do
   desc 'Gem update'
   task :gem_update do
     on roles(:app) do
-      execute("#{fetch(:rvm_installed)} #{fetch(:ruby_version)} do source ~/.rvm/bin/rvm")
+      execute("source ~/.rvm/bin/rvm")
       execute("#{fetch(:rvm_installed)} #{fetch(:ruby_version)} do gem update --system --no-document")
     end
   end
