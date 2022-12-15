@@ -16,7 +16,7 @@ set :rvm_installed, "/home/#{fetch(:user)}/.rvm/bin/rvm"
 set :ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
 set :bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 ## Gemfile.lock show puma version as "    puma (5.6.5) " -  don't remove space from "/ /"
-set :rvm_puma_version, File.readlines('./Gemfile.lock').reverse.find { |v| v =~ /    puma/ }[-7..-3]
+set :puma_version, File.readlines('./Gemfile.lock').reverse.find { |v| v =~ /    puma/ }[-7..-3]
 
 # Default value for :pty is false
 set :pty, true
