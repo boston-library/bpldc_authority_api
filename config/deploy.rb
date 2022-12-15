@@ -57,13 +57,13 @@ namespace :boston_library do
     end
   end
 
-  # desc 'Install binstubs'
-  desc "Install binstubs"
-  task :force_binstubs do
-    on roles(:app) do
-       execute("#{fetch(:rvm_installed)}  #{fetch(:ruby_version)} do bundle binstubs puma --force")    
-    end    
-  end
+  # # desc 'Install binstubs'
+  # desc "Install binstubs"
+  # task :force_binstubs do
+  #   on roles(:app) do
+  #      execute("#{fetch(:rvm_installed)}  #{fetch(:ruby_version)} do bundle binstubs puma --force")    
+  #   end    
+  # end
 
   desc 'bpldc_authority_api restart bpldc_puma service'
   task :restart_bpldc_nginx do
@@ -81,9 +81,18 @@ namespace :boston_library do
   end
 end
 
+namespace :bundler do 
+  task :install do 
+    on roles(:app) do 
+      execute("#{fetch(:rvm_installed)}  #{fetch(:ruby_version)} do bundle install --jobs 4 --quiet")  
+    end
+  end
+  
+end
+
 before :'rvm:check', :'boston_library:rvm_install_ruby'
 after :'boston_library:gem_update', :'boston_library:install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
-after :'bundler:install', :'boston_library:force_binstubs'
+# after :'bundler:install', :'boston_library:force_binstubs'
 after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
 after 'boston_library:restart_bpldc_nginx', 'boston_library:restart_nginx'
