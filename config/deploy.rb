@@ -73,7 +73,7 @@ namespace :boston_library do
 end
 
 before :'rvm:check', :'boston_library:rvm_install_ruby'
-after :'boston_library:gem_update', :'install_bundler'
+# after :'boston_library:gem_update', :'install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
 after 'deploy:cleanup', 'boston_library:restart_bpldc_nginx'
 after 'boston_library:restart_bpldc_nginx', 'boston_library:restart_nginx'
