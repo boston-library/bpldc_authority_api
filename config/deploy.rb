@@ -51,7 +51,7 @@ namespace :boston_library do
   desc "Install bundler #{fetch(:rvm_bundle_version)}"
   task :install_bundler do
     on roles(:app) do
-      # execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:bundle_version)}")
+      execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:bundle_version)}")
       execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do bundle binstubs bundler --force")
       # execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install puma:#{fetch(:puma_version)}")
     end
