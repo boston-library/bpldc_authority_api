@@ -70,7 +70,7 @@ namespace :boston_library do
 end
 
 before :'rvm:check', :'boston_library:rvm_install_ruby'
-after :'boston_library:gem_update', :'install_bundler'
+after :'boston_library:gem_update', :'boston_library:install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
-after 'deploy:cleanup', 'boston_library:restart_bpldc_puma'
-after 'boston_library:restart_bpldc_puma', 'boston_library:restart_nginx'
+after :'deploy:cleanup', :'boston_library:restart_bpldc_puma'
+after :'boston_library:restart_bpldc_puma', :'boston_library:restart_nginx'
