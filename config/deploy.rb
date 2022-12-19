@@ -17,7 +17,7 @@ set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)
 set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].strip
 
 # Default value for :pty is false
-set :pty, false
+set :pty, true
 
 ## When running tasks against staging server, some tasks defined in it needs to be available.
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
