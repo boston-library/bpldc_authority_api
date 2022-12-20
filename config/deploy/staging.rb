@@ -4,6 +4,7 @@
 # ======================
 
 set :server_ip, Rails.application.credentials.dig(:deploy_testing, :server)
+set :ssh_key, Rails.application.credentials.dig(:deploy_testing, :ssh_key)
 
 # set :branch, 'master'
 set :branch, 'capistrano'
@@ -32,6 +33,6 @@ server fetch(:server_ip).to_s, {
   :user => fetch(:user).to_s,
   :role => %w(app db web),
   :ssh_options => {
-    :keys => '/var/lib/jenkins/.ssh/promdev'
+    :keys => fetch(:ssh_key).to_s
   }
 }
