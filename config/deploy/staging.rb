@@ -3,7 +3,7 @@
 # server-based syntax
 # ======================
 
-set :server_ip, Rails.application.credentials.dig(:deploy, :server)
+set :server_ip, Rails.application.credentials.dig(:deploy_testing, :server)
 
 # set :branch, 'master'
 set :branch, 'capistrano'
