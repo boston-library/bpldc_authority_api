@@ -6,8 +6,8 @@
 set :server_ip, Rails.application.credentials.dig(:deploy_staging, :server)
 set :ssh_key, Rails.application.credentials.dig(:deploy_staging, :ssh_key)
 
-# set :branch, 'master'
-set :branch, 'capistrano'
+set :branch, 'master'
+# set :branch, 'capistrano'
 
 # role-based syntax
 # ==================
