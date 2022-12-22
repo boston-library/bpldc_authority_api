@@ -9,7 +9,7 @@ gem 'rails', '~> 6.1.7', '< 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 5.6', '< 6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Needed for caching
 gem 'connection_pool', '~> 2.3'
@@ -17,9 +17,6 @@ gem 'jbuilder', '~> 2.11'
 gem 'redis', '~> 4.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -48,6 +45,10 @@ end
 
 group :development, :test do
   gem 'awesome_print', '~> 1.9'
+  gem 'capistrano', '~> 3.17', require: false
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', '~> 1.4', require: false
+  gem 'capistrano-rvm'
   gem 'dotenv-rails', '~> 2.8'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.23'
