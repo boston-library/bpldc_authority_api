@@ -53,10 +53,10 @@ namespace :boston_library do
     end
   end
 
-  desc 'bpldc_authority_api restart bpldc_puma service'
-  task :restart_bpldc_puma do
+  desc "#{fetch(:application)} restart #{fetch(:application)}_puma service"
+  task :"restart_#{fetch(:application)}_puma" do
     on roles(:app), in: :sequence, wait: 5 do
-      execute 'sudo /bin/systemctl restart bpldc_puma.service'
+      execute "sudo /bin/systemctl restart #{fetch(:application)}_puma.service"
       sleep(5)
     end
   end
@@ -72,5 +72,5 @@ end
 before :'rvm:check', :'boston_library:rvm_install_ruby'
 after :'boston_library:gem_update', :'boston_library:install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
-after :'deploy:cleanup', :'boston_library:restart_bpldc_puma'
-after :'boston_library:restart_bpldc_puma', :'boston_library:restart_nginx'
+after :'deploy:cleanup', :"boston_library:restart_#{fetch(:application)}_puma"
+after :"boston_library:restart_#{fetch(:application)}_puma", :'boston_library:restart_nginx'
