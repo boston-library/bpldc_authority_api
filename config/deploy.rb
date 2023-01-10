@@ -6,9 +6,13 @@ require File.expand_path('./environment', __dir__)
 
 set :use_sudo, false
 
+# If staging_case is set to "testing", capistrano deploys app to testing server.
+# switch :stage_case to "staging" when moving to staging enviroment
+set :stage_case, 'staging'
+# set :stage_case, 'testing'
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
-set :user, Rails.application.credentials.dig(:deploy_staging, :user)
+set :user, Rails.application.credentials.dig("deploy_#{fetch(:stage_case)}".to_sym, :user)
 ## Make user home path dynamic.
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
 
@@ -23,7 +27,7 @@ set :pty, true
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
 ## Otherwise "curl server_IP" returns 301....
 append :linked_files, 'config/database.yml', 'config/credentials/staging.key', 'config/environments/staging.rb'
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'bundle'
+append :linked_dirs, 'log', 'tmp/cache', 'tmp/pids', 'tmp/sockets', 'bundle'
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
@@ -53,10 +57,10 @@ namespace :boston_library do
     end
   end
 
-  desc 'bpldc_authority_api restart bpldc_puma service'
-  task :restart_bpldc_puma do
+  desc "#{fetch(:application)} restart #{fetch(:application)}_puma service"
+  task :"restart_#{fetch(:application)}_puma" do
     on roles(:app), in: :sequence, wait: 5 do
-      execute 'sudo /bin/systemctl restart bpldc_puma.service'
+      execute "sudo /bin/systemctl restart #{fetch(:application)}_puma.socket #{fetch(:application)}_puma.service"
       sleep(5)
     end
   end
@@ -72,5 +76,5 @@ end
 before :'rvm:check', :'boston_library:rvm_install_ruby'
 after :'boston_library:gem_update', :'boston_library:install_bundler'
 before :'bundler:install', :'boston_library:gem_update'
-after :'deploy:cleanup', :'boston_library:restart_bpldc_puma'
-after :'boston_library:restart_bpldc_puma', :'boston_library:restart_nginx'
+after :'deploy:cleanup', :"boston_library:restart_#{fetch(:application)}_puma"
+after :"boston_library:restart_#{fetch(:application)}_puma", :'boston_library:restart_nginx'
