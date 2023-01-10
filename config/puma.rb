@@ -36,9 +36,7 @@ end
 if %w(staging production).member?(rails_env)
   bind "unix://#{app_dir}/tmp/sockets/bpldc_authority_api_puma.sock"
   stdout_redirect("#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true)
-  # pidfile "#{app_dir}/tmp/pids/bpldc_puma_server.pid"
   pidfile "#{app_dir}/tmp/pids/bpldc_authority_api_puma_server.pid"
-  # state_path "#{app_dir}/tmp/pids/bpldc_puma_server.state"
   state_path "#{app_dir}/tmp/pids/bpldc_authority_api_puma_server.state"
 else
   port ENV.fetch('PORT') { 3000 }

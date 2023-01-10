@@ -11,7 +11,6 @@ set :use_sudo, false
 set :stage_case, 'testing'
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
-# set :user, Rails.application.credentials.dig(:deploy_testing, :user)
 set :user, Rails.application.credentials.dig("deploy_#{fetch(:stage_case)}".to_sym, :user)
 ## Make user home path dynamic.
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
