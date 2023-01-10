@@ -7,7 +7,7 @@ set :server_ip, Rails.application.credentials.dig(:deploy_testing, :server)
 set :ssh_key, Rails.application.credentials.dig(:deploy_testing, :ssh_key)
 
 # set :branch, 'master'
-et :branch, 'capistrano'
+set :branch, 'capistrano'
 
 # role-based syntax
 # ==================
