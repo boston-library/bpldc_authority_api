@@ -8,8 +8,8 @@ set :use_sudo, false
 
 # If staging_case is set to "testing", capistrano deploys app to testing server.
 # switch :stage_case to "staging" when moving to staging enviroment
-# set :stage_case, 'staging'
-set :stage_case, 'testing'
+set :stage_case, 'staging'
+# set :stage_case, 'testing'
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
 set :user, Rails.application.credentials.dig("deploy_#{fetch(:stage_case)}".to_sym, :user)
@@ -79,9 +79,3 @@ after :'boston_library:gem_update', :'boston_library:rvm_install_ruby'
 after :'boston_library:rvm_install_ruby', :'boston_library:install_bundler'
 after :'deploy:cleanup', :"boston_library:restart_#{fetch(:application)}_puma"
 after :"boston_library:restart_#{fetch(:application)}_puma", :'boston_library:restart_nginx'
-
-# before :'rvm:check', :'boston_library:rvm_install_ruby'
-# after :'boston_library:gem_update', :'boston_library:install_bundler'
-# before :'bundler:install', :'boston_library:gem_update'
-# after :'deploy:cleanup', :"boston_library:restart_#{fetch(:application)}_puma"
-# after :"boston_library:restart_#{fetch(:application)}_puma", :'boston_library:restart_nginx'
