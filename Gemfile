@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.0.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.7', '< 7.0'
+gem 'rails', '~> 6.1.7.1', '< 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -14,7 +14,7 @@ gem 'puma', '~> 5.6', '< 6'
 # Needed for caching
 gem 'connection_pool', '~> 2.3'
 gem 'jbuilder', '~> 2.11'
-gem 'redis', '~> 4.6'
+gem 'redis', '~> 4.8'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -32,7 +32,7 @@ gem 'psych', '~> 3.3'
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.2'
 # NOTE: Geomash needs to be updated to updated to handle the breaking changes in
-gem 'qa', '~> 5.9'
+gem 'qa', '~> 5.10'
 
 gem 'faraday', '~> 1.10', '< 2'
 gem 'faraday_middleware', '~> 1.2'
