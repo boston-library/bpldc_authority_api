@@ -12,7 +12,7 @@ set :user, ENV['DEPLOY_USER']
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
 ## Make user home path dynamic.
-set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
+set :deploy_to, "/home/#{fetch(:user)}/railsApps/#{fetch(:application)}"
 
 set :rvm_installed, "/home/#{fetch(:user)}/.rvm/bin/rvm"
 set :rvm_ruby_version, File.read(File.expand_path('./../.ruby-version', __dir__)).strip
