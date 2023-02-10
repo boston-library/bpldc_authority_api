@@ -2,17 +2,15 @@
 
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.17.1'
-require File.expand_path('./environment', __dir__)
 
 set :use_sudo, false
 
 # If staging_case is set to "testing", capistrano deploys app to testing server.
-# switch :stage_case to "staging" when moving to staging enviroment
-set :stage_case, 'staging'
-# set :stage_case, 'testing'
+set :stage_case, ENV['STAGE_NAME']
+set :user, ENV['DEPLOY_USER']
+
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
-set :user, Rails.application.credentials.dig("deploy_#{fetch(:stage_case)}".to_sym, :user)
 ## Make user home path dynamic.
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
 
