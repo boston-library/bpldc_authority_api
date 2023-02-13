@@ -3,13 +3,6 @@
 # server-based syntax
 # ======================
 
-# # stage_case means different deployment environment: staging, testing...
-# set :server_ip, Rails.application.credentials.dig("deploy_#{fetch(:stage_case)}".to_sym, :server)
-# set :ssh_key, Rails.application.credentials.dig("deploy_#{fetch(:stage_case)}".to_sym, :ssh_key)
-
-# set :branch, 'master'
-# # set :branch, 'capistrano'
-
 set :server_ip, ENV['SERVER_IP']
 set :ssh_key, ENV['SSH_KEY']
 set :branch, ENV['BRANCH_NAME']
