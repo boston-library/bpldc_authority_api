@@ -5,7 +5,7 @@ lock '~> 3.17.1'
 
 set :use_sudo, false
 
-# If staging_case is set to "testing", capistrano deploys app to testing server.
+## STAGE_NAME is a paramter from Jenkins job: "staging", "qc", and "testing"
 set :stage_case, ENV['STAGE_NAME']
 set :user, ENV['DEPLOY_USER']
 
@@ -24,7 +24,7 @@ set :pty, true
 ## When running tasks against staging server, some tasks defined in it needs to be available.
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
 ## Otherwise "curl server_IP" returns 301....
-append :linked_files, 'config/database.yml', 'config/credentials/staging.key', 'config/environments/staging.rb'
+append :linked_files, 'config/database.yml', 'config/credentials/staging.key', 'config/environments/staging.rb', 'config/credentials/production.key', 
 append :linked_dirs, 'log', 'tmp/cache', 'tmp/pids', 'tmp/sockets', 'bundle'
 
 # Default value for keep_releases is 5

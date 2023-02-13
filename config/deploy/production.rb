@@ -5,6 +5,7 @@
 
 set :server_ip, ENV['SERVER_IP']
 set :ssh_key, ENV['SSH_KEY']
+
 set :branch, ENV['BRANCH_NAME']
 
 # role-based syntax
