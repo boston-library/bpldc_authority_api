@@ -26,7 +26,7 @@ gem 'geomash', github: 'samvera-labs/geomash', ref: 'b7c8f12'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1'
 
-gem 'oj', '~> 3.13'
+gem 'oj', '~> 3.14'
 gem 'psych', '~> 3.3'
 
 # Required gems for QA and linked data access
