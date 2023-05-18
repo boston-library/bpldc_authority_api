@@ -520,6 +520,7 @@ Rails/Output:
   Exclude:
     - 'db/seeds.rb'
     - 'app/services/bpldc/lc_vocab_utilities/lc_vocab_fetcher.rb'
+    - 'config/deploy.rb'
 
 Rails/ReflectionClassName:
   Enabled: false

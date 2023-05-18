@@ -81,7 +81,7 @@ namespace :boston_library do
     end
   end
   # rubocop:enable Metrics/LineLength
-  
+
   desc "#{fetch(:application)} restart #{fetch(:application)}_puma service"
   task :"restart_#{fetch(:application)}_puma" do
     on roles(:app), in: :sequence, wait: 5 do
