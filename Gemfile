@@ -12,7 +12,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.6', '< 6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Needed for caching
-gem 'connection_pool', '~> 2.3'
+gem 'connection_pool', '~> 2.4'
 gem 'jbuilder', '~> 2.11'
 gem 'redis', '~> 4.8'
 # Use ActiveModel has_secure_password
@@ -26,7 +26,7 @@ gem 'geomash', github: 'samvera-labs/geomash', ref: 'b7c8f12'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1'
 
-gem 'oj', '~> 3.14'
+gem 'oj', '~> 3.15'
 gem 'psych', '~> 3.3'
 
 # Required gems for QA and linked data access
