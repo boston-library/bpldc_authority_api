@@ -6,8 +6,11 @@ lock '~> 3.17.1'
 set :use_sudo, false
 
 ## STAGE_NAME is a paramter from Jenkins job: "staging", "qc", and "testing", or "production"
-set :stage_case, ENV['STAGE_NAME']
-set :user, ENV['DEPLOY_USER']
+# set :stage_case, ENV['STAGE_NAME']
+# set :user, ENV['DEPLOY_USER']
+
+set :stage_case, 'production'
+set :user, 'deployer'
 
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
