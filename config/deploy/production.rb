@@ -3,15 +3,15 @@
 # server-based syntax
 # ======================
 
-# set :server_ip, ENV['SERVER_IP']
-# set :ssh_key, ENV['SSH_KEY']
+set :server_ip, ENV['SERVER_IP']
+set :ssh_key, ENV['SSH_KEY']
 
-# set :branch, ENV['BRANCH_NAME']
+set :branch, ENV['BRANCH_NAME']
 
-set :server_ip, "172.29.101.32"
-set :ssh_key, '/var/lib/jenkins/.ssh/dc3003'
+# set :server_ip, "172.29.101.32"
+# set :ssh_key, '/var/lib/jenkins/.ssh/dc3003'
 
-set :branch, 'capistrano'
+# set :branch, 'capistrano'
 
 # role-based syntax
 # ==================
