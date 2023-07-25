@@ -9,8 +9,8 @@ set :use_sudo, false
 set :stage_case, ENV['STAGE_NAME']
 set :user, ENV['DEPLOY_USER']
 
-set :stage_case, 'production'
-set :user, 'deployer'
+# set :stage_case, 'production'
+# set :user, 'deployer'
 
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
