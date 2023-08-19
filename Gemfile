@@ -9,7 +9,7 @@ gem 'rails', '~> 6.1.7', '< 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 5.6', '< 6'
+gem 'puma', '~> 5.6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Needed for caching
 gem 'connection_pool', '~> 2.4'
