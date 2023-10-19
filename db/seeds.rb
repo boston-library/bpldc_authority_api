@@ -10,7 +10,7 @@ AUTHORITY_INPUTS = [
       name: 'GeoNames', geographics: true },
     { code: 'gmgpc', base_url: 'http://id.loc.gov/vocabulary/graphicMaterials',
       name: 'Thesaurus for Graphic Materials', genres: true },
-    { code: 'homoit', base_url: 'http://homosaurus.org/v2',
+    { code: 'homoit', base_url: 'https://homosaurus.org/v3',
       name: 'Homosaurus LGBTQ vocabulary', subjects: true, genres: true },
     { code: 'iso639-2', base_url: 'http://id.loc.gov/vocabulary/iso639-2',
       name: 'ISO639-2 Languages' },
