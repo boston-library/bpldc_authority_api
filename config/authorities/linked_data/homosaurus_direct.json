@@ -1,0 +1,82 @@
+{
+  "QA_CONFIG_VERSION": "2.2",
+  "prefixes": {
+    "dcterms": "http://purl.org/dc/terms/"
+  },
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "https://homosaurus.org/v3/{term_id}.jsonld",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_id",
+          "property": "hydra:freetextQuery",
+          "required": true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_id"
+    },
+    "term_id": "ID",
+    "results": {
+      "id_ldpath":       "dcterms:identifier",
+      "label_ldpath":    "skos:prefLabel :: xsd:string",
+      "altlabel_ldpath": "skos:altLabel :: xsd:string",
+      "narrower_ldpath": "skos:narrower :: xsd:anyURI",
+      "broader_ldpath":  "skos:broader :: xsd:anyURI",
+      "sameas_ldpath":   "skos:exactMatch :: xsd:anyURI"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "https://homosaurus.org/search/v3.jsonld?q={query}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode": true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query"
+    },
+    "results": {
+      "id_ldpath":    "dcterms:identifier",
+      "label_ldpath": "skos:prefLabel :: xsd:string"
+    },
+    "context": {
+      "properties": [
+        {
+          "property_label_i18n": "qa.linked_data.authority.homosaurus_direct.identifier",
+          "property_label_default": "Identifier",
+          "ldpath": "dcterms:identifier :: xsd:string"
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.homosaurus_direct.preferred_label",
+          "property_label_default": "Preferred Label",
+          "ldpath": "skos:prefLabel :: xsd:string"
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.homosaurus_direct.alt_label",
+          "property_label_default": "Alt Label",
+          "ldpath": "skos:altLabel :: xsd:string"
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.homosaurus_direct.scope",
+          "property_label_default": "Scope",
+          "ldpath": "rdfs:comment :: xsd:string"
+        }
+      ]
+    }
+  }
+}
