@@ -7,12 +7,12 @@ cache:
   apt: true
 
 addons:
-  postgresql: '12'
+  postgresql: '14'
   apt:
     update: true
     packages:
-      - postgresql-12
-      - postgresql-client-12
+      - postgresql
+      - postgresql-contrib
 
 before_install:
   - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/12/main/postgresql.conf
