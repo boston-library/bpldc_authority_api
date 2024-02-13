@@ -62,10 +62,11 @@ group :development, :test do
 end
 
 group :test do
-  gem 'coveralls', require: false
+  gem 'coveralls_reborn', require: false
   gem 'database_cleaner-active_record', '~> 2'
   gem 'rails-controller-testing', '~> 1.0'
   gem 'shoulda-matchers', '~> 5.2'
+  gem 'simplecov', '~> 0.22'
   gem 'vcr', '~> 6.1'
   gem 'webmock', '~> 3.18'
 end
