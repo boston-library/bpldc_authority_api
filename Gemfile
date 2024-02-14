@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.0.6'
+ruby '~> 3.1.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.7', '< 7.0'
 # Use postgresql as the database for Active Record
@@ -62,10 +62,11 @@ group :development, :test do
 end
 
 group :test do
-  gem 'coveralls', require: false
+  gem 'coveralls_reborn', require: false
   gem 'database_cleaner-active_record', '~> 2'
   gem 'rails-controller-testing', '~> 1.0'
   gem 'shoulda-matchers', '~> 5.2'
+  gem 'simplecov', '~> 0.22'
   gem 'vcr', '~> 6.1'
   gem 'webmock', '~> 3.18'
 end

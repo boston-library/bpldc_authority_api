@@ -13,6 +13,8 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore installed bundle
+/vendor/bundle/
 
 .byebug_history
 
