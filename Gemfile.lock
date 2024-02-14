@@ -559,7 +559,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print (~> 1.9)
   bootsnap (>= 1.1.0)
-  capistrano (~> 3.17)
+  capistrano (~> 3.18)
   capistrano-rails (~> 1.4)
   capistrano-rvm
   capistrano3-puma
