@@ -3,7 +3,7 @@ FROM ruby:3.1.4
 LABEL maintainer="bbarber@bpl.org, eenglish@bpl.org"
 
 ENV LANG=C.UTF-8 \
-    BUNDLER_VERSION=2.5.6
+    BUNDLER_VERSION=2.4.22
 
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends apt-utils
@@ -20,11 +20,14 @@ RUN apt-get update -qq \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && truncate -s 0 /var/log/*log
 
-# Add PostgreSQL to sources list
-RUN curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
+RUN apt-get update -qq \
+  && apt-get install -y build-essential apt-utils postgresql-client libpq-dev
+
+## Add PostgreSQL to sources list
+#m# RUN curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
     && echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' 12 > /etc/apt/sources.list.d/pgdg.list
 
-RUN apt-get update -qq && \
+#m# RUN apt-get update -qq && \
   DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends \
   libpq-dev \
   postgresql-client-12 && \
