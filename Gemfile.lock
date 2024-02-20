@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/samvera-labs/geomash.git
-  revision: b7c8f12a100b08e786d64732c1a2660ea8a27cf7
-  ref: b7c8f12
+  revision: 4e9213a1a8d8678a20fa034fe1acb5aad5d4f7ba
+  ref: 4e9213a
   specs:
     geomash (0.5.9)
       activesupport (>= 5.0)
@@ -108,7 +108,7 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
-    countries (5.7.1)
+    countries (6.0.0)
       unaccent (~> 0.3)
     coveralls_reborn (0.28.0)
       simplecov (~> 0.22.0)
