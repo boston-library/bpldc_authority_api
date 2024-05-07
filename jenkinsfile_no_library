@@ -1,0 +1,94 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('CheckoutCode') {
+            steps {
+                
+                checkout([$class: 'GitSCM', 
+                    branches: [[name: '*/${BRANCH_NAME}']], 
+                    userRemoteConfigs: [[
+                        url: "https://github.com/boston-library/bpldc_authority_api.git",
+                        credentialsId: 'bplwebmaster'
+                        ]]
+                ])
+            }
+        }
+
+        stage('Preparation') {
+            steps {
+                sh '''
+                    #!/usr/bin/env bash
+                    set -xe
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_api)" ]; then 
+                        docker stop $(docker ps -qa -f name=bpldc_authority_api) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_cache)" ]; then 
+                        docker stop $(docker ps -qa -f name=bpldc_authority_cache) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_pg)" ]; then 
+                        docker stop $(docker ps -qa -f name=bpldc_authority_pg) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_api)" ]; then 
+                        docker rm $(docker ps -qa -f name=bpldc_authority_api) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_cache)" ]; then 
+                        docker rm $(docker ps -qa -f name=bpldc_authority_api) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_pg)" ]; then 
+                        docker rm $(docker ps -qa -f name=bpldc_authority_pg) || true
+                    fi                
+                '''
+            }
+        }
+        
+        stage('Docker images build') {
+            steps {
+                sh '''
+                #!/usr/bin/env bash
+                
+                set -xe
+                
+                echo "GEONAMES_USERNAME=boston_library" > .env
+                echo "GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}" >> .env
+                echo "BPLDC_REDIS_CACHE_URL=" >> .env
+                
+                cat .env
+                
+                sudo docker compose build 
+                sudo docker compose up -d
+                '''
+            }    
+        }
+        
+        stage('Test') {
+            steps {
+                sh '''
+                    #!/usr/bin/env bash
+                    set -xe
+                    sudo docker-compose run app bundle exec rake --verbose
+                '''
+            }
+        }
+    }
+    
+    post {
+        always {
+            sh '''
+                #!/usr/bin/env bash
+                set -xe
+                sudo docker stop $(docker ps -aq)
+                sudo docker rm $(docker ps -aq)
+                
+                sudo docker rmi bostonlibrary/bpldc_authority_api:dev-latest
+            '''
+        }
+    }
+}
+

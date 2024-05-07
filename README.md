@@ -130,3 +130,231 @@ pipeline {
 }
 
  -->
+
+<!-- 
+#!groovy
+@Library("bpllib2@jenkinsfile-shared-library") _
+
+def bpl_tool = new org.bpl.bpl_tools()
+
+pipeline {
+    agent any
+       
+    environment {
+        RAILS_ENV = 'test'
+        // RAILS_ENV = 'staging'
+    } 
+    
+    stages {
+   
+        // stage('CheckoutCode') {
+        //     steps {
+        //         checkout([$class: 'GitSCM', 
+        //             branches: [[name: '*/${BRANCH_NAME}']], 
+        //             userRemoteConfigs: [[
+        //                 url: "https://github.com/boston-library/Commonwealth_3.git",
+        //                 credentialsId: 'bplwebmaster'
+        //                 ]]
+        //         ])
+        //     }
+        // }
+
+        stage('CheckoutCode') {
+            steps {
+                script {  
+                    echo "bpl_tool is ${bpl_tool}"
+                    echo "In Jenkinsfile phase: Checkout Source Code" 
+                    bpl_tool.CheckoutCode() 
+                }
+            }
+        }
+        
+        stage('Preparation') {
+            steps {
+                script {  
+                    echo "In Jenkinsfile phase: Preparation at the very begining"                   
+                    bpl_tool.RunPreparation()
+                }                
+            }
+        }
+
+        // stage ('Install new ruby'){
+        //     steps {
+        //         sh '''
+        //             #!/bin/bash -l
+        //             set +x
+   
+        //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+        //                 source /var/lib/jenkins/.rvm/bin/rvm
+        //             else 
+        //                 exit
+        //             fi
+                    
+        //             EXPECTED_RUBY=`cat .ruby-version`
+        //                         ## /var/lib/jenkins/.rvm/bin/rvm list
+        //             echo "EXPECTED_RUBY is $EXPECTED_RUBY"
+        //             set -x
+        //             rvm list
+        //             rvm use ${EXPECTED_RUBY} --default
+        //             ruby --version
+                    
+        //         '''
+        //     }
+        // }
+
+        stage ('Install new ruby'){
+            steps {
+                script {  
+                    echo "In Jenkins phase: Install new ruby" 
+                    def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
+                    echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
+                    bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
+                }
+            }
+        }
+        
+        // stage('bundle install') {
+        //     steps {
+        //         sh '''
+        //             #!/bin/bash --login
+        //             set +x
+                    
+        //             EXPECTED_RUBY=`cat .ruby-version`
+    
+        //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+        //                 source /var/lib/jenkins/.rvm/bin/rvm
+        //             else 
+        //                 exit
+        //             fi    
+                    
+        //             rvm use ${EXPECTED_RUBY} --default
+                    
+        //             bundle install --jobs=3 --retry=3
+                    
+        //         '''
+        //     }
+        // }
+
+        stage ('Bundle Install .. '){
+            steps {
+                script {  
+                    echo "In Jenkins phase: bundle install "                    
+                    bpl_tool.RunBundleInstall() 
+                }
+            }
+        }
+
+        stage ('DB preparation'){
+            steps {
+                script {  
+                    echo "In Jenkins phase: DB preparation " 
+                    railsEnv = env.RAILS_ENV
+                            // sh "printenv"
+                    echo "railsEnv variables is : ${railsEnv}"                   
+                    bpl_tool.RunDBpreparation(railsEnv) 
+                }
+            }
+        }
+
+        // stage('DB preparation') {
+        //     steps {
+        //         sh '''
+        //             #!/bin/bash --login
+        //             set +x
+                    
+        //             ls -alt
+        //             EXPECTED_RUBY=`cat .ruby-version`
+                
+        //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+        //                 source /var/lib/jenkins/.rvm/bin/rvm
+        //             else 
+        //                 exit
+        //             fi    
+                    
+        //             rvm use ${EXPECTED_RUBY} --default
+        //             set -x
+                    
+        //             RAILS_ENV=staging bundle exec rails db:prepare
+        //             RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
+                    
+        //         '''
+        //     }
+        // }
+
+        stage('CI') {
+            steps {
+                script {  
+                    echo "In Jenkins phase: running CI testing "                   
+                    bpl_tool.RunCI() 
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {  
+                    echo "In Jenkins phase: Capistrano deploying "
+                    railsEnv = env.RAILS_ENV
+                    echo "railsEnv is ${railsEnv}"              
+                    bpl_tool.RunDeployment(railsEnv) 
+                }
+            }
+        }
+        
+        // stage('Deploy') {
+        //     steps {
+        //         script {
+        //             sh """
+        //                 #!/bin/bash --login
+        //                 set -x
+                        
+        //                 # STAGE_NAME=\$stage_name_password
+        //                 # SERVER_IP=\$server_ip_password
+        //                 # DEPLOY_USER=\$deploy_user_password
+        //                 # SSH_KEY=\$ssh_key_password
+        //                 # TESTING_SUDO_PASSWORD=\$sudo_pass_password
+        //                 # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
+        //                 # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
+    
+
+        //                 EXPECTED_RUBY=`cat .ruby-version`
+        //                 echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
+                            
+        //                 set +x
+                        
+        //                 if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+        //                     source /var/lib/jenkins/.rvm/bin/rvm
+        //                 else 
+        //                     exit
+        //                 fi    
+                        
+
+        //                 rvm list
+        //                 rvm install "\$EXPECTED_RUBY"
+        //                 rvm use "\$EXPECTED_RUBY" --default
+        //                 whereis ruby
+        //                 ruby --version
+
+        //                 RAILS_ENV=staging cap staging install --trace
+        //                 RAILS_ENV=staging cap -T
+                        
+                        
+        //                 ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
+        //                 ## Capistrano breaks here!
+        //                 RAILS_ENV=staging cap staging deploy:check
+        //                 RAILS_ENV=staging cap staging deploy --dry-run --trace
+        //                 RAILS_ENV=staging cap staging deploy --trace
+                        
+        //                 if [[ -f ./config/deploy/production.rb ]]; then 
+        //                     echo "There is ./config/deploy/production.rb created!"
+        //                     ls -alt ./config/deploy/production.rb
+        //                 else 
+        //                     echo "There is NO ./config/deploy/production.rb yet"
+        //                 fi   
+        //             """
+        //         }            
+        //     }
+        // }
+    }
+}    
+  -->
