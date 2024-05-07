@@ -5,7 +5,7 @@ def CheckoutCode(){
   checkout([$class: 'GitSCM', 
       branches: [[name: '*/${BRANCH_NAME}']], 
       userRemoteConfigs: [[
-          url: "https://github.com/boston-library/Commonwealth_3.git",
+          url: "https://github.com/boston-library/bpldc_authority_api.git",
           credentialsId: 'bplwebmaster'
           ]]
   ])
