@@ -64,6 +64,8 @@ def RunPreparation(){
     sudo pg_ctlcluster 12 main restart
     
     export RAILS_ENV=test
+
+    cp .env.jenkins .env
     
     export PGVER=12
     export PGHOST=127.0.0.1
