@@ -156,16 +156,16 @@ pipeline {
             }
         }
 
-        // stage('Deploy') {
-        //     steps {
-        //         script {  
-        //             echo "In Jenkins phase: Capistrano deploying "
-        //             railsEnv = env.RAILS_ENV
-        //             echo "railsEnv is ${railsEnv}"              
-        //             bpl_tool.RunDeployment(railsEnv) 
-        //         }
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                script {  
+                    echo "In Jenkins phase: Capistrano deploying "
+                    railsEnv = env.RAILS_ENV
+                    echo "railsEnv is ${railsEnv}"              
+                    bpl_tool.RunDeployment(railsEnv) 
+                }
+            }
+        }
         
         // stage('Deploy') {
         //     steps {
