@@ -161,9 +161,9 @@ def RunCI(){
         exit
     fi    
     
-    rvm use ${EXPECTED_RUBY} --default
+    rvm use default ${EXPECTED_RUBY} 
     
-    RAILS_ENV=test bundle exec rake ci
+    RAILS_ENV=test bundle exec rake
   '''
 }
 
