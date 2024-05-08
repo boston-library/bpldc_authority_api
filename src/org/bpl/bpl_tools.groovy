@@ -139,7 +139,7 @@ def RunDBpreparation(railsEnv){
       ## RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
       ## RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
 
-      ## bundle exec rails db:prepare
+      bundle exec rails db:prepare
       bundle exec rails db:migrate
 
     '''
