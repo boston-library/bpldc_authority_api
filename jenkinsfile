@@ -1,5 +1,5 @@
 #!groovy
-// @Library("bpllib2@jenkinsfile-shared-library") _
+@Library("bpldc_lib@jenkinsfile-shared-library") _
 
 def bpl_tool = new org.bpl.bpl_tools()
 
