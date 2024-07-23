@@ -37,6 +37,7 @@ env:
   - PGPORT=5432
   - PGHOST=127.0.0.1
   - PGUSER=postgres
+  - PGPASSWORD=postgres
   - POSTGRES_USER=postgres
   - POSTGRES_PASSWORD=postgres
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
