@@ -420,8 +420,8 @@ GEM
       rexml (~> 3.2)
     redis (4.8.1)
     regexp_parser (2.9.0)
-    rexml (3.2.8)
-      strscan (>= 3.0.9)
+    rexml (3.3.2)
+      strscan
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.0)
@@ -601,7 +601,7 @@ DEPENDENCIES
   webmock (~> 3.18)
 
 RUBY VERSION
-   ruby 3.1.5p252
+   ruby 3.1.6p260
 
 BUNDLED WITH
    2.5.9
