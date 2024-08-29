@@ -227,6 +227,13 @@ def RunDeployment(railsEnv){
         whereis ruby
         ruby --version
 
+        echo "Rongbing Miao#1"
+        echo "GIT_HTTP_USERNAME is \$GIT_HTTP_USERNAME"
+        echo "GIT_HTTP_PASSWORD is \$GIT_HTTP_PASSWORD"
+        echo "SERVER_IP is \$SERVER_IP"
+        echo "SSH_KEY is \$SSH_KEY"
+        echo "Rongbing Miao#2"
+
         #m# RAILS_ENV=staging cap staging install --trace
         #m# RAILS_ENV=staging cap -T
         RAILS_ENV=${RAILS_ENV} cap staging install --trace
