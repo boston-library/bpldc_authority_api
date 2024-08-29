@@ -61,7 +61,7 @@ def RunPreparation(){
 
     sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/15/main/postgresql.conf
     #sudo cp /etc/postgresql/{9.3,12}/main/pg_hba.conf
-    sudo pg_ctlcluster 12 main restart
+    sudo pg_ctlcluster 15 main restart
     
     export RAILS_ENV=test
     
