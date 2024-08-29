@@ -182,7 +182,7 @@ pipeline {
                         # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
                         # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
     
-
+                        echo "Rongbing Miao#1"
                         EXPECTED_RUBY=`cat .ruby-version`
                         echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
                             
@@ -203,7 +203,7 @@ pipeline {
 
                         RAILS_ENV=staging cap staging install --trace
                         RAILS_ENV=staging cap -T
-                        
+                        echo "Rongbing Miao#2"
                         
                         ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
                         ## Capistrano breaks here!
