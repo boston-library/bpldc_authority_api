@@ -201,13 +201,13 @@ def RunDeployment(railsEnv){
         #!/bin/bash --login
         set -x
         
-        STAGE_NAME=\$stage_name_password
+        ## STAGE_NAME=\$stage_name_password
         SERVER_IP=\$server_ip_password
         DEPLOY_USER=\$deploy_user_password
         SSH_KEY=\$ssh_key_password
         TESTING_SUDO_PASSWORD=\$sudo_pass_password
-        GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
-        GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
+        ## GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
+        ## GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
 
         echo "From shared library, railsEnv is \$RAILS_ENV"
         EXPECTED_RUBY=`cat .ruby-version`
@@ -228,8 +228,8 @@ def RunDeployment(railsEnv){
         ruby --version
 
         echo "Rongbing Miao#1"
-        echo "GIT_HTTP_USERNAME is \$GIT_HTTP_USERNAME"
-        echo "GIT_HTTP_PASSWORD is \$GIT_HTTP_PASSWORD"
+        ## echo "GIT_HTTP_USERNAME is \$GIT_HTTP_USERNAME"
+        ## echo "GIT_HTTP_PASSWORD is \$GIT_HTTP_PASSWORD"
         echo "SERVER_IP is \$SERVER_IP"
         echo "SSH_KEY is \$SSH_KEY"
         echo "Rongbing Miao#2"
