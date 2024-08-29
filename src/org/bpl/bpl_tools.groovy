@@ -59,7 +59,7 @@ def RunPreparation(){
   sh '''
     #!/bin/bash --login
 
-    sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/12/main/postgresql.conf
+    sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/15/main/postgresql.conf
     #sudo cp /etc/postgresql/{9.3,12}/main/pg_hba.conf
     sudo pg_ctlcluster 12 main restart
     
