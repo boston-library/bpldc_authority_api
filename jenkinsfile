@@ -210,9 +210,9 @@ pipeline {
                         
                         ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
                         ## Capistrano breaks here!
-                        RAILS_ENV=staging cap staging deploy:check
-                        RAILS_ENV=staging cap staging deploy --dry-run --trace
-                        RAILS_ENV=staging cap staging deploy --trace
+                        bundle exec RAILS_ENV=staging cap staging deploy:check --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+                        bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+                        bundle exec RAILS_ENV=staging cap staging deploy --trace --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
                         
                         if [[ -f ./config/deploy/production.rb ]]; then 
                             echo "There is ./config/deploy/production.rb created!"
