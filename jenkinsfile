@@ -203,9 +203,9 @@ pipeline {
                         echo "Rongbing Miao#1"
                         echo "SERVER_IP is \$SERVER_IP"
                         echo "SSH_KEY is \$SSH_KEY"
-                        RAILS_ENV=staging cap staging install --trace --ssh-options="-i /var/lib/jenkins/promdev"
+                        RAILS_ENV=staging cap staging install --trace
                         echo "Rongbing Miao#2"
-                        RAILS_ENV=staging cap -T --ssh-options="-i /var/lib/jenkins/promdev"
+                        RAILS_ENV=staging cap -T
                         echo "Rongbing Miao#3"
                         
                         ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
