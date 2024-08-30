@@ -203,18 +203,18 @@ pipeline {
                         echo "Rongbing Miao#1"
                         echo "SERVER_IP is \$SERVER_IP"
                         echo "SSH_KEY is \$SSH_KEY"
-                        # bundle exec RAILS_ENV=staging cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+                        RAILS_ENV=staging cap staging install --trace
                         # bundle exec cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
                         echo "Rongbing Miao#2"
-                        # bundle exec RAILS_ENV=staging cap -T  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+                        RAILS_ENV=staging cap -T
                         # bundle exec cap -T  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"                        
                         echo "Rongbing Miao#3"
                         
                         ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
                         ## Capistrano breaks here!
-                        bundle exec cap staging deploy:check --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
-                        # bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
-                        bundle exec RAILS_ENV=staging cap staging deploy --trace --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+                        RAILS_ENV=staging cap staging deploy:check  
+                        # bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace 
+                        RAILS_ENV=staging cap staging deploy --trace  
                         
                         if [[ -f ./config/deploy/production.rb ]]; then 
                             echo "There is ./config/deploy/production.rb created!"
