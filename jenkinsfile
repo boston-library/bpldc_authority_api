@@ -170,6 +170,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
+                    
+                    SSHKit.config.command_map[:ssh] = "ssh -i /var/lib/jenkins/.ssh/promdev"
+
                     sh """
                         #!/bin/bash --login
                         set -x
