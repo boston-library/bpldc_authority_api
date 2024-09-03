@@ -205,11 +205,10 @@ pipeline {
                         echo "SERVER_IP is \$SERVER_IP"
                         echo "SSH_KEY is \$SSH_KEY"
                         RAILS_ENV=staging cap -T 
-                        SSHKit.config.command_map[:ssh] = "ssh -i /var/lib/jenkins/.ssh/promdev"
-                        RAILS_ENV=staging cap -T 
+                        # SSHKit.config.command_map[:ssh] = "ssh -i /var/lib/jenkins/.ssh/promdev"
 
-                        ##  bundle exec cap staging install --trace
-                        #m# RAILS_ENV=staging cap staging install --trace
+                        bundle exec cap staging install --trace
+                        # RAILS_ENV=staging cap staging install --trace
                         
                         ## SSHKit.config.command_map[:ssh] = "ssh -i /path/to/your/private/key"
                         ## bundle exec cap production deploy
