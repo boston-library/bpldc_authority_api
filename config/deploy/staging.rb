@@ -28,9 +28,9 @@ server fetch(:server_ip).to_s, {
   :user => fetch(:user).to_s,
   :role => %w(app db web),
   :ssh_options => {
-  #    :keys => fetch(:ssh_key).to_s,
+    #    :keys => fetch(:ssh_key).to_s,
     :verbose => :debug
-  #    :forward_agent => true,
-  #    :auth_methods => %w(publickey)
+    #    :forward_agent => true,
+    #    :auth_methods => %w(publickey)
   }
 }
