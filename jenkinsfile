@@ -178,8 +178,6 @@ pipeline {
                     sh """
                         #!/bin/bash --login
                         set -x
-                        
-                        ansiColor('xterm')
 
                         # STAGE_NAME=\$stage_name_password
                         # SERVER_IP=\$server_ip_password
