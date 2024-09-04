@@ -207,7 +207,8 @@ pipeline {
 
                         eval \$(ssh-agent)
                         # ssh-add /var/lib/jenkins/.ssh/promdev
-                        ssh-add "\$SSH_KEY"
+                        # m# ssh-add "\$SSH_KEY"
+                        ssh-add \$SSH_KEY
 
                         RAILS_ENV=staging cap -T 
 
