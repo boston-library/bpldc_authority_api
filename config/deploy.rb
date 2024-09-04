@@ -9,9 +9,6 @@ set :use_sudo, false
 set :stage_case, ENV['STAGE_NAME']
 set :user, ENV['DEPLOY_USER']
 
-## Set up ssh key
-# m# SSHKit.config.command_map[:ssh] = 'ssh -i /var/lib/jenkins/.ssh/promdev'
-
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
 ## Make user home path dynamic.
