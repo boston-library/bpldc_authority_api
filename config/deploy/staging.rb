@@ -18,6 +18,7 @@ role :db,  ["#{fetch(:user)}@#{fetch(:server_ip)}"]
 ## When Capistrano tries to delete old release, puma socket/id can be removed only by sudo user.
 ## Allow current user to run it with sudo priviledge.
 SSHKit.config.command_map[:rm] = 'sudo rm'
+SSHKit.config.command_map[:ssh] = "ssh -i /var/lib/jenkins/.ssh/promdev"
 
 # Custom SSH Options
 # SSH to remote server uses username/password.
