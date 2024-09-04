@@ -21,6 +21,9 @@ set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].
 # Default value for :pty is false
 set :pty, true
 
+## Set up ssh key
+SSHKit.config.command_map[:ssh] = 'ssh -i /var/lib/jenkins/.ssh/promdev'
+
 ## When running tasks against staging server, some tasks defined in it needs to be available.
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
 ## Otherwise "curl server_IP" returns 301....
