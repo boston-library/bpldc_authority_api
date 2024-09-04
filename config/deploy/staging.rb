@@ -3,7 +3,7 @@
 # server-based syntax
 # ======================
 
-#m# set :log_level, :debug
+# m# set :log_level, :debug
 set :server_ip, ENV['SERVER_IP']
 set :ssh_key, ENV['SSH_KEY']
 set :branch, ENV['BRANCH_NAME']
