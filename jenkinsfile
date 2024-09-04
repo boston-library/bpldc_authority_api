@@ -206,9 +206,9 @@ pipeline {
                         echo "SSH_KEY is \$SSH_KEY"
 
                         eval \$(ssh-agent)
-                        #m# ssh-add /var/lib/jenkins/.ssh/promdev
-                        ssh-add \$SSH_KEY
-                        
+                        ssh-add /var/lib/jenkins/.ssh/promdev
+                        # ssh-add \$SSH_KEY
+
                         RAILS_ENV=staging cap -T 
 
                         # bundle exec cap staging install --trace
