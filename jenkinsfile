@@ -209,12 +209,10 @@ pipeline {
                         ssh-add /var/lib/jenkins/.ssh/promdev
                         
                         RAILS_ENV=staging cap -T 
-                        # SSHKit.config.command_map[:ssh] = "ssh -i /var/lib/jenkins/.ssh/promdev"
 
                         # bundle exec cap staging install --trace
                         RAILS_ENV=staging cap staging install --trace
                         
-                        ## SSHKit.config.command_map[:ssh] = "ssh -i /path/to/your/private/key"
                         ## bundle exec cap production deploy
 
                         # bundle exec cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
