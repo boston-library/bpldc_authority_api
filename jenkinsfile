@@ -205,9 +205,7 @@ pipeline {
                         echo "SERVER_IP is \$SERVER_IP"
                         echo "SSH_KEY is \$SSH_KEY"
 
-                        eval \$(ssh-agent)
-                        # ssh-add /var/lib/jenkins/.ssh/promdev
-                        # m# ssh-add "\$SSH_KEY"
+                        # eval \$(ssh-agent)
                         ssh-add \$SSH_KEY
 
                         RAILS_ENV=staging cap -T 
