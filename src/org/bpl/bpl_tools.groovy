@@ -136,11 +136,11 @@ def RunDBpreparation(railsEnv){
          exit
       fi    
       
-      RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
-      RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
+      # RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
+      # RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
 
-      #m# bundle exec rails db:prepare
-      #m# bundle exec rails db:migrate
+      bundle exec rails db:prepare
+      bundle exec rails db:migrate
 
     '''
   }
