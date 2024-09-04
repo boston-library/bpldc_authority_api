@@ -9,9 +9,11 @@ pipeline {
     environment {
         RAILS_ENV = 'test'
         // RAILS_ENV = 'staging'
-        ansiColor('xterm')
-
     } 
+
+    options {
+        ansiColor('xterm')
+    }
     
     stages {
    
