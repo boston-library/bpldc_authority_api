@@ -5,7 +5,9 @@ def bpl_tool = new org.bpl.bpl_tools()
 
 pipeline {
     agent any
-       
+    
+    ansiColor('xterm')
+
     environment {
         RAILS_ENV = 'test'
         // RAILS_ENV = 'staging'
@@ -175,6 +177,8 @@ pipeline {
                         #!/bin/bash --login
                         set -x
                         
+                        ansiColor('xterm')
+
                         # STAGE_NAME=\$stage_name_password
                         # SERVER_IP=\$server_ip_password
                         # DEPLOY_USER=\$deploy_user_password
