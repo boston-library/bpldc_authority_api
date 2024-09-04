@@ -207,7 +207,6 @@ pipeline {
 
                         eval \$(ssh-agent)
                         ssh-add /var/lib/jenkins/.ssh/promdev
-                        echo $SSH_AUTH_SOCK
                         
                         RAILS_ENV=staging cap -T 
                         # SSHKit.config.command_map[:ssh] = "ssh -i /var/lib/jenkins/.ssh/promdev"
