@@ -9,6 +9,9 @@ set :use_sudo, false
 set :stage_case, ENV['STAGE_NAME']
 set :user, ENV['DEPLOY_USER']
 
+## Set up ssh key
+SSHKit.config.command_map[:ssh] = 'ssh -i /var/lib/jenkins/.ssh/promdev'
+
 set :application, 'bpldc_authority_api'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
 ## Make user home path dynamic.
@@ -20,9 +23,6 @@ set :rvm_bundle_version, File.read(File.expand_path('./Gemfile.lock'))[-10..-1].
 
 # Default value for :pty is false
 set :pty, true
-
-## Set up ssh key
-SSHKit.config.command_map[:ssh] = 'ssh -i /var/lib/jenkins/.ssh/promdev'
 
 ## When running tasks against staging server, some tasks defined in it needs to be available.
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
