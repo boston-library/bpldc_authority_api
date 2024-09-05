@@ -77,7 +77,7 @@ pipeline {
                 script {  
                     echo "In Jenkins phase: Install new ruby" 
                     // def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
-                    EXPECTED_RUBY = 3.2.5
+                    EXPECTED_RUBY = '3.2.5'
                     echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
                     bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
                 }
@@ -188,7 +188,8 @@ pipeline {
                         # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
                         # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
     
-                        EXPECTED_RUBY=`cat .ruby-version`
+                        #m# EXPECTED_RUBY=`cat .ruby-version`
+                        EXPECTED_RUBY='3.2.5'
                         echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
                             
                         set +x
