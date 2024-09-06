@@ -86,9 +86,12 @@ def RunPreparation(){
 
     set -e
 
-    rvm use ${EXPECTED_RUBY} --default
-    
-    export LD_PRELOAD=/lib/x86_64-linux-gnu/libjemalloc.so.2
+    /var/lib/jenkins/.rvm/bin/rvm install ${RUBYVERSION}
+    ## /var/lib/jenkins/.rvm/bin/rvm get stable
+    /var/lib/jenkins/.rvm/bin/rvm use ${RUBYVERSION} --default
+    /var/lib/jenkins/.rvm/bin/rvm alias create --default  ${RUBYVERSION} 
+    /var/lib/jenkins/.rvm/bin/rvm alias create --current  ${RUBYVERSION} 
+
     ruby --version
 
 
