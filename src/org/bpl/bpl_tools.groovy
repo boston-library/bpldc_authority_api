@@ -87,7 +87,10 @@ def RunPreparation(){
     set -e
 
     rvm use ${EXPECTED_RUBY} --default
+    
+    export LD_PRELOAD=/lib/x86_64-linux-gnu/libjemalloc.so.2
     ruby --version
+
 
     echo "and bundle version is ${BUNDLE_VER}"
     export BUNDLE_GEMFILE=$PWD/Gemfile                
