@@ -143,13 +143,13 @@ pipeline {
                     fi    
                     
                     rvm install ${EXPECTED_RUBY} -C --with-jemalloc
-                    # rvm get stable
+                    rvm get stable
                     # rvm use ${EXPECTED_RUBY} --default 
                     rvm alias create --default  ${EXPECTED_RUBY} 
                     rvm alias create --current  ${EXPECTED_RUBY} 
 
                     # rvm use ${EXPECTED_RUBY} --default
-                    set -x
+                    # set -x
                     
                     RAILS_ENV=staging bundle exec rails db:prepare
                     RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
