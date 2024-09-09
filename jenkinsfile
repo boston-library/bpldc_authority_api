@@ -151,7 +151,7 @@ pipeline {
                     # rvm use ${EXPECTED_RUBY} --default
                     # set -x
                     
-                    RAILS_ENV=staging bundle exec rails db:prepare
+                    RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
                     RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
                     
                 '''
