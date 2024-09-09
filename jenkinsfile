@@ -115,48 +115,48 @@ pipeline {
             }
         }
 
-        // stage ('DB preparation'){
-        //     steps {
-        //         script {  
-        //             echo "In Jenkins phase: DB preparation " 
-        //             railsEnv = env.RAILS_ENV
-        //                     // sh "printenv"
-        //             echo "railsEnv variables is : ${railsEnv}"                   
-        //             bpl_tool.RunDBpreparation(railsEnv) 
-        //         }
-        //     }
-        // }
-
-        stage('DB preparation') {
+        stage ('DB preparation'){
             steps {
-                sh '''
-                    #!/bin/bash --login
-                    set +x
-                    
-                    ls -alt
-                    EXPECTED_RUBY=`cat .ruby-version`
-                
-                    if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-                        source /var/lib/jenkins/.rvm/bin/rvm
-                    else 
-                        exit
-                    fi    
-                    
-                    rvm reinstall ${EXPECTED_RUBY} -C --with-jemalloc --quiet
-                    rvm get stable
-                    # rvm use ${EXPECTED_RUBY} --default 
-                    rvm alias create --default  ${EXPECTED_RUBY} 
-                    rvm alias create --current  ${EXPECTED_RUBY} 
-
-                    # rvm use ${EXPECTED_RUBY} --default
-                    # set -x
-                    
-                    RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
-                    RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
-                    
-                '''
+                script {  
+                    echo "In Jenkins phase: DB preparation " 
+                    railsEnv = env.RAILS_ENV
+                            // sh "printenv"
+                    echo "railsEnv variables is : ${railsEnv}"                   
+                    bpl_tool.RunDBpreparation(railsEnv) 
+                }
             }
         }
+
+        // stage('DB preparation') {
+        //     steps {
+        //         sh '''
+        //             #!/bin/bash --login
+        //             set +x
+                    
+        //             ls -alt
+        //             EXPECTED_RUBY=`cat .ruby-version`
+                
+        //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+        //                 source /var/lib/jenkins/.rvm/bin/rvm
+        //             else 
+        //                 exit
+        //             fi    
+                    
+        //             rvm reinstall ${EXPECTED_RUBY} -C --with-jemalloc --quiet
+        //             rvm get stable
+        //             # rvm use ${EXPECTED_RUBY} --default 
+        //             rvm alias create --default  ${EXPECTED_RUBY} 
+        //             rvm alias create --current  ${EXPECTED_RUBY} 
+
+        //             # rvm use ${EXPECTED_RUBY} --default
+        //             # set -x
+                    
+        //             RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
+        //             RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
+                    
+        //         '''
+        //     }
+        // }
 
         stage('CI') {
             steps {
