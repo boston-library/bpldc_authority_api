@@ -145,11 +145,13 @@ def RunDBpreparation(railsEnv){
          exit
       fi    
 
-      /var/lib/jenkins/.rvm/bin/rvm install ${RUBYVERSION}
+      EXPECTED_RUBY=`cat .ruby-version`
+
+      /var/lib/jenkins/.rvm/bin/rvm install ${EXPECTED_RUBY}
          ## /var/lib/jenkins/.rvm/bin/rvm get stable
-      /var/lib/jenkins/.rvm/bin/rvm use ${RUBYVERSION} --default
-      /var/lib/jenkins/.rvm/bin/rvm alias create --default  ${RUBYVERSION} 
-      /var/lib/jenkins/.rvm/bin/rvm alias create --current  ${RUBYVERSION} 
+      /var/lib/jenkins/.rvm/bin/rvm use ${EXPECTED_RUBY} --default
+      /var/lib/jenkins/.rvm/bin/rvm alias create --default  ${EXPECTED_RUBY} 
+      /var/lib/jenkins/.rvm/bin/rvm alias create --current  ${EXPECTED_RUBY} 
       
       # RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
       # RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
