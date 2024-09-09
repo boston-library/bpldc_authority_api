@@ -158,117 +158,110 @@ pipeline {
             }
         }
 
-        // stage('CI') {
-        //     steps {
-        //         script {  
-        //             echo "In Jenkins phase: running CI testing "                   
-        //             bpl_tool.RunCI() 
-        //         }
-        //     }
-        // }
-
-        // stage('Deploy') {
-        //     steps {
-        //         script {  
-        //             echo "In Jenkins phase: Capistrano deploying "
-        //             railsEnv = env.RAILS_ENV
-        //             echo "railsEnv is ${railsEnv}"              
-        //             bpl_tool.RunDeployment(railsEnv) 
-        //         }
-        //     }
-        // }
-        
-        stage('Deploy') {
+        stage('CI') {
             steps {
-                script {
-
-                    sh """
-                        #!/bin/bash --login
-                        set -x
-
-                        # STAGE_NAME=\$stage_name_password
-                        # SERVER_IP=\$server_ip_password
-                        # DEPLOY_USER=\$deploy_user_password
-                        # SSH_KEY=\$ssh_key_password
-                        # TESTING_SUDO_PASSWORD=\$sudo_pass_password
-                        # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
-                        # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
-    
-                        #m# EXPECTED_RUBY=`cat .ruby-version`
-                        EXPECTED_RUBY='3.2.5'
-                        echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
-                            
-                        set +x
-                        
-                        if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-                            source /var/lib/jenkins/.rvm/bin/rvm
-                        else 
-                            exit
-                        fi    
-                        
-
-                        rvm list
-                        rvm install "\$EXPECTED_RUBY"
-                        rvm use "\$EXPECTED_RUBY" --default
-                        whereis ruby
-                        ruby --version
-
-                        echo "Rongbing Miao#1"
-                        echo "SERVER_IP is \$SERVER_IP"
-                        echo "SSH_KEY is \$SSH_KEY"
-
-                        eval \$(ssh-agent)
-                        ssh-add \$SSH_KEY
-
-                        RAILS_ENV=staging cap -T 
-
-                        # bundle exec cap staging install --trace
-                        RAILS_ENV=staging cap staging install --trace
-                        
-                        ## bundle exec cap production deploy
-
-                        # bundle exec cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
-                        echo "Rongbing Miao#2"
-                        # RAILS_ENV=staging cap -T
-                        # bundle exec cap -T  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"                        
-                        echo "Rongbing Miao#3"
-                        
-                        ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
-                        ## Capistrano breaks here!
-                        RAILS_ENV=staging cap staging deploy:check  
-                        # bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace 
-                        RAILS_ENV=staging cap staging deploy --trace  
-                        
-                        if [[ -f ./config/deploy/production.rb ]]; then 
-                            echo "There is ./config/deploy/production.rb created!"
-                            ls -alt ./config/deploy/production.rb
-                        else 
-                            echo "There is NO ./config/deploy/production.rb yet"
-                        fi   
-                    """
-                }            
+                script {  
+                    echo "In Jenkins phase: running CI testing "                   
+                    bpl_tool.RunCI() 
+                }
             }
         }
+
+        stage('Deploy') {
+            steps {
+                script {  
+                    echo "In Jenkins phase: Capistrano deploying "
+                    railsEnv = env.RAILS_ENV
+                    echo "railsEnv is ${railsEnv}"              
+                    bpl_tool.RunDeployment(railsEnv) 
+                }
+            }
+        }
+        
+        // stage('Deploy') {
+        //     steps {
+        //         script {
+
+        //             sh """
+        //                 #!/bin/bash --login
+        //                 set -x
+
+        //                 # STAGE_NAME=\$stage_name_password
+        //                 # SERVER_IP=\$server_ip_password
+        //                 # DEPLOY_USER=\$deploy_user_password
+        //                 # SSH_KEY=\$ssh_key_password
+        //                 # TESTING_SUDO_PASSWORD=\$sudo_pass_password
+        //                 # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
+        //                 # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
+    
+        //                 #m# EXPECTED_RUBY=`cat .ruby-version`
+        //                 EXPECTED_RUBY='3.2.5'
+        //                 echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
+                            
+        //                 set +x
+                        
+        //                 if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+        //                     source /var/lib/jenkins/.rvm/bin/rvm
+        //                 else 
+        //                     exit
+        //                 fi    
+                        
+
+        //                 rvm list
+        //                 rvm install "\$EXPECTED_RUBY"
+        //                 rvm use "\$EXPECTED_RUBY" --default
+        //                 whereis ruby
+        //                 ruby --version
+
+        //                 echo "Rongbing Miao#1"
+        //                 echo "SERVER_IP is \$SERVER_IP"
+        //                 echo "SSH_KEY is \$SSH_KEY"
+
+        //                 eval \$(ssh-agent)
+        //                 ssh-add \$SSH_KEY
+
+        //                 RAILS_ENV=staging cap -T 
+
+        //                 # bundle exec cap staging install --trace
+        //                 RAILS_ENV=staging cap staging install --trace
+                        
+        //                 ## bundle exec cap production deploy
+
+        //                 # bundle exec cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+        //                 echo "Rongbing Miao#2"
+        //                 # RAILS_ENV=staging cap -T
+        //                 # bundle exec cap -T  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"                        
+        //                 echo "Rongbing Miao#3"
+                        
+        //                 ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
+        //                 ## Capistrano breaks here!
+        //                 RAILS_ENV=staging cap staging deploy:check  
+        //                 # bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace 
+        //                 RAILS_ENV=staging cap staging deploy --trace  
+                        
+        //                 if [[ -f ./config/deploy/production.rb ]]; then 
+        //                     echo "There is ./config/deploy/production.rb created!"
+        //                     ls -alt ./config/deploy/production.rb
+        //                 else 
+        //                     echo "There is NO ./config/deploy/production.rb yet"
+        //                 fi   
+        //             """
+        //         }            
+        //     }
+        // }
 
     }
 
     post {
         failure {
-            script {
-                if (env.BUILD_USER_EMAIL) {
-                    emailext (
-                        to: "${env.BUILD_USER_EMAIL}",
-                        subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                        body: """<p>Build failed in Jenkins:</p>
-                                <p>Job: ${env.JOB_NAME}</p>
-                                <p>Build Number: ${env.BUILD_NUMBER}</p>
-                                <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
-                        mimeType: 'text/html'
-                    )
-                } else {
-                    echo "No email address available for the user who triggered the build."
-                }
-            }
+            emailext (
+                subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """<p>Build failed in Jenkins:</p>
+                        <p>Job: ${env.JOB_NAME}</p>
+                        <p>Build Number: ${env.BUILD_NUMBER}</p>
+                        <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+            )
         }
     }
 
