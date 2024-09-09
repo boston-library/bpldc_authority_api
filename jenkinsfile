@@ -254,16 +254,21 @@ pipeline {
 
     post {
         failure {
-            emailext (
-                subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """<p>Build failed in Jenkins:</p>
-                        <p>Job: ${env.JOB_NAME}</p>
-                        <p>Build Number: ${env.BUILD_NUMBER}</p>
-                        <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
-                to: "${env.BUILD_USER_EMAIL}",
-                mimeType: 'text/html'
-            )
+            script {
+                if (env.BUILD_USER_EMAIL) {
+                    emailext (
+                        to: "${env.BUILD_USER_EMAIL}",
+                        subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                        body: """<p>Build failed in Jenkins:</p>
+                                <p>Job: ${env.JOB_NAME}</p>
+                                <p>Build Number: ${env.BUILD_NUMBER}</p>
+                                <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
+                        mimeType: 'text/html'
+                    )
+                } else {
+                    echo "No email address available for the user who triggered the build."
+                }
+            }
         }
     }
 
