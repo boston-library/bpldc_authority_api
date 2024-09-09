@@ -211,22 +211,25 @@ def RunRSpec(){
 	'''
 }
 
-def RunDeployment(railsEnv){
+ 
+def RunDeployment(railsEnv, server_ip, ssh_key){
   println("RUN Capistrano deployment ")
-  withEnv(["RAILS_ENV=${railsEnv}"]){
+  withEnv(["RAILS_ENV=${railsEnv}" "SERVER_IP=${server_ip}" "SSH_KEY=${ssh_key}"]){
     sh """
         #!/bin/bash --login
         set -x
         
         ## STAGE_NAME=\$stage_name_password
-        SERVER_IP=\$server_ip_password
-        DEPLOY_USER=\$deploy_user_password
-        SSH_KEY=\$ssh_key_password
-        TESTING_SUDO_PASSWORD=\$sudo_pass_password
+        #m# SERVER_IP=\$server_ip_password
+        #m# DEPLOY_USER=\$deploy_user_password
+        #m# SSH_KEY=\$ssh_key_password
+        #m# TESTING_SUDO_PASSWORD=\$sudo_pass_password
         ## GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
         ## GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
 
         echo "From shared library, railsEnv is \$RAILS_ENV"
+        echo "From shared library, server_ip is \$SERVER_IP"
+        echo "From shared library, ssh_key is \$SSH_KEY"
         EXPECTED_RUBY=`cat .ruby-version`
         echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
             
