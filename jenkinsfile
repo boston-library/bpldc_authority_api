@@ -142,7 +142,7 @@ pipeline {
                         exit
                     fi    
                     
-                    rvm reinstall ${EXPECTED_RUBY} -C --with-jemalloc --no-progress
+                    rvm reinstall ${EXPECTED_RUBY} -C --with-jemalloc
                     rvm get stable
                     # rvm use ${EXPECTED_RUBY} --default 
                     rvm alias create --default  ${EXPECTED_RUBY} 
