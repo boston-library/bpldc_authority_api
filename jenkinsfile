@@ -250,17 +250,19 @@ pipeline {
         //     }
         // }
 
-        post {
-            failure {
-                emailext (
-                    subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                    body: """<p>Build failed in Jenkins:</p>
-                            <p>Job: ${env.JOB_NAME}</p>
-                            <p>Build Number: ${env.BUILD_NUMBER}</p>
-                            <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
-                    recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-                )
-            }
+    }
+
+    post {
+        failure {
+            emailext (
+                subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """<p>Build failed in Jenkins:</p>
+                        <p>Job: ${env.JOB_NAME}</p>
+                        <p>Build Number: ${env.BUILD_NUMBER}</p>
+                        <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+            )
         }
     }
+
 }    
