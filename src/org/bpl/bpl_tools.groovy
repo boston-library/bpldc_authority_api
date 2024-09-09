@@ -254,6 +254,9 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         echo "SSH_KEY is \$SSH_KEY"
         echo "Rongbing Miao#2"
 
+        eval \$(ssh-agent)
+        ssh-add \$SSH_KEY
+        
         RAILS_ENV=staging cap staging install --trace
         RAILS_ENV=staging cap -T
         #m# RAILS_ENV=${RAILS_ENV} cap staging install --trace
