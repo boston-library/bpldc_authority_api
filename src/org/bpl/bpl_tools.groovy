@@ -99,7 +99,7 @@ def RunPreparation(){
     export BUNDLE_GEMFILE=$PWD/Gemfile                
     # gem update --system --no-document
     gem update --system 
-    gem install bundler:${BUNDLE_VER}
+    gem install bundler:${BUNDLE_VER} --no-document
     
     ## Because previous capistrano deployment creates a new production.rb that
     ## cannot pass the CI tests. Remove it if we are in test/staging environment
