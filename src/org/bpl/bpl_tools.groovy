@@ -219,13 +219,13 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         #!/bin/bash --login
         set -x
         
-        ## STAGE_NAME=\$stage_name_password
-        #m# SERVER_IP=\$server_ip_password
-        #m# DEPLOY_USER=\$deploy_user_password
-        #m# SSH_KEY=\$ssh_key_password
-        #m# TESTING_SUDO_PASSWORD=\$sudo_pass_password
-        ## GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
-        ## GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
+                ## STAGE_NAME=\$stage_name_password
+                #m# SERVER_IP=\$server_ip_password
+                #m# DEPLOY_USER=\$deploy_user_password
+                #m# SSH_KEY=\$ssh_key_password
+                #m# TESTING_SUDO_PASSWORD=\$sudo_pass_password
+                ## GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
+                ## GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
 
         echo "From shared library, railsEnv is \$RAILS_ENV"
         echo "From shared library, server_ip is \$SERVER_IP"
@@ -248,8 +248,8 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         ruby --version
 
         echo "Rongbing Miao#1"
-        ## echo "GIT_HTTP_USERNAME is \$GIT_HTTP_USERNAME"
-        ## echo "GIT_HTTP_PASSWORD is \$GIT_HTTP_PASSWORD"
+            ## echo "GIT_HTTP_USERNAME is \$GIT_HTTP_USERNAME"
+            ## echo "GIT_HTTP_PASSWORD is \$GIT_HTTP_PASSWORD"
         echo "SERVER_IP is \$SERVER_IP"
         echo "SSH_KEY is \$SSH_KEY"
         echo "Rongbing Miao#2"
@@ -258,12 +258,7 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         ssh-add \$SSH_KEY
         
         RAILS_ENV=staging cap staging install --trace
-        RAILS_ENV=staging cap -T
-        #m# RAILS_ENV=${RAILS_ENV} cap staging install --trace
-        # bundle exec RAILS_ENV=${RAILS_ENV} cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
-        #m# RAILS_ENV=${RAILS_ENV} cap -T  
-        # bundle exec RAILS_ENV=${RAILS_ENV} cap -T --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
-        
+        RAILS_ENV=staging cap -T        
         
         ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
         ## Capistrano breaks here!
