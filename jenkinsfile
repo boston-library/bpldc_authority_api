@@ -17,17 +17,17 @@ pipeline {
     
     stages {
    
-        // stage('CheckoutCode') {
-        //     steps {
-        //         checkout([$class: 'GitSCM', 
-        //             branches: [[name: '*/${BRANCH_NAME}']], 
-        //             userRemoteConfigs: [[
-        //                 url: "https://github.com/boston-library/Commonwealth_3.git",
-        //                 credentialsId: 'bplwebmaster'
-        //                 ]]
-        //         ])
-        //     }
-        // }
+                // stage('CheckoutCode') {
+                //     steps {
+                //         checkout([$class: 'GitSCM', 
+                //             branches: [[name: '*/${BRANCH_NAME}']], 
+                //             userRemoteConfigs: [[
+                //                 url: "https://github.com/boston-library/Commonwealth_3.git",
+                //                 credentialsId: 'bplwebmaster'
+                //                 ]]
+                //         ])
+                //     }
+                // }
 
         stage('CheckoutCode') {
             steps {
@@ -48,29 +48,29 @@ pipeline {
             }
         }
 
-        // stage ('Install new ruby'){
-        //     steps {
-        //         sh '''
-        //             #!/bin/bash -l
-        //             set +x
-   
-        //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-        //                 source /var/lib/jenkins/.rvm/bin/rvm
-        //             else 
-        //                 exit
-        //             fi
-                    
-        //             EXPECTED_RUBY=`cat .ruby-version`
-        //                         ## /var/lib/jenkins/.rvm/bin/rvm list
-        //             echo "EXPECTED_RUBY is $EXPECTED_RUBY"
-        //             set -x
-        //             rvm list
-        //             rvm use ${EXPECTED_RUBY} --default
-        //             ruby --version
-                    
-        //         '''
-        //     }
-        // }
+                // stage ('Install new ruby'){
+                //     steps {
+                //         sh '''
+                //             #!/bin/bash -l
+                //             set +x
+           
+                //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+                //                 source /var/lib/jenkins/.rvm/bin/rvm
+                //             else 
+                //                 exit
+                //             fi
+                            
+                //             EXPECTED_RUBY=`cat .ruby-version`
+                //                         ## /var/lib/jenkins/.rvm/bin/rvm list
+                //             echo "EXPECTED_RUBY is $EXPECTED_RUBY"
+                //             set -x
+                //             rvm list
+                //             rvm use ${EXPECTED_RUBY} --default
+                //             ruby --version
+                            
+                //         '''
+                //     }
+                // }
 
         stage ('Install new ruby'){
             steps {
@@ -84,27 +84,27 @@ pipeline {
             }
         }
         
-        // stage('bundle install') {
-        //     steps {
-        //         sh '''
-        //             #!/bin/bash --login
-        //             set +x
-                    
-        //             EXPECTED_RUBY=`cat .ruby-version`
-    
-        //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-        //                 source /var/lib/jenkins/.rvm/bin/rvm
-        //             else 
-        //                 exit
-        //             fi    
-                    
-        //             rvm use ${EXPECTED_RUBY} --default
-                    
-        //             bundle install --jobs=3 --retry=3
-                    
-        //         '''
-        //     }
-        // }
+                // stage('bundle install') {
+                //     steps {
+                //         sh '''
+                //             #!/bin/bash --login
+                //             set +x
+                            
+                //             EXPECTED_RUBY=`cat .ruby-version`
+            
+                //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+                //                 source /var/lib/jenkins/.rvm/bin/rvm
+                //             else 
+                //                 exit
+                //             fi    
+                            
+                //             rvm use ${EXPECTED_RUBY} --default
+                            
+                //             bundle install --jobs=3 --retry=3
+                            
+                //         '''
+                //     }
+                // }
 
         stage ('Bundle Install .. '){
             steps {
@@ -127,36 +127,36 @@ pipeline {
             }
         }
 
-        // stage('DB preparation') {
-        //     steps {
-        //         sh '''
-        //             #!/bin/bash --login
-        //             set +x
-                    
-        //             ls -alt
-        //             EXPECTED_RUBY=`cat .ruby-version`
-                
-        //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-        //                 source /var/lib/jenkins/.rvm/bin/rvm
-        //             else 
-        //                 exit
-        //             fi    
-                    
-        //             rvm reinstall ${EXPECTED_RUBY} -C --with-jemalloc --quiet
-        //             rvm get stable
-        //             # rvm use ${EXPECTED_RUBY} --default 
-        //             rvm alias create --default  ${EXPECTED_RUBY} 
-        //             rvm alias create --current  ${EXPECTED_RUBY} 
+                // stage('DB preparation') {
+                //     steps {
+                //         sh '''
+                //             #!/bin/bash --login
+                //             set +x
+                            
+                //             ls -alt
+                //             EXPECTED_RUBY=`cat .ruby-version`
+                        
+                //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+                //                 source /var/lib/jenkins/.rvm/bin/rvm
+                //             else 
+                //                 exit
+                //             fi    
+                            
+                //             rvm reinstall ${EXPECTED_RUBY} -C --with-jemalloc --quiet
+                //             rvm get stable
+                //             # rvm use ${EXPECTED_RUBY} --default 
+                //             rvm alias create --default  ${EXPECTED_RUBY} 
+                //             rvm alias create --current  ${EXPECTED_RUBY} 
 
-        //             # rvm use ${EXPECTED_RUBY} --default
-        //             # set -x
-                    
-        //             RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
-        //             RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
-                    
-        //         '''
-        //     }
-        // }
+                //             # rvm use ${EXPECTED_RUBY} --default
+                //             # set -x
+                            
+                //             RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
+                //             RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
+                            
+                //         '''
+                //     }
+                // }
 
         stage('CI') {
             steps {
@@ -180,77 +180,77 @@ pipeline {
             }
         }
         
-        // stage('Deploy') {
-        //     steps {
-        //         script {
+                // stage('Deploy') {
+                //     steps {
+                //         script {
 
-        //             sh """
-        //                 #!/bin/bash --login
-        //                 set -x
+                //             sh """
+                //                 #!/bin/bash --login
+                //                 set -x
 
-        //                 # STAGE_NAME=\$stage_name_password
-        //                 # SERVER_IP=\$server_ip_password
-        //                 # DEPLOY_USER=\$deploy_user_password
-        //                 # SSH_KEY=\$ssh_key_password
+                //                 # STAGE_NAME=\$stage_name_password
+                //                 # SERVER_IP=\$server_ip_password
+                //                 # DEPLOY_USER=\$deploy_user_password
+                //                 # SSH_KEY=\$ssh_key_password
 
-        //                 # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
-        //                 # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
-    
-        //                 #m# EXPECTED_RUBY=`cat .ruby-version`
-        //                 EXPECTED_RUBY='3.2.5'
-        //                 echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
-                            
-        //                 set +x
-                        
-        //                 if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-        //                     source /var/lib/jenkins/.rvm/bin/rvm
-        //                 else 
-        //                     exit
-        //                 fi    
-                        
+                //                 # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
+                //                 # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
+            
+                //                 #m# EXPECTED_RUBY=`cat .ruby-version`
+                //                 EXPECTED_RUBY='3.2.5'
+                //                 echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
+                                    
+                //                 set +x
+                                
+                //                 if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+                //                     source /var/lib/jenkins/.rvm/bin/rvm
+                //                 else 
+                //                     exit
+                //                 fi    
+                                
 
-        //                 rvm list
-        //                 rvm install "\$EXPECTED_RUBY"
-        //                 rvm use "\$EXPECTED_RUBY" --default
-        //                 whereis ruby
-        //                 ruby --version
+                //                 rvm list
+                //                 rvm install "\$EXPECTED_RUBY"
+                //                 rvm use "\$EXPECTED_RUBY" --default
+                //                 whereis ruby
+                //                 ruby --version
 
-        //                 echo "Rongbing Miao#1"
-        //                 echo "SERVER_IP is \$SERVER_IP"
-        //                 echo "SSH_KEY is \$SSH_KEY"
+                //                 echo "Rongbing Miao#1"
+                //                 echo "SERVER_IP is \$SERVER_IP"
+                //                 echo "SSH_KEY is \$SSH_KEY"
 
-        //                 eval \$(ssh-agent)
-        //                 ssh-add \$SSH_KEY
+                //                 eval \$(ssh-agent)
+                //                 ssh-add \$SSH_KEY
 
-        //                 RAILS_ENV=staging cap -T 
+                //                 RAILS_ENV=staging cap -T 
 
-        //                 # bundle exec cap staging install --trace
-        //                 RAILS_ENV=staging cap staging install --trace
-                        
-        //                 ## bundle exec cap production deploy
+                //                 # bundle exec cap staging install --trace
+                //                 RAILS_ENV=staging cap staging install --trace
+                                
+                //                 ## bundle exec cap production deploy
 
-        //                 # bundle exec cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
-        //                 echo "Rongbing Miao#2"
-        //                 # RAILS_ENV=staging cap -T
-        //                 # bundle exec cap -T  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"                        
-        //                 echo "Rongbing Miao#3"
-                        
-        //                 ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
-        //                 ## Capistrano breaks here!
-        //                 RAILS_ENV=staging cap staging deploy:check  
-        //                 # bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace 
-        //                 RAILS_ENV=staging cap staging deploy --trace  
-                        
-        //                 if [[ -f ./config/deploy/production.rb ]]; then 
-        //                     echo "There is ./config/deploy/production.rb created!"
-        //                     ls -alt ./config/deploy/production.rb
-        //                 else 
-        //                     echo "There is NO ./config/deploy/production.rb yet"
-        //                 fi   
-        //             """
-        //         }            
-        //     }
-        // }
+                //                 # bundle exec cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+                //                 echo "Rongbing Miao#2"
+                //                 # RAILS_ENV=staging cap -T
+                //                 # bundle exec cap -T  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"                        
+                //                 echo "Rongbing Miao#3"
+                                
+                //                 ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
+                //                 ## Capistrano breaks here!
+                //                 RAILS_ENV=staging cap staging deploy:check  
+                //                 # bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace 
+                //                 RAILS_ENV=staging cap staging deploy --trace  
+                                
+                //                 if [[ -f ./config/deploy/production.rb ]]; then 
+                //                     echo "There is ./config/deploy/production.rb created!"
+                //                     ls -alt ./config/deploy/production.rb
+                //                 else 
+                //                     echo "There is NO ./config/deploy/production.rb yet"
+                //                 fi   
+                //             """
+                //         }            
+                //     }
+                // }
 
     }
 
