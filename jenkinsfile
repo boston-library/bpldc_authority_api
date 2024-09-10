@@ -174,7 +174,7 @@ pipeline {
                     railsEnv = env.RAILS_ENV
                     server_ip = env.SERVER_IP
                     ssh_key = env.SSH_KEY
-                    echo "railsEnv is ${railsEnv}, server_ip is ${server_ip}, ssh_key is ${ssh_key}"              
+                    // echo "railsEnv is ${railsEnv}, server_ip is ${server_ip}, ssh_key is ${ssh_key}"              
                     bpl_tool.RunDeployment(railsEnv, server_ip, ssh_key) 
                 }
             }
