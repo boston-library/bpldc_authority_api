@@ -262,7 +262,7 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         #m# RAILS_ENV=${RAILS_ENV} cap staging install --trace
         # bundle exec RAILS_ENV=${RAILS_ENV} cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
         #m# RAILS_ENV=${RAILS_ENV} cap -T  
-        bundle exec RAILS_ENV=${RAILS_ENV} cap -T --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+        # bundle exec RAILS_ENV=${RAILS_ENV} cap -T --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
         
         
         ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
