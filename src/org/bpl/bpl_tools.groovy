@@ -42,11 +42,11 @@ def InstallNewRuby(rubyVersion){
       fi
 
       echo "after sourcing rvm..."
-      /var/lib/jenkins/.rvm/bin/rvm install ${RUBYVERSION}
+      rvm install ${RUBYVERSION}
       ## /var/lib/jenkins/.rvm/bin/rvm get stable
-      /var/lib/jenkins/.rvm/bin/rvm use ${RUBYVERSION} --default
-      /var/lib/jenkins/.rvm/bin/rvm alias create --default  ${RUBYVERSION} 
-      /var/lib/jenkins/.rvm/bin/rvm alias create --current  ${RUBYVERSION} 
+      rvm use ${RUBYVERSION} --default
+      rvm alias create --default  ${RUBYVERSION} 
+      rvm alias create --current  ${RUBYVERSION} 
 
       # # bundle install
       whereis ruby
@@ -86,11 +86,11 @@ def RunPreparation(){
 
     set -e
 
-    /var/lib/jenkins/.rvm/bin/rvm install ${EXPECTED_RUBY} -C --with-jemalloc
+    rvm install ${EXPECTED_RUBY} -C --with-jemalloc
     ## /var/lib/jenkins/.rvm/bin/rvm get stable
-    /var/lib/jenkins/.rvm/bin/rvm use ${EXPECTED_RUBY} --default 
-    /var/lib/jenkins/.rvm/bin/rvm alias create --default  ${EXPECTED_RUBY} 
-    /var/lib/jenkins/.rvm/bin/rvm alias create --current  ${EXPECTED_RUBY} 
+    rvm use ${EXPECTED_RUBY} --default 
+    rvm alias create --default  ${EXPECTED_RUBY} 
+    rvm alias create --current  ${EXPECTED_RUBY} 
 
     ruby --version
 
@@ -147,11 +147,11 @@ def RunDBpreparation(railsEnv){
 
       EXPECTED_RUBY=`cat .ruby-version`
 
-      /var/lib/jenkins/.rvm/bin/rvm install ${EXPECTED_RUBY}
+      rvm install ${EXPECTED_RUBY}
          ## /var/lib/jenkins/.rvm/bin/rvm get stable
-      /var/lib/jenkins/.rvm/bin/rvm use ${EXPECTED_RUBY} --default
-      /var/lib/jenkins/.rvm/bin/rvm alias create --default  ${EXPECTED_RUBY} 
-      /var/lib/jenkins/.rvm/bin/rvm alias create --current  ${EXPECTED_RUBY} 
+      rvm use ${EXPECTED_RUBY} --default
+      rvm alias create --default  ${EXPECTED_RUBY} 
+      rvm alias create --current  ${EXPECTED_RUBY} 
       
       # RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
       # RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
@@ -227,9 +227,9 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
                 ## GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
                 ## GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
 
-        # echo "From shared library, railsEnv is \$RAILS_ENV"
-        # echo "From shared library, server_ip is \$SERVER_IP"
-        # echo "From shared library, ssh_key is \$SSH_KEY"
+            # echo "From shared library, railsEnv is \$RAILS_ENV"
+            # echo "From shared library, server_ip is \$SERVER_IP"
+            # echo "From shared library, ssh_key is \$SSH_KEY"
         EXPECTED_RUBY=`cat .ruby-version`
         echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
             
