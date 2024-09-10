@@ -250,8 +250,8 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         echo "Rongbing Miao#1"
             ## echo "GIT_HTTP_USERNAME is \$GIT_HTTP_USERNAME"
             ## echo "GIT_HTTP_PASSWORD is \$GIT_HTTP_PASSWORD"
-        echo "SERVER_IP is \$SERVER_IP"
-        echo "SSH_KEY is \$SSH_KEY"
+        #m# echo "SERVER_IP is \$SERVER_IP"
+        #m# echo "SSH_KEY is \$SSH_KEY"
         echo "Rongbing Miao#2"
 
         eval \$(ssh-agent)
