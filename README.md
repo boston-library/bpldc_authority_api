@@ -312,7 +312,7 @@ pipeline {
         //                 # SERVER_IP=\$server_ip_password
         //                 # DEPLOY_USER=\$deploy_user_password
         //                 # SSH_KEY=\$ssh_key_password
-        //                 # TESTING_SUDO_PASSWORD=\$sudo_pass_password
+
         //                 # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
         //                 # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
     
