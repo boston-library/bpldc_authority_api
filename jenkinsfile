@@ -39,50 +39,50 @@ pipeline {
             }
         }
         
-        // stage('Preparation') {
-        //     steps {
-        //         script {  
-        //             echo "In Jenkinsfile phase: Preparation at the very begining"                   
-        //             bpl_tool.RunPreparation()
-        //         }                
-        //     }
-        // }
-
-        stage ('Install new ruby'){
+        stage('Preparation') {
             steps {
-                sh '''
-                    #!/bin/bash -l
-                    set +x
-   
-                    if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-                        source /var/lib/jenkins/.rvm/bin/rvm
-                    else 
-                        exit
-                    fi
-                    
-                    EXPECTED_RUBY=`cat .ruby-version`
-                                ## /var/lib/jenkins/.rvm/bin/rvm list
-                    echo "EXPECTED_RUBY is $EXPECTED_RUBY"
-                    set -x
-                    rvm list
-                    rvm use ${EXPECTED_RUBY} --default
-                    ruby --version
-                    
-                '''
+                script {  
+                    echo "In Jenkinsfile phase: Preparation at the very begining"                   
+                    bpl_tool.RunPreparation()
+                }                
             }
         }
 
         // stage ('Install new ruby'){
         //     steps {
-        //         script {  
-        //             echo "In Jenkins phase: Install new ruby" 
-        //             // def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
-        //             EXPECTED_RUBY = '3.2.5'
-        //             echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
-        //             bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
-        //         }
+        //         sh '''
+        //             #!/bin/bash -l
+        //             set +x
+   
+        //             if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+        //                 source /var/lib/jenkins/.rvm/bin/rvm
+        //             else 
+        //                 exit
+        //             fi
+                    
+        //             EXPECTED_RUBY=`cat .ruby-version`
+        //                         ## /var/lib/jenkins/.rvm/bin/rvm list
+        //             echo "EXPECTED_RUBY is $EXPECTED_RUBY"
+        //             set -x
+        //             rvm list
+        //             rvm use ${EXPECTED_RUBY} --default
+        //             ruby --version
+                    
+        //         '''
         //     }
         // }
+
+        stage ('Install new ruby'){
+            steps {
+                script {  
+                    echo "In Jenkins phase: Install new ruby" 
+                    // def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
+                    EXPECTED_RUBY = '3.2.5'
+                    echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
+                    bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
+                }
+            }
+        }
         
         // stage('bundle install') {
         //     steps {
