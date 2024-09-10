@@ -227,9 +227,9 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
                 ## GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
                 ## GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
 
-        echo "From shared library, railsEnv is \$RAILS_ENV"
-        echo "From shared library, server_ip is \$SERVER_IP"
-        echo "From shared library, ssh_key is \$SSH_KEY"
+        # echo "From shared library, railsEnv is \$RAILS_ENV"
+        # echo "From shared library, server_ip is \$SERVER_IP"
+        # echo "From shared library, ssh_key is \$SSH_KEY"
         EXPECTED_RUBY=`cat .ruby-version`
         echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
             
@@ -244,7 +244,7 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         rvm list
         rvm install "\$EXPECTED_RUBY"
         rvm use "\$EXPECTED_RUBY" --default
-        whereis ruby
+        # whereis ruby
         ruby --version
 
         echo "Rongbing Miao#1"
