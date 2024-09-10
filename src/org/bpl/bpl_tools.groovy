@@ -180,7 +180,7 @@ def RunCI(){
     
     rvm use default ${EXPECTED_RUBY} 
     
-    ## RAILS_ENV=test bundle exec rake
+            ## RAILS_ENV=test bundle exec rake
     bundle exec rake
   '''
 }
