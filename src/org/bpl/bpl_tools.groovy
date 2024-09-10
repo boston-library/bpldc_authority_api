@@ -97,8 +97,8 @@ def RunPreparation(){
 
     echo "and bundle version is ${BUNDLE_VER}"
     export BUNDLE_GEMFILE=$PWD/Gemfile                
-    ## gem update --system --no-document
-    gem update
+    gem update --system --no-document
+    # gem update
     gem install bundler:${BUNDLE_VER}
     
     ## Because previous capistrano deployment creates a new production.rb that
