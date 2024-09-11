@@ -191,20 +191,24 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'TESTING_DEPLOY_USER', usernameVariable: 'deploy_USERNAME', passwordVariable: 'deploy_PASSWORD'),
                         usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey_PASSWORD'),
                         usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip_PASSWORD')]){
-                        sh '''
-                            echo "Using credentials"
-                            echo "TESTING_DEPLOY_USER username is  $deploy_USERNAME, and Password is: $deploy_PASSWORD"
-                            echo "TESTING_SSH_KEY username is  $sshkey_USERNAME, and Password is: $sshkey_PASSWORD"
-                            echo "TESTING_SERVER_IP username is  $TESTING_SERVER_IP, and Password is: $serverip_PASSWORD"
-                            deploy_p=\$deploy_PASSWORD
-                            sshkey_p=\$sshkey_PASSWORD
-                            serverip_p=\$serverip_PASSWORD
-                            echo "Displaying credentials passwords:"
-                            echo "deploy_p is  $deploy_p"
-                            echo "sshkey_p is  $sshkey_p"
-                            echo "serverip_p is  $serverip_p"                      
-                            # curl -u $USERNAME:$PASSWORD http://www.example.com
-                        '''
+                            deploy_p    = deploy_PASSWORD
+                            sshkey_p    = sshkey_PASSWORD
+                            serverip_p  = serverip_PASSWORD
+
+                        // sh '''
+                        //     echo "Using credentials"
+                        //     echo "TESTING_DEPLOY_USER username is  $deploy_USERNAME, and Password is: $deploy_PASSWORD"
+                        //     echo "TESTING_SSH_KEY username is  $sshkey_USERNAME, and Password is: $sshkey_PASSWORD"
+                        //     echo "TESTING_SERVER_IP username is  $TESTING_SERVER_IP, and Password is: $serverip_PASSWORD"
+                        //     deploy_p=\$deploy_PASSWORD
+                        //     sshkey_p=\$sshkey_PASSWORD
+                        //     serverip_p=\$serverip_PASSWORD
+                        //     echo "Displaying credentials passwords:"
+                        //     echo "deploy_p is  $deploy_p"
+                        //     echo "sshkey_p is  $sshkey_p"
+                        //     echo "serverip_p is  $serverip_p"                      
+                        //     # curl -u $USERNAME:$PASSWORD http://www.example.com
+                        // '''
                     }
                     echo "deploy_p is  $deploy_p"
                     echo "sshkey_p is  $sshkey_p"
