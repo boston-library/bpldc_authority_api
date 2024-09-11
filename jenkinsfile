@@ -181,112 +181,113 @@ pipeline {
         // }
         
 
-        stage("test to use withCredentials") {
+        stage("Deploy test to use withCredentials") {
             steps {
                 script {
-                    deploy_p = null
-                    sshkey_p = null
-                    serverip_p = null
 
-                    withCredentials([usernamePassword(credentialsId: 'TESTING_DEPLOY_USER', usernameVariable: 'deploy_USERNAME', passwordVariable: 'deploy_PASSWORD'),
-                        usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey_PASSWORD'),
+                    ssh_key = null
+                    server_ip = null
+
+                    withCredentials( usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey_PASSWORD'),
                         usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip_PASSWORD')]){
-                            deploy_p    = deploy_PASSWORD
-                            sshkey_p    = sshkey_PASSWORD
-                            serverip_p  = serverip_PASSWORD
+                            echo "In Jenkins phase: Capistrano deploying "
+                            ssh_key    = sshkey_PASSWORD
+                            server_ip  = serverip_PASSWORD
+                            railsEnv = env.RAILS_ENV
+                            bpl_tool.RunDeployment(railsEnv, server_ip, ssh_key)
 
-                        // sh '''
-                        //     echo "Using credentials"
-                        //     echo "TESTING_DEPLOY_USER username is  $deploy_USERNAME, and Password is: $deploy_PASSWORD"
-                        //     echo "TESTING_SSH_KEY username is  $sshkey_USERNAME, and Password is: $sshkey_PASSWORD"
-                        //     echo "TESTING_SERVER_IP username is  $TESTING_SERVER_IP, and Password is: $serverip_PASSWORD"
-                        //     deploy_p=\$deploy_PASSWORD
-                        //     sshkey_p=\$sshkey_PASSWORD
-                        //     serverip_p=\$serverip_PASSWORD
-                        //     echo "Displaying credentials passwords:"
-                        //     echo "deploy_p is  $deploy_p"
-                        //     echo "sshkey_p is  $sshkey_p"
-                        //     echo "serverip_p is  $serverip_p"                      
-                        //     # curl -u $USERNAME:$PASSWORD http://www.example.com
-                        // '''
+                                    // sh '''
+                                    //     echo "Using credentials"
+                                    //     echo "TESTING_DEPLOY_USER username is  $deploy_USERNAME, and Password is: $deploy_PASSWORD"
+                                    //     echo "TESTING_SSH_KEY username is  $sshkey_USERNAME, and Password is: $sshkey_PASSWORD"
+                                    //     echo "TESTING_SERVER_IP username is  $TESTING_SERVER_IP, and Password is: $serverip_PASSWORD"
+                                    //     deploy_p=\$deploy_PASSWORD
+                                    //     sshkey_p=\$sshkey_PASSWORD
+                                    //     serverip_p=\$serverip_PASSWORD
+                                    //     echo "Displaying credentials passwords:"
+                                    //     echo "deploy_p is  $deploy_p"
+                                    //     echo "sshkey_p is  $sshkey_p"
+                                    //     echo "serverip_p is  $serverip_p"                      
+                                    //     # curl -u $USERNAME:$PASSWORD http://www.example.com
+                                    // '''
                     }
                     echo "deploy_p is  $deploy_p"
-                    echo "sshkey_p is  $sshkey_p"
-                    echo "serverip_p is  $serverip_p"                    
+                    echo "ssh_key is  $sshkey_p"
+                    echo "server_ip is  $serverip_p"                    
                 }
             }
         }
 
-        stage('Deploy') {
-            steps {
-                script {
+        // stage('Deploy') {
+        //     steps {
+        //         script {
 
-                    sh """
-                        #!/bin/bash --login
-                        set -x
+        //             sh """
+        //                 #!/bin/bash --login
+        //                 set -x
 
-                        # STAGE_NAME=\$stage_name_password
-                        # SERVER_IP=\$server_ip_password
-                        # DEPLOY_USER=\$deploy_user_password
-                        # SSH_KEY=\$ssh_key_password
+        //                 # STAGE_NAME=\$stage_name_password
+        //                 # SERVER_IP=\$server_ip_password
+        //                 # DEPLOY_USER=\$deploy_user_password
+        //                 # SSH_KEY=\$ssh_key_password
 
-                        # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
-                        # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
+        //                 # GIT_HTTP_USERNAME=\$GIT_HTTP_USERNAME_password
+        //                 # GIT_HTTP_PASSWORD=\$GIT_HTTP_PASSWORD_password
     
-                        #m# EXPECTED_RUBY=`cat .ruby-version`
-                        EXPECTED_RUBY='3.2.5'
-                        echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
+        //                 #m# EXPECTED_RUBY=`cat .ruby-version`
+        //                 EXPECTED_RUBY='3.2.5'
+        //                 echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
                             
-                        set +x
+        //                 set +x
                         
-                        if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-                            source /var/lib/jenkins/.rvm/bin/rvm
-                        else 
-                            exit
-                        fi    
+        //                 if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+        //                     source /var/lib/jenkins/.rvm/bin/rvm
+        //                 else 
+        //                     exit
+        //                 fi    
                         
 
-                        rvm list
-                        rvm install "\$EXPECTED_RUBY"
-                        rvm use "\$EXPECTED_RUBY" --default
-                        whereis ruby
-                        ruby --version
+        //                 rvm list
+        //                 rvm install "\$EXPECTED_RUBY"
+        //                 rvm use "\$EXPECTED_RUBY" --default
+        //                 whereis ruby
+        //                 ruby --version
 
-                        echo "Rongbing Miao#1"
-                        echo "SERVER_IP is \$SERVER_IP"
-                        echo "SSH_KEY is \$SSH_KEY"
+        //                 echo "Rongbing Miao#1"
+        //                 echo "SERVER_IP is \$SERVER_IP"
+        //                 echo "SSH_KEY is \$SSH_KEY"
 
-                        eval \$(ssh-agent)
-                        ssh-add \$SSH_KEY
+        //                 eval \$(ssh-agent)
+        //                 ssh-add \$SSH_KEY
 
-                        RAILS_ENV=staging cap -T 
+        //                 RAILS_ENV=staging cap -T 
 
-                        # bundle exec cap staging install --trace
-                        RAILS_ENV=staging cap staging install --trace
+        //                 # bundle exec cap staging install --trace
+        //                 RAILS_ENV=staging cap staging install --trace
                         
-                        ## bundle exec cap production deploy
+        //                 ## bundle exec cap production deploy
 
-                        # bundle exec cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
-                        echo "Rongbing Miao#2"
-                        # RAILS_ENV=staging cap -T
-                        # bundle exec cap -T  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"                        
-                        echo "Rongbing Miao#3"
+        //                 # bundle exec cap staging install --trace  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"
+        //                 echo "Rongbing Miao#2"
+        //                 # RAILS_ENV=staging cap -T
+        //                 # bundle exec cap -T  --ssh-options="-i /var/lib/jenkins/.ssh/promdev"                        
+        //                 echo "Rongbing Miao#3"
                         
-                        ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
-                        ## Capistrano breaks here!
-                        RAILS_ENV=staging cap staging deploy:check  
-                        # bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace 
-                        RAILS_ENV=staging cap staging deploy --trace  
+        //                 ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
+        //                 ## Capistrano breaks here!
+        //                 RAILS_ENV=staging cap staging deploy:check  
+        //                 # bundle exec RAILS_ENV=staging cap staging deploy --dry-run --trace 
+        //                 RAILS_ENV=staging cap staging deploy --trace  
                         
-                        if [[ -f ./config/deploy/production.rb ]]; then 
-                            echo "There is ./config/deploy/production.rb created!"
-                            ls -alt ./config/deploy/production.rb
-                        else 
-                            echo "There is NO ./config/deploy/production.rb yet"
-                        fi   
-                    """
-                }            
-            }
+        //                 if [[ -f ./config/deploy/production.rb ]]; then 
+        //                     echo "There is ./config/deploy/production.rb created!"
+        //                     ls -alt ./config/deploy/production.rb
+        //                 else 
+        //                     echo "There is NO ./config/deploy/production.rb yet"
+        //                 fi   
+        //             """
+        //         }            
+        //     }
         }
 
     }
