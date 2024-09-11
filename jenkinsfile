@@ -185,9 +185,9 @@ pipeline {
             steps {
                 // withCredentials([usernamePassword(credentialsId: 'MY_CREDENTIALS_ID', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {}
 
-                withCredentials([usernamePassword(credentialsId: 'TESTING_DEPLOY_USER', usernameVariable: 'deploy_USERNAME', passwordVariable: 'deploy_PASSWORD')],
-                    [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey_PASSWORD')],
-                    [usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip_PASSWORD')]){
+                withCredentials([usernamePassword(credentialsId: 'TESTING_DEPLOY_USER', usernameVariable: 'deploy_USERNAME', passwordVariable: 'deploy_PASSWORD') 
+                    usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey_PASSWORD')
+                    usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip_PASSWORD')]){
                     sh '''
                         echo "Using credentials"
                         echo "TESTING_DEPLOY_USER username is  $deploy_USERNAME, and Password is: $deploy_PASSWORD"
