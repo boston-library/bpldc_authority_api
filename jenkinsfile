@@ -190,16 +190,16 @@ pipeline {
 
                     withCredentials( [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey_PASSWORD'),
                         usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip_PASSWORD')]){
-
+                            sh '''
                             railsEnv    = env.RAILS_ENV
-                            // server_ip   = serverip_PASSWORD
-                            // ssh_key     = sshkey_PASSWORD
+                                    // server_ip   = serverip_PASSWORD
+                                    // ssh_key     = sshkey_PASSWORD
 
-                            // echo "railsEnv is  $railsEnv"
-                            // echo "ssh_key is  $ssh_key"
-                            // echo "server_ip is  $server_ip" 
-                            // bpl_tool.RunDeployment(railsEnv, server_ip, ssh_key)
-                            
+                                    // echo "railsEnv is  $railsEnv"
+                                    // echo "ssh_key is  $ssh_key"
+                                    // echo "server_ip is  $server_ip" 
+                                    // bpl_tool.RunDeployment(railsEnv, server_ip, ssh_key)
+
                             bpl_tool.RunDeployment(railsEnv, serverip_PASSWORD, sshkey_PASSWORD)
                                     // sh '''
                                     //     echo "Using credentials"
@@ -214,7 +214,8 @@ pipeline {
                                     //     echo "sshkey_p is  $sshkey_p"
                                     //     echo "serverip_p is  $serverip_p"                      
                                     //     # curl -u $USERNAME:$PASSWORD http://www.example.com
-                                    // '''
+                                    // 
+                            '''
                     }
                     // echo "railsEnv is  $railsEnv"
                     // echo "ssh_key is  $sshkey_p"
