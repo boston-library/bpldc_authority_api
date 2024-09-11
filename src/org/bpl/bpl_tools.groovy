@@ -251,6 +251,8 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         else 
             echo "There is NO ./config/deploy/production.rb yet"
         fi   
+        
+        set -x
     """
   }
 }
