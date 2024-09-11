@@ -188,8 +188,8 @@ pipeline {
                                     // ssh_key = null
                                     // server_ip = null
 
-                    withCredentials( [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey_PASSWORD'),
-                        usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip_PASSWORD')]){
+                    withCredentials( [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey'),
+                        usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip')]){
 
                             railsEnv    = env.RAILS_ENV
                                     // server_ip   = serverip_PASSWORD
