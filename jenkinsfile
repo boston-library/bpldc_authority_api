@@ -194,6 +194,10 @@ pipeline {
                             ssh_key    = sshkey_PASSWORD
                             server_ip  = serverip_PASSWORD
                             railsEnv = env.RAILS_ENV
+
+                            echo "deploy_p is  $deploy_p"
+                            echo "ssh_key is  $sshkey_p"
+                            echo "server_ip is  $serverip_p" 
                             bpl_tool.RunDeployment(railsEnv, server_ip, ssh_key)
 
                                     // sh '''
@@ -211,9 +215,9 @@ pipeline {
                                     //     # curl -u $USERNAME:$PASSWORD http://www.example.com
                                     // '''
                     }
-                    echo "deploy_p is  $deploy_p"
-                    echo "ssh_key is  $sshkey_p"
-                    echo "server_ip is  $serverip_p"                    
+                    // echo "deploy_p is  $deploy_p"
+                    // echo "ssh_key is  $sshkey_p"
+                    // echo "server_ip is  $serverip_p"                    
                 }
             }
         }
