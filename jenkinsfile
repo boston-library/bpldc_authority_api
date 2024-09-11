@@ -185,8 +185,8 @@ pipeline {
             steps {
                 script {
                     echo "In Jenkins phase: Capistrano deploying "
-                    ssh_key = null
-                    server_ip = null
+                                    // ssh_key = null
+                                    // server_ip = null
 
                     withCredentials( [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey_PASSWORD'),
                         usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip_PASSWORD')]){
