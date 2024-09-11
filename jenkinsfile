@@ -180,6 +180,21 @@ pipeline {
         //     }
         // }
         
+
+        stage("test to use withCredentials") {
+            steps {
+                // withCredentials([usernamePassword(credentialsId: 'MY_CREDENTIALS_ID', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {}
+
+                withCredentials([usernamePassword(credentialsId: 'TESTING_DEPLOY_USER', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                    sh '''
+                        echo "Using credentials"
+                        echo "username is  $USERNAME, and Password is: $PASSWORD"
+                        # curl -u $USERNAME:$PASSWORD http://www.example.com
+                    '''
+                }
+            }
+        }
+
         stage('Deploy') {
             steps {
                 script {
