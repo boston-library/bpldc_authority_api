@@ -211,8 +211,9 @@ def RunRSpec(){
  
 def RunDeployment(railsEnv, server_ip, ssh_key){
   println("RUN Capistrano deployment ")
-  // withEnv(["RAILS_ENV=${railsEnv}", "SERVER_IP=${server_ip}", "SSH_KEY=${ssh_key}"]){
-     withEnv(["RAILS_ENV=$railsEnv", "SERVER_IP=$server_ip", "SSH_KEY=$ssh_key"]){
+  //work withEnv(["RAILS_ENV=${railsEnv}", "SERVER_IP=${server_ip}", "SSH_KEY=${ssh_key}"]){
+  //work withEnv(["RAILS_ENV=$railsEnv", "SERVER_IP=$server_ip", "SSH_KEY=$ssh_key"]){
+  withEnv(["RAILS_ENV=$railsEnv", "SERVER_IP=$server_ip", "SSH_KEY=$ssh_key"]){
     sh '''
         #!/bin/bash --login
         set -x
