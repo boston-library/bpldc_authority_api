@@ -237,7 +237,7 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
         eval \$(ssh-agent)
         ssh-add \$SSH_KEY
         
-        RAILS_ENV=staging cap staging install --trace
+        RAILS_ENV=\$RAILS_ENV cap staging install --trace
         RAILS_ENV=staging cap -T        
         
         ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
