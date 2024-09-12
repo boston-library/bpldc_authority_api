@@ -167,6 +167,8 @@ pipeline {
             }
         }
 
+        // This deployment with two password parameters gets a warning from Jenkins:
+        // insecure interpolation of sensitive variables: withEnv: [ssh_key, server_ip]
         // stage('Deploy') {
         //     steps {
         //         script {  
