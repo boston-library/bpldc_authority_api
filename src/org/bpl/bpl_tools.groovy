@@ -213,7 +213,9 @@ def RunDeployment(railsEnv, server_ip, ssh_key){
   println("RUN Capistrano deployment ")
   //work withEnv(["RAILS_ENV=${railsEnv}", "SERVER_IP=${server_ip}", "SSH_KEY=${ssh_key}"]){
   //work withEnv(["RAILS_ENV=$railsEnv", "SERVER_IP=$server_ip", "SSH_KEY=$ssh_key"]){
-  withEnv(["RAILS_ENV=$railsEnv", "SERVER_IP=$server_ip", "SSH_KEY=$ssh_key"]){
+     // withEnv(["RAILS_ENV=$railsEnv", "SERVER_IP=$server_ip", "SSH_KEY=$ssh_key"]){
+  withCredentials( [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'ssh_key'),
+                        usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'server_ip')]){
     sh '''
         #!/bin/bash --login
         set -x
