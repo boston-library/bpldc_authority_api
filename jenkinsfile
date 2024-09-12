@@ -190,8 +190,7 @@ pipeline {
 
                     // withCredentials( [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey'),
                     //    usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip')]){
-                            // maskPasswords(["sshkey", "serverip"])
-                            // railsEnv    = env.RAILS_ENV
+
                             railsEnv    = env.deploy_env
                                     // server_ip   = serverip_PASSWORD
                                     // ssh_key     = sshkey_PASSWORD
@@ -201,7 +200,7 @@ pipeline {
                                     // echo "serverip is  $serverip" 
                                     //work bpl_tool.RunDeployment(railsEnv, serverip, sshkey)
                                     bpl_tool.RunDeployment(railsEnv)
-                                    
+
                             // bpl_tool.RunDeployment(railsEnv, serverip, sshkey)
                                     // sh '''
                                     //     echo "Using credentials"
@@ -218,10 +217,7 @@ pipeline {
                                     //     # curl -u $USERNAME:$PASSWORD http://www.example.com
                                     // 
 
-                    // }
-                    // echo "railsEnv is  $railsEnv"
-                    // echo "ssh_key is  $sshkey_p"
-                    // echo "server_ip is  $serverip_p"                    
+                    // }                 
                 }
             }
         }
