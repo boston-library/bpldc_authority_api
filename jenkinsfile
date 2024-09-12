@@ -190,7 +190,7 @@ pipeline {
 
                     withCredentials( [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey'),
                         usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip')]){
-
+                            maskPasswords(["sshkey", "serverip"])
                             railsEnv    = env.RAILS_ENV
                                     // server_ip   = serverip_PASSWORD
                                     // ssh_key     = sshkey_PASSWORD
