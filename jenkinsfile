@@ -185,39 +185,9 @@ pipeline {
             steps {
                 script {
                     echo "In Jenkins phase: Capistrano deploying "
-                                    // ssh_key = null
-                                    // server_ip = null
+                    railsEnv    = env.deploy_env
 
-                    // withCredentials( [usernamePassword(credentialsId: 'TESTING_SSH_KEY', usernameVariable: 'sshkey_USERNAME', passwordVariable: 'sshkey'),
-                    //    usernamePassword(credentialsId: 'TESTING_SERVER_IP', usernameVariable: 'serverip_USERNAME', passwordVariable: 'serverip')]){
-
-                            railsEnv    = env.deploy_env
-                                    // server_ip   = serverip_PASSWORD
-                                    // ssh_key     = sshkey_PASSWORD
-
-                                    // echo "railsEnv is  $railsEnv"
-                                    // echo "sshkey is  $sshkey"
-                                    // echo "serverip is  $serverip" 
-                                    //work bpl_tool.RunDeployment(railsEnv, serverip, sshkey)
-                                    bpl_tool.RunDeployment(railsEnv)
-
-                            // bpl_tool.RunDeployment(railsEnv, serverip, sshkey)
-                                    // sh '''
-                                    //     echo "Using credentials"
-                                    //     echo "TESTING_DEPLOY_USER username is  $deploy_USERNAME, and Password is: $deploy_PASSWORD"
-                                    //     echo "TESTING_SSH_KEY username is  $sshkey_USERNAME, and Password is: $sshkey_PASSWORD"
-                                    //     echo "TESTING_SERVER_IP username is  $TESTING_SERVER_IP, and Password is: $serverip_PASSWORD"
-                                    //     deploy_p=\$deploy_PASSWORD
-                                    //     sshkey_p=\$sshkey_PASSWORD
-                                    //     serverip_p=\$serverip_PASSWORD
-                                    //     echo "Displaying credentials passwords:"
-                                    //     echo "deploy_p is  $deploy_p"
-                                    //     echo "sshkey_p is  $sshkey_p"
-                                    //     echo "serverip_p is  $serverip_p"                      
-                                    //     # curl -u $USERNAME:$PASSWORD http://www.example.com
-                                    // 
-
-                    // }                 
+                    bpl_tool.RunDeployment(railsEnv)                
                 }
             }
         }
