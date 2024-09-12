@@ -196,9 +196,9 @@ pipeline {
                                     // ssh_key     = sshkey_PASSWORD
 
                                     echo "railsEnv is  $railsEnv"
-                                    echo "ssh_key is  $ssh_key"
-                                    echo "server_ip is  $server_ip" 
-                                    bpl_tool.RunDeployment(railsEnv, server_ip, ssh_key)
+                                    echo "sshkey is  $sshkey"
+                                    echo "serverip is  $serverip" 
+                                    bpl_tool.RunDeployment(railsEnv, serverip, sshkey)
 
                             // bpl_tool.RunDeployment(railsEnv, serverip, sshkey)
                                     // sh '''
