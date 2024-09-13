@@ -230,7 +230,6 @@ def RunDeployment(railsEnv){
         rvm list
         rvm install "\$EXPECTED_RUBY"
         rvm use "\$EXPECTED_RUBY" --default
-        # whereis ruby
         ruby --version
 
         eval \$(ssh-agent)
@@ -245,14 +244,14 @@ def RunDeployment(railsEnv){
         RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --dry-run --trace
         RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --trace
         
-        #m# RAILS_ENV=\$RAILS_ENV cap staging install --trace
-        #m# RAILS_ENV=staging cap -T        
-        
-        #m# ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
-        #m# ## Capistrano breaks here!
-        #m# RAILS_ENV=staging cap staging deploy:check
-        #m# RAILS_ENV=staging cap staging deploy --dry-run --trace
-        #m# RAILS_ENV=staging cap staging deploy --trace
+                #m# RAILS_ENV=\$RAILS_ENV cap staging install --trace
+                #m# RAILS_ENV=staging cap -T        
+                
+                #m# ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
+                #m# ## Capistrano breaks here!
+                #m# RAILS_ENV=staging cap staging deploy:check
+                #m# RAILS_ENV=staging cap staging deploy --dry-run --trace
+                #m# RAILS_ENV=staging cap staging deploy --trace
         
         if [[ -f ./config/deploy/production.rb ]]; then 
             echo "There is ./config/deploy/production.rb created!"
