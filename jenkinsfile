@@ -48,7 +48,7 @@ pipeline {
             }
         }
 
-        stage ('Bundle Install .. '){
+        stage ('Bundle Install'){
             steps {
                 script {  
                     echo "In Jenkins phase: bundle install "                    
@@ -61,9 +61,7 @@ pipeline {
             steps {
                 script {  
                     echo "In Jenkins phase: DB preparation " 
-                    railsEnv = env.RAILS_ENV
-                            // sh "printenv"
-                    echo "railsEnv variables is : ${railsEnv}"                   
+                    railsEnv = env.RAILS_ENV                
                     bpl_tool.RunDBpreparation(railsEnv) 
                 }
             }
@@ -78,7 +76,7 @@ pipeline {
             }
         }
 
-        stage("Deploy test to use withCredentials") {
+        stage("Deploy application to target servers, test/staging/production servers") {
             steps {
                 script {
                     echo "In Jenkins phase: Capistrano deploying "
