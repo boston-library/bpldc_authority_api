@@ -211,6 +211,7 @@ def RunRSpec(){
 def RunDeployment(railsEnv){
   println("RUN Capistrano deployment ")
   withEnv(["RAILS_ENV=$railsEnv"]){  
+    echo "railsEnv is \$railsEnv"
     sh '''
         #!/bin/bash --login
         set -x
