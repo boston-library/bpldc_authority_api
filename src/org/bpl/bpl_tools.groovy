@@ -23,8 +23,8 @@ def GetCode(srcType,branchName,gitHttpURL,credentialsId){
 }
 
 def InstallNewRuby(rubyVersion){
-   println("Installing new ruby version by being called: ${rubyVersion}")
-   withEnv(["RUBYVERSION=${rubyVersion}"]){
+    println("Installing new ruby version by being called: ${rubyVersion}")
+    withEnv(["RUBYVERSION=${rubyVersion}"]){
       sh '''
       #!/bin/bash --login
  
@@ -110,25 +110,25 @@ def RunPreparation(){
     else 
         echo "There is NO ./config/deploy/production.rb yet"
     fi 
-  '''
+  '''.stripIndent()
 }
 
 def RunBundleInstall(){
-  println("RUN bundle install ")
-  sh '''
-    #!/bin/bash -l
-   
-    echo "In  shared library,  bundle install" 
-    if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-       source /var/lib/jenkins/.rvm/bin/rvm
-    else 
-       exit
-    fi    
-    
-    ## rvm use ${EXPECTED_RUBY} --default
-    bundle install
+    println("RUN bundle install ")
+    sh '''
+        #!/bin/bash -l
+       
+        echo "In  shared library,  bundle install" 
+        if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+           source /var/lib/jenkins/.rvm/bin/rvm
+        else 
+           exit
+        fi    
+        
+        ## rvm use ${EXPECTED_RUBY} --default
+        bundle install
 
-  '''
+    '''.stripIndent()
 }
 
 def RunDBpreparation(railsEnv){
@@ -159,7 +159,7 @@ def RunDBpreparation(railsEnv){
           bundle exec rails db:prepare
           bundle exec rails db:migrate
 
-        '''
+        '''.stripIndent()
     }
 }
 
@@ -182,7 +182,7 @@ def RunCI(){
         
                 ## RAILS_ENV=test bundle exec rake
         bundle exec rake
-    '''
+    '''.stripIndent()
 }
 
 def RunRSpec(){
@@ -206,7 +206,7 @@ def RunRSpec(){
 
         rspec	
 
-	'''
+	'''.stripIndent()
 }
 
 def RunDeployment(railsEnv){
@@ -252,6 +252,6 @@ def RunDeployment(railsEnv){
         fi   
 
         set -x
-    '''
+    '''.stripIndent()
   }
 }
