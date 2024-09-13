@@ -132,57 +132,57 @@ def RunBundleInstall(){
 }
 
 def RunDBpreparation(railsEnv){
-  println("RUN DB prepare and migrate ")
-  withEnv(["RAILS_ENV=${railsEnv}"]){
-    sh '''
-      #!/bin/bash -l
-     
-      echo "RAILS_ENV from Jenkinsfile is ${RAILS_ENV}"
-      echo "In  shared library,  db:prepare and db:migrate " 
-      if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-         source /var/lib/jenkins/.rvm/bin/rvm
-      else 
-         exit
-      fi    
+    println("RUN DB prepare and migrate ")
+    withEnv(["RAILS_ENV=${railsEnv}"]){
+        sh '''
+          #!/bin/bash -l
+         
+          echo "RAILS_ENV from Jenkinsfile is ${RAILS_ENV}"
+          echo "In  shared library,  db:prepare and db:migrate " 
+          if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+             source /var/lib/jenkins/.rvm/bin/rvm
+          else 
+             exit
+          fi    
 
-      EXPECTED_RUBY=`cat .ruby-version`
+          EXPECTED_RUBY=`cat .ruby-version`
 
-      rvm install ${EXPECTED_RUBY}
-         ## /var/lib/jenkins/.rvm/bin/rvm get stable
-      rvm use ${EXPECTED_RUBY} --default
-      rvm alias create --default  ${EXPECTED_RUBY} 
-      rvm alias create --current  ${EXPECTED_RUBY} 
-      
-      # RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
-      # RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
+          rvm install ${EXPECTED_RUBY}
+             ## /var/lib/jenkins/.rvm/bin/rvm get stable
+          rvm use ${EXPECTED_RUBY} --default
+          rvm alias create --default  ${EXPECTED_RUBY} 
+          rvm alias create --current  ${EXPECTED_RUBY} 
+          
+          # RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
+          # RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
 
-      bundle exec rails db:prepare
-      bundle exec rails db:migrate
+          bundle exec rails db:prepare
+          bundle exec rails db:migrate
 
-    '''
-  }
+        '''
+    }
 }
 
 
 def RunCI(){
-  println("Running CI  ")
-  sh '''
-    #!/bin/bash --login
-    set +x
+    println("Running CI  ")
+    sh '''
+        #!/bin/bash --login
+        set +x
 
-    EXPECTED_RUBY=`cat .ruby-version`
+        EXPECTED_RUBY=`cat .ruby-version`
 
-    if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
-        source /var/lib/jenkins/.rvm/bin/rvm
-    else 
-        exit
-    fi    
-    
-    rvm use default ${EXPECTED_RUBY} 
-    
-            ## RAILS_ENV=test bundle exec rake
-    bundle exec rake
-  '''
+        if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+            source /var/lib/jenkins/.rvm/bin/rvm
+        else 
+            exit
+        fi    
+        
+        rvm use default ${EXPECTED_RUBY} 
+        
+                ## RAILS_ENV=test bundle exec rake
+        bundle exec rake
+    '''
 }
 
 def RunRSpec(){
@@ -202,9 +202,10 @@ def RunRSpec(){
         
         ## rvm use ${EXPECTED_RUBY} --default
         ## bundle install
-        
         ## bin/rails exec rspec
+
         rspec	
+
 	'''
 }
 
@@ -242,15 +243,6 @@ def RunDeployment(railsEnv){
         RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy:check
         RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --dry-run --trace
         RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --trace
-        
-                #m# RAILS_ENV=\$RAILS_ENV cap staging install --trace
-                #m# RAILS_ENV=staging cap -T        
-                
-                #m# ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
-                #m# ## Capistrano breaks here!
-                #m# RAILS_ENV=staging cap staging deploy:check
-                #m# RAILS_ENV=staging cap staging deploy --dry-run --trace
-                #m# RAILS_ENV=staging cap staging deploy --trace
         
         if [[ -f ./config/deploy/production.rb ]]; then 
             echo "There is ./config/deploy/production.rb created!"
