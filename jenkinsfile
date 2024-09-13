@@ -40,8 +40,8 @@ pipeline {
             steps {
                 script {  
                     echo "In Jenkins phase: Install new ruby" 
-                    // def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
-                    EXPECTED_RUBY = '3.2.5'
+                    def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
+                    // EXPECTED_RUBY = '3.2.5'
                     echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
                     bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
                 }
@@ -76,7 +76,7 @@ pipeline {
             }
         }
 
-        stage("Deploy application to target servers, test/staging/production servers") {
+        stage("Deploy application to target servers") {
             steps {
                 script {
                     echo "In Jenkins phase: Capistrano deploying "
