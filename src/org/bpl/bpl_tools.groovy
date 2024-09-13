@@ -211,14 +211,14 @@ def RunRSpec(){
 def RunDeployment(railsEnv){
   println("RUN Capistrano deployment ")
   withEnv(["RAILS_ENV=$railsEnv"]){  
-    echo "railsEnv is ${railsEnv}"
+    echo "railsEnv is ${railsEnv}, RAILS_ENV is ${RAILS_ENV}"
     sh '''
         #!/bin/bash --login
         set -x
         
         EXPECTED_RUBY=`cat .ruby-version`
         echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
-        echo "railsEnv is \${railsEnv}"
+        echo "railsEnv is \${railsEnv},  RAILS_ENV is ${RAILS_ENV}"
             
         set +x
         
