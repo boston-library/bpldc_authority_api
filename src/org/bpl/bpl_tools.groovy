@@ -217,6 +217,7 @@ def RunDeployment(railsEnv){
         
         EXPECTED_RUBY=`cat .ruby-version`
         echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
+        echo "railsEnv is \$railsEnv"
             
         set +x
         
