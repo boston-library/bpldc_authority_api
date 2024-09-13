@@ -217,10 +217,10 @@ def RunDeployment(railsEnv){
         
         # set -x
         set +x
-        
+
         EXPECTED_RUBY=`cat .ruby-version`
         echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
-        // echo "railsEnv is \${railsEnv},  RAILS_ENV is ${RAILS_ENV}, RAILS_ENV is \$RAILS_ENV"
+        echo "railsEnv is \${railsEnv},  RAILS_ENV is ${RAILS_ENV}, RAILS_ENV is \$RAILS_ENV"
             
         set +x
         
