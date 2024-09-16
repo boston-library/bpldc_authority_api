@@ -156,7 +156,12 @@ def RunDBpreparation(railsEnv){
           # RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
           # RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
 
-          bundle exec rails db:prepare
+          if [ ${RAILS_ENV} == 'test' ]; then 
+            bundle exec rails db:prepare
+          else 
+            exit
+          fi
+    
           bundle exec rails db:migrate
 
         '''.stripIndent()
