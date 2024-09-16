@@ -173,7 +173,7 @@ def RunCI(){
             exit
         fi    
         
-        rvm use default ${EXPECTED_RUBY} 
+        rvm use ${EXPECTED_RUBY} 
         
                 ## RAILS_ENV=test bundle exec rake
         bundle exec rake
@@ -195,7 +195,7 @@ def RunRSpec(){
            exit
         fi    
         
-        ## rvm use ${EXPECTED_RUBY} --default
+        ## rvm use ${EXPECTED_RUBY}
         ## bundle install
         ## bin/rails exec rspec
 

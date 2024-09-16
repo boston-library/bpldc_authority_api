@@ -1,5 +1,6 @@
 #!groovy
 @Library("bpldc_lib@jenkinsfile") _
+// @Library("url to external lib") _
 
 def bpl_tool = new org.bpl.bpl_tools()
 
