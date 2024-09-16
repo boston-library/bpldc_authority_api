@@ -1,5 +1,5 @@
 #!groovy
-@Library("bpldc_jenkinsfile_1@main") _
+@Library("bpldc_jenkinsfile@main") _
 
 // Following library works, including configs in `Manage Jenkins/System` on Jenkins server!
 // @Library("bpldc_lib@jenkinsfile") _
@@ -19,16 +19,6 @@ pipeline {
     }
     
     stages {
-        // works for bpldc_authority
-        // stage('CheckoutCode') {
-        //     steps {
-        //         script {  
-        //             echo "bpl_tool is ${bpl_tool}"
-        //             echo "In Jenkinsfile phase: Checkout Source Code" 
-        //             bpl_tool.CheckoutCode() 
-        //         }
-        //     }
-        // }
 
         stage('GetCode') {
             steps {
