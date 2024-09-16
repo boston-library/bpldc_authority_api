@@ -26,7 +26,7 @@ pipeline {
         //         }
         //     }
         // }
-        
+
         stage('Show Parameters and Env Vars') {
             steps {
                 script {
@@ -52,9 +52,13 @@ pipeline {
                     echo "In Jenkinsfile phase: Checkout Source Code" 
                     // bpl_tool.CheckoutCode()
                     def srcType    = 'Git' 
-                    def branchName = params.BRANCH_NAME
-                    def gitHttpURL = 'https://github.com/boston-library/bpldc_authority_api.git'
-                    def credentialsId = 'bplwebmaster'
+                    // def branchName = params.BRANCH_NAME
+                    // def gitHttpURL = 'https://github.com/boston-library/bpldc_authority_api.git'
+                    // def credentialsId = 'bplwebmaster'
+                    def branchName = env.GIT_BRANCH
+                    def gitHttpURL = env.GIT_URL
+                    def credentialsId = scm.userRemoteConfigs[0]?.credentialsId
+
                     echo "srcType is ${srcType}"
                     echo "branchName is ${branchName}"
                     echo "gitHttpURL is ${gitHttpURL}"
