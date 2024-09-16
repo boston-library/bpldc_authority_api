@@ -26,17 +26,22 @@ pipeline {
         //         }
         //     }
         // }
+        
         stage('Show Parameters and Env Vars') {
-            // Print all build parameters
-            echo "Build Parameters:"
-            for (param in params) {
-                echo "${param.key} = ${param.value}"
-            }
+            steps {
+                script {
+                    // Display all build parameters
+                    echo "Build Parameters:"
+                    params.each { param -> 
+                        echo "${param.key} = ${param.value}"
+                    }
 
-            // Print all environment variables
-            echo "Environment Variables:"
-            for (variable in env) {
-                echo "${variable.key} = ${variable.value}"
+                    // Display all environment variables
+                    echo "Environment Variables:"
+                    env.each { variable -> 
+                        echo "${variable.key} = ${variable.value}"
+                    }
+                }
             }
         }
 
