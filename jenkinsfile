@@ -57,7 +57,7 @@ pipeline {
                     // def credentialsId = 'bplwebmaster'
                     def branchName = env.GIT_BRANCH
                     def gitHttpURL = env.GIT_URL
-                    def credentials = scm
+                    def credentials = scm.userRemoteConfigs
                     def credentialsId = scm.userRemoteConfigs[0]?.credentialsId
 
 
