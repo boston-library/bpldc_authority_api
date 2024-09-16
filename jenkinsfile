@@ -57,11 +57,14 @@ pipeline {
                     // def credentialsId = 'bplwebmaster'
                     def branchName = env.GIT_BRANCH
                     def gitHttpURL = env.GIT_URL
+                    def credentials = scm
                     def credentialsId = scm.userRemoteConfigs[0]?.credentialsId
+
 
                     echo "srcType is ${srcType}"
                     echo "branchName is ${branchName}"
                     echo "gitHttpURL is ${gitHttpURL}"
+                    echo "credentials is ${credentials}"
                     echo "credentialsId is ${credentialsId}"
 
                     bpl_tool.GetCode(srcType,branchName,gitHttpURL,credentialsId)
