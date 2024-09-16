@@ -38,7 +38,7 @@ pipeline {
                     def gitHttpURL = params.GIT_URL
                     def credentialsId = env.bplwebmaster
                     echo "srcType is ${srcType}"
-                    echo "branchName is ${srcType}"
+                    echo "branchName is ${branchName}"
                     echo "gitHttpURL is ${gitHttpURL}"
                     echo "credentialsId is ${gitHttpURL}"
 
