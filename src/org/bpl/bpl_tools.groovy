@@ -61,19 +61,19 @@ def RunPreparation(){
   sh '''
     #!/bin/bash --login
 
-    sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/15/main/postgresql.conf
-    #sudo cp /etc/postgresql/{9.3,12}/main/pg_hba.conf
-    sudo pg_ctlcluster 15 main restart
+    #m# sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/15/main/postgresql.conf
+    #m# #sudo cp /etc/postgresql/{9.3,12}/main/pg_hba.conf
+    #m# sudo pg_ctlcluster 15 main restart
     
-    export RAILS_ENV=test
+    #m# export RAILS_ENV=test
     
-    export PGVER=12
-    export PGHOST=127.0.0.1
-    export PGUSER=postgres
-    export PGPASSWORD=postgres
-    export PGPORT=5432
-    export NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-    export RAILS_VERSION=6.0.5
+    #m# export PGVER=12
+    #m# export PGHOST=127.0.0.1
+    #m# export PGUSER=postgres
+    #m# export PGPASSWORD=postgres
+    #m# export PGPORT=5432
+    #m# export NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    #m# export RAILS_VERSION=6.0.5
 
     EXPECTED_RUBY=`cat .ruby-version`
     BUNDLE_VER=$(tail -1 ./Gemfile.lock | xargs)
@@ -88,9 +88,9 @@ def RunPreparation(){
 
     rvm install ${EXPECTED_RUBY} -C --with-jemalloc
     ## /var/lib/jenkins/.rvm/bin/rvm get stable
-    rvm use ${EXPECTED_RUBY} --default 
-    rvm alias create --default  ${EXPECTED_RUBY} 
-    rvm alias create --current  ${EXPECTED_RUBY} 
+    rvm use ${EXPECTED_RUBY} 
+    #m# rvm alias create --default  ${EXPECTED_RUBY} 
+    #m# rvm alias create --current  ${EXPECTED_RUBY} 
 
     ruby --version
 
@@ -125,7 +125,7 @@ def RunBundleInstall(){
            exit
         fi    
         
-        ## rvm use ${EXPECTED_RUBY} --default
+        ## rvm use ${EXPECTED_RUBY} 
         bundle install
 
     '''.stripIndent()
