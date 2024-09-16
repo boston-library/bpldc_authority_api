@@ -35,8 +35,8 @@ pipeline {
                     // bpl_tool.CheckoutCode()
                     def srcType    = 'Git' 
                     def branchName = params.BRANCH_NAME
-                    def gitHttpURL = params.GIT_URL
-                    def credentialsId = env.bplwebmaster
+                    def gitHttpURL = 'https://github.com/boston-library/bpldc_authority_api.git'
+                    def credentialsId = 'bplwebmaster'
                     echo "srcType is ${srcType}"
                     echo "branchName is ${branchName}"
                     echo "gitHttpURL is ${gitHttpURL}"
