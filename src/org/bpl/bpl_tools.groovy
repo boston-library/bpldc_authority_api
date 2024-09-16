@@ -61,19 +61,7 @@ def RunPreparation(){
   sh '''
     #!/bin/bash --login
 
-    #m# sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/15/main/postgresql.conf
-    #m# #sudo cp /etc/postgresql/{9.3,12}/main/pg_hba.conf
-    #m# sudo pg_ctlcluster 15 main restart
-    
     #m# export RAILS_ENV=test
-    
-    #m# export PGVER=12
-    #m# export PGHOST=127.0.0.1
-    #m# export PGUSER=postgres
-    #m# export PGPASSWORD=postgres
-    #m# export PGPORT=5432
-    #m# export NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-    #m# export RAILS_VERSION=6.0.5
 
     EXPECTED_RUBY=`cat .ruby-version`
     BUNDLE_VER=$(tail -1 ./Gemfile.lock | xargs)
@@ -156,7 +144,9 @@ def RunDBpreparation(railsEnv){
           # RAILS_ENV=${RAILS_ENV} bundle exec rails db:prepare
           # RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
 
-          if [ ${RAILS_ENV} == 'test' ]; then 
+          ## Only run db:prepare in test environment. Not in staging/production
+          ## Otherwise db in staging/prod will get reset.
+          if [ "${RAILS_ENV}" == "test" ]; then 
             bundle exec rails db:prepare
           else 
             exit
