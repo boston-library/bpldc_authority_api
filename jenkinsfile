@@ -16,13 +16,33 @@ pipeline {
     }
     
     stages {
+        // works for bpldc_authority
+        // stage('CheckoutCode') {
+        //     steps {
+        //         script {  
+        //             echo "bpl_tool is ${bpl_tool}"
+        //             echo "In Jenkinsfile phase: Checkout Source Code" 
+        //             bpl_tool.CheckoutCode() 
+        //         }
+        //     }
+        // }
 
-        stage('CheckoutCode') {
+        stage('GetCode') {
             steps {
                 script {  
                     echo "bpl_tool is ${bpl_tool}"
                     echo "In Jenkinsfile phase: Checkout Source Code" 
-                    bpl_tool.CheckoutCode() 
+                    // bpl_tool.CheckoutCode()
+                    def srcType    = 'Git' 
+                    def branchName = params.BRANCH_NAME
+                    def gitHttpURL = params.GIT_URL
+                    def credentialsId = env.bplwebmaster
+                    echo "srcType is ${srcType}"
+                    echo "branchName is ${srcType}"
+                    echo "gitHttpURL is ${gitHttpURL}"
+                    echo "credentialsId is ${gitHttpURL}"
+
+                    bpl_tool.GetCode(srcType,branchName,gitHttpURL,credentialsId)
                 }
             }
         }
