@@ -1,6 +1,8 @@
 #!groovy
-@Library("bpldc_lib@jenkinsfile") _
-// @Library("url to external lib") _
+@Library("bpldc_jenkinsfile@main") _
+
+// Following library works, including configs in `Manage Jenkins/System` on Jenkins server!
+// @Library("bpldc_lib@jenkinsfile") _
 
 def bpl_tool = new org.bpl.bpl_tools()
 
