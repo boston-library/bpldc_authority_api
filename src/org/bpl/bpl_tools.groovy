@@ -31,9 +31,9 @@ def InstallNewRuby(rubyVersion){
       ## EXPECTED_RUBY=`cat .ruby-version`
       echo "ruby_version is ${RUBYVERSION}"
 
-      source /var/lib/jenkins/.bashrc
-      source /var/lib/jenkins/.bash_profile
-      source /var/lib/jenkins/.profile
+      #m# source /var/lib/jenkins/.bashrc
+      #m# source /var/lib/jenkins/.bash_profile
+      #m# source /var/lib/jenkins/.profile
 
       if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
         source /var/lib/jenkins/.rvm/bin/rvm
@@ -43,7 +43,7 @@ def InstallNewRuby(rubyVersion){
 
       echo "after sourcing rvm..."
       rvm install ${RUBYVERSION}
-      ## /var/lib/jenkins/.rvm/bin/rvm get stable
+        ## /var/lib/jenkins/.rvm/bin/rvm get stable
       rvm use ${RUBYVERSION} --default
       rvm alias create --default  ${RUBYVERSION} 
       rvm alias create --current  ${RUBYVERSION} 
