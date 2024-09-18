@@ -90,7 +90,7 @@ pipeline {
                 script {
                     if ( env.RAILS_ENV == 'test') {
                         echo "creating docker images"
-                        bpl_tool.CreateDockerImages()
+                        bpl_tool.CreateBpldcAuthorityDockerImages()
                     }else{
                         echo "No need create docker images. Skipping... "
                     }
