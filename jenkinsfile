@@ -85,6 +85,19 @@ pipeline {
             }
         }
 
+        stage('Create Docker Image'){
+            steps {
+                script {
+                    if ( ${RAILS_ENV} == 'test') {
+                        echo "creating docker images"
+                        bpl_tool.CreateDockerImages()
+                    }else{
+                        echo "No need create docker images. Skipping... "
+                    }
+                }
+            }
+        }
+
         stage("Deploy application to target servers") {
             steps {
                 script {
