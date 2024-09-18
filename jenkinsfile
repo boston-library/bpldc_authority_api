@@ -88,7 +88,7 @@ pipeline {
         stage('Create Docker Image'){
             steps {
                 script {
-                    if ( ${RAILS_ENV} == 'test') {
+                    if ( env.RAILS_ENV == 'test') {
                         echo "creating docker images"
                         bpl_tool.CreateDockerImages()
                     }else{
