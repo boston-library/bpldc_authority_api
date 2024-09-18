@@ -1,5 +1,5 @@
 #!groovy
-@Library("bpldc_jenkinsfile_1@main") _
+@Library("bpldc_jenkinsfile@main") _
 
 // Following library works, including configs of `Manage Jenkins/System/bpldc_lib` on Jenkins server!
 // @Library("bpldc_lib@jenkinsfile") _
