@@ -88,7 +88,7 @@ pipeline {
             steps {
                 script {
                     if ( env.RAILS_ENV == 'test') {
-                        echo "creating docker images"
+                        echo "creating docker image"
                         // bpl_tool.CreateBpldcAuthorityDockerImages()
                         bpl_tool.CreateDockerImage('bpldc_authority_api')
                     }else{
