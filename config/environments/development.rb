@@ -76,7 +76,7 @@ Rails.application.configure do
 
   config.log_level = :debug
   config.log_formatter = ::Logger::Formatter.new
-
+  config.log_file_size = 10 * 1_024 * 1_024
   # Prepend all log lines with the following tags.
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
