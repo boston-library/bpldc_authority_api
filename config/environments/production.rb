@@ -6,7 +6,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-  config.cache_classes = true
+  config.enable_reloading = false
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -46,8 +46,10 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
   config.cache_store = :redis_cache_store, {
     url: ENV.fetch('BPLDC_REDIS_CACHE_URL') { Rails.application.credentials.dig(:redis, :url) },
-    pool_size: ENV.fetch('RAILS_MAX_THREADS') { 5 },
-    pool_timeout: 5,
+    pool:{
+      size: ENV.fetch('RAILS_MAX_THREADS', 5),
+      timeout: ENV.fetch('BPLDC_REDIS_CACHE_TTL', 60)
+    },
     expires_in: 24.hours
   }
 

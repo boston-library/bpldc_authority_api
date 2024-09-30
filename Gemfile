@@ -33,8 +33,8 @@ gem 'qa', '~> 5.13'
 gem 'faraday', '~> 1.10', '< 2'
 gem 'faraday_middleware', '~> 1.2'
 
-
 group :development do
+  gem 'listen'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 end
@@ -45,8 +45,8 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'capistrano-rails', '~> 1.4', require: false
   gem 'capistrano-rvm'
+  gem 'debug', platforms: %i(mri windows)
   gem 'dotenv-rails', '~> 2.8'
-  gem 'debug', platforms: %i[mri windows]
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 3.2'
   gem 'rspec-rails', '~> 6.1'

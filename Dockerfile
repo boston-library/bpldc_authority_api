@@ -1,9 +1,9 @@
-FROM ruby:3.1.6
+FROM ruby:3.2.5
 
 LABEL maintainer="bbarber@bpl.org, eenglish@bpl.org"
 
 ENV LANG=C.UTF-8 \
-    BUNDLER_VERSION=2.5.9
+    BUNDLER_VERSION=2.5.19
 
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends apt-utils

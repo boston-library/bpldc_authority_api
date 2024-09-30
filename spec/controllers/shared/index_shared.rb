@@ -2,7 +2,7 @@
 
 RSpec.shared_examples 'bpldc_index_shared' do
   describe 'index_actions' do
-    let!(:expected_cache_response_headers) { ['ETag', 'Last-Modified', 'Cache-Control'] }
+    let!(:expected_cache_response_headers) { ['etag', 'last-modified', 'cache-control'] }
 
     it 'assigns @objects' do
       expect(assigns(:objects)).to_not be_falsey
