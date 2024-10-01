@@ -3,6 +3,8 @@
 Rails.application.routes.draw do
   root 'application#app_info'
 
+  get 'up' => 'rails/health#show', as: :rails_health_check
+
   mount Qa::Engine => '/qa'
 
   namespace :bpldc, defaults: { format: 'json' } do
