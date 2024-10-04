@@ -5,16 +5,19 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # In the development environment your application's code is reloaded on
-  # every request. This slows down response time but is perfect for development
-  # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = false
+  # In the development environment your application's code is reloaded any time
+  # it changes. This slows down response time but is perfect for development
+
+  config.enable_reloading = true
 
   # Do not eager load code on boot.
   config.eager_load = false
 
   # Show full error reports.
   config.consider_all_requests_local = true
+
+  # Enable server timing
+  config.server_timing = true
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -32,8 +35,10 @@ Rails.application.configure do
     }
     config.cache_store = :redis_cache_store, {
       url: ENV['BPLDC_REDIS_CACHE_URL'],
-      pool_size: ENV.fetch('RAILS_MAX_THREADS') { 5 },
-      pool_timeout: 5,
+      pool: {
+        size: ENV.fetch('RAILS_MAX_THREADS', 5),
+        timeout: 5
+      },
       expires_in: 24.hours
     }
   else
@@ -71,7 +76,7 @@ Rails.application.configure do
 
   config.log_level = :debug
   config.log_formatter = ::Logger::Formatter.new
-
+  config.log_file_size = 10 * 1_024 * 1_024
   # Prepend all log lines with the following tags.
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?

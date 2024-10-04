@@ -22,9 +22,10 @@ Bundler.require(*Rails.groups)
 module BpldcAuthorityApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 7.1
     config.api_only = true
-
+    # config.add_autoload_paths_to_load_path = false
+    # config.active_support.cache_format_version = 7.1
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
@@ -41,11 +42,5 @@ module BpldcAuthorityApi
       g.fixture_replacement :factory_bot
       g.factory_bot dir: 'spec/factories'
     end
-
-    # NOTE: Geomash doesn't read ERB/ENV in config/geomash.yml, so we reset it here
-    Geomash.config[:geonames_username] = ENV.fetch('GEONAMES_USERNAME') { Rails.application.credentials.dig(:geonames_user) }
-    Geomash.config[:google_key] = ENV.fetch('GOOGLE_MAPS_API_KEY') { Rails.application.credentials.dig(:google_maps_api_key) }
-
-    Qa::Authorities::Geonames.username = ENV.fetch('GEONAMES_USERNAME') { Rails.application.credentials.dig(:geonames_user) }
   end
 end

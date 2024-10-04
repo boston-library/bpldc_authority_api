@@ -5,7 +5,7 @@ module Geomash
     # GET /geomash/tgn/:id
     def tgn
       begin
-        @geomash_data = Rails.cache.fetch("bpldc:geomash/tgn/#{params[:id]}") do
+        @geomash_data = Rails.cache.fetch("bpldc:geomash/tgn/#{params[:id]}", skip_nil: true) do
           Geomash::TGN.get_tgn_data(params[:id])
         end
         return_or_not_found
@@ -17,7 +17,7 @@ module Geomash
     # GET /geomash/geonames/:id
     def geonames
       begin
-        @geomash_data = Rails.cache.fetch("bpldc:geomash/geonames/#{params[:id]}") do
+        @geomash_data = Rails.cache.fetch("bpldc:geomash/geonames/#{params[:id]}", skip_nil: true) do
           Geomash::Geonames.get_geonames_data(params[:id])
         end
 
