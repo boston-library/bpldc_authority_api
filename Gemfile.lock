@@ -104,7 +104,7 @@ GEM
     base64 (0.2.0)
     bcp47_spec (0.2.1)
     benchmark (0.4.0)
-    bigdecimal (3.1.8)
+    bigdecimal (3.1.9)
     bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
@@ -307,10 +307,10 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.4-x86_64-linux-gnu)
       racc (~> 1.4)
-    oj (3.16.6)
+    oj (3.16.10)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
-    ostruct (0.6.0)
+    ostruct (0.6.1)
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -320,7 +320,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
-    puma (6.4.3)
+    puma (6.6.0)
       nio4r (~> 2.0)
     qa (5.13.0)
       activerecord-import
@@ -612,7 +612,7 @@ DEPENDENCIES
   listen
   oj (~> 3.16)
   pg (>= 0.18, < 2.0)
-  puma (~> 6.4)
+  puma (~> 6.6)
   qa (~> 5.13)
   rack-cors (~> 2.0)
   rails (~> 7.1.4)
@@ -631,7 +631,7 @@ DEPENDENCIES
   webmock (~> 3.23)
 
 RUBY VERSION
-   ruby 3.2.5p208
+   ruby 3.2.8p263
 
 BUNDLED WITH
-   2.5.19
+   2.6.7
