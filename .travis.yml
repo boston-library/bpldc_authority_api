@@ -23,7 +23,7 @@ before_install:
     /etc/postgresql/13/main/pg_hba.conf
   - sudo pg_ctlcluster 13 main restart
   - gem update --system --no-document
-  - gem install bundler:2.6.7 --no-document
+  - gem install bundler:2.6.8 --no-document
 
 before_script:
   - bundle exec rails db:prepare
