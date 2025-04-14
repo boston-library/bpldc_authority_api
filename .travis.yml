@@ -29,7 +29,7 @@ before_script:
   - bundle exec rails db:prepare
 
 rvm:
-  - 3.2.8
+  - 3.3.8
 
 env:
   global:
