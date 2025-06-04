@@ -13,9 +13,9 @@ pipeline {
         // RAILS_ENV = 'staging'
     } 
 
-    options {
-        ansiColor('xterm')
-    }
+    // options {
+    //     ansiColor('xterm')
+    // }
     
     stages {
 
