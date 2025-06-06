@@ -84,19 +84,20 @@ pipeline {
     //         }
     //     }
 
-        stage('Create Docker Image'){
-            steps {
-                script {
-                    if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
-                        echo "creating docker image"
+        // 06/06/2025 This stage works 
+        // stage('Create Docker Image'){
+        //     steps {
+        //         script {
+        //             if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
+        //                 echo "creating docker image"
                         
-                        bpl_tool.CreateDockerImage('bpldc_authority_api')
-                    }else{
-                        echo "No need create docker images. Skipping... "
-                    }
-                }
-            }
-        }
+        //                 bpl_tool.CreateDockerImage('bpldc_authority_api')
+        //             }else{
+        //                 echo "No need create docker images. Skipping... "
+        //             }
+        //         }
+        //     }
+        // }
 
     //     stage("Deploy application to target servers") {
     //         steps {
