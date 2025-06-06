@@ -35,7 +35,7 @@ pipeline {
             }
         }
         
-    //     stage('Preparation') {
+    //    stage('Preparation') {
     //         steps {
     //             script {  
     //                 echo "In Jenkinsfile phase: Preparation at the very begining"                   
@@ -108,7 +108,7 @@ pipeline {
     //             }
     //         }
     //     }
-    }
+    //}
 
     post {
         failure {
