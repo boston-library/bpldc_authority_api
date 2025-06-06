@@ -35,14 +35,14 @@ pipeline {
             }
         }
         
-       // stage('Preparation') {
-       //      steps {
-       //          script {  
-       //              echo "In Jenkinsfile phase: Preparation at the very begining"                   
-       //              bpl_tool.RunPreparation()
-       //          }                
-       //      }
-       //  }
+       stage('Preparation') {
+            steps {
+                script {  
+                    echo "In Jenkinsfile phase: Preparation at the very begining"                   
+                    bpl_tool.RunPreparation()
+                }                
+            }
+        }
 
     //     stage ('Install new ruby'){
     //         steps {
