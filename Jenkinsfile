@@ -44,17 +44,17 @@ pipeline {
             }
         }
 
-    //     stage ('Install new ruby'){
-    //         steps {
-    //             script {  
-    //                 echo "In Jenkins phase: Install new ruby" 
-    //                 def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
-    //                 // EXPECTED_RUBY = '3.2.5'
-    //                 echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
-    //                 bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
-    //             }
-    //         }
-    //     }
+        stage ('Install new ruby'){
+            steps {
+                script {  
+                    echo "In Jenkins phase: Install new ruby" 
+                    def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
+                    // EXPECTED_RUBY = '3.2.5'
+                    echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
+                    bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
+                }
+            }
+        }
 
     //     stage ('Bundle Install'){
     //         steps {
