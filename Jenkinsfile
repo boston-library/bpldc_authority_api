@@ -75,14 +75,14 @@ pipeline {
             }
         }
 
-    //     stage('CI') {
-    //         steps {
-    //             script {  
-    //                 echo "In Jenkins phase: running CI testing "                   
-    //                 bpl_tool.RunCI() 
-    //             }
-    //         }
-    //     }
+        stage('CI') {
+            steps {
+                script {  
+                    echo "In Jenkins phase: running CI testing "                   
+                    bpl_tool.RunCI() 
+                }
+            }
+        }
 
         // 06/06/2025 This stage works 
         // stage('Create Docker Image'){
