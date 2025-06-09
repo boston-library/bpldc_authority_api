@@ -84,7 +84,6 @@ pipeline {
             }
         }
 
-        // 06/06/2025 This stage works 
         stage('Create Docker Image'){
             steps {
                 script {
