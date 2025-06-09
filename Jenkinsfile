@@ -56,14 +56,14 @@ pipeline {
             }
         }
 
-    //     stage ('Bundle Install'){
-    //         steps {
-    //             script {  
-    //                 echo "In Jenkins phase: bundle install "                    
-    //                 bpl_tool.RunBundleInstall() 
-    //             }
-    //         }
-    //     }
+        stage ('Bundle Install'){
+            steps {
+                script {  
+                    echo "In Jenkins phase: bundle install "                    
+                    bpl_tool.RunBundleInstall() 
+                }
+            }
+        }
 
     //     stage ('DB preparation'){
     //         steps {
