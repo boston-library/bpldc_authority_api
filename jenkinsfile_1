@@ -76,6 +76,42 @@ pipeline {
                 '''
             }
         }
+
+
+        stage('Deployment') {
+            steps {
+                sh '''#!/bin/bash --login
+                    set -xe
+                    EXPECTED_RUBY=`cat .ruby-version`
+                    echo "EXPECTED_RUBY is \$EXPECTED_RUBY"
+                        
+                    set +x
+                    
+                    if [ -s /var/lib/jenkins/.rvm/bin/rvm ]; then 
+                        source /var/lib/jenkins/.rvm/bin/rvm
+                    else 
+                        exit
+                    fi
+
+                    rvm list
+                    rvm install "\$EXPECTED_RUBY"
+                    rvm use "\$EXPECTED_RUBY" default
+                    ruby --version
+
+                    eval \$(ssh-agent)
+                    ssh-add \$SSH_KEY
+
+                    RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV install --trace
+                    RAILS_ENV=\$RAILS_ENV cap -T        
+                    
+                    ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
+                    ## Capistrano breaks here!
+                    RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy:check
+                    RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --dry-run --trace
+                    RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --trace
+                '''
+            }
+        }
     }
     
     post {
