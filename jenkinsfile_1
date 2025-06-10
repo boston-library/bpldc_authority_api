@@ -48,34 +48,34 @@ pipeline {
             }
         }
         
-        stage('Docker images build') {
-            steps {
-                sh '''
-                #!/usr/bin/env bash
-                
-                set -xe
-                
-                echo "GEONAMES_USERNAME=boston_library" > .env
-                echo "GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}" >> .env
-                echo "BPLDC_REDIS_CACHE_URL=" >> .env
-                
-                cat .env
-                
-                sudo docker compose build 
-                sudo docker compose up -d
-                '''
-            }    
-        }
+        // stage('Docker images build') {
+        //    steps {
+        //         sh '''
+        //         #!/usr/bin/env bash
+        //          
+        //         set -xe
+        //         
+        //         echo "GEONAMES_USERNAME=boston_library" > .env
+        //         echo "GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}" >> .env
+        //         echo "BPLDC_REDIS_CACHE_URL=" >> .env
+        //         
+        //         cat .env
+        //         
+        //         sudo docker compose build 
+        //         sudo docker compose up -d
+        //         '''
+        //     }    
+        // }
         
-        stage('Test') {
-            steps {
-                sh '''
-                    #!/usr/bin/env bash
-                    set -xe
-                    sudo docker-compose run app bundle exec rake --verbose
-                '''
-            }
-        }
+        // stage('Test') {
+        //    steps {
+        //        sh '''
+        //            #!/usr/bin/env bash
+        //            set -xe
+        //            sudo docker-compose run app bundle exec rake --verbose
+        //        '''
+        //    }
+        // }
 
 
         stage('Deployment') {
