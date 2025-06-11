@@ -7,12 +7,13 @@ def bpl_tool = new org.bpl.bpl_tools()
 
 pipeline {
     // agent any
-
-    node {
-        label 'agent-label'
-        customWorkspace "/var/lib/jenkins/workspace/${env.JOB_NAME.replace('/', '-')}"
+    agent {
+        node {
+            label 'agent-label'
+            customWorkspace "/var/lib/jenkins/workspace/${env.JOB_NAME.replace('/', '-')}"
+        }
     }
-
+    
     environment {
         RAILS_ENV = 'test'
         // RAILS_ENV = 'staging'
