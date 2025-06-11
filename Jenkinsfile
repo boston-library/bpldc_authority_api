@@ -7,9 +7,10 @@ def bpl_tool = new org.bpl.bpl_tools()
 
 pipeline {
     // agent any
+    
     agent {
-        label 'BPL_DAN'
         node {
+            label 'BPL_DAN'
             customWorkspace "/var/lib/jenkins/workspace/${env.JOB_NAME.replace('/', '-')}"
         }
     }
