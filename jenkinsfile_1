@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        RAILS_ENV = 'test'
+        // RAILS_ENV = 'staging'
+    } 
+
     stages {
         stage('CheckoutCode') {
             steps {
