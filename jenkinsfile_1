@@ -116,7 +116,7 @@ pipeline {
                     ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
                     ## Capistrano breaks here!
 
-                    RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy:check
+                    #m# RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy:check
                     RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --dry-run --trace
 
                     echo "Daniel Miao #3"  
