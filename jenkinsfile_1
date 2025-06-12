@@ -98,16 +98,21 @@ pipeline {
                     rvm use "\$EXPECTED_RUBY" default
                     ruby --version
 
+                    echo "Daniel Miao #1"  
                     eval \$(ssh-agent)
                     ssh-add \$SSH_KEY
 
                     RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV install --trace
-                    RAILS_ENV=\$RAILS_ENV cap -T        
+                    RAILS_ENV=\$RAILS_ENV cap -T  
+
+                    echo "Daniel Miao #2"      
                     
                     ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
                     ## Capistrano breaks here!
                     RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy:check
                     RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --dry-run --trace
+
+                    echo "Daniel Miao #3"  
                     RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV deploy --trace
                 '''
             }
