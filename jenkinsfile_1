@@ -110,7 +110,8 @@ pipeline {
                     RAILS_ENV=\$RAILS_ENV cap \$RAILS_ENV install --trace
                     RAILS_ENV=\$RAILS_ENV cap -T  
 
-                    echo "Daniel Miao #2"      
+                    echo "Daniel Miao #2"
+                    echo "\$RAILS_ENV"    
                     
                     ## If using GIT_HTTP_USERNAME/PASSWORD from Jenkins level, 
                     ## Capistrano breaks here!
