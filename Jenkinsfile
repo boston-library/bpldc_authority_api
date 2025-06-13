@@ -109,9 +109,9 @@ pipeline {
             steps {
                 script {
                     echo "In Jenkins phase: Capistrano deploying "
-                    railsEnv    = env.deploy_env
+                    RAILS_ENV    = env.deploy_env
 
-                    bpl_tool.RunDeployment(railsEnv)                
+                    bpl_tool.RunDeployment(env.RAILS_ENV)                
                 }
             }
         }
