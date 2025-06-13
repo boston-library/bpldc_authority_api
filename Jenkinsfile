@@ -42,68 +42,68 @@ pipeline {
             }
         }
         
-       stage('Preparation') {
-            steps {
-                script {  
-                    echo "In Jenkinsfile phase: Preparation at the very begining"                   
-                    bpl_tool.RunPreparation()
-                }                
-            }
-        }
+       // stage('Preparation') {
+       //      steps {
+       //          script {  
+       //              echo "In Jenkinsfile phase: Preparation at the very begining"                   
+       //              bpl_tool.RunPreparation()
+       //          }                
+       //      }
+       //  }
 
-        stage ('Install new ruby'){
-            steps {
-                script {  
-                    echo "In Jenkins phase: Install new ruby" 
-                    def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
-                    // EXPECTED_RUBY = '3.2.5'
-                    echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
-                    bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
-                }
-            }
-        }
+       //  stage ('Install new ruby'){
+       //      steps {
+       //          script {  
+       //              echo "In Jenkins phase: Install new ruby" 
+       //              def EXPECTED_RUBY = sh(returnStdout: true, script: 'cat .ruby-version')
+       //              // EXPECTED_RUBY = '3.2.5'
+       //              echo "EXPECTED_RUBY is $EXPECTED_RUBY"                    
+       //              bpl_tool.InstallNewRuby(EXPECTED_RUBY) 
+       //          }
+       //      }
+       //  }
 
-        stage ('Bundle Install'){
-            steps {
-                script {  
-                    echo "In Jenkins phase: bundle install "                    
-                    bpl_tool.RunBundleInstall() 
-                }
-            }
-        }
+       //  stage ('Bundle Install'){
+       //      steps {
+       //          script {  
+       //              echo "In Jenkins phase: bundle install "                    
+       //              bpl_tool.RunBundleInstall() 
+       //          }
+       //      }
+       //  }
 
-        stage ('DB preparation'){
-            steps {
-                script {  
-                    echo "In Jenkins phase: DB preparation " 
-                    railsEnv = env.RAILS_ENV                
-                    bpl_tool.RunDBpreparation(railsEnv) 
-                }
-            }
-        }
+       //  stage ('DB preparation'){
+       //      steps {
+       //          script {  
+       //              echo "In Jenkins phase: DB preparation " 
+       //              railsEnv = env.RAILS_ENV                
+       //              bpl_tool.RunDBpreparation(railsEnv) 
+       //          }
+       //      }
+       //  }
 
-        stage('CI') {
-            steps {
-                script {  
-                    echo "In Jenkins phase: running CI testing "                   
-                    bpl_tool.RunCI() 
-                }
-            }
-        }
+       //  stage('CI') {
+       //      steps {
+       //          script {  
+       //              echo "In Jenkins phase: running CI testing "                   
+       //              bpl_tool.RunCI() 
+       //          }
+       //      }
+       //  }
 
-        stage('Create Docker Image'){
-            steps {
-                script {
-                    if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
-                        echo "creating docker image"
+       //  stage('Create Docker Image'){
+       //      steps {
+       //          script {
+       //              if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
+       //                  echo "creating docker image"
                         
-                        bpl_tool.CreateDockerImage('bpldc_authority_api')
-                    }else{
-                        echo "No need create docker images. Skipping... "
-                    }
-                }
-            }
-        }
+       //                  bpl_tool.CreateDockerImage('bpldc_authority_api')
+       //              }else{
+       //                  echo "No need create docker images. Skipping... "
+       //              }
+       //          }
+       //      }
+       //  }
 
         stage("Deploy application to target servers") {
             steps {
