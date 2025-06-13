@@ -132,17 +132,17 @@ pipeline {
         }
     }
     
-    // post {
-    //     always {
-    //         sh '''
-    //             #!/usr/bin/env bash
-    //             set -xe
-    //             sudo docker stop $(docker ps -aq)
-    //             sudo docker rm $(docker ps -aq)
-    //             
-    //             sudo docker rmi bostonlibrary/bpldc_authority_api:dev-latest
-    //         '''
-    //     }
-    // }
+    post {
+        always {
+            sh '''
+                #!/usr/bin/env bash
+                set -xe
+                sudo docker stop $(docker ps -aq)
+                sudo docker rm $(docker ps -aq)
+                
+                sudo docker rmi bostonlibrary/bpldc_authority_api:dev-latest
+            '''
+        }
+    }
 }
 
