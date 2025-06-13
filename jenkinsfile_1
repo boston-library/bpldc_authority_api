@@ -20,67 +20,67 @@ pipeline {
             }
         }
 
-        // stage('Preparation') {
-        //     steps {
-        //         sh '''
-        //             #!/usr/bin/env bash
-        //             set -xe
-        //             
-        //             if [ "$(docker ps -qa -f name=bpldc_authority_api)" ]; then 
-        //                 docker stop $(docker ps -qa -f name=bpldc_authority_api) || true
-        //             fi
-        //             
-        //             if [ "$(docker ps -qa -f name=bpldc_authority_cache)" ]; then 
-        //                 docker stop $(docker ps -qa -f name=bpldc_authority_cache) || true
-        //             fi
-        //             
-        //             if [ "$(docker ps -qa -f name=bpldc_authority_pg)" ]; then 
-        //                 docker stop $(docker ps -qa -f name=bpldc_authority_pg) || true
-        //             fi
-        //             
-        //             if [ "$(docker ps -qa -f name=bpldc_authority_api)" ]; then 
-        //                 docker rm $(docker ps -qa -f name=bpldc_authority_api) || true
-        //             fi
-        //             
-        //             if [ "$(docker ps -qa -f name=bpldc_authority_cache)" ]; then 
-        //                 docker rm $(docker ps -qa -f name=bpldc_authority_api) || true
-        //             fi
-        //             
-        //             if [ "$(docker ps -qa -f name=bpldc_authority_pg)" ]; then 
-        //                 docker rm $(docker ps -qa -f name=bpldc_authority_pg) || true
-        //             fi                
-        //         '''
-        //     }
-        // }
+        stage('Preparation') {
+            steps {
+                sh '''
+                    #!/usr/bin/env bash
+                    set -xe
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_api)" ]; then 
+                        docker stop $(docker ps -qa -f name=bpldc_authority_api) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_cache)" ]; then 
+                        docker stop $(docker ps -qa -f name=bpldc_authority_cache) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_pg)" ]; then 
+                        docker stop $(docker ps -qa -f name=bpldc_authority_pg) || true
+                    fi
+                   
+                    if [ "$(docker ps -qa -f name=bpldc_authority_api)" ]; then 
+                        docker rm $(docker ps -qa -f name=bpldc_authority_api) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_cache)" ]; then 
+                        docker rm $(docker ps -qa -f name=bpldc_authority_api) || true
+                    fi
+                    
+                    if [ "$(docker ps -qa -f name=bpldc_authority_pg)" ]; then 
+                        docker rm $(docker ps -qa -f name=bpldc_authority_pg) || true
+                    fi                
+                '''
+            }
+        }
         
-        // stage('Docker images build') {
-        //    steps {
-        //         sh '''
-        //         #!/usr/bin/env bash
-        //          
-        //         set -xe
-        //         
-        //         echo "GEONAMES_USERNAME=boston_library" > .env
-        //         echo "GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}" >> .env
-        //         echo "BPLDC_REDIS_CACHE_URL=" >> .env
-        //         
-        //         cat .env
-        //         
-        //         sudo docker compose build 
-        //         sudo docker compose up -d
-        //         '''
-        //     }    
-        // }
+        stage('Docker images build') {
+           steps {
+                sh '''
+                #!/usr/bin/env bash
+              
+                set -xe
+                
+                echo "GEONAMES_USERNAME=boston_library" > .env
+                echo "GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}" >> .env
+                echo "BPLDC_REDIS_CACHE_URL=" >> .env
+                
+                cat .env
+                
+                sudo docker compose build 
+                sudo docker compose up -d
+                '''
+            }    
+        }
         
-        // stage('Test') {
-        //    steps {
-        //        sh '''
-        //            #!/usr/bin/env bash
-        //            set -xe
-        //            sudo docker-compose run app bundle exec rake --verbose
-        //        '''
-        //    }
-        // }
+        stage('Test') {
+           steps {
+               sh '''
+                   #!/usr/bin/env bash
+                   set -xe
+                   sudo docker-compose run app bundle exec rake --verbose
+               '''
+           }
+        }
 
 
         stage('Deployment') {
