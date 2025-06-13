@@ -80,7 +80,10 @@ pipeline {
                sh '''
                    #!/usr/bin/env bash
                    set -xe
-                   sudo docker-compose run app bundle exec rake --verbose
+                    
+                   # sudo docker-compose run app bundle exec rake --verbose
+
+                   docker-compose run app bundle exec rake --verbose
                '''
            }
         }
