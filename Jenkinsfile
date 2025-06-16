@@ -16,8 +16,9 @@ pipeline {
     }
 
     environment {
-        //work RAILS_ENV = 'test'
-        RAILS_ENV = 'staging'
+        //work// RAILS_ENV = 'test'
+        //work// RAILS_ENV = 'staging'
+        RAILS_ENV = env.deploy_env
     } 
 
     // options {
