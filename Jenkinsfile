@@ -126,7 +126,7 @@ pipeline {
                     echo "In Jenkinsfile, RAILS_ENV is ${RAILS_ENV}"
                     
                     //work bpl_tool.RunDeployment(env.RAILS_ENV) 
-                    bpl_tool.RunDeployment(env.RAILS_ENV)               
+                    bpl_tool.RunDeployment(RAILS_ENV)               
                 }
             }
         }
