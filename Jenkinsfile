@@ -15,17 +15,29 @@ pipeline {
         }
     }
 
-    environment {
-        //work// RAILS_ENV = 'test'
-        //work// RAILS_ENV = 'staging'
-        RAILS_ENV = env.deploy_env
-    } 
+
+    parameters {
+        string(name: 'MY_PARAM', defaultValue: '', description: 'A sample parameter')
+    }
+
+    // environment {
+    //     //work// RAILS_ENV = 'test'
+    //     RAILS_ENV = 'staging'
+    //     // RAILS_ENV = env.deploy_env
+    // } 
 
     // options {
     //     ansiColor('xterm')
     // }
     
     stages {
+
+        stage('Print Parameter') {
+            steps {
+                echo "MY_PARAM value: ${params.MY_PARAM}"
+            }
+        }
+
 
         stage('GetCode') {
             steps {
