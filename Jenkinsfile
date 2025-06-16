@@ -20,11 +20,11 @@ pipeline {
         string(name: 'deploy_env', defaultValue: 'staging', description: 'Deployment environment')
     }
 
-    // environment {
-    //     //work// RAILS_ENV = 'test'
-    //     RAILS_ENV = 'staging'
-    //     // RAILS_ENV = env.deploy_env
-    // } 
+                        // environment {
+                        //     //work// RAILS_ENV = 'test'
+                        //     RAILS_ENV = 'staging'
+                        //     // RAILS_ENV = env.deploy_env
+                        // } 
 
     // options {
     //     ansiColor('xterm')
