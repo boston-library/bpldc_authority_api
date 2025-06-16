@@ -17,7 +17,7 @@ pipeline {
 
 
     parameters {
-        string(name: 'MY_PARAM', defaultValue: '', description: 'A sample parameter')
+        string(name: 'deploy_env', defaultValue: 'staging', description: 'Deployment environment')
     }
 
     // environment {
@@ -34,7 +34,7 @@ pipeline {
 
         stage('Print Parameter') {
             steps {
-                echo "MY_PARAM value: ${params.MY_PARAM}"
+                echo "deploy_env value: ${params.deploy_env}"
             }
         }
 
