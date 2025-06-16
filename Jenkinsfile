@@ -122,7 +122,7 @@ pipeline {
             steps {
                 script {
                     echo "In Jenkins phase: Capistrano deploying "
-                    RAILS_ENV    = env.deploy_env
+                    def RAILS_ENV = env.deploy_env
                     echo "In Jenkinsfile, RAILS_ENV is ${RAILS_ENV}"
                     
                     //work bpl_tool.RunDeployment(env.RAILS_ENV) 
