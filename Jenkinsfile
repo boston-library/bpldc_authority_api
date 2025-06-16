@@ -110,8 +110,10 @@ pipeline {
                 script {
                     echo "In Jenkins phase: Capistrano deploying "
                     RAILS_ENV    = env.deploy_env
-
-                    bpl_tool.RunDeployment(env.RAILS_ENV)                
+                    echo "In Jenkinsfile, RAILS_ENV is ${RAILS_ENV}"
+                    
+                    //work bpl_tool.RunDeployment(env.RAILS_ENV) 
+                    bpl_tool.RunDeployment(env.RAILS_ENV)               
                 }
             }
         }
