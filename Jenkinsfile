@@ -85,39 +85,39 @@ pipeline {
             }
         }
 
-        stage ('DB preparation'){
+        // stage ('DB preparation'){
+        //     steps {
+        //         script {  
+        //             echo "In Jenkins phase: DB preparation " 
+        //             def RAILS_ENV = env.deploy_env
+                                   
+        //             bpl_tool.RunDBpreparation(RAILS_ENV) 
+        //         }
+        //     }
+        // }
+
+        stage('CI') {
             steps {
                 script {  
-                    echo "In Jenkins phase: DB preparation " 
-                    def RAILS_ENV = env.deploy_env
-                                   
-                    bpl_tool.RunDBpreparation(RAILS_ENV) 
+                    echo "In Jenkins phase: running CI testing "                   
+                    bpl_tool.RunCI() 
                 }
             }
         }
 
-        // stage('CI') {
-        //     steps {
-        //         script {  
-        //             echo "In Jenkins phase: running CI testing "                   
-        //             bpl_tool.RunCI() 
-        //         }
-        //     }
-        // }
-
-        // stage('Create Docker Image'){
-        //     steps {
-        //         script {
-        //             if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
-        //                 echo "creating docker image"
+        stage('Create Docker Image'){
+            steps {
+                script {
+                    if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
+                        echo "creating docker image"
                         
-        //                 bpl_tool.CreateDockerImage('bpldc_authority_api')
-        //             }else{
-        //                 echo "No need create docker images. Skipping... "
-        //             }
-        //         }
-        //     }
-        // }
+                        bpl_tool.CreateDockerImage('bpldc_authority_api')
+                    }else{
+                        echo "No need create docker images. Skipping... "
+                    }
+                }
+            }
+        }
 
         // stage("Deploy application to target servers") {
         //     steps {
