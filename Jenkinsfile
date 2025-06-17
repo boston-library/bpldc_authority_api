@@ -89,7 +89,7 @@ pipeline {
             steps {
                 script {  
                     echo "In Jenkins phase: DB preparation " 
-                    railsEnv = env.RAILS_ENV                
+                    def railsEnv = env.RAILS_ENV                
                     bpl_tool.RunDBpreparation(railsEnv) 
                 }
             }
