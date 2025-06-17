@@ -119,18 +119,18 @@ pipeline {
             }
         }
 
-        // stage("Deploy application to target servers") {
-        //     steps {
-        //         script {
-        //             echo "In Jenkins phase: Capistrano deploying "
-        //             def RAILS_ENV = env.deploy_env
-        //             echo "In Jenkinsfile, RAILS_ENV is ${RAILS_ENV}"
+        stage("Deploy application to target servers") {
+            steps {
+                script {
+                    echo "In Jenkins phase: Capistrano deploying "
+                    def RAILS_ENV = env.deploy_env
+                    echo "In Jenkinsfile, RAILS_ENV is ${RAILS_ENV}"
                     
-        //             //work bpl_tool.RunDeployment(env.RAILS_ENV) 
-        //             bpl_tool.RunDeployment(RAILS_ENV)               
-        //         }
-        //     }
-        // }
+                    //work bpl_tool.RunDeployment(env.RAILS_ENV) 
+                    bpl_tool.RunDeployment(RAILS_ENV)               
+                }
+            }
+        }
 
     }
 
