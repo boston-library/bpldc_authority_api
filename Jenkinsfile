@@ -90,7 +90,7 @@ pipeline {
         //         script {  
         //             echo "In Jenkins phase: DB preparation " 
         //             def RAILS_ENV = env.deploy_env
-                                   
+
         //             bpl_tool.RunDBpreparation(RAILS_ENV) 
         //         }
         //     }
@@ -120,6 +120,11 @@ pipeline {
         }
 
         stage("Deploy application to target servers") {
+
+            when {
+                branch 'JFK_Capis'
+            }
+
             steps {
                 script {
                     echo "In Jenkins phase: Capistrano deploying "
