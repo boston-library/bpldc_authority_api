@@ -121,6 +121,8 @@ pipeline {
 
         stage("Deploy application to target servers") {
 
+            // When branch is 'JFK_Capis', skip this stage
+            // All other branches do deployment, for example 'master'
             when {
                 branch 'JFK_Capis'
             }
