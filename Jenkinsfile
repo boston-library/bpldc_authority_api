@@ -85,16 +85,16 @@ pipeline {
             }
         }
 
-        // stage ('DB preparation'){
-        //     steps {
-        //         script {  
-        //             echo "In Jenkins phase: DB preparation " 
-        //             def RAILS_ENV = env.deploy_env
+        stage ('DB preparation'){
+            steps {
+                script {  
+                    echo "In Jenkins phase: DB preparation " 
+                    def RAILS_ENV = env.deploy_env
                                    
-        //             bpl_tool.RunDBpreparation(RAILS_ENV) 
-        //         }
-        //     }
-        // }
+                    bpl_tool.RunDBpreparation(RAILS_ENV) 
+                }
+            }
+        }
 
         // stage('CI') {
         //     steps {
