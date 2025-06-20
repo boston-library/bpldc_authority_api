@@ -151,18 +151,22 @@ pipeline {
 
         }
 
-        stage('Trigger Downstream') {
-            when {
-                branch 'JKF_Capis'  // optional: only trigger for specific branches
-            }
-            steps {
-                script {
-                    echo 'Triggering another project...'
-                    build job: 'bpldc_jenkinsfile_deploy_STAGING_capistrano', wait: false
-                    build job: 'bpldc_jenkinsfile_dpeloy_test_capistrano', wait: false
-                }
-            }
-        }
+
+        // It turns out to trigger another jobs endlessly, becauase it builds `JKF_Capis`
+        // How to stop it?
+        //
+        // stage('Trigger Downstream') {
+        //     when {
+        //         branch 'JKF_Capis'  // optional: only trigger for specific branches
+        //     }
+        //     steps {
+        //         script {
+        //             echo 'Triggering another project...'
+        //             build job: 'bpldc_jenkinsfile_deploy_STAGING_capistrano', wait: false
+        //             build job: 'bpldc_jenkinsfile_dpeloy_test_capistrano', wait: false
+        //         }
+        //     }
+        // }
 
     }
 
