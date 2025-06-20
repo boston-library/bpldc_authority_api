@@ -159,7 +159,7 @@ pipeline {
                 script {
                     echo 'Triggering another project...'
                     build job: 'bpldc_jenkinsfile_deploy_STAGING_capistrano', wait: false
-                    build job: 'bpldc_jenkinsfile_deploy_test_capistrano', wait: false
+                    build job: 'bpldc_jenkinsfile_dpeloy_test_capistrano', wait: false
                 }
             }
         }
