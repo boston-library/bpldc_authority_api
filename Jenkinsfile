@@ -16,9 +16,9 @@ pipeline {
     }
 
 
-    parameters {
-        string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: 'Deployment environment')
-    }
+    // parameters {
+    //     string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: 'Deployment environment')
+    // }
 
                         // environment {
                         //     //work// RAILS_ENV = 'test'
