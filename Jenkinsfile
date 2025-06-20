@@ -133,7 +133,7 @@ pipeline {
 
             when {
                 expression {
-                    return env.DEPLOY_OR_NOT == 'true'
+                    return env.DEPLOY_OR_NOT == 'True'
                 }
             }
 
