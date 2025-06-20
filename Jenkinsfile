@@ -148,6 +148,21 @@ pipeline {
                     // bpl_tool.RunDeployment()               
                 }
             }
+
+
+            // 
+            stage('Trigger Downstream') {
+                when {
+                    branch 'main'  // optional: only trigger for specific branches
+                }
+                steps {
+                    script {
+                        echo 'Triggering another project...'
+                        build job: 'bpldc_jenkinsfile_deploy_STAGING_capistrano', wait: false
+                        build job: 'bpldc_jenkinsfile_deploy_test_capistrano', wait: false
+                    }
+                }
+            }
         }
 
     }
