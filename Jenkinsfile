@@ -17,7 +17,7 @@ pipeline {
 
 
     parameters {
-        string(name: 'deploy_env', defaultValue: 'staging', description: 'Deployment environment')
+        string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: 'Deployment environment')
     }
 
                         // environment {
