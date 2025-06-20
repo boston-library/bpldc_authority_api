@@ -8,6 +8,8 @@ def bpl_tool = new org.bpl.bpl_tools()
 pipeline {
     // agent any
     
+    // This agent setting is for multibranch short 32 characters name. 
+    // With this setting, project name can be any length.
     agent {
         node {
             label 'BPL_DAN'
@@ -16,9 +18,9 @@ pipeline {
     }
 
 
-    // parameters {
-    //     string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: 'Deployment environment')
-    // }
+                        // parameters {
+                        //     string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: 'Deployment environment')
+                        // }
 
                         // environment {
                         //     //work// RAILS_ENV = 'test'
@@ -35,6 +37,8 @@ pipeline {
         stage('Print Parameter') {
             steps {
                 echo "deploy_env value: ${params.deploy_env}"
+                echo "DEPLOY_OR_NOT value: ${env.DEPLOY_OR_NOT}"
+                
             }
         }
 
@@ -126,6 +130,12 @@ pipeline {
             // when {
             //     branch 'JFK_Capis'
             // }
+
+            when {
+                expression {
+                    return env.DEPLOY_OR_NOT == 'true'
+                }
+            }
 
             steps {
                 script {
