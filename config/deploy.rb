@@ -6,7 +6,7 @@ lock '~> 3.17.1'
 set :use_sudo, false
 
 ## STAGE_NAME is a paramter from Jenkins job: "staging", "qc", and "testing", or "production"
-##work## set :stage_case, ENV['STAGE_NAME']
+## work ## set :stage_case, ENV['STAGE_NAME']
 set :stage_console, ENV['deploy_env']
 set :user, ENV['DEPLOY_USER']
 
