@@ -103,6 +103,12 @@ pipeline {
         // }
 
         stage('CI') {
+
+            when {
+                expression {
+                    return env.DEPLOY_OR_NOT != 'True' || env.DEPLOY_OR_NOT != 'true'
+                }
+            }
             steps {
                 script {  
                     echo "In Jenkins phase: running CI testing "                   
@@ -112,6 +118,12 @@ pipeline {
         }
 
         stage('Create Docker Image'){
+
+            when {
+                expression {
+                    return env.DEPLOY_OR_NOT != 'True' || env.DEPLOY_OR_NOT != 'true'
+                }
+            }
             steps {
                 script {
                     if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
