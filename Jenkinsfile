@@ -97,9 +97,10 @@ pipeline {
         // stage ('DB preparation'){
         //     steps {
         //         script {  
-        //             echo "In Jenkins phase: DB preparation " 
-        //             // def RAILS_ENV = env.deploy_env
-        //            def RAILS_ENV = env.DEPLOY_ENV
+        //              // staging/production doesn't need DB preparation
+        //              // This is only for Jenkins branch build
+        //             echo "In Jenkins phase: DB preparation "
+        //             def RAILS_ENV = env.DEPLOY_ENV
         //             bpl_tool.RunDBpreparation(RAILS_ENV) 
         //         }
         //     }
