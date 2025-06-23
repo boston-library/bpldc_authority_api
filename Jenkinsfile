@@ -37,7 +37,7 @@ pipeline {
         stage('Print Parameter') {
             steps {
                 echo "deploy_env value: ${params.deploy_env}"
-                echo "DEPLOY_OR_NOT value: ${env.DEPLOY_OR_NOT}"
+                echo "\033[42m\033[97DEPLOY_OR_NOT value: ${env.DEPLOY_OR_NOT}\033[0m"
                 
             }
         }
