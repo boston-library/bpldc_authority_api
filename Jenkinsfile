@@ -36,7 +36,7 @@ pipeline {
 
         stage('Print Parameter') {
             steps {
-                echo "deploy_env value: ${params.deploy_env}"
+                echo "DEPLOY_ENV value: ${env.DEPLOY_ENV}"
                 echo "\033[42m\033[97D DEPLOY_OR_NOT value: ${env.DEPLOY_OR_NOT}\033[0m"
                 
             }
@@ -114,7 +114,8 @@ pipeline {
         stage('Create Docker Image'){
             steps {
                 script {
-                    if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
+                    // if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
+                    if ( (env.DEPLOY_ENV != 'staging') &&  ( env.DEPLOY_ENV != 'production')) {
                         echo "creating docker image"
                         
                         bpl_tool.CreateDockerImage('bpldc_authority_api')
