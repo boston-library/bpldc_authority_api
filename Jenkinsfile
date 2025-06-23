@@ -82,7 +82,8 @@ pipeline {
 
         stage ('Bundle Install'){
             steps {
-                script {  
+                script {
+                    // all environments, including staging/production, need ruby/capistrano installation
                     echo "In Jenkins phase: bundle install "                    
                     bpl_tool.RunBundleInstall() 
                 }
@@ -105,8 +106,14 @@ pipeline {
         stage('CI') {
             steps {
                 script {  
-                    echo "In Jenkins phase: running CI testing "                   
-                    bpl_tool.RunCI() 
+                    // staging/production still do a rspec testing for ruby codes.
+                    // it may skip
+                    if ( (env.DEPLOY_ENV != 'staging') &&  ( env.DEPLOY_ENV != 'production')) {
+                        echo "In Jenkins phase: running CI testing "                   
+                        bpl_tool.RunCI() 
+                    }else{
+                        echo "No need run rspec tests in staging/production. Skipping... "
+                    }
                 }
             }
         }
@@ -114,7 +121,7 @@ pipeline {
         stage('Create Docker Image'){
             steps {
                 script {
-                    // if ( (env.deploy_env != 'staging') &&  ( env.deploy_env != 'production')) {
+                    // staging/production doesn't need to create docker image
                     if ( (env.DEPLOY_ENV != 'staging') &&  ( env.DEPLOY_ENV != 'production')) {
                         echo "creating docker image"
                         
