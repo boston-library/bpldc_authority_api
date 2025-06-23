@@ -33,7 +33,9 @@ pipeline {
     }
     
     stages {
-
+        // DEPLOY_ENV value is set to `null` if it cannot be found in Jenkinsfile
+        // Since capistrano deployment is only for staging/production, Jenkins configs will
+        // provide value to `DEPLOY_ENV` (staging, produciton). 
         stage('Print Parameter') {
             steps {
                 echo "DEPLOY_ENV value: ${env.DEPLOY_ENV}"
