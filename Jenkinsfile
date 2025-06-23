@@ -28,9 +28,9 @@ pipeline {
                         //     // RAILS_ENV = env.deploy_env
                         // } 
 
-    // options {
-    //     ansiColor('xterm')
-    // }
+    options {
+        ansiColor('xterm')
+    }
     
     stages {
 
@@ -158,6 +158,7 @@ pipeline {
         // stage('Trigger Downstream') {
         //     when {
         //         branch 'JKF_Capis'  // optional: only trigger for specific branches
+        //          branch 'master'  // optional: only trigger for specific branches
         //     }
         //     steps {
         //         script {
