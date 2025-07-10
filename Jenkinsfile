@@ -40,7 +40,15 @@ pipeline {
             steps {
                 echo "DEPLOY_ENV value: ${env.DEPLOY_ENV}"
                 echo "\033[42m\033[97D DEPLOY_OR_NOT value: ${env.DEPLOY_OR_NOT}\033[0m"
-                
+                echo "WORKSPACE_TMP: ${env.WORKSPACE_TMP}"
+                echo "JOB_DISPLAY_URL: ${env.JOB_DISPLAY_URL}"
+                echo "RUN_ARTIFACTS_DISPLAY_URL: ${env.RUN_ARTIFACTS_DISPLAY_URL}"
+                echo "fullDisplayName: ${currentBuild.fullDisplayName}"
+                echo "externalizableId: ${currentBuild.externalizableId}"
+                echo "absoluteUrl: ${currentBuild.absoluteUrl}"
+                echo "buildVariables: ${currentBuild.buildVariables}"
+                echo "JOB_BASE_NAME: ${env.JOB_BASE_NAME}"
+                echo "JOB_NAME: ${env.JOB_NAME}"
             }
         }
 
