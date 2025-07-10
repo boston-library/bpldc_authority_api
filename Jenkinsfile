@@ -146,12 +146,6 @@ pipeline {
 
         stage("Deploy application to target servers") {
 
-            // When branch is 'JFK_Capis', skip this stage
-            // All other branches do deployment, for example 'master'
-            // when {
-            //     branch 'JFK_Capis'
-            // }
-
             when {
                 expression {
                     return env.DEPLOY_OR_NOT == 'True' || env.DEPLOY_OR_NOT == 'true'
@@ -186,7 +180,7 @@ pipeline {
             steps {
                 script {
                     echo 'Triggering other projects...'
-                    build job: 'bpldc_jenkinsfile_dpeloy_test_capistrano', wait: false
+                    build job: 'bpldc_jenkinsfile_deploy_test_capistrano', wait: false
                     build job: 'bpldc_jenkinsfile_deploy_STAGING_capistrano', wait: false
                 }
             }
