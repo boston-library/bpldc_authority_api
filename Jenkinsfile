@@ -209,7 +209,7 @@ pipeline {
                         <p>Build Number: ${env.BUILD_NUMBER}</p>
                         <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-                to: 'rmiao@bpl.org, bbarber@bpl.org'
+                to: 'rmiao@bpl.org'
             )
         }
     }
