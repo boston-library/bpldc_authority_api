@@ -94,8 +94,10 @@ pipeline {
             steps {
                 script {
                     // all environments, including staging/production, need ruby/capistrano installation
-                    echo "In Jenkins phase: bundle install "                    
-                    bpl_tool.RunBundleInstall() 
+                    echo "In Jenkins phase: bundle install " 
+                    // Test for failure pipeline and send email from pipeline   
+                    bpl_tool.RunBundleInstal()
+                    // good ! // bpl_tool.RunBundleInstall() 
                 }
             }
         }

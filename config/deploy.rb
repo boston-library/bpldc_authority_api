@@ -8,7 +8,7 @@ set :use_sudo, false
 ## DEPLOY_ENV is a paramter from Jenkins job: "staging", "qc", and "testing", or "production"
 ## It is used by Cap method :rails_console_runner
 ## Test for failure pipeline and send email from pipeline
-# m#set :stage_console, ENV['DEPLOY_ENV']
+set :stage_console, ENV['DEPLOY_ENV']
 set :user, ENV['DEPLOY_USER']
 
 set :application, 'bpldc_authority_api'
