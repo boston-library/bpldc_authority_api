@@ -198,10 +198,7 @@ pipeline {
                 }
             }
         }
-    }
 
-
-    post {
         failure {
             emailext (
                 subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
