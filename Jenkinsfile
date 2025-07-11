@@ -166,27 +166,40 @@ pipeline {
 
         }
 
+        // If job_name has "deploy" inside, it will not trigger downstream deployment!
+        // For example, if "deploy_prod" job, it will stop trigger other project
+        // stage('Trigger Downstream') {
+        //     when {
+        //         expression {
+        //             // Only trigger if JOB_NAME contains "deploy"
+        //             return !env.JOB_NAME.contains('deploy')
+        //         }
+        //     }
+        //     steps {
+        //         script {
+        //             echo 'Triggering other projects...'
+        //             build job: 'bpldc_jenkinsfile_deploy_test_capistrano', wait: false
+        //             build job: 'bpldc_jenkinsfile_deploy_STAGING_capistrano', wait: false
+        //         }
+        //     }
+        // }
 
-        // It turns out to trigger another jobs endlessly, becauase it builds `JKF_Capis`
-        // How to stop it?
-        //
-        stage('Trigger Downstream') {
-            when {
-                expression {
-                    // Only trigger if JOB_NAME contains "deploy"
-                    return !env.JOB_NAME.contains('deploy')
-                }
-            }
-            steps {
-                script {
+    }
+
+    // If job_name has "deploy" inside, it will not trigger downstream deployment!
+    // For example, if "deploy_prod" job, it will stop trigger other project
+    post {
+        success {
+            script {
+                if (!env.JOB_NAME.contains('deploy')) {
                     echo 'Triggering other projects...'
                     build job: 'bpldc_jenkinsfile_deploy_test_capistrano', wait: false
                     build job: 'bpldc_jenkinsfile_deploy_STAGING_capistrano', wait: false
                 }
             }
         }
-
     }
+
 
     post {
         failure {
