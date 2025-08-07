@@ -1,9 +1,9 @@
-FROM ruby:3.3.8
+FROM ruby:3.3.9
 
 LABEL maintainer="bbarber@bpl.org, eenglish@bpl.org"
 
 ENV LANG=C.UTF-8 \
-    BUNDLER_VERSION=2.6.8
+    BUNDLER_VERSION=2.7.1
 
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends apt-utils

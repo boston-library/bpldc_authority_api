@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.8'
+ruby '3.3.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.1.4'
 # Use postgresql as the database for Active Record
@@ -29,7 +29,7 @@ gem 'oj', '~> 3.16'
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.2'
 # NOTE: Geomash needs to be updated to updated to handle the breaking changes in
-gem 'qa', '~> 5.13'
+gem 'qa', '~> 5.15'
 
 gem 'faraday', '~> 1.10', '< 2'
 gem 'faraday_middleware', '~> 1.2'
@@ -41,7 +41,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'awesome_print', '~> 1.9'
   gem 'capistrano', '~> 3.17.1', require: false
   gem 'capistrano-rails', '~> 1.4', require: false
   gem 'capistrano-rvm'
@@ -67,4 +66,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:windows, :jruby]
