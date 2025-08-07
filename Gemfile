@@ -41,7 +41,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'capistrano', '~> 3.17.1', require: false
+  gem 'capistrano', '~> 3.19.2', require: false
   gem 'capistrano-rails', '~> 1.4', require: false
   gem 'capistrano-rvm'
   gem 'debug', platforms: %i(mri windows)

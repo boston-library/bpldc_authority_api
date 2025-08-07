@@ -108,7 +108,7 @@ GEM
     bootsnap (1.18.4)
       msgpack (~> 1.2)
     builder (3.3.0)
-    capistrano (3.17.3)
+    capistrano (3.19.2)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -607,7 +607,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  capistrano (~> 3.17.1)
+  capistrano (~> 3.19.2)
   capistrano-rails (~> 1.4)
   capistrano-rvm
   connection_pool (~> 2.4)
