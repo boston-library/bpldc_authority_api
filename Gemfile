@@ -3,16 +3,16 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.9'
+ruby '3.3.10'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.1.4'
+gem 'rails', '~> 7.1.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 6.6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # Needed for caching
-gem 'connection_pool', '~> 2.4'
+gem 'connection_pool', '~> 2.5'
 gem 'csv'
 gem 'jbuilder', '~> 2.11'
 gem 'redis', '~> 5'
@@ -48,7 +48,7 @@ group :development, :test do
   gem 'dotenv-rails', '~> 2.8'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 3.2'
-  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec-rails', '~> 7.1'
   gem 'rubocop', '~> 1.36', require: false
   gem 'rubocop-performance', '~> 1.15', require: false
   gem 'rubocop-rails', '~> 2.16', require: false
