@@ -47,12 +47,13 @@ group :development, :test do
   gem 'debug', platforms: %i(mri windows)
   gem 'dotenv-rails', '~> 2.8'
   gem 'factory_bot_rails', '~> 6.5'
-  gem 'faker', '~> 3.2'
+  gem 'faker', '~> 3.5'
   gem 'rspec-rails', '~> 7.1'
   gem 'rubocop', '~> 1.81', require: false
+  gem 'rubocop-factory_bot', '~> 2.28', require: false
   gem 'rubocop-performance', '~> 1.15', require: false
-  gem 'rubocop-rails', '~> 2.16', require: false
-  gem 'rubocop-rspec', require: false
+  gem 'rubocop-rails', '~> 2.34', require: false
+  gem 'rubocop-rspec', '~> 3.8', require: false
 end
 
 group :test do

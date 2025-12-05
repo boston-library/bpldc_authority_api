@@ -22,10 +22,8 @@ Bundler.require(*Rails.groups)
 module BpldcAuthorityApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
+    config.load_defaults 7.2
     config.api_only = true
-    # config.add_autoload_paths_to_load_path = false
-    # config.active_support.cache_format_version = 7.1
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
