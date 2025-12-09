@@ -51,8 +51,6 @@ Rails.application.configure do
       size: ENV.fetch('BPLDC_REDIS_CACHE_SIZE', 5),
       timeout: ENV.fetch('BPLDC_REDIS_CACHE_TTL', 60),
     },
-    pool_size: ENV.fetch('RAILS_MAX_THREADS') { 5 },
-    pool_timeout: 5,
     expires_in: 24.hours
   }
 
