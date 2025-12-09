@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.3.10'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.1.5'
+gem 'rails', '~> 7.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -14,7 +14,7 @@ gem 'puma', '~> 6.6'
 # Needed for caching
 gem 'connection_pool', '~> 2.5'
 gem 'csv'
-gem 'jbuilder', '~> 2.11'
+gem 'jbuilder', '~> 2.14'
 gem 'redis', '~> 5'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -46,13 +46,14 @@ group :development, :test do
   gem 'capistrano-rvm'
   gem 'debug', platforms: %i(mri windows)
   gem 'dotenv-rails', '~> 2.8'
-  gem 'factory_bot_rails', '~> 6.2'
-  gem 'faker', '~> 3.2'
+  gem 'factory_bot_rails', '~> 6.5'
+  gem 'faker', '~> 3.5'
   gem 'rspec-rails', '~> 7.1'
-  gem 'rubocop', '~> 1.36', require: false
+  gem 'rubocop', '~> 1.81', require: false
+  gem 'rubocop-factory_bot', '~> 2.28', require: false
   gem 'rubocop-performance', '~> 1.15', require: false
-  gem 'rubocop-rails', '~> 2.16', require: false
-  gem 'rubocop-rspec', require: false
+  gem 'rubocop-rails', '~> 2.34', require: false
+  gem 'rubocop-rspec', '~> 3.8', require: false
 end
 
 group :test do

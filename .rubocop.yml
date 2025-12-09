@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-rspec
   - rubocop-rails
   - rubocop-performance
@@ -671,9 +671,6 @@ RSpec/ExpectInHook:
   Enabled: false
 
 RSpec/ExpectOutput:
-  Enabled: true
-
-RSpec/FactoryBot:
   Enabled: true
 
 RSpec/HookArgument:
