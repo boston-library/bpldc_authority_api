@@ -31,7 +31,7 @@ gem 'linkeddata', '~> 3.2'
 # NOTE: Geomash needs to be updated to updated to handle the breaking changes in
 gem 'qa', '~> 5.15'
 
-gem 'faraday', '~> 1.10', '< 2'
+gem 'faraday', '~> 1.10'
 gem 'faraday_middleware', '~> 1.2'
 
 group :development do
