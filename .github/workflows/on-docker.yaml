@@ -1,0 +1,41 @@
+name: Test CI with github Actions
+
+on: 
+  push: 
+    branches:
+      - action-ci
+
+jobs:
+  build-on-docker:
+
+    runs-on: ubuntu-22.04
+
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use secret
+        run: |
+          echo "GEONAMES Username is ${{ secrets.GEONAMES_USERNAME }}"
+          echo "Google Map API Key is ${{ secrets.GOOGLE_MAPS_API_KEY }}"
+
+
+      - name: Create .env file
+        run: |
+          echo "GEONAMES_USERNAME=boston_library" > .env
+          echo "GOOGLE_MAPS_API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" >> .env
+          echo "BPLDC_REDIS_CACHE_URL=" >> .env
+          
+          # Debugging: Print .env (Note: Secrets will be masked as ***)
+          cat .env
+
+      - name: Build Docker Compose
+        run: docker compose build
+
+      - name: Run Tests
+        run: docker compose run app bundle exec rake --verbose
+
+      - name: Shutdown Containers
+        if: always() 
+        run: docker compose down
