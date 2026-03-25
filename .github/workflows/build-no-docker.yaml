@@ -66,14 +66,6 @@ jobs:
           # Automatically runs 'bundle install' and caches gems
           bundler-cache: true
 
-      - name: copy database.yaml
-        run: |
-          pwd
-          ls -altr
-          cp config/database.yml.sample config/database.yml
-          cat config/database.yml
-          echo "finished copying database.yml"
-
       - name: Database Setup
         run: |
           RAILS_ENV=test bundle exec rails db:prepare
