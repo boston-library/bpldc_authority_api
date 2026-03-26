@@ -63,7 +63,7 @@ rescue ActiveRecord::PendingMigrationError => e
   # puts e.to_s.strip
   Rails.logger.error(e.to_s.strip)
   # exit 1
-  raise "Exiting due to pending migrations."
+  raise 'Exiting due to pending migrations.'
 end
 
 RSpec.configure do |config|
