@@ -9,7 +9,7 @@ on:
   pull_request:
     branches:
       - '**'        # Match all target branches
-      - '!main'     # Then exclude main
+      - '!main'     # Then  exclude main
 
 jobs:
   build-steps:
