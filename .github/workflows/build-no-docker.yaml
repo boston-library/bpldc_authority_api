@@ -3,9 +3,7 @@ name: Build without docker
 on: [push, pull_request]
 
 jobs:
-
   build-steps:
-
     runs-on: ubuntu-22.04
 
     # Define environment variables globally for the job 
