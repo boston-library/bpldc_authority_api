@@ -13,7 +13,7 @@ jobs:
 
     runs-on: ubuntu-22.04
 
-    # Define environment variables globally for the job ..
+    # Define environment variables globally for the job 
     env:
       RAILS_ENV: test
       PGHOST: localhost
