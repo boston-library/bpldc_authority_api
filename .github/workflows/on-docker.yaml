@@ -1,9 +1,9 @@
 name: Build with docker
 
-on: 
-  push: 
-    branches:
-      - action-ci
+on: [push, pull_request]
+  # push: 
+  #   branches:
+  #     - action-ci
 
 jobs:
   build-on-docker:
