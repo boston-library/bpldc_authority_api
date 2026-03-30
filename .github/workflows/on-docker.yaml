@@ -1,6 +1,15 @@
 name: Build with docker
 
-on: [push, pull_request]
+# on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+      - action-ci
+  pull_request:
+    branches:
+      - main
+      - actioin-ci
 
 jobs:
   build-on-docker:
