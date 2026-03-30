@@ -1,7 +1,16 @@
 name: Build with docker
 
-on: [push, pull_request]
-  branches: [main, action-ci]
+# on: [push, pull_request]
+
+on:
+  push:
+    branches:
+      - '**'        # Match all branches
+      - '!main'     # Then exclude main
+  pull_request:
+    branches:
+      - '**'        # Match all target branches
+      - '!main'     # Then  exclude main
 
 jobs:
   build-on-docker:
