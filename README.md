@@ -1,6 +1,6 @@
 # BPLDC Authority API
 
-[![Build Status](https://travis-ci.com/boston-library/bpldc_authority_api.svg?branch=master)](https://travis-ci.com/boston-library/bpldc_authority_api) [![Coverage Status](https://coveralls.io/repos/github/boston-library/bpldc_authority_api/badge.svg?branch=master)](https://coveralls.io/github/boston-library/bpldc_authority_api?branch=master)
+![CI Workflow](https://github.com/boston-library/bpldc_authority_api/actions/workflows/build-no-docker.yaml)![Build Status](https://github.com/boston-library/bpldc_authority_api/actions/workflows/build-no-docker.yaml/badge.svg)
 
 A lightweight API-only Rails app that provides authority data and controlled values for descriptive metadata records conforming to the BPLDC MODS Application Profile.
 

@@ -1,0 +1,26 @@
+name: Build with docker
+
+on: [push, pull_request]
+
+jobs:
+  build-on-docker:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create .env file
+        run: |
+          echo "GEONAMES_USERNAME=${{ secrets.GEONAMES_USERNAME }}" > .env
+          echo "GOOGLE_MAPS_API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" >> .env
+          echo "BPLDC_REDIS_CACHE_URL=" >> .env
+
+      - name: Build Docker Compose
+        run: docker compose build
+
+      - name: Run Tests
+        run: docker compose run app bundle exec rake --verbose
+
+      - name: Shutdown Containers
+        if: always() 
+        run: docker compose down
