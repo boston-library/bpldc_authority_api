@@ -503,6 +503,8 @@ Rails/EnvironmentComparison:
 
 Rails/Exit:
   Enabled: true
+  Exclude: 
+    - 'spec/rails_helper.rb'
 
 Rails/InverseOf:
   Enabled: true
@@ -522,6 +524,7 @@ Rails/Output:
     - 'db/seeds.rb'
     - 'app/services/bpldc/lc_vocab_utilities/lc_vocab_fetcher.rb'
     - 'config/deploy.rb'
+    - 'spec/rails_helper.rb'
 
 Rails/ReflectionClassName:
   Enabled: false
