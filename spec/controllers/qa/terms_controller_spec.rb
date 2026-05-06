@@ -12,7 +12,7 @@ RSpec.describe Qa::TermsController do
       let(:vocab_name) { 'getty' }
       let(:vocab_subauth) { 'aat' }
       let(:term_id) { '300261803' }
-      let(:term_uri) { "http://vocab.getty.edu/aat/#{term_id}" }
+      let(:term_uri) { "https://vocab.getty.edu/aat/#{term_id}" }
       let(:query) { 'landscape' }
       it_behaves_like 'terms_search'
     end
@@ -21,7 +21,7 @@ RSpec.describe Qa::TermsController do
       let(:vocab_name) { 'getty' }
       let(:vocab_subauth) { 'ulan' }
       let(:term_id) { '500019204' }
-      let(:term_uri) { "http://vocab.getty.edu/ulan/#{term_id}" }
+      let(:term_uri) { "https://vocab.getty.edu/ulan/#{term_id}" }
       let(:query) { 'McKim' }
       it_behaves_like 'terms_search'
     end
