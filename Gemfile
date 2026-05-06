@@ -20,7 +20,7 @@ gem 'redis', '~> 5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'geomash', github: 'samvera-labs/geomash', ref: '4e9213a'
+gem 'geomash', github: 'samvera-labs/geomash', ref: '4761f84'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 2.0'
