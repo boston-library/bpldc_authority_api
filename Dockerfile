@@ -1,9 +1,9 @@
-FROM ruby:3.3.10
+FROM ruby:3.3.11
 
 LABEL maintainer="bbarber@bpl.org, eenglish@bpl.org"
 
 ENV LANG=C.UTF-8 \
-    BUNDLER_VERSION=2.7.2
+    BUNDLER_VERSION=4.0.12
 
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends apt-utils

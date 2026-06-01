@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.10'
+ruby '3.3.11'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.2.3'
 # Use postgresql as the database for Active Record
@@ -14,7 +14,7 @@ gem 'puma', '~> 6.6'
 # Needed for caching
 gem 'connection_pool', '~> 2.5'
 gem 'csv'
-gem 'jbuilder', '~> 2.14'
+gem 'jbuilder', '~> 2.15'
 gem 'redis', '~> 5'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -25,7 +25,7 @@ gem 'geomash', github: 'samvera-labs/geomash', ref: '4761f84'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 2.0'
 
-gem 'oj', '~> 3.16'
+gem 'oj', '~> 3.17'
 # Required gems for QA and linked data access
 gem 'linkeddata', '~> 3.2'
 # NOTE: Geomash needs to be updated to updated to handle the breaking changes in
