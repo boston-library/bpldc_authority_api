@@ -334,7 +334,7 @@ GEM
       date
       stringio
     public_suffix (7.0.5)
-    puma (6.6.1)
+    puma (7.2.1)
       nio4r (~> 2.0)
     qa (5.15.0)
       activerecord-import
@@ -642,7 +642,7 @@ DEPENDENCIES
   listen
   oj (~> 3.17)
   pg (>= 0.18, < 2.0)
-  puma (~> 6.6)
+  puma (~> 7.2)
   qa (~> 5.15)
   rack-cors (~> 2.0)
   rails (~> 7.2.3)
