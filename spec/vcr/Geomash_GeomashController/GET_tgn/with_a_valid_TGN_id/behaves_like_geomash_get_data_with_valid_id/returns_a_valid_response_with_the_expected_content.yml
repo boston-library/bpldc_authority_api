@@ -1,0 +1,1817 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://vocab.getty.edu/tgn/7017665
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Accept-Profile:
+      - "<http://www.w3.org/2004/02/skos/core#>"
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      date:
+      - Wed, 10 Jun 2026 15:40:09 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '44356'
+      server:
+      - nginx/1.29.8
+      content-disposition:
+      - attachment; filename="tgn_7017665.json"
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "head" : {
+            "vars" : [ "Subject", "Predicate", "Object" ]
+          },
+          "results" : {
+            "bindings" : [ {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#Subject"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#Concept"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#AdminPlaceConcept"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2000/01/rdf-schema#label"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "Walla Walla"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://www.getty.edu/vow/TGNFullDisplay?find=&place=&nation=&subjectid=7017665"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broader"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPartitiveExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7029392"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPartitiveExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/1000001"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPartitiveExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/8725217"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPartitiveExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7012149"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPartitiveExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPartitiveExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7007920"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7029392"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/1000001"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/8725217"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7012149"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7007920"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPreferredExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7029392"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPreferredExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/1000001"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPreferredExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7012149"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPreferredExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPreferredExtended"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7007920"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#parentString"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "Walla Walla, Washington, United States, North and Central America, World"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#parentStringAbbrev"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "Walla Walla, Washington, ... World"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#displayOrder"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#positiveInteger",
+                "type" : "literal",
+                "value" : "151"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeType"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008347"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeType"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008416"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeType"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008389"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeType"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300000835"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2008/05/skos-xl#prefLabel"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "Walla Walla"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPartitive"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#broaderPreferred"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#broader"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/iso25964/skos-thes#broaderPartitive"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#prefLabelGVP"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#inScheme"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/contributor"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/contrib/10000000"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/contributor"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/contrib/10000001"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/source"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006294"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/source"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267-subject-7017665"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/source"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553-subject-7017665"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeTypePreferred"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008347"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeTypeNonPreferred"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008416"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeTypeNonPreferred"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008389"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeTypeNonPreferred"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300000835"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/elements/1.1/identifier"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "7017665"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#broaderTransitive"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/1000001"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#broaderTransitive"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/8725217"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#broaderTransitive"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7012149"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#broaderTransitive"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2002251"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#broaderTransitive"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7007920"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2004/02/skos/core#narrower"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/2747547"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/license"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://opendatacommons.org/licenses/by/1.0/"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://creativecommons.org/ns#license"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://opendatacommons.org/licenses/by/1.0/"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://rdfs.org/ns/void#inDataset"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/dataset/tgn"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://xmlns.com/foaf/0.1/focus"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267-subject-7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://purl.org/ontology/bibo/DocumentPart"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267-subject-7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/ontology/bibo/locator"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "1319"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267-subject-7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/isPartOf"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553-subject-7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://purl.org/ontology/bibo/DocumentPart"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553-subject-7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/ontology/bibo/locator"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "GNIS53021786"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553-subject-7017665"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/isPartOf"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2008/05/skos-xl#Label"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#term"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "Walla Walla"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#displayOrder"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#positiveInteger",
+                "type" : "literal",
+                "value" : "1"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2008/05/skos-xl#literalForm"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "Walla Walla"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#termFlag"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/term/flag/Vernacular"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#termPOS"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/term/POS/Noun"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#contributorPreferred"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/contrib/10000000"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/contributor"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/contrib/10000000"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/contributor"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/contrib/10000001"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#contributorNonPreferred"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/contrib/10000001"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/source"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006294"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/source"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267-term-301741"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/source"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553-term-301741"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/term/301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/elements/1.1/identifier"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "301741"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267-term-301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://purl.org/ontology/bibo/DocumentPart"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267-term-301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/ontology/bibo/locator"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "1319"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267-term-301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/isPartOf"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006267"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553-term-301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://purl.org/ontology/bibo/DocumentPart"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553-term-301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/ontology/bibo/locator"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "GNIS53021786"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553-term-301741"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/isPartOf"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/source/9006553"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008347"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008347"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008347"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeTypePreferred"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008347"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008347"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008347"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2000/01/rdf-schema#comment"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "founded 1856; grew up around army fort"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008347"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#displayOrder"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#positiveInteger",
+                "type" : "literal",
+                "value" : "1"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008347"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#estStart"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#gYear",
+                "type" : "literal",
+                "value" : "1856"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008389"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008389"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008389"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeTypeNonPreferred"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008389"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008389"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008389"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2000/01/rdf-schema#comment"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "incorporated 1862"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008389"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#displayOrder"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#positiveInteger",
+                "type" : "literal",
+                "value" : "2"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008389"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#estStart"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#gYear",
+                "type" : "literal",
+                "value" : "1862"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008416"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008416"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008416"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeTypeNonPreferred"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008416"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008416"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300008416"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#displayOrder"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#positiveInteger",
+                "type" : "literal",
+                "value" : "3"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#placeTypeNonPreferred"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300000835"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2000/01/rdf-schema#comment"
+              },
+              "Object" : {
+                "type" : "literal",
+                "value" : "in 1855, in wars with Amerindians during westward expansion of the US"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#displayOrder"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#positiveInteger",
+                "type" : "literal",
+                "value" : "4"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#estStart"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#gYear",
+                "type" : "literal",
+                "value" : "1855"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#estEnd"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#gYear",
+                "type" : "literal",
+                "value" : "1855"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/rel/7017665-placeType-300000835"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ontology#historicFlag"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/historic/historic"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://schema.org/Place"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+                "type" : "literal",
+                "value" : "46.05"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+                "type" : "literal",
+                "value" : "-118.3333"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://purl.org/dc/terms/license"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://opendatacommons.org/licenses/by/1.0/"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://creativecommons.org/ns#license"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://opendatacommons.org/licenses/by/1.0/"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://rdfs.org/ns/void#inDataset"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/dataset/tgn"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-place"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://schema.org/geo"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-geometry"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-geometry"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              },
+              "Object" : {
+                "type" : "uri",
+                "value" : "http://schema.org/GeoCoordinates"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-geometry"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://schema.org/longitude"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+                "type" : "literal",
+                "value" : "-118.3333"
+              }
+            }, {
+              "Subject" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/tgn/7017665-geometry"
+              },
+              "Predicate" : {
+                "type" : "uri",
+                "value" : "http://schema.org/latitude"
+              },
+              "Object" : {
+                "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+                "type" : "literal",
+                "value" : "46.05"
+              }
+            } ]
+          }
+        }
+    http_version: '2'
+    adapter_metadata:
+      effective_url: https://vocab.getty.edu/download/json?uri=http://vocab.getty.edu/tgn/7017665
+  recorded_at: Wed, 10 Jun 2026 15:40:09 GMT
+- request:
+    method: post
+    uri: https://vocab.getty.edu/sparql.json
+    body:
+      encoding: US-ASCII
+      string: query=SELECT ?identifier_place ?place_label_default ?place_label_en
+        ?aat_pref ?place_label_latn_pinyin WHERE {{<http://vocab.getty.edu/tgn/7029392>
+        <http://purl.org/dc/elements/1.1/identifier> ?identifier_place . OPTIONAL
+        {<http://vocab.getty.edu/tgn/7029392> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_en FILTER langMatches( lang(?place_label_en), "en" ) } OPTIONAL
+        {<http://vocab.getty.edu/tgn/7029392> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_default FILTER langMatches( lang(?place_label_default), "" )
+        } OPTIONAL {<http://vocab.getty.edu/tgn/7029392> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_latn_pinyin FILTER langMatches( lang(?place_label_latn_pinyin),
+        "zh-latn-pinyin" ) } <http://vocab.getty.edu/tgn/7029392> <http://vocab.getty.edu/ontology#placeTypePreferred>
+        ?aat_pref } UNION{<http://vocab.getty.edu/tgn/1000001> <http://purl.org/dc/elements/1.1/identifier>
+        ?identifier_place . OPTIONAL {<http://vocab.getty.edu/tgn/1000001> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_en FILTER langMatches( lang(?place_label_en), "en" ) } OPTIONAL
+        {<http://vocab.getty.edu/tgn/1000001> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_default FILTER langMatches( lang(?place_label_default), "" )
+        } OPTIONAL {<http://vocab.getty.edu/tgn/1000001> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_latn_pinyin FILTER langMatches( lang(?place_label_latn_pinyin),
+        "zh-latn-pinyin" ) } <http://vocab.getty.edu/tgn/1000001> <http://vocab.getty.edu/ontology#placeTypePreferred>
+        ?aat_pref } UNION{<http://vocab.getty.edu/tgn/7012149> <http://purl.org/dc/elements/1.1/identifier>
+        ?identifier_place . OPTIONAL {<http://vocab.getty.edu/tgn/7012149> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_en FILTER langMatches( lang(?place_label_en), "en" ) } OPTIONAL
+        {<http://vocab.getty.edu/tgn/7012149> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_default FILTER langMatches( lang(?place_label_default), "" )
+        } OPTIONAL {<http://vocab.getty.edu/tgn/7012149> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_latn_pinyin FILTER langMatches( lang(?place_label_latn_pinyin),
+        "zh-latn-pinyin" ) } <http://vocab.getty.edu/tgn/7012149> <http://vocab.getty.edu/ontology#placeTypePreferred>
+        ?aat_pref } UNION{<http://vocab.getty.edu/tgn/2002251> <http://purl.org/dc/elements/1.1/identifier>
+        ?identifier_place . OPTIONAL {<http://vocab.getty.edu/tgn/2002251> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_en FILTER langMatches( lang(?place_label_en), "en" ) } OPTIONAL
+        {<http://vocab.getty.edu/tgn/2002251> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_default FILTER langMatches( lang(?place_label_default), "" )
+        } OPTIONAL {<http://vocab.getty.edu/tgn/2002251> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_latn_pinyin FILTER langMatches( lang(?place_label_latn_pinyin),
+        "zh-latn-pinyin" ) } <http://vocab.getty.edu/tgn/2002251> <http://vocab.getty.edu/ontology#placeTypePreferred>
+        ?aat_pref } UNION{<http://vocab.getty.edu/tgn/7007920> <http://purl.org/dc/elements/1.1/identifier>
+        ?identifier_place . OPTIONAL {<http://vocab.getty.edu/tgn/7007920> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_en FILTER langMatches( lang(?place_label_en), "en" ) } OPTIONAL
+        {<http://vocab.getty.edu/tgn/7007920> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_default FILTER langMatches( lang(?place_label_default), "" )
+        } OPTIONAL {<http://vocab.getty.edu/tgn/7007920> <http://www.w3.org/2004/02/skos/core#prefLabel>
+        ?place_label_latn_pinyin FILTER langMatches( lang(?place_label_latn_pinyin),
+        "zh-latn-pinyin" ) } <http://vocab.getty.edu/tgn/7007920> <http://vocab.getty.edu/ontology#placeTypePreferred>
+        ?aat_pref . }} GROUP BY ?identifier_place ?place_label_default ?place_label_en
+        ?place_label_latn_pinyin ?aat_pref
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      date:
+      - Wed, 10 Jun 2026 15:40:09 GMT
+      content-type:
+      - application/sparql-results+json;charset=utf-8
+      server:
+      - nginx/1.29.8
+      access-control-allow-origin:
+      - "*"
+      link:
+      - <http://opendatacommons.org/licenses/by/1.0/>; rel="license"
+      content-disposition:
+      - attachment; filename="sparql.json"
+      content-language:
+      - en
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "head" : {
+            "vars" : [ "identifier_place", "place_label_default", "place_label_en", "aat_pref", "place_label_latn_pinyin" ]
+          },
+          "results" : {
+            "bindings" : [ {
+              "identifier_place" : {
+                "type" : "literal",
+                "value" : "7029392"
+              },
+              "place_label_en" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "World"
+              },
+              "aat_pref" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300386699"
+              }
+            }, {
+              "identifier_place" : {
+                "type" : "literal",
+                "value" : "1000001"
+              },
+              "place_label_default" : {
+                "type" : "literal",
+                "value" : "North and Central America"
+              },
+              "aat_pref" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300128176"
+              }
+            }, {
+              "identifier_place" : {
+                "type" : "literal",
+                "value" : "7012149"
+              },
+              "place_label_en" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "United States"
+              },
+              "aat_pref" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300128207"
+              }
+            }, {
+              "identifier_place" : {
+                "type" : "literal",
+                "value" : "2002251"
+              },
+              "place_label_default" : {
+                "type" : "literal",
+                "value" : "Walla Walla"
+              },
+              "aat_pref" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300000771"
+              }
+            }, {
+              "identifier_place" : {
+                "type" : "literal",
+                "value" : "7007920"
+              },
+              "place_label_en" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "Washington"
+              },
+              "aat_pref" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300000776"
+              }
+            } ]
+          }
+        }
+    http_version: '2'
+    adapter_metadata:
+      effective_url: https://vocab.getty.edu/sparql.json
+  recorded_at: Wed, 10 Jun 2026 15:40:09 GMT
+recorded_with: VCR 6.3.1

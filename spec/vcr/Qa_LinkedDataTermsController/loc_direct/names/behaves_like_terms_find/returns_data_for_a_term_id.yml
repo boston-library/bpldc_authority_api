@@ -1,0 +1,213 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://id.loc.gov/authorities/names/n83017570
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/n-triples, application/n-quads, application/ld+json, application/x-ld+json,
+        application/rdf+json, text/html;q=0.5, application/xhtml+xml;q=0.7, image/svg+xml;q=0.4,
+        text/n3, text/rdf+n3;q=0.2, application/rdf+n3;q=0.2, application/canonical+n-quads,
+        application/x-canonical+n-quads, application/rdf+xml, text/csv;q=0.4, text/tab-separated-values;q=0.4,
+        application/csvm+json, text/turtle, text/rdf+turtle, application/turtle;q=0.2,
+        application/x-turtle;q=0.2, application/trig, application/x-trig;q=0.2, application/trix,
+        application/ld+yaml, */*;q=0.1
+      User-Agent:
+      - Ruby RDF.rb/3.3.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:40:07 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Location:
+      - https://id.loc.gov/authorities/names/n83017570
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a0997903aa185619-BOS
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301
+        Moved Permanently</h1></center>\r\n<hr><center>cloudflare</center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Wed, 10 Jun 2026 15:40:07 GMT
+- request:
+    method: get
+    uri: https://id.loc.gov/authorities/names/n83017570
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/n-triples, application/n-quads, application/ld+json, application/x-ld+json,
+        application/rdf+json, text/html;q=0.5, application/xhtml+xml;q=0.7, image/svg+xml;q=0.4,
+        text/n3, text/rdf+n3;q=0.2, application/rdf+n3;q=0.2, application/canonical+n-quads,
+        application/x-canonical+n-quads, application/rdf+xml, text/csv;q=0.4, text/tab-separated-values;q=0.4,
+        application/csvm+json, text/turtle, text/rdf+turtle, application/turtle;q=0.2,
+        application/x-turtle;q=0.2, application/trig, application/x-trig;q=0.2, application/trix,
+        application/ld+yaml, */*;q=0.1
+      User-Agent:
+      - Ruby RDF.rb/3.3.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 303
+      message: See Other
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:40:07 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Location:
+      - https://id.loc.gov/authorities/names/n83017570.jsonld
+      Vary:
+      - Accept
+      X-Uri:
+      - http://id.loc.gov/authorities/names/n83017570
+      X-Preflabel:
+      - McKim, Charles Follen, 1847-1909
+      X-Preflabel-Escaped:
+      - McKim, Charles Follen, 1847-1909
+      X-Preflabel-Encoded:
+      - McKim%2C%20Charles%20Follen%2C%201847-1909
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - '1'
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Method:
+      - HEAD, POST, GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, X-URI, X-PrefLabel, X-PrefLabel-Escaped, X-PrefLabel-Encoded
+      Strict-Transport-Security:
+      - max-age=31536000
+      Server:
+      - cloudflare
+      Cache-Control:
+      - public, max-age=2419200
+      X-Varnish:
+      - 27503681 3930634
+      Age:
+      - '766796'
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - a0997903da0fb39b-BOS
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 10 Jun 2026 15:40:07 GMT
+- request:
+    method: get
+    uri: https://id.loc.gov/authorities/names/n83017570.jsonld
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/n-triples, application/n-quads, application/ld+json, application/x-ld+json,
+        application/rdf+json, text/html;q=0.5, application/xhtml+xml;q=0.7, image/svg+xml;q=0.4,
+        text/n3, text/rdf+n3;q=0.2, application/rdf+n3;q=0.2, application/canonical+n-quads,
+        application/x-canonical+n-quads, application/rdf+xml, text/csv;q=0.4, text/tab-separated-values;q=0.4,
+        application/csvm+json, text/turtle, text/rdf+turtle, application/turtle;q=0.2,
+        application/x-turtle;q=0.2, application/trig, application/x-trig;q=0.2, application/trix,
+        application/ld+yaml, */*;q=0.1
+      User-Agent:
+      - Ruby RDF.rb/3.3.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:40:07 GMT
+      Content-Type:
+      - application/ld+json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - '1'
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Method:
+      - HEAD, POST, GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+      Access-Control-Expose-Headers:
+      - Content-Type, Cache-Control, X-URI, X-PrefLabel, X-PrefLabel-Escaped, X-PrefLabel-Encoded
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Preflabel:
+      - McKim, Charles Follen, 1847-1909
+      X-Preflabel-Escaped:
+      - McKim, Charles Follen, 1847-1909
+      X-Preflabel-Encoded:
+      - McKim%2C%20Charles%20Follen%2C%201847-1909
+      X-Uri:
+      - http://id.loc.gov/authorities/names/n83017570
+      Server:
+      - cloudflare
+      Cache-Control:
+      - public, max-age=2419200
+      X-Varnish:
+      - 25066891 4546848
+      Age:
+      - '778799'
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - a09979042c72896f-BOS
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        [  { "@id": "https://d-nb.info/gnd/12459087X", "@type": [ "http://www.loc.gov/mads/rdf/v1#PersonalName" ], "http://www.w3.org/2000/01/rdf-schema#label": [ { "@value": "McKim, Charles Follen" } ], "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [ { "@value": "McKim, Charles Follen" } ] },  { "@id": "_:b27iddOtlocdOtgovauthoritiesnamesn83017570", "@type": [ "http://www.loc.gov/mads/rdf/v1#Source" ], "http://www.loc.gov/mads/rdf/v1#citationStatus": [ { "@value": "found" } ], "http://www.loc.gov/mads/rdf/v1#citationSource": [ { "@value": "Chicago. Art Institute. Exhibition of the work of ... 1910." } ] },  { "@id": "http://id.loc.gov/rwo/agents/n83017570", "@type": [ "http://www.loc.gov/mads/rdf/v1#RWO", "http://id.loc.gov/ontologies/bibframe/Person", "http://xmlns.com/foaf/0.1/Person" ], "http://www.w3.org/2000/01/rdf-schema#label": [ { "@value": "McKim, Charles Follen, 1847-1909" } ], "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority": [ { "@id": "http://id.loc.gov/authorities/names/n83017570" } ] },  { "@id": "_:b8iddOtlocdOtgovauthoritiesnamesn83017570", "@type": [ "http://www.loc.gov/mads/rdf/v1#FullNameElement" ], "http://www.loc.gov/mads/rdf/v1#elementValue": [ { "@value": "McKim, Charles Follen," } ] },  { "@id": "http://id.loc.gov/authorities/names/n83017570", "@type": [ "http://www.loc.gov/mads/rdf/v1#PersonalName", "http://www.loc.gov/mads/rdf/v1#Authority", "http://www.loc.gov/mads/rdf/v1#PersonalName", "http://www.loc.gov/mads/rdf/v1#Authority", "http://www.w3.org/2004/02/skos/core#Concept" ], "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [ { "@value": "McKim, Charles Follen, 1847-1909" }, { "@value": "McKim, Charles Follen, 1847-1909" } ], "http://www.loc.gov/mads/rdf/v1#elementList": [ { "@list": [{"@id": "_:b8iddOtlocdOtgovauthoritiesnamesn83017570"}, {"@id": "_:b11iddOtlocdOtgovauthoritiesnamesn83017570"} ] } ], "http://id.loc.gov/ontologies/bflc/marcKey": [ { "@value": "1001 $aMcKim, Charles Follen,$d1847-1909" } ], "http://www.loc.gov/mads/rdf/v1#identifiesRWO": [ { "@id": "http://id.loc.gov/rwo/agents/n83017570" }, { "@id": "https://d-nb.info/gnd/12459087X" }, { "@id": "https://isni.org/isni/0000000121255537" } ], "http://www.loc.gov/mads/rdf/v1#hasSource": [ { "@id": "_:b27iddOtlocdOtgovauthoritiesnamesn83017570" }, { "@id": "_:b33iddOtlocdOtgovauthoritiesnamesn83017570" } ], "http://id.loc.gov/vocabulary/identifiers/lccn": [ { "@value": "n 83017570" } ], "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSCollection": [ { "@id": "http://id.loc.gov/authorities/names/collection_NamesAuthorizedHeadings" }, { "@id": "http://id.loc.gov/authorities/names/collection_LCNAF" } ], "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSScheme": [ { "@id": "http://id.loc.gov/authorities/names" } ], "http://www.loc.gov/mads/rdf/v1#hasReciprocalAuthority": [ { "@id": "http://id.loc.gov/authorities/names/n82109012" } ], "http://www.loc.gov/mads/rdf/v1#hasExactExternalAuthority": [ { "@id": "http://viaf.org/en/viaf/LC%7Cn%20%2083017570" } ], "http://www.loc.gov/mads/rdf/v1#hasCloseExternalAuthority": [ { "@id": "http://id.worldcat.org/fast/108543" }, { "@id": "http://vocab.getty.edu/ulan/500019204" } ], "http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority": [ { "@id": "http://vocab.getty.edu/ulan/500019204" } ], "http://www.loc.gov/mads/rdf/v1#adminMetadata": [ { "@id": "_:b67iddOtlocdOtgovauthoritiesnamesn83017570" }, { "@id": "_:b96iddOtlocdOtgovauthoritiesnamesn83017570" } ], "http://www.w3.org/2004/02/skos/core#prefLabel": [ { "@value": "McKim, Charles Follen, 1847-1909" } ], "http://www.w3.org/2004/02/skos/core#related": [ { "@id": "http://id.loc.gov/authorities/names/n82109012" } ], "http://www.w3.org/2004/02/skos/core#semanticRelation": [ { "@id": "http://vocab.getty.edu/ulan/500019204" } ], "http://www.w3.org/2004/02/skos/core#exactMatch": [ { "@id": "http://viaf.org/en/viaf/LC%7Cn%20%2083017570" } ], "http://www.w3.org/2004/02/skos/core#closeMatch": [ { "@id": "http://id.worldcat.org/fast/108543" }, { "@id": "http://vocab.getty.edu/ulan/500019204" } ], "http://www.w3.org/2004/02/skos/core#inScheme": [ { "@id": "http://id.loc.gov/authorities/names" } ], "http://www.w3.org/2004/02/skos/core#changeNote": [ { "@id": "_:b142iddOtlocdOtgovauthoritiesnamesn83017570" }, { "@id": "_:b151iddOtlocdOtgovauthoritiesnamesn83017570" } ] },  { "@id": "_:b33iddOtlocdOtgovauthoritiesnamesn83017570", "@type": [ "http://www.loc.gov/mads/rdf/v1#Source" ], "http://www.loc.gov/mads/rdf/v1#citationStatus": [ { "@value": "found" } ], "http://www.loc.gov/mads/rdf/v1#citationSource": [ { "@value": "Wilson, R. G. McKim, Mead & White architects, 1983:" } ], "http://www.loc.gov/mads/rdf/v1#citationNote": [ { "@value": "CIP galley (Charles Follen McKim; Charles McKim)" } ] },  { "@id": "http://id.loc.gov/vocabulary/organizations/ocolc", "@type": [ "http://www.loc.gov/mads/rdf/v1#CorporateName", "http://www.loc.gov/mads/rdf/v1#Authority" ], "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [ { "@value": "Online Computer Library Center, Inc." } ], "http://www.loc.gov/mads/rdf/v1#code": [ { "@type": "http://id.loc.gov/datatypes/orgs/code",
+        "@value": "OCoLC" }, { "@type": "http://id.loc.gov/datatypes/orgs/normalized",
+        "@value": "ocolc" }, { "@type": "http://id.loc.gov/datatypes/orgs/iso15511",
+        "@value": "US-ocolc" } ] },  { "@id": "http://id.worldcat.org/fast/108543", "@type": [ "http://www.loc.gov/mads/rdf/v1#PersonalName", "http://www.w3.org/2004/02/skos/core#Concept" ], "http://id.loc.gov/ontologies/bflc/marcKey": [ { "@value": "1001 $aMcKim, Charles Follen,$d1847-1909" } ], "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [ { "@value": "McKim, Charles Follen, 1847-1909" } ], "http://www.w3.org/2004/02/skos/core#prefLabel": [ { "@value": "McKim, Charles Follen, 1847-1909" } ] },  { "@id": "_:b142iddOtlocdOtgovauthoritiesnamesn83017570", "@type": [ "http://purl.org/vocab/changeset/schema#ChangeSet" ], "http://purl.org/vocab/changeset/schema#subjectOfChange": [ { "@id": "http://id.loc.gov/authorities/names/n83017570" } ], "http://purl.org/vocab/changeset/schema#creatorName": [ { "@value": "United States, Library of CongressDLCdlcUS-dlc" } ], "http://purl.org/vocab/changeset/schema#createdDate": [ { "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "1983-07-06T00:00:00" } ], "http://purl.org/vocab/changeset/schema#changeReason": [ { "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "new" } ] },  { "@id": "http://id.loc.gov/vocabulary/organizations/dlc", "@type": [ "http://www.loc.gov/mads/rdf/v1#CorporateName", "http://www.loc.gov/mads/rdf/v1#Authority" ], "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [ { "@value": "United States, Library of Congress" } ], "http://www.loc.gov/mads/rdf/v1#code": [ { "@type": "http://id.loc.gov/datatypes/orgs/code",
+        "@value": "DLC" }, { "@type": "http://id.loc.gov/datatypes/orgs/normalized",
+        "@value": "dlc" }, { "@type": "http://id.loc.gov/datatypes/orgs/iso15511",
+        "@value": "US-dlc" } ] },  { "@id": "_:b67iddOtlocdOtgovauthoritiesnamesn83017570", "@type": [ "http://id.loc.gov/ontologies/RecordInfo#RecordInfo" ], "http://id.loc.gov/ontologies/RecordInfo#recordChangeDate": [ { "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "1983-07-06T00:00:00" } ], "http://id.loc.gov/ontologies/RecordInfo#recordStatus": [ { "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "new" } ], "http://id.loc.gov/ontologies/RecordInfo#recordContentSource": [ { "@id": "http://id.loc.gov/vocabulary/organizations/dlc" } ], "http://id.loc.gov/ontologies/RecordInfo#languageOfCataloging": [ { "@id": "http://id.loc.gov/vocabulary/iso639-2/eng" } ] },  { "@id": "_:b11iddOtlocdOtgovauthoritiesnamesn83017570", "@type": [ "http://www.loc.gov/mads/rdf/v1#DateNameElement" ], "http://www.loc.gov/mads/rdf/v1#elementValue": [ { "@value": "1847-1909" } ] },  { "@id": "http://id.loc.gov/authorities/names/n82109012", "@type": [ "http://www.loc.gov/mads/rdf/v1#CorporateName", "http://www.loc.gov/mads/rdf/v1#Authority", "http://www.w3.org/2004/02/skos/core#Concept" ], "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [ { "@value": "McKim, Mead & White" } ], "http://www.w3.org/2004/02/skos/core#prefLabel": [ { "@value": "McKim, Mead & White" } ] },  { "@id": "_:b96iddOtlocdOtgovauthoritiesnamesn83017570", "@type": [ "http://id.loc.gov/ontologies/RecordInfo#RecordInfo" ], "http://id.loc.gov/ontologies/RecordInfo#recordChangeDate": [ { "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-08-05T00:36:56" } ], "http://id.loc.gov/ontologies/RecordInfo#recordStatus": [ { "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "revised" } ], "http://id.loc.gov/ontologies/RecordInfo#recordContentSource": [ { "@id": "http://id.loc.gov/vocabulary/organizations/ocolc" } ], "http://id.loc.gov/ontologies/RecordInfo#languageOfCataloging": [ { "@id": "http://id.loc.gov/vocabulary/iso639-2/eng" } ] },  { "@id": "http://id.loc.gov/vocabulary/iso639-2/eng", "@type": [ "http://www.loc.gov/mads/rdf/v1#Language", "//www.loc.gov/mads/rdf/v1#Authority", "http://id.loc.gov/vocabulary/iso639-2/iso639-2_Language", "http://www.loc.gov/mads/rdf/v1#Language", "//www.loc.gov/mads/rdf/v1#Authority", "http://id.loc.gov/vocabulary/iso639-2/iso639-2_Language" ], "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [ { "@value": "English" }, { "@value": "anglais" }, { "@value": "Englisch" }, { "@value": "English" }, { "@value": "anglais" }, { "@value": "Englisch" } ], "http://www.loc.gov/mads/rdf/v1#code": [ { "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "eng" }, { "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "eng" } ] },  { "@id": "_:b151iddOtlocdOtgovauthoritiesnamesn83017570", "@type": [ "http://purl.org/vocab/changeset/schema#ChangeSet" ], "http://purl.org/vocab/changeset/schema#subjectOfChange": [ { "@id": "http://id.loc.gov/authorities/names/n83017570" } ], "http://purl.org/vocab/changeset/schema#creatorName": [ { "@value": "Online Computer Library Center, Inc.OCoLCocolcUS-ocolc" } ], "http://purl.org/vocab/changeset/schema#createdDate": [ { "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-08-05T00:36:56" } ], "http://purl.org/vocab/changeset/schema#changeReason": [ { "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "revised" } ] } ]
+  recorded_at: Wed, 10 Jun 2026 15:40:07 GMT
+recorded_with: VCR 6.3.1

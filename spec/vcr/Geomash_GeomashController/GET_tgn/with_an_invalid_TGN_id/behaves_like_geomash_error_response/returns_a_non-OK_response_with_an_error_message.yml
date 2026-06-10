@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://vocab.getty.edu/tgn/foo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Accept-Profile:
+      - "<http://www.w3.org/2004/02/skos/core#>"
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 404
+      message: ''
+    headers:
+      date:
+      - Wed, 10 Jun 2026 15:40:09 GMT
+      content-type:
+      - text/html;charset=utf-8
+      content-length:
+      - '683'
+      server:
+      - nginx/1.29.8
+      content-language:
+      - en
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz0iZW4iPjxoZWFkPjx0aXRsZT5IVFRQIFN0YXR1cyA0MDQg4oCTIE5vdCBGb3VuZDwvdGl0bGU+PHN0eWxlIHR5cGU9InRleHQvY3NzIj5ib2R5IHtmb250LWZhbWlseTpUYWhvbWEsQXJpYWwsc2Fucy1zZXJpZjt9IGgxLCBoMiwgaDMsIGIge2NvbG9yOndoaXRlO2JhY2tncm91bmQtY29sb3I6IzUyNUQ3Njt9IGgxIHtmb250LXNpemU6MjJweDt9IGgyIHtmb250LXNpemU6MTZweDt9IGgzIHtmb250LXNpemU6MTRweDt9IHAge2ZvbnQtc2l6ZToxMnB4O30gYSB7Y29sb3I6YmxhY2s7fSAubGluZSB7aGVpZ2h0OjFweDtiYWNrZ3JvdW5kLWNvbG9yOiM1MjVENzY7Ym9yZGVyOm5vbmU7fTwvc3R5bGU+PC9oZWFkPjxib2R5PjxoMT5IVFRQIFN0YXR1cyA0MDQg4oCTIE5vdCBGb3VuZDwvaDE+PGhyIGNsYXNzPSJsaW5lIiAvPjxwPjxiPlR5cGU8L2I+IFN0YXR1cyBSZXBvcnQ8L3A+PHA+PGI+RGVzY3JpcHRpb248L2I+IFRoZSBvcmlnaW4gc2VydmVyIGRpZCBub3QgZmluZCBhIGN1cnJlbnQgcmVwcmVzZW50YXRpb24gZm9yIHRoZSB0YXJnZXQgcmVzb3VyY2Ugb3IgaXMgbm90IHdpbGxpbmcgdG8gZGlzY2xvc2UgdGhhdCBvbmUgZXhpc3RzLjwvcD48aHIgY2xhc3M9ImxpbmUiIC8+PGgzPkFwYWNoZSBUb21jYXQvNy4wLjEwOTwvaDM+PC9ib2R5PjwvaHRtbD4=
+    http_version: '2'
+    adapter_metadata:
+      effective_url: https://vocab.getty.edu/download/json?uri=http://vocab.getty.edu/tgn/foo
+  recorded_at: Wed, 10 Jun 2026 15:40:09 GMT
+recorded_with: VCR 6.3.1

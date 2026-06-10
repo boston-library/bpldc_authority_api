@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
-# specs are slow because they call Geomash methods that make HTTP requests using Typhoeus,
-# which doesn't seem to play well with VCR (despite `hook_into :typhoeus` in config block)
-# so specs are making live requests to GeoNames, Getty, Google Maps API, etc.
 require_relative '../shared/geomash_shared'
-RSpec.describe Geomash::GeomashController do
+RSpec.describe Geomash::GeomashController, :vcr do
   let(:tgn_id) { '7017665' }
   let(:geonames_id) { '5814916' }
   let(:city) { 'Walla Walla' }

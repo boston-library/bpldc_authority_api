@@ -35,8 +35,10 @@ require 'vcr'
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
   c.configure_rspec_metadata!
-  c.hook_into :webmock
+  c.hook_into :webmock, :typhoeus
   c.allow_http_connections_when_no_cassette = true
+  c.filter_sensitive_data('<USERNAME>') { CGI.escape(ENV['GEONAMES_USERNAME']) }
+  c.filter_sensitive_data('<REDACTED>') { CGI.escape(ENV['GOOGLE_MAPS_API_KEY']) }
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

@@ -1,0 +1,274 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=Walla%20Walla,%20WA&key=<REDACTED>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 10 Jun 2026 15:46:05 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:257:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:257:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:257:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:257:0"}],}'
+      Server:
+      - mafe
+      Content-Length:
+      - '2412'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=130
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"Walla Walla\",\n
+        \              \"short_name\" : \"Walla Walla\",\n               \"types\"
+        : \n               [\n                  \"locality\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Walla Walla County\",\n               \"short_name\" : \"Walla Walla County\",\n
+        \              \"types\" : \n               [\n                  \"administrative_area_level_2\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Washington\",\n               \"short_name\"
+        : \"WA\",\n               \"types\" : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"United States\",\n               \"short_name\"
+        : \"US\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"99362\",\n               \"short_name\" :
+        \"99362\",\n               \"types\" : \n               [\n                  \"postal_code\"\n
+        \              ]\n            }\n         ],\n         \"formatted_address\"
+        : \"Walla Walla, WA 99362, USA\",\n         \"geometry\" : \n         {\n
+        \           \"bounds\" : \n            {\n               \"northeast\" : \n
+        \              {\n                  \"lat\" : 46.10312099999999,\n                  \"lng\"
+        : -118.2420601\n               },\n               \"southwest\" : \n               {\n
+        \                 \"lat\" : 46.0295129,\n                  \"lng\" : -118.4147721\n
+        \              }\n            },\n            \"location\" : \n            {\n
+        \              \"lat\" : 46.0645809,\n               \"lng\" : -118.3430209\n
+        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
+        : \n            {\n               \"northeast\" : \n               {\n                  \"lat\"
+        : 46.10312099999999,\n                  \"lng\" : -118.2420601\n               },\n
+        \              \"southwest\" : \n               {\n                  \"lat\"
+        : 46.0295129,\n                  \"lng\" : -118.4147721\n               }\n
+        \           }\n         },\n         \"place_id\" : \"ChIJO_fQoEsVolQR1LEd58-vxBI\",\n
+        \        \"types\" : \n         [\n            \"locality\",\n            \"political\"\n
+        \        ]\n      }\n   ],\n   \"status\" : \"OK\"\n}"
+  recorded_at: Wed, 10 Jun 2026 15:46:05 GMT
+- request:
+    method: get
+    uri: https://vocab.getty.edu/sparql.json?query=SELECT%20%3Fobject_identifier%20WHERE%20%7B%20%3Fx%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2Fidentifier%3E%20%3Fobject_identifier%20.%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23placeTypePreferred%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F300128207%3E%20.%20%3Fx%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%3E%20%3Fobject_label%20.%20FILTER%20regex%28%3Fobject_label%2C%20%22%5EUnited%20States%24%22%2C%20%22i%22%20%29%20%7D%20GROUP%20BY%20%3Fobject_identifier
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      date:
+      - Wed, 10 Jun 2026 15:46:06 GMT
+      content-type:
+      - application/sparql-results+json;charset=utf-8
+      server:
+      - nginx/1.29.8
+      access-control-allow-origin:
+      - "*"
+      link:
+      - <http://opendatacommons.org/licenses/by/1.0/>; rel="license"
+      content-disposition:
+      - attachment; filename="sparql.json"
+      content-language:
+      - en
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "head" : {
+            "vars" : [ "object_identifier" ]
+          },
+          "results" : {
+            "bindings" : [ {
+              "object_identifier" : {
+                "type" : "literal",
+                "value" : "7012149"
+              }
+            } ]
+          }
+        }
+    http_version: '2'
+    adapter_metadata:
+      effective_url: https://vocab.getty.edu/sparql.json?query=SELECT%20%3Fobject_identifier%20WHERE%20%7B%20%3Fx%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2Fidentifier%3E%20%3Fobject_identifier%20.%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23placeTypePreferred%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F300128207%3E%20.%20%3Fx%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%3E%20%3Fobject_label%20.%20FILTER%20regex%28%3Fobject_label%2C%20%22%5EUnited%20States%24%22%2C%20%22i%22%20%29%20%7D%20GROUP%20BY%20%3Fobject_identifier
+  recorded_at: Wed, 10 Jun 2026 15:46:06 GMT
+- request:
+    method: get
+    uri: https://vocab.getty.edu/sparql.json?query=SELECT%20%3Fobject_identifier%20WHERE%20%7B%20%3Fx%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2Fidentifier%3E%20%3Fobject_identifier%20.%20%7B%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23placeTypePreferred%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F300000776%3E%7D%20UNION%20%7B%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23placeTypePreferred%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F300387081%3E%7D%20.%20%3Fx%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%3E%20%3Fobject_label%20.%20FILTER%20regex%28%3Fobject_label%2C%20%22%5EWashington%24%22%2C%20%22i%22%20%29%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23broaderPreferredExtended%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Ftgn%2F7012149%3E%20.%20%7D%20GROUP%20BY%20%3Fobject_identifier
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      date:
+      - Wed, 10 Jun 2026 15:46:06 GMT
+      content-type:
+      - application/sparql-results+json;charset=utf-8
+      server:
+      - nginx/1.29.8
+      access-control-allow-origin:
+      - "*"
+      link:
+      - <http://opendatacommons.org/licenses/by/1.0/>; rel="license"
+      content-disposition:
+      - attachment; filename="sparql.json"
+      content-language:
+      - en
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "head" : {
+            "vars" : [ "object_identifier" ]
+          },
+          "results" : {
+            "bindings" : [ {
+              "object_identifier" : {
+                "type" : "literal",
+                "value" : "7007920"
+              }
+            } ]
+          }
+        }
+    http_version: '2'
+    adapter_metadata:
+      effective_url: https://vocab.getty.edu/sparql.json?query=SELECT%20%3Fobject_identifier%20WHERE%20%7B%20%3Fx%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2Fidentifier%3E%20%3Fobject_identifier%20.%20%7B%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23placeTypePreferred%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F300000776%3E%7D%20UNION%20%7B%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23placeTypePreferred%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F300387081%3E%7D%20.%20%3Fx%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%3E%20%3Fobject_label%20.%20FILTER%20regex%28%3Fobject_label%2C%20%22%5EWashington%24%22%2C%20%22i%22%20%29%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23broaderPreferredExtended%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Ftgn%2F7012149%3E%20.%20%7D%20GROUP%20BY%20%3Fobject_identifier
+  recorded_at: Wed, 10 Jun 2026 15:46:06 GMT
+- request:
+    method: get
+    uri: https://vocab.getty.edu/sparql.json?query=SELECT%20%3Fobject_identifier%20WHERE%20%7B%20%3Fx%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2Fidentifier%3E%20%3Fobject_identifier%20.%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23placeTypePreferred%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F300008347%3E%20.%20%3Fx%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23prefLabel%3E%20%3Fobject_label%20.%20FILTER%20regex%28%3Fobject_label%2C%20%22%5EWalla%20Walla%24%22%2C%20%22i%22%20%29%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23broaderPreferredExtended%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Ftgn%2F7012149%3E%20.%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23broaderPreferredExtended%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Ftgn%2F7007920%3E%20.%20%7D%20GROUP%20BY%20%3Fobject_identifier
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      date:
+      - Wed, 10 Jun 2026 15:46:07 GMT
+      content-type:
+      - application/sparql-results+json;charset=utf-8
+      server:
+      - nginx/1.29.8
+      access-control-allow-origin:
+      - "*"
+      link:
+      - <http://opendatacommons.org/licenses/by/1.0/>; rel="license"
+      content-disposition:
+      - attachment; filename="sparql.json"
+      content-language:
+      - en
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "head" : {
+            "vars" : [ "object_identifier" ]
+          },
+          "results" : {
+            "bindings" : [ {
+              "object_identifier" : {
+                "type" : "literal",
+                "value" : "7017665"
+              }
+            } ]
+          }
+        }
+    http_version: '2'
+    adapter_metadata:
+      effective_url: https://vocab.getty.edu/sparql.json?query=SELECT%20%3Fobject_identifier%20WHERE%20%7B%20%3Fx%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2Fidentifier%3E%20%3Fobject_identifier%20.%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23placeTypePreferred%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F300008347%3E%20.%20%3Fx%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23prefLabel%3E%20%3Fobject_label%20.%20FILTER%20regex%28%3Fobject_label%2C%20%22%5EWalla%20Walla%24%22%2C%20%22i%22%20%29%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23broaderPreferredExtended%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Ftgn%2F7012149%3E%20.%20%3Fx%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Fontology%23broaderPreferredExtended%3E%20%3Chttp%3A%2F%2Fvocab.getty.edu%2Ftgn%2F7007920%3E%20.%20%7D%20GROUP%20BY%20%3Fobject_identifier
+  recorded_at: Wed, 10 Jun 2026 15:46:07 GMT
+- request:
+    method: get
+    uri: http://api.geonames.org/search?username=<USERNAME>&lang=en&style=FULL&q=Walla+Walla%2C+Washington%2C+United+States&name_equals=Walla+Walla&country=US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: '200'
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:46:07 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) mod_jk/1.2.46 OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - sameorigin
+      Cache-Control:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxnZW9uYW1lcyBzdHlsZT0iRlVMTCI+CiAgICA8dG90YWxSZXN1bHRzQ291bnQ+NDwvdG90YWxSZXN1bHRzQ291bnQ+CiAgICA8Z2VvbmFtZT4KICAgICAgICA8dG9wb255bU5hbWU+V2FsbGEgV2FsbGE8L3RvcG9ueW1OYW1lPgogICAgICAgIDxuYW1lPldhbGxhIFdhbGxhPC9uYW1lPgogICAgICAgIDxsYXQ+NDYuMDY0NTg8L2xhdD4KICAgICAgICA8bG5nPi0xMTguMzQzMDI8L2xuZz4KICAgICAgICA8Z2VvbmFtZUlkPjU4MTQ5MTY8L2dlb25hbWVJZD4KICAgICAgICA8Y291bnRyeUNvZGU+VVM8L2NvdW50cnlDb2RlPgogICAgICAgIDxjb3VudHJ5TmFtZT5Vbml0ZWQgU3RhdGVzPC9jb3VudHJ5TmFtZT4KICAgICAgICA8ZmNsPlA8L2ZjbD4KICAgICAgICA8ZmNvZGU+UFBMQTI8L2Zjb2RlPgogICAgICAgIDxmY2xOYW1lPmNpdHksIHZpbGxhZ2UsLi4uPC9mY2xOYW1lPgogICAgICAgIDxmY29kZU5hbWU+c2VhdCBvZiBhIHNlY29uZC1vcmRlciBhZG1pbmlzdHJhdGl2ZSBkaXZpc2lvbjwvZmNvZGVOYW1lPgogICAgICAgIDxwb3B1bGF0aW9uPjMyMjM3PC9wb3B1bGF0aW9uPgogICAgICAgIDxhZG1pbkNvZGUxIElTTzMxNjYtMj0iV0EiPldBPC9hZG1pbkNvZGUxPgogICAgICAgIDxhZG1pbk5hbWUxPldhc2hpbmd0b248L2FkbWluTmFtZTE+CiAgICAgICAgPGFzY2lpTmFtZT5XYWxsYSBXYWxsYTwvYXNjaWlOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lcz5BTFcsU3RlcHRvZSBDaXR5LFN0ZXB0b2V2aWxsZSxVb2xhIFVvbGEsVW9sbGEgVW9sbGEsVm9sYSBWb2xhLFdhbGxhIFdhbGxhLFdhbGxhIFdhbGxhIENpdHksd2EgbGEgd2EgbGEsd2FsYSB3YWxhLHdhbGEgd2FsYSAgd2FzaHluZ3RuLHdhbGxhd2FsbGEsd2FyYXdhcmEs0JLQvtC70LAg0JLQvtC70LAs0KPQvtC70LAg0KPQvtC70LAs0KPQvtC70LvQsCDQo9C+0LvQu9CwLNmI2KfZhNinINmI2KfZhNinLNmI2KfZhNinINmI2KfZhNin2Iwg2YjYp9i024zZhtqv2KrZhizjg6/jg6njg6/jg6ks55Om5ouJ55Om5ouJLOyZiOudvOyZiOudvDwvYWx0ZXJuYXRlTmFtZXM+CiAgICAgICAgPGVsZXZhdGlvbj4yODc8L2VsZXZhdGlvbj4KICAgICAgICA8c3J0bTM+Mjg3PC9zcnRtMz4KICAgICAgICA8YXN0ZXJnZGVtPjI4OTwvYXN0ZXJnZGVtPgogICAgICAgIDxjb250aW5lbnRDb2RlPk5BPC9jb250aW5lbnRDb2RlPgogICAgICAgIDxhZG1pbkNvZGUyPjA3MTwvYWRtaW5Db2RlMj4KICAgICAgICA8YWRtaW5OYW1lMj5XYWxsYSBXYWxsYTwvYWRtaW5OYW1lMj4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJhciI+2YjYp9mE2Kcg2YjYp9mE2Kc8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iYmciPtCj0L7Qu9CwINCj0L7Qu9CwPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGlzUHJlZmVycmVkTmFtZT0idHJ1ZSIgbGFuZz0iZW4iPldhbGxhIFdhbGxhPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9ImZhIj7ZiNin2YTYpyDZiNin2YTYp9iMINmI2KfYtNuM2Ybar9iq2YY8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iaWF0YSI+QUxXPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9ImphIj7jg6/jg6njg6/jg6k8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0ia28iPuyZiOudvOyZiOudvDwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJsaW5rIj5odHRwczovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9XYWxsYV9XYWxsYSUyQ19XYXNoaW5ndG9uPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9InBvc3QiPjk5MzYyPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9InJ1Ij7Qo9C+0LvQu9CwINCj0L7Qu9C70LA8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0ic3IiPtCS0L7Qu9CwINCS0L7Qu9CwPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9InVubGMiPlVTQUxXPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9IndrZHQiPlEyMjIzMzg8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iemgiPueTpuaLieeTpuaLiTwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJ6aC1IYW50Ij7nk6bmi4nnk6bmi4k8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPHRpbWV6b25lIGRzdE9mZnNldD0iLTcuMCIgZ210T2Zmc2V0PSItOC4wIj5BbWVyaWNhL0xvc19BbmdlbGVzPC90aW1lem9uZT4KICAgICAgICA8YmJveD4KICAgICAgICAgICAgPHdlc3Q+LTExOC40MTQ3Nzwvd2VzdD4KICAgICAgICAgICAgPG5vcnRoPjQ2LjEwMzEyPC9ub3J0aD4KICAgICAgICAgICAgPGVhc3Q+LTExOC4yNDIwNjwvZWFzdD4KICAgICAgICAgICAgPHNvdXRoPjQ2LjAzNTg5PC9zb3V0aD4KICAgICAgICAgICAgPGFjY3VyYWN5TGV2ZWw+MTA8L2FjY3VyYWN5TGV2ZWw+CiAgICAgICAgPC9iYm94PgogICAgICAgIDxzY29yZT43Ny4zMTI1MzA1MTc1NzgxMjwvc2NvcmU+CiAgICA8L2dlb25hbWU+CiAgICA8Z2VvbmFtZT4KICAgICAgICA8dG9wb255bU5hbWU+V2FsbGEgV2FsbGEgQ291bnR5PC90b3BvbnltTmFtZT4KICAgICAgICA8bmFtZT5XYWxsYSBXYWxsYTwvbmFtZT4KICAgICAgICA8bGF0PjQ2LjIyOTg8L2xhdD4KICAgICAgICA8bG5nPi0xMTguNDc4NDU8L2xuZz4KICAgICAgICA8Z2VvbmFtZUlkPjU4MTQ5MjE8L2dlb25hbWVJZD4KICAgICAgICA8Y291bnRyeUNvZGU+VVM8L2NvdW50cnlDb2RlPgogICAgICAgIDxjb3VudHJ5TmFtZT5Vbml0ZWQgU3RhdGVzPC9jb3VudHJ5TmFtZT4KICAgICAgICA8ZmNsPkE8L2ZjbD4KICAgICAgICA8ZmNvZGU+QURNMjwvZmNvZGU+CiAgICAgICAgPGZjbE5hbWU+Y291bnRyeSwgc3RhdGUsIHJlZ2lvbiwuLi48L2ZjbE5hbWU+CiAgICAgICAgPGZjb2RlTmFtZT5zZWNvbmQtb3JkZXIgYWRtaW5pc3RyYXRpdmUgZGl2aXNpb248L2Zjb2RlTmFtZT4KICAgICAgICA8cG9wdWxhdGlvbj41ODc4MTwvcG9wdWxhdGlvbj4KICAgICAgICA8YWRtaW5Db2RlMSBJU08zMTY2LTI9IldBIj5XQTwvYWRtaW5Db2RlMT4KICAgICAgICA8YWRtaW5OYW1lMT5XYXNoaW5ndG9uPC9hZG1pbk5hbWUxPgogICAgICAgIDxhc2NpaU5hbWU+V2FsbGEgV2FsbGEgQ291bnR5PC9hc2NpaU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWVzPkNvbWl0YXR1bCBXYWxsYSBXYWxsYSxDb210ZSBkZSBXYWxsYSBXYWxsYSxDb210w6kgZGUgV2FsbGEgV2FsbGEsQ29uZGFkbyBkZSBXYWxsYSBXYWxsYSxDb25kYWRvIGhhbiBXYWxsYSBXYWxsYSxDb250ZWEgZGkgV2FsbGEgV2FsbGEsSHJhYnN0d28gV2FsbGEgV2FsbGEsS2FudG9ubyBXYWxsYSBXYWxsYSxPa3J1ZyBWb2xhIFZvbGEsUXVhbiBXYWxsYSBXYWxsYSxRdeG6rW4gV2FsbGEgV2FsbGEsVW9sYSBVb2xhLFVvbGxhLVVvbGxhLFZhbGxhLVZhbGxhLFdhbGxhIFdhbGxhLFdhbGxhIFdhbGxhIENvdW50eSxXYWxsYSBXYWxsYSBLdW4sV2FsbGEgV2FsbGEgS8WrbixXYWxsYSBXYWxsYSBrb25kZXJyaWEsV2FsbGEgV2FsbGEgbWVneWUsV2FsbGF3YWxsYSBDb3VudHksbXFhdMq/dCB3YWxhIHdhbGEscmFhbGEgcmFhbGEga2EndW50aSxzaGhyc3RhbiB3YWxhIHdhbGEgIHdhc2h5bmd0bix3YSBsYSB3YSBsYSB4aWFuLHdhcmF3YXJhIGp1bizQktCw0LvQu9CwLdCS0LDQu9C70LAs0J7QutGA0YPQsyDQktC+0LvQsCDQktC+0LvQsCzQo9C+0LvQsCDQo9C+0LvQsCzQo9C+0LvQu9CwLdCj0L7Qu9C70LAs2LTZh9ix2LPYqtin2YYg2YjYp9mE2Kcg2YjYp9mE2KfYjCDZiNin2LTbjNmG2q/YqtmGLNmF2YLYp9i32LnYqSDZiNin2YTYpyDZiNin2YTYpyzZiNin2YTYpyDZiNin2YTYpyDaqdin2KTZhtm524ws2YjYp9mE2Kcg2YjYp9mE2Kcg2qnYp9ik2YbZuduM2Iwg2YjYp9i02Ybar9m52YYs4Kex4Ka+4Kay4Ka+IOCnseCmvuCmsuCmviDgppXgpr7gpongpqjgp43gpp/gpr8s44Ov44Op44Ov44Op6YOhLOeTpuaLieeTpuaLiee4ozwvYWx0ZXJuYXRlTmFtZXM+CiAgICAgICAgPGVsZXZhdGlvbj4zNjE8L2VsZXZhdGlvbj4KICAgICAgICA8c3J0bTM+MzUwPC9zcnRtMz4KICAgICAgICA8YXN0ZXJnZGVtPjM0MzwvYXN0ZXJnZGVtPgogICAgICAgIDxjb250aW5lbnRDb2RlPk5BPC9jb250aW5lbnRDb2RlPgogICAgICAgIDxhZG1pbkNvZGUyPjA3MTwvYWRtaW5Db2RlMj4KICAgICAgICA8YWRtaW5OYW1lMj5XYWxsYSBXYWxsYTwvYWRtaW5OYW1lMj4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJhciI+2YXZgtin2LfYudipINmI2KfZhNinINmI2KfZhNinPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9ImJnIj7Qo9C+0LvQsCDQo9C+0LvQsDwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJicHkiPuCnseCmvuCmsuCmviDgp7Hgpr7gprLgpr4g4KaV4Ka+4KaJ4Kao4KeN4Kaf4Ka/PC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGlzU2hvcnROYW1lPSJ0cnVlIiBsYW5nPSJlbiI+V2FsbGEgV2FsbGE8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iZW8iPkthbnRvbm8gV2FsbGEgV2FsbGE8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iZXMiPkNvbmRhZG8gZGUgV2FsbGEgV2FsbGE8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iZXUiPldhbGxhIFdhbGxhIGtvbmRlcnJpYTwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJmYSI+2LTZh9ix2LPYqtin2YYg2YjYp9mE2Kcg2YjYp9mE2KfYjCDZiNin2LTbjNmG2q/YqtmGPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9ImZyIj5Db210w6kgZGUgV2FsbGEgV2FsbGE8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iaHUiPldhbGxhIFdhbGxhIG1lZ3llPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9Iml0Ij5Db250ZWEgZGkgV2FsbGEgV2FsbGE8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iamEiPuODr+ODqeODr+ODqemDoTwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJsaW5rIj5odHRwczovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9XYWxsYV9XYWxsYV9Db3VudHklMkNfV2FzaGluZ3RvbjwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJuYW4iPldhbGxhIFdhbGxhIEvFq248L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0icGwiPkhyYWJzdHdvIFdhbGxhIFdhbGxhPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9InBuYiI+2YjYp9mE2Kcg2YjYp9mE2Kcg2qnYp9ik2YbZuduMPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9InB0Ij5Db25kYWRvIGRlIFdhbGxhIFdhbGxhPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9InJvIj5Db21pdGF0dWwgV2FsbGEgV2FsbGE8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0icnUiPtCj0L7Qu9C70LAt0KPQvtC70LvQsDwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJzciI+0J7QutGA0YPQsyDQktC+0LvQsCDQktC+0LvQsDwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJ1ayI+0JLQsNC70LvQsC3QktCw0LvQu9CwPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9InVyIj7ZiNin2YTYpyDZiNin2YTYpyDaqdin2KTZhtm524zYjCDZiNin2LTZhtqv2bnZhjwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJ2aSI+UXXhuq1uIFdhbGxhIFdhbGxhPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9IndhciI+Q29uZGFkbyBoYW4gV2FsbGEgV2FsbGE8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWUgbGFuZz0iemgiPueTpuaLieeTpuaLiee4ozwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBsYW5nPSJ6aC1IYW50Ij7nk6bmi4nnk6bmi4nnuKM8L2FsdGVybmF0ZU5hbWU+CiAgICAgICAgPHRpbWV6b25lIGRzdE9mZnNldD0iLTcuMCIgZ210T2Zmc2V0PSItOC4wIj5BbWVyaWNhL0xvc19BbmdlbGVzPC90aW1lem9uZT4KICAgICAgICA8YmJveD4KICAgICAgICAgICAgPHdlc3Q+LTExOS4wNDE1PC93ZXN0PgogICAgICAgICAgICA8bm9ydGg+NDYuNjA2ODE8L25vcnRoPgogICAgICAgICAgICA8ZWFzdD4tMTE3Ljk5MTQ4PC9lYXN0PgogICAgICAgICAgICA8c291dGg+NDUuOTk5ODU8L3NvdXRoPgogICAgICAgICAgICA8YWNjdXJhY3lMZXZlbD4xMDwvYWNjdXJhY3lMZXZlbD4KICAgICAgICA8L2Jib3g+CiAgICAgICAgPHNjb3JlPjQ3LjkxMDgxNjE5MjYyNjk1PC9zY29yZT4KICAgIDwvZ2VvbmFtZT4KICAgIDxnZW9uYW1lPgogICAgICAgIDx0b3BvbnltTmFtZT5XYWxsYSBXYWxsYSBSaXZlcjwvdG9wb255bU5hbWU+CiAgICAgICAgPG5hbWU+V2FsbGEgV2FsbGEgUml2ZXI8L25hbWU+CiAgICAgICAgPGxhdD40Ni4wNTg0NjwvbGF0PgogICAgICAgIDxsbmc+LTExOC45MDY5NDwvbG5nPgogICAgICAgIDxnZW9uYW1lSWQ+NTgxNDkyNTwvZ2VvbmFtZUlkPgogICAgICAgIDxjb3VudHJ5Q29kZT5VUzwvY291bnRyeUNvZGU+CiAgICAgICAgPGNvdW50cnlOYW1lPlVuaXRlZCBTdGF0ZXM8L2NvdW50cnlOYW1lPgogICAgICAgIDxmY2w+SDwvZmNsPgogICAgICAgIDxmY29kZT5TVE08L2Zjb2RlPgogICAgICAgIDxmY2xOYW1lPnN0cmVhbSwgbGFrZSwgLi4uPC9mY2xOYW1lPgogICAgICAgIDxmY29kZU5hbWU+c3RyZWFtPC9mY29kZU5hbWU+CiAgICAgICAgPHBvcHVsYXRpb24+MDwvcG9wdWxhdGlvbj4KICAgICAgICA8YWRtaW5Db2RlMSBJU08zMTY2LTI9IldBIj5XQTwvYWRtaW5Db2RlMT4KICAgICAgICA8YWRtaW5OYW1lMT5XYXNoaW5ndG9uPC9hZG1pbk5hbWUxPgogICAgICAgIDxhc2NpaU5hbWU+V2FsbGEgV2FsbGEgUml2ZXI8L2FzY2lpTmFtZT4KICAgICAgICA8YWx0ZXJuYXRlTmFtZXM+V2FsbGEgV2FsbGEsV2FsbGEgV2FsbGEgUml2ZXIsV2FsbG93IFdhbGxvd3MsV2FsbG93IFdhbGxvd3MgUml2ZXIsV29sbGFoIFdvbGxhaCxXb2xsYWggV29sbGFoIFJpdmVyLFdvbGxhdyBXb2xsYWgsV29sbGVyIFdvbGxlcixXb2xsZXIgV29sbGVyIFJpdmVyPC9hbHRlcm5hdGVOYW1lcz4KICAgICAgICA8ZWxldmF0aW9uPjEyMzwvZWxldmF0aW9uPgogICAgICAgIDxzcnRtMz4xMDQ8L3NydG0zPgogICAgICAgIDxhc3RlcmdkZW0+MTAwPC9hc3RlcmdkZW0+CiAgICAgICAgPGNvbnRpbmVudENvZGU+TkE8L2NvbnRpbmVudENvZGU+CiAgICAgICAgPGFkbWluQ29kZTI+MDcxPC9hZG1pbkNvZGUyPgogICAgICAgIDxhZG1pbk5hbWUyPldhbGxhIFdhbGxhPC9hZG1pbk5hbWUyPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGlzUHJlZmVycmVkTmFtZT0idHJ1ZSIgbGFuZz0iZW4iPldhbGxhIFdhbGxhIFJpdmVyPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDxhbHRlcm5hdGVOYW1lIGxhbmc9ImxpbmsiPmh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL1dhbGxhX1dhbGxhX1JpdmVyPC9hbHRlcm5hdGVOYW1lPgogICAgICAgIDx0aW1lem9uZSBkc3RPZmZzZXQ9Ii03LjAiIGdtdE9mZnNldD0iLTguMCI+QW1lcmljYS9Mb3NfQW5nZWxlczwvdGltZXpvbmU+CiAgICAgICAgPHNjb3JlPjMzLjYwNTY3NDc0MzY1MjM0NDwvc2NvcmU+CiAgICA8L2dlb25hbWU+CiAgICA8Z2VvbmFtZT4KICAgICAgICA8dG9wb255bU5hbWU+V2FsbGEgV2F0dGE8L3RvcG9ueW1OYW1lPgogICAgICAgIDxuYW1lPldhbGxhIFdhdHRhPC9uYW1lPgogICAgICAgIDxsYXQ+MzUuNTg1NDQ8L2xhdD4KICAgICAgICA8bG5nPi03Ni44NzM1NTwvbG5nPgogICAgICAgIDxnZW9uYW1lSWQ+NDQ5NzM4NDwvZ2VvbmFtZUlkPgogICAgICAgIDxjb3VudHJ5Q29kZT5VUzwvY291bnRyeUNvZGU+CiAgICAgICAgPGNvdW50cnlOYW1lPlVuaXRlZCBTdGF0ZXM8L2NvdW50cnlOYW1lPgogICAgICAgIDxmY2w+UDwvZmNsPgogICAgICAgIDxmY29kZT5QUEw8L2Zjb2RlPgogICAgICAgIDxmY2xOYW1lPmNpdHksIHZpbGxhZ2UsLi4uPC9mY2xOYW1lPgogICAgICAgIDxmY29kZU5hbWU+cG9wdWxhdGVkIHBsYWNlPC9mY29kZU5hbWU+CiAgICAgICAgPHBvcHVsYXRpb24+MDwvcG9wdWxhdGlvbj4KICAgICAgICA8YWRtaW5Db2RlMSBJU08zMTY2LTI9Ik5DIj5OQzwvYWRtaW5Db2RlMT4KICAgICAgICA8YWRtaW5OYW1lMT5Ob3J0aCBDYXJvbGluYTwvYWRtaW5OYW1lMT4KICAgICAgICA8YXNjaWlOYW1lPldhbGxhIFdhdHRhPC9hc2NpaU5hbWU+CiAgICAgICAgPGFsdGVybmF0ZU5hbWVzPldhbGxhIFdhbGxhLFdhbGxhIFdhdGEsV2FsbGEgV2F0dCxXYWxsYSBXYXR0YTwvYWx0ZXJuYXRlTmFtZXM+CiAgICAgICAgPGVsZXZhdGlvbj45PC9lbGV2YXRpb24+CiAgICAgICAgPHNydG0zPjEyPC9zcnRtMz4KICAgICAgICA8YXN0ZXJnZGVtPjE1PC9hc3RlcmdkZW0+CiAgICAgICAgPGNvbnRpbmVudENvZGU+TkE8L2NvbnRpbmVudENvZGU+CiAgICAgICAgPGFkbWluQ29kZTI+MDEzPC9hZG1pbkNvZGUyPgogICAgICAgIDxhZG1pbk5hbWUyPkJlYXVmb3J0PC9hZG1pbk5hbWUyPgogICAgICAgIDxhZG1pbkNvZGUzPjkxODk2PC9hZG1pbkNvZGUzPgogICAgICAgIDxhZG1pbk5hbWUzPkxvbmcgQWNyZSBUb3duc2hpcDwvYWRtaW5OYW1lMz4KICAgICAgICA8YWx0ZXJuYXRlTmFtZSBpc1ByZWZlcnJlZE5hbWU9InRydWUiIGxhbmc9ImVuIj5XYWxsYSBXYXR0YTwvYWx0ZXJuYXRlTmFtZT4KICAgICAgICA8dGltZXpvbmUgZHN0T2Zmc2V0PSItNC4wIiBnbXRPZmZzZXQ9Ii01LjAiPkFtZXJpY2EvTmV3X1lvcms8L3RpbWV6b25lPgogICAgICAgIDxiYm94PgogICAgICAgICAgICA8d2VzdD4tNzYuODg0NjI8L3dlc3Q+CiAgICAgICAgICAgIDxub3J0aD4zNS41OTQ0Mzwvbm9ydGg+CiAgICAgICAgICAgIDxlYXN0Pi03Ni44NjI0OTwvZWFzdD4KICAgICAgICAgICAgPHNvdXRoPjM1LjU3NjQ1PC9zb3V0aD4KICAgICAgICAgICAgPGFjY3VyYWN5TGV2ZWw+MTwvYWNjdXJhY3lMZXZlbD4KICAgICAgICA8L2Jib3g+CiAgICAgICAgPHNjb3JlPjI3LjYzNDY1ODgxMzQ3NjU2Mjwvc2NvcmU+CiAgICA8L2dlb25hbWU+CjwvZ2VvbmFtZXM+Cg==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://api.geonames.org/search?username=<USERNAME>&lang=en&style=FULL&q=Walla+Walla%2C+Washington%2C+United+States&name_equals=Walla+Walla&country=US
+  recorded_at: Wed, 10 Jun 2026 15:46:13 GMT
+recorded_with: VCR 6.3.1
