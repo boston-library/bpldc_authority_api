@@ -1,0 +1,231 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://vocab.getty.edu/sparql.json?_equivalent=false&_form=/sparql&_implicit=false&implicit=true&query=SELECT%20DISTINCT%20?s%20?name%20?bio%20%7B%20?s%20a%20skos:Concept%3B%20luc:term%20%22McKim%22%3B%20skos:inScheme%20%3Chttp://vocab.getty.edu/ulan/%3E%20%3B%20gvp:prefLabelGVP%20%5Bskosxl:literalForm%20?name%5D%20%3B%20foaf:focus/gvp:biographyPreferred%20%5Bschema:description%20?bio%5D%20%3B%20skos:altLabel%20?alt%20.%20FILTER%20regex(?name,%20%22McKim%22,%20%22i%22)%20.%20%7D%20ORDER%20BY%20?name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.5
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - awselb/2.0
+      Date:
+      - Wed, 10 Jun 2026 15:40:12 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '134'
+      Connection:
+      - keep-alive
+      Location:
+      - https://vocab.getty.edu:443/sparql.json?_equivalent=false&_form=%2Fsparql&_implicit=false&implicit=true&query=SELECT+DISTINCT+%3Fs+%3Fname+%3Fbio+%7B+%3Fs+a+skos%3AConcept%3B+luc%3Aterm+%22McKim%22%3B+skos%3AinScheme+%3Chttp%3A%2F%2Fvocab.getty.edu%2Fulan%2F%3E+%3B+gvp%3AprefLabelGVP+%5Bskosxl%3AliteralForm+%3Fname%5D+%3B+foaf%3Afocus%2Fgvp%3AbiographyPreferred+%5Bschema%3Adescription+%3Fbio%5D+%3B+skos%3AaltLabel+%3Falt+.+FILTER+regex%28%3Fname%2C+%22McKim%22%2C+%22i%22%29+.+%7D+ORDER+BY+%3Fname
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301
+        Moved Permanently</h1></center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Wed, 10 Jun 2026 15:40:12 GMT
+- request:
+    method: get
+    uri: https://vocab.getty.edu/sparql.json?_equivalent=false&_form=/sparql&_implicit=false&implicit=true&query=SELECT%20DISTINCT%20?s%20?name%20?bio%20%7B%20?s%20a%20skos:Concept%3B%20luc:term%20%22McKim%22%3B%20skos:inScheme%20%3Chttp://vocab.getty.edu/ulan/%3E%20%3B%20gvp:prefLabelGVP%20%5Bskosxl:literalForm%20?name%5D%20%3B%20foaf:focus/gvp:biographyPreferred%20%5Bschema:description%20?bio%5D%20%3B%20skos:altLabel%20?alt%20.%20FILTER%20regex(?name,%20%22McKim%22,%20%22i%22)%20.%20%7D%20ORDER%20BY%20?name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.5
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:40:12 GMT
+      Content-Type:
+      - application/sparql-results+json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx/1.29.8
+      Access-Control-Allow-Origin:
+      - "*"
+      Link:
+      - <http://opendatacommons.org/licenses/by/1.0/>; rel="license"
+      Content-Disposition:
+      - attachment; filename="sparql.json"
+      Content-Language:
+      - en
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "head" : {
+            "vars" : [ "s", "name", "bio" ]
+          },
+          "results" : {
+            "bindings" : [ {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500491200"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "McKim, Bruce"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American photographer, contemporary"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500517962"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "McKim, Herbert P."
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "architect, active in North Carolina"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500221352"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "McKim, Mead and Bigelow"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American architectural partnership, active 1878-1879"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500122312"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "McKim, Mead, and White"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American architectural firm, 1879-1910"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500445059"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "McKim, William L."
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American owner, fl. 1939"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500778750"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "McKim, William Wind"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American artist, 1916-1995"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500229650"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "Norton, Charles McKim"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American architect, 1907-1991"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500199223"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "Valentine, Sarah McKim"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American artist, 20th century"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500049841"
+              },
+              "name" : {
+                "type" : "literal",
+                "value" : "Whiting, Gertrude McKim"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American painter, born 1898"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500019204"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "McKim, Charles Follen"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American architect, 1847-1909"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/ulan/500587200"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "McKim, Musa"
+              },
+              "bio" : {
+                "type" : "literal",
+                "value" : "American painter, poet, 1908-1992"
+              }
+            } ]
+          }
+        }
+  recorded_at: Wed, 10 Jun 2026 15:40:12 GMT
+recorded_with: VCR 6.3.1

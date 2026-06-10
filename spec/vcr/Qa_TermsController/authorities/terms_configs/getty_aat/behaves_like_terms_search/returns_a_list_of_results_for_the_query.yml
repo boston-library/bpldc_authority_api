@@ -1,0 +1,446 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://vocab.getty.edu/sparql.json?_equivalent=false&_form=/sparql&_implicit=false&implicit=true&query=SELECT%20?s%20?name%20%7B%20?s%20a%20skos:Concept%3B%20luc:term%20%22landscape%22%3B%20skos:inScheme%20%3Chttp://vocab.getty.edu/aat/%3E%20%3B%20gvp:prefLabelGVP%20%5Bskosxl:literalForm%20?name%5D.%20FILTER%20regex(?name,%20%22landscape%22,%20%22i%22)%20.%20%7D%20ORDER%20BY%20?name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.5
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - awselb/2.0
+      Date:
+      - Wed, 10 Jun 2026 15:40:12 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '134'
+      Connection:
+      - keep-alive
+      Location:
+      - https://vocab.getty.edu:443/sparql.json?_equivalent=false&_form=%2Fsparql&_implicit=false&implicit=true&query=SELECT+%3Fs+%3Fname+%7B+%3Fs+a+skos%3AConcept%3B+luc%3Aterm+%22landscape%22%3B+skos%3AinScheme+%3Chttp%3A%2F%2Fvocab.getty.edu%2Faat%2F%3E+%3B+gvp%3AprefLabelGVP+%5Bskosxl%3AliteralForm+%3Fname%5D.+FILTER+regex%28%3Fname%2C+%22landscape%22%2C+%22i%22%29+.+%7D+ORDER+BY+%3Fname
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301
+        Moved Permanently</h1></center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Wed, 10 Jun 2026 15:40:12 GMT
+- request:
+    method: get
+    uri: https://vocab.getty.edu/sparql.json?_equivalent=false&_form=/sparql&_implicit=false&implicit=true&query=SELECT%20?s%20?name%20%7B%20?s%20a%20skos:Concept%3B%20luc:term%20%22landscape%22%3B%20skos:inScheme%20%3Chttp://vocab.getty.edu/aat/%3E%20%3B%20gvp:prefLabelGVP%20%5Bskosxl:literalForm%20?name%5D.%20FILTER%20regex(?name,%20%22landscape%22,%20%22i%22)%20.%20%7D%20ORDER%20BY%20?name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.5
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:40:13 GMT
+      Content-Type:
+      - application/sparql-results+json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx/1.29.8
+      Access-Control-Allow-Origin:
+      - "*"
+      Link:
+      - <http://opendatacommons.org/licenses/by/1.0/>; rel="license"
+      Content-Disposition:
+      - attachment; filename="sparql.json"
+      Content-Language:
+      - en
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "head" : {
+            "vars" : [ "s", "name" ]
+          },
+          "results" : {
+            "bindings" : [ {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300417314"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "Arcadian landscapes (visual works)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300443504"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "Historic Urban Landscape approach"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300443503"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "Historic Urban Landscape, the"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300419990"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "abandoned landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300435107"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "coastal landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300444117"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "cultural landscape reports"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008932"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "cultural landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300435106"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "flat landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300191134"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "historic landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300417328"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "idealized landscapes (visual works)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300253299"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "industrial landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300252459"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape archaeology"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300024993"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape architects"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300054157"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape architecture (discipline)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300417326"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape architecture (work genre)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300386171"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape architecture firms"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300263616"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape bindings"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300457766"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape design (built work)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300427968"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape edging"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300204032"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape figures (wallpapers by pattern)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300311843"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape format"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300443916"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape gardeners"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300054708"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape gardening"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300435136"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape painters"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300055272"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscape protection"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008626"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscapes (environments)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300015636"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "landscapes (visual works)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300411358"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "mountain landscapes (visual works)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300132294"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "natural landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300417313"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "naturalistic landscapes (visual works)"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300435110"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "riverine landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300393148"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "sacred landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300132448"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "suburban landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300132447"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "urban landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300435111"
+              },
+              "name" : {
+                "xml:lang" : "en",
+                "type" : "literal",
+                "value" : "wooded landscapes"
+              }
+            }, {
+              "s" : {
+                "type" : "uri",
+                "value" : "http://vocab.getty.edu/aat/300008139"
+              },
+              "name" : {
+                "xml:lang" : "en-us",
+                "type" : "literal",
+                "value" : "landscape gardens"
+              }
+            } ]
+          }
+        }
+  recorded_at: Wed, 10 Jun 2026 15:40:13 GMT
+recorded_with: VCR 6.3.1

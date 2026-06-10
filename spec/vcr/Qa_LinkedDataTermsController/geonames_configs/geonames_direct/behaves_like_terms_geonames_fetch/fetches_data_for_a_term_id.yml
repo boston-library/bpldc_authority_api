@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sws.geonames.org/5814916/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/n-triples, application/n-quads, application/ld+json, application/x-ld+json,
+        application/rdf+json, text/html;q=0.5, application/xhtml+xml;q=0.7, image/svg+xml;q=0.4,
+        text/n3, text/rdf+n3;q=0.2, application/rdf+n3;q=0.2, application/canonical+n-quads,
+        application/x-canonical+n-quads, application/rdf+xml, text/csv;q=0.4, text/tab-separated-values;q=0.4,
+        application/csvm+json, text/turtle, text/rdf+turtle, application/turtle;q=0.2,
+        application/x-turtle;q=0.2, application/trig, application/x-trig;q=0.2, application/trix,
+        application/ld+yaml, */*;q=0.1
+      User-Agent:
+      - Ruby RDF.rb/3.3.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 303
+      message: See Other
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:40:06 GMT
+      Server:
+      - Apache/2.4.37 (centos) mod_jk/1.2.48 OpenSSL/1.1.1k
+      Location:
+      - http://sws.geonames.org/5814916/about.rdf
+      Content-Length:
+      - '248'
+      Content-Type:
+      - text/html; charset=iso-8859-1
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>303 See Other</title>
+        </head><body>
+        <h1>See Other</h1>
+        <p>The answer to your request is located <a href="http://sws.geonames.org/5814916/about.rdf">here</a>.</p>
+        </body></html>
+  recorded_at: Wed, 10 Jun 2026 15:40:06 GMT
+- request:
+    method: get
+    uri: http://sws.geonames.org/5814916/about.rdf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/n-triples, application/n-quads, application/ld+json, application/x-ld+json,
+        application/rdf+json, text/html;q=0.5, application/xhtml+xml;q=0.7, image/svg+xml;q=0.4,
+        text/n3, text/rdf+n3;q=0.2, application/rdf+n3;q=0.2, application/canonical+n-quads,
+        application/x-canonical+n-quads, application/rdf+xml, text/csv;q=0.4, text/tab-separated-values;q=0.4,
+        application/csvm+json, text/turtle, text/rdf+turtle, application/turtle;q=0.2,
+        application/x-turtle;q=0.2, application/trig, application/x-trig;q=0.2, application/trix,
+        application/ld+yaml, */*;q=0.1
+      User-Agent:
+      - Ruby RDF.rb/3.3.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: '200'
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:40:06 GMT
+      Server:
+      - Apache/2.4.37 (centos) mod_jk/1.2.48 OpenSSL/1.1.1k
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - sameorigin
+      Cache-Control:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/rdf+xml;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxyZGY6UkRGIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOmRjdGVybXM9Imh0dHA6Ly9wdXJsLm9yZy9kYy90ZXJtcy8iIHhtbG5zOmZvYWY9Imh0dHA6Ly94bWxucy5jb20vZm9hZi8wLjEvIiB4bWxuczpnbj0iaHR0cDovL3d3dy5nZW9uYW1lcy5vcmcvb250b2xvZ3kjIiB4bWxuczpvd2w9Imh0dHA6Ly93d3cudzMub3JnLzIwMDIvMDcvb3dsIyIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpyZGZzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzAxL3JkZi1zY2hlbWEjIiB4bWxuczp3Z3M4NF9wb3M9Imh0dHA6Ly93d3cudzMub3JnLzIwMDMvMDEvZ2VvL3dnczg0X3BvcyMiPgogICAgPGduOkZlYXR1cmUgcmRmOmFib3V0PSJodHRwczovL3N3cy5nZW9uYW1lcy5vcmcvNTgxNDkxNi8iPgogICAgICAgIDxyZGZzOmlzRGVmaW5lZEJ5IHJkZjpyZXNvdXJjZT0iaHR0cHM6Ly9zd3MuZ2VvbmFtZXMub3JnLzU4MTQ5MTYvYWJvdXQucmRmIi8+CiAgICAgICAgPGduOm5hbWU+V2FsbGEgV2FsbGE8L2duOm5hbWU+CiAgICAgICAgPGduOmFsdGVybmF0ZU5hbWUgeG1sOmxhbmc9ImtvIj7smYjrnbzsmYjrnbw8L2duOmFsdGVybmF0ZU5hbWU+CiAgICAgICAgPGduOmFsdGVybmF0ZU5hbWU+U3RlcHRvZSBDaXR5PC9nbjphbHRlcm5hdGVOYW1lPgogICAgICAgIDxnbjphbHRlcm5hdGVOYW1lPlN0ZXB0b2V2aWxsZTwvZ246YWx0ZXJuYXRlTmFtZT4KICAgICAgICA8Z246b2ZmaWNpYWxOYW1lIHhtbDpsYW5nPSJlbiI+V2FsbGEgV2FsbGE8L2duOm9mZmljaWFsTmFtZT4KICAgICAgICA8Z246YWx0ZXJuYXRlTmFtZT5XYWxsYSBXYWxsYSBDaXR5PC9nbjphbHRlcm5hdGVOYW1lPgogICAgICAgIDxnbjphbHRlcm5hdGVOYW1lIHhtbDpsYW5nPSJzciI+0JLQvtC70LAg0JLQvtC70LA8L2duOmFsdGVybmF0ZU5hbWU+CiAgICAgICAgPGduOmFsdGVybmF0ZU5hbWUgeG1sOmxhbmc9ImJnIj7Qo9C+0LvQsCDQo9C+0LvQsDwvZ246YWx0ZXJuYXRlTmFtZT4KICAgICAgICA8Z246YWx0ZXJuYXRlTmFtZSB4bWw6bGFuZz0icnUiPtCj0L7Qu9C70LAg0KPQvtC70LvQsDwvZ246YWx0ZXJuYXRlTmFtZT4KICAgICAgICA8Z246YWx0ZXJuYXRlTmFtZSB4bWw6bGFuZz0iYXIiPtmI2KfZhNinINmI2KfZhNinPC9nbjphbHRlcm5hdGVOYW1lPgogICAgICAgIDxnbjphbHRlcm5hdGVOYW1lIHhtbDpsYW5nPSJmYSI+2YjYp9mE2Kcg2YjYp9mE2KfYjCDZiNin2LTbjNmG2q/YqtmGPC9nbjphbHRlcm5hdGVOYW1lPgogICAgICAgIDxnbjphbHRlcm5hdGVOYW1lIHhtbDpsYW5nPSJqYSI+44Ov44Op44Ov44OpPC9nbjphbHRlcm5hdGVOYW1lPgogICAgICAgIDxnbjphbHRlcm5hdGVOYW1lIHhtbDpsYW5nPSJ6aCI+55Om5ouJ55Om5ouJPC9nbjphbHRlcm5hdGVOYW1lPgogICAgICAgIDxnbjpmZWF0dXJlQ2xhc3MgcmRmOnJlc291cmNlPSJodHRwczovL3d3dy5nZW9uYW1lcy5vcmcvb250b2xvZ3kjUCIvPgogICAgICAgIDxnbjpmZWF0dXJlQ29kZSByZGY6cmVzb3VyY2U9Imh0dHBzOi8vd3d3Lmdlb25hbWVzLm9yZy9vbnRvbG9neSNQLlBQTEEyIi8+CiAgICAgICAgPGduOmNvdW50cnlDb2RlPlVTPC9nbjpjb3VudHJ5Q29kZT4KICAgICAgICA8Z246cG9wdWxhdGlvbj4zMjIzNzwvZ246cG9wdWxhdGlvbj4KICAgICAgICA8Z246cG9zdGFsQ29kZT45OTM2MjwvZ246cG9zdGFsQ29kZT4KICAgICAgICA8d2dzODRfcG9zOmxhdD40Ni4wNjQ1ODwvd2dzODRfcG9zOmxhdD4KICAgICAgICA8d2dzODRfcG9zOmxvbmc+LTExOC4zNDMwMjwvd2dzODRfcG9zOmxvbmc+CiAgICAgICAgPHdnczg0X3BvczphbHQ+Mjg3PC93Z3M4NF9wb3M6YWx0PgogICAgICAgIDxnbjpwYXJlbnRGZWF0dXJlIHJkZjpyZXNvdXJjZT0iaHR0cHM6Ly9zd3MuZ2VvbmFtZXMub3JnLzU4MTQ5MjEvIi8+CiAgICAgICAgPGduOnBhcmVudENvdW50cnkgcmRmOnJlc291cmNlPSJodHRwczovL3N3cy5nZW9uYW1lcy5vcmcvNjI1MjAwMS8iLz4KICAgICAgICA8Z246cGFyZW50QURNMSByZGY6cmVzb3VyY2U9Imh0dHBzOi8vc3dzLmdlb25hbWVzLm9yZy81ODE1MTM1LyIvPgogICAgICAgIDxnbjpwYXJlbnRBRE0yIHJkZjpyZXNvdXJjZT0iaHR0cHM6Ly9zd3MuZ2VvbmFtZXMub3JnLzU4MTQ5MjEvIi8+CiAgICAgICAgPGduOm5lYXJieUZlYXR1cmVzIHJkZjpyZXNvdXJjZT0iaHR0cHM6Ly9zd3MuZ2VvbmFtZXMub3JnLzU4MTQ5MTYvbmVhcmJ5LnJkZiIvPgogICAgICAgIDxnbjpsb2NhdGlvbk1hcCByZGY6cmVzb3VyY2U9Imh0dHBzOi8vd3d3Lmdlb25hbWVzLm9yZy81ODE0OTE2L3dhbGxhLXdhbGxhLmh0bWwiLz4KICAgICAgICA8Z246d2lraXBlZGlhQXJ0aWNsZSByZGY6cmVzb3VyY2U9Imh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL1dhbGxhX1dhbGxhJTJDX1dhc2hpbmd0b24iLz4KICAgICAgICA8cmRmczpzZWVBbHNvIHJkZjpyZXNvdXJjZT0iaHR0cHM6Ly9kYnBlZGlhLm9yZy9yZXNvdXJjZS9XYWxsYV9XYWxsYSUyQ19XYXNoaW5ndG9uIi8+CiAgICA8L2duOkZlYXR1cmU+CiAgICA8Zm9hZjpEb2N1bWVudCByZGY6YWJvdXQ9Imh0dHBzOi8vc3dzLmdlb25hbWVzLm9yZy81ODE0OTE2L2Fib3V0LnJkZiI+CiAgICAgICAgPGZvYWY6cHJpbWFyeVRvcGljIHJkZjpyZXNvdXJjZT0iaHR0cHM6Ly9zd3MuZ2VvbmFtZXMub3JnLzU4MTQ5MTYvIi8+CiAgICAgICAgPGNjOmxpY2Vuc2UgcmRmOnJlc291cmNlPSJodHRwczovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvNC4wLyIvPgogICAgICAgIDxjYzphdHRyaWJ1dGlvblVSTCByZGY6cmVzb3VyY2U9Imh0dHBzOi8vd3d3Lmdlb25hbWVzLm9yZyIvPgogICAgICAgIDxjYzphdHRyaWJ1dGlvbk5hbWUgcmRmOmRhdGF0eXBlPSJodHRwczovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEjc3RyaW5nIj5HZW9OYW1lczwvY2M6YXR0cmlidXRpb25OYW1lPgogICAgICAgIDxkY3Rlcm1zOmNyZWF0ZWQgcmRmOmRhdGF0eXBlPSJodHRwczovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEjZGF0ZSI+MjAwNi0wMS0xNTwvZGN0ZXJtczpjcmVhdGVkPgogICAgICAgIDxkY3Rlcm1zOm1vZGlmaWVkIHJkZjpkYXRhdHlwZT0iaHR0cHM6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hI2RhdGUiPjIwMTgtMDEtMDE8L2RjdGVybXM6bW9kaWZpZWQ+CiAgICA8L2ZvYWY6RG9jdW1lbnQ+CjwvcmRmOlJERj4K
+  recorded_at: Wed, 10 Jun 2026 15:40:06 GMT
+recorded_with: VCR 6.3.1

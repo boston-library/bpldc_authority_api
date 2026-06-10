@@ -4,7 +4,7 @@
 # don't use VCR, so we can be sure source authority is returning expected data
 require_relative '../shared/terms_shared'
 
-RSpec.describe Qa::TermsController do
+RSpec.describe Qa::TermsController, :vcr do
   routes { Qa::Engine.routes }
 
   describe 'authorities/terms configs' do

@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.geonames.org/hierarchy?username=<USERNAME>&lang=en&style=FULL&geonameId=foo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: '200'
+    headers:
+      Date:
+      - Wed, 10 Jun 2026 15:46:24 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) mod_jk/1.2.46 OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - sameorigin
+      Cache-Control:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <geonames>
+            <status message="For input string: &quot;foo&quot;" value="14"/>
+        </geonames>
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://api.geonames.org/hierarchy?username=<USERNAME>&lang=en&style=FULL&geonameId=foo
+  recorded_at: Wed, 10 Jun 2026 15:46:38 GMT
+recorded_with: VCR 6.3.1

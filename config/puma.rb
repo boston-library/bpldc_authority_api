@@ -7,7 +7,7 @@
 # and maximum; this matches the default thread size of Active Record.
 #
 rails_env = ENV.fetch('RAILS_ENV') { 'development' }
-max_threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }
+max_threads_count = ENV.fetch('RAILS_MAX_THREADS') { 3 }
 min_threads_count = ENV.fetch('RAILS_MIN_THREADS') { max_threads_count }
 app_dir = File.expand_path('..', __dir__)
 
@@ -17,7 +17,7 @@ workers ENV.fetch('WEB_CONCURRENCY') { 2 }
 # Specifies the `worker_timeout` threshold that Puma will use to wait before
 # terminating a worker in development environments.
 #
-worker_timeout 3600 if rails_env == 'development'
+worker_timeout rails_env == 'development' ? 3600 : 60
 
 environment rails_env
 
@@ -25,8 +25,12 @@ wait_for_less_busy_worker
 
 preload_app!
 
-on_worker_boot do
-  ActiveRecord::Base.establish_connection
+before_fork do
+  ActiveRecord::Base.connection_pool.disconnect! if defined?(ActiveRecord)
+end
+
+before_worker_boot do
+  ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
 end
 
 if %w(staging production).member?(rails_env)

@@ -2,10 +2,8 @@
 
 require_relative '../shared/terms_shared'
 # this controller is actually defined in QA, but we add some specs
-# to test configs in config/authorities/linked_data
-# don't use VCR, so we can be sure source authority is returning expected data
-# NOTE this only works for geonames_direct at the moment
-RSpec.describe Qa::LinkedDataTermsController do
+
+RSpec.describe Qa::LinkedDataTermsController, :vcr do
   routes { Qa::Engine.routes }
 
   describe 'loc_direct' do
