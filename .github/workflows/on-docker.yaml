@@ -18,7 +18,7 @@ jobs:
         run: docker compose build
 
       - name: Run Tests
-        run: docker compose run -e RAILS_ENV=test app bundle exec rake --verbose
+        run: docker compose run -e RAILS_ENV=test app bundle exec rake --trace
 
       - name: Shutdown Containers
         if: always() 

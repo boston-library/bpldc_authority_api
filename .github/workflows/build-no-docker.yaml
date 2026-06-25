@@ -55,4 +55,4 @@ jobs:
           RAILS_ENV=test bundle exec rails db:prepare
 
       - name: Run Tests
-        run: bundle exec rake
+        run: bundle exec rake --trace
