@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.11'
+ruby '3.3.12'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.2.3'
 # Use postgresql as the database for Active Record
@@ -15,7 +15,7 @@ gem 'puma', '~> 7.2'
 gem 'connection_pool', '~> 2.5'
 gem 'csv'
 gem 'jbuilder', '~> 2.15'
-gem 'redis', '~> 5'
+gem 'redis', '~> 5.4'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
