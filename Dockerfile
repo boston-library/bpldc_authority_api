@@ -1,4 +1,4 @@
-FROM ruby:3.3.13
+FROM ruby:3.3.14
 
 LABEL maintainer="bbarber@bpl.org, eenglish@bpl.org"
 
